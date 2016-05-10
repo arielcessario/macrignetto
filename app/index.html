@@ -2,15 +2,310 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+
   <style>
     [ng-cloak] {
       display: none;
     }
   </style>
 
+    <style>
+
+        #ac-loader {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            font-family: Verdana, sans-serif;
+            background-color: white;
+        }
+
+        /* line 22, ../sass/screen.scss */
+        #ac-loader #loader-loading {
+            margin-bottom: 40px;
+            -webkit-animation: loader-loading-anim 3s ease-in-out infinite;
+            -o-animation: loader-loading-anim 3s ease-in-out infinite;
+            animation: loader-loading-anim 3s ease-in-out infinite;
+        }
+
+        /* line 31, ../sass/screen.scss */
+        #ac-loader #border-rad {
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            border-radius: 30px;
+            overflow: hidden;
+            height: 54px;
+            width: 304px;
+            -moz-box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.8);
+            -webkit-box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.8);
+            box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.8);
+            -webkit-animation: loader-shadow-anim 5s ease-in-out infinite;
+            -o-animation: loader-shadow-anim 5s ease-in-out infinite;
+            animation: loader-shadow-anim 5s ease-in-out infinite;
+            border: 4px solid #133648;
+            background-color: #133648;
+            position: relative;
+        }
+
+        /* line 49, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container {
+            background-color: gray;
+            height: 50px;
+            width: 300px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+            -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            border-radius: 30px;
+            border: 2px solid beige;
+        }
+
+        /* line 63, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container #bubble {
+            position: absolute;
+            top: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            width: 10px;
+            right: 15px;
+            height: 10px;
+        }
+
+        /* line 75, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container #reflex {
+            position: absolute;
+            top: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            width: 250px;
+            left: 20px;
+            height: 10px;
+        }
+
+        /* line 87, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container #loader-zero {
+            -webkit-transform: translateX(0px) !important;
+            -moz-transform: translateX(0px) !important;
+            -ms-transform: translateX(0px) !important;
+            -o-transform: translateX(0px) !important;
+            transform: translateX(0px) !important;
+            -webkit-animation: move-loader-zero 10s linear infinite !important;
+            -o-animation: move-loader-zero 10s linear infinite !important;
+            animation: move-loader-zero 10s linear infinite !important;
+        }
+
+        /* line 99, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container #loader-zero,
+        #ac-loader #border-rad #loader-container #loader-first,
+        #ac-loader #border-rad #loader-container #loader-second,
+        #ac-loader #border-rad #loader-container #loader-third,
+        #ac-loader #border-rad #loader-container #loader-fourth,
+        #ac-loader #border-rad #loader-container #loader-fifth,
+        #ac-loader #border-rad #loader-container #loader-sixth {
+            position: absolute;
+            height: 100px;
+            width: 400px;
+            display: flex;
+            flex-direction: row;
+            top: 0;
+            -webkit-transform: translateX(-200px);
+            -moz-transform: translateX(-200px);
+            -ms-transform: translateX(-200px);
+            -o-transform: translateX(-200px);
+            transform: translateX(-200px);
+            -webkit-animation: move-loader 10s linear infinite;
+            -o-animation: move-loader 10s linear infinite;
+            animation: move-loader 10s linear infinite;
+        }
+
+        /* line 123, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container #loader-zero div,
+        #ac-loader #border-rad #loader-container #loader-first div,
+        #ac-loader #border-rad #loader-container #loader-second div,
+        #ac-loader #border-rad #loader-container #loader-third div,
+        #ac-loader #border-rad #loader-container #loader-fourth div,
+        #ac-loader #border-rad #loader-container #loader-fifth div,
+        #ac-loader #border-rad #loader-container #loader-sixth div {
+            width: 50px;
+            height: 100%;
+        }
+
+        /* line 129, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container #loader-second {
+            -webkit-animation-delay: 2s;
+            -moz-animation-delay: 2s;
+            -ms-animation-delay: 2s;
+            -o-animation-delay: 2s;
+            animation-delay: 2s;
+        }
+
+        /* line 137, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container #loader-third {
+            -webkit-animation-delay: 4s;
+            -moz-animation-delay: 4s;
+            -ms-animation-delay: 4s;
+            -o-animation-delay: 4s;
+            animation-delay: 4s;
+        }
+
+        /* line 145, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container #loader-fourth {
+            -webkit-animation-delay: 6s;
+            -moz-animation-delay: 6s;
+            -ms-animation-delay: 6s;
+            -o-animation-delay: 6s;
+            animation-delay: 6s;
+        }
+
+        /* line 153, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container #loader-fifth {
+            -webkit-animation-delay: 8s;
+            -moz-animation-delay: 8s;
+            -ms-animation-delay: 8s;
+            -o-animation-delay: 8s;
+            animation-delay: 8s;
+        }
+
+        /* line 161, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container #loader-sixth {
+            -webkit-animation-delay: 10s;
+            -moz-animation-delay: 10s;
+            -ms-animation-delay: 10s;
+            -o-animation-delay: 10s;
+            animation-delay: 10s;
+        }
+
+        /* line 169, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container .rojo {
+            background-color: red;
+        }
+
+        /* line 173, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container .azul {
+            background-color: blue;
+        }
+
+        /* line 177, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container .amarillo {
+            background-color: yellow;
+        }
+
+        /* line 181, ../sass/screen.scss */
+        #ac-loader #border-rad #loader-container .naranja {
+            background-color: orange;
+        }
+
+        @-webkit-keyframes move-loader {
+            0% {
+                -webkit-transform: translateX(-200);
+                -moz-transform: translateX(-200);
+                -ms-transform: translateX(-200);
+                -o-transform: translateX(-200);
+                transform: translateX(-200);
+            }
+            50% {
+                -webkit-transform: translateX(300px);
+                -moz-transform: translateX(300px);
+                -ms-transform: translateX(300px);
+                -o-transform: translateX(300px);
+                transform: translateX(300px);
+                opacity: 1;
+            }
+            51% {
+                opacity: 0;
+            }
+            100% {
+                -webkit-transform: translateX(-200px);
+                -moz-transform: translateX(-200px);
+                -ms-transform: translateX(-200px);
+                -o-transform: translateX(-200px);
+                transform: translateX(-200px);
+                opacity: 0;
+            }
+        }
+
+        @-webkit-keyframes move-loader-zero {
+            0% {
+                -webkit-transform: translateX(0);
+                -moz-transform: translateX(0);
+                -ms-transform: translateX(0);
+                -o-transform: translateX(0);
+                transform: translateX(0);
+            }
+            50% {
+                -webkit-transform: translateX(500px);
+                -moz-transform: translateX(500px);
+                -ms-transform: translateX(500px);
+                -o-transform: translateX(500px);
+                transform: translateX(500px);
+                opacity: 1;
+            }
+            51% {
+                opacity: 0;
+            }
+            100% {
+                -webkit-transform: translateX(0px);
+                -moz-transform: translateX(0px);
+                -ms-transform: translateX(0px);
+                -o-transform: translateX(0px);
+                transform: translateX(0px);
+                opacity: 0;
+            }
+        }
+
+        @-webkit-keyframes loader-loading-anim {
+            0% {
+                opacity: 0;
+            }
+            25% {
+                opacity: 1;
+            }
+            75% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @-webkit-keyframes loader-shadow-anim {
+            0% {
+                -moz-box-shadow: 0px 0px 40px 5px transparent;
+                -webkit-box-shadow: 0px 0px 40px 5px transparent;
+                box-shadow: 0px 0px 40px 5px transparent;
+            }
+            50% {
+                -moz-box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.8);
+                -webkit-box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.8);
+                box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.8);
+            }
+            100% {
+                -moz-box-shadow: 0px 0px 40px 5px transparent;
+                -webkit-box-shadow: 0px 0px 40px 5px transparent;
+                box-shadow: 0px 0px 40px 5px transparent;
+            }
+        }
+
+
+    </style>
+
   <script>
       // Cargo las configuraciones para la app
-      window.appName = 'inmobiliarias';
+      window.appName = 'macrignetto';
       window.installPath = 'bower_components';
       window.mailAdmin = 'arielcessario@gmail.com';
       window.mailAdmins = [{mail: 'arielcessario@gmail.com'}, {mail: 'mmaneff@gmail.com'}];
@@ -39,9 +334,9 @@
                       'bower_components/angular-route/angular-route.min.js',
                       'bower_components/oclazyload/dist/ocLazyLoad.min.js',
                       'bower_components/angular-cookies/angular-cookies.min.js',
-                      'bower_components/angular-aria/angular-aria.min.js',
+                      //'bower_components/angular-aria/angular-aria.min.js',
                       'bower_components/angular-animate/angular-animate.min.js',
-                      'bower_components/angular-scroll/angular-scroll.min.js',
+                      //'bower_components/angular-scroll/angular-scroll.min.js',
                       'https://cdn.firebase.com/js/client/2.4.0/firebase.js',
                       'https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js',
 //                      '//cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-rangy.min.js',
@@ -61,26 +356,36 @@
                       ], 'tercero');
 
                       $script.ready('tercero', function () {
-                          angular.bootstrap(document, ['inmobiliarias']);
+                          angular.bootstrap(document, ['macrignetto']);
 
                       });
                   });
               }
       );
   </script>
-  <title>Inmobiliarias</title>
+  <title>Macrignetto</title>
+    <!--<link rel="stylesheet" href="stylesheets/screen.css">-->
+    <script>
+        var cb = function () {
+            var l = document.createElement('link');
+            l.rel = 'stylesheet';
+            l.href = 'stylesheets/styles.css';
+            var h = document.getElementsByTagName('head')[0];
+            h.parentNode.insertBefore(l, h);
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+                webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if (raf) raf(cb);
+        else window.addEventListener('load', cb);
+    </script>
 </head>
 <body ng-cloak ng-controller="AppCtrl as appCtrl">
-  <ul class="menu">
-    <li><a href="#/listado">listado</a></li>
-    <li><a href="#/administracion">administración</a></li>
-    <li><a href="#/usuarios">usuarios</a></li>
-    <li><a href="#/casas">casas</a></li>
-    <li><a href="#/casa">casa</a></li>
-  </ul>
 
-  <div ng-view></div>
+    <div ng-view autoscroll="true"></div>
 
+    <footer>
+        <div style="width: 100%; font-size: 18px;text-align: center;" class="acdesarrollos">Powered by <a style="color: white; text-decoration: none;" href="http://www.ac-desarrollos.com"> AC Desarrollos</a></div>
+    </footer>
 
 </body>
 </html>
