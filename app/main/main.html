@@ -1,84 +1,27 @@
 <div ng-controller="MainController as mainCtrl">
-    <div id="inicio" class="container">
-        <h1 style="height:100px;font-size: 74px;font-weight: bold;text-align: center;text-transform: uppercase;">Macrignetto</h1>
-        <div style="">
-            <div style="display: flex;align-items: center;height: 60px">
-                <div style="color:brown;margin: 0 15px;">Economia</div>
-                <div style="color:brown;margin: 0 15px;">Politica</div>
-                <div style="color:brown;margin: 0 15px;">Comunidad</div>
-                <div style="background-color: aqua;width: 100%;display: flex;align-items: center;height: 60px">
-                    <div style="font-size: 42px;font-weight: bold;margin-left: 20px;">Noticias</div>
-                    <div>buscar</div>
-                    <div>Ordenar</div>
-                </div>
-            </div>
-            <div class="info-container">
-                <div class="container-noticias">
-                    <div class="container-big">
-                        <img src="images/fondo1.jpg" class="stretch">
-                    </div>
-                </div>
-                <div class="container-noticias">
-                    <div class="container-small">
-                        <img src="images/fondo1.jpg" class="stretch">
-                    </div>
-                    <div class="container-small">
-                        <img src="images/fondo2.jpg" class="stretch">
-                    </div>
-                </div>
-                <div class="container-noticias">
-                    <div class="container-big">
-                        <img src="images/fondo1.jpg" class="stretch">
-                    </div>
-                </div>
-            </div>
-
-        </div>
+    <div style="background-color: #59323c;height: 150px;display: flex;justify-content: center;align-items: center;">
+        <h1 style="text-transform: uppercase;font-size: 72px;font-weight: bold;color:#fff;">Macrignetto</h1>
     </div>
-    <div id="agenda" class="container">
-        <h1>Agenda</h1>
-        <div style="display: flex;align-items: center;justify-content: center;height: 450px;">
-            <div style="width: 60%">
-                <div></div>
-                <img src="images/agenda_img.png">
-            </div>
-            <div style="width: 40%">
-                <h2 style="font-size: 56px;font-weight: bold;text-align: center;color:pink;text-transform: uppercase;margin-bottom: 25px;">Titulo Agenda</h2>
-                <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
-            </div>
+    <div class="header-2">
+        <div class="header-2-1">
+            <lable>Buscar por:</lable>
+            <select>
+                <option value="1" selected>Nombre</option>
+                <option value="2">Titulo</option>
+            </select>
+            <lable>Ordenar por:</lable>
+            <select>
+                <option value="1" selected>Asc</option>
+                <option value="2">Desc</option>
+            </select>
         </div>
-    </div>
-    <div id="comics" class="container">
-        <h1>Comics</h1>
-        <div >
-            <img src="images/comics.png">
+        <div class="header-2-2">
+            <div style="margin: 0 15px">Economia</div>
+            <div style="margin: 0 15px">Politica</div>
+            <div style="margin: 0 15px">Comunidad</div>
         </div>
-    </div>
-
-    <div id="contacto" class="container" style="display: flex;align-items: center;justify-content: center;">
-        <div id="contacto-form">
-            <h2 style="font-size: 74px;font-weight: bold;text-align: center;color:pink;text-transform: uppercase;margin-bottom: 25px;">Contacto</h2>
-            <div class="contacto-panel">
-                <div class="control-container">
-                    <label>Nombre</label>
-                    <input ac-validator is-required="Debe ingresar un nombre" ng-model="mainCtrl.nombre"
-                           type="text" id="contacto-nombre" class="form-control">
-                </div>
-                <div class="control-container">
-                    <label>Email</label>
-                    <input ac-validator is-mail="El mail es incorrecto" ng-model="mainCtrl.email"
-                           type="text" id="contacto-mail" class="form-control">
-                </div>
-                <div class="control-container">
-                    <label>Consulta</label>
-                    <textarea ac-validator is-required="Debe ingresar una consulta" ng-model="mainCtrl.mensaje"
-                              name="" id="contacto-consulta" rows="10" class="form-control"></textarea>
-                </div>
-            </div>
-            <fieldset ng-disabled="mainCtrl.enviando" class="contacto-panel contacto-enviar-mobile">
-                <button id="contacto-enviar-mobile" ac-validator ng-click="mainCtrl.sendMail();">Enviar</button>
-            </fieldset>
+        <div class="header-2-3">
+            <h2 style="font-size: 56px;color:#260126;font-weight: bold;">Noticias</h2>
         </div>
-
     </div>
 </div>
