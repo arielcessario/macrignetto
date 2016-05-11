@@ -14,131 +14,60 @@
 
         var factory = this;
 
-        factory.propiedad = {
+        factory.usuario = {
+            nombre: '',
+            apellido: '',
+            email: '',
+            rol: '',
+            comentarios: '',
+            notas: '',
+            status: 1,
+            fecha: Firebase.ServerValue.TIMESTAMP
+        };
+
+        factory.refUsuarios = FireVars._FIREREF.child('/usuarios/');
+
+        factory.evento = {
             titulo: '',
             descripcion: '',
-            direccion: {},
-            fotos: {},
-            superficie_total: '',
-            superficie_cubierta: '',
-            precio: 0.0,
-            moneda: {},
-            habitaciones: 0,
-            banos: 0,
-            tipo_propiedad: '',
-            servicios_basicos: {},
-            generales: {},
-            otros: {},
-            inmobiliaria: {},
-            status: 0,
-            fecha_alta: Firebase.ServerValue.TIMESTAMP
+            fotos: '',
+            status: 1,
+            fecha_evento: Firebase.ServerValue.TIMESTAMP,
+            fecha: Firebase.ServerValue.TIMESTAMP
         };
 
-        factory.refPropiedades = FireVars._FIREREF.child('/propiedad/');
+        factory.refEventos = FireVars._FIREREF.child('/eventos/');
 
-        factory.inmobiliaria = {
-            nombre: '',
-            direccion: {},
-            web: '',
-            propiedades: {},
-            usuarios: {}
+        factory.historieta = {
+            url: '',
+            status: 1,
+            fecha: Firebase.ServerValue.TIMESTAMP
         };
 
-        factory.refInmobiliarias = FireVars._FIREREF.child('/inmobiliaria/');
+        factory.refHistorietas = FireVars._FIREREF.child('/historietas/');
 
-        factory.otro = {
-            nombre: '',
-            status: true,
-            propiedades: {}
+        factory.nota = {
+            titulo: '',
+            detalle: '',
+            fotos: '',
+            comentarios: '',
+            fecha: Firebase.ServerValue.TIMESTAMP,
+            destacada: false,
+            status: 1
         };
 
-        factory.refOtros = FireVars._FIREREF.child('/otro/');
+        factory.refNotas = FireVars._FIREREF.child('/notas/');
 
-        factory.general = {
-            nombre: '',
-            status: true,
-            propiedades: {}
-        };
-
-        factory.refGenerales = FireVars._FIREREF.child('/general/');
-
-        factory.servicio = {
-            nombre: '',
-            status: true,
-            propiedades: {}
-        };
-
-        factory.refServicios = FireVars._FIREREF.child('/servicio/');
-
-        factory.tipoPropiedad = {
-            nombre: '',
-            status: true,
-            propiedades: {}
-        };
-
-        factory.refTiposPropiedad = FireVars._FIREREF.child('/tipo_propiedad/');
-
-        factory.foto = {
-            nombre: '',
-            main: false,
-            propiedades: {}
-        };
-
-        factory.refFotos = FireVars._FIREREF.child('/foto/');
-
-        factory.moneda = {
-            nombre: '',
-            cambio: 0.0,
-            propiedades: {}
-        };
-
-        factory.refMonedas = FireVars._FIREREF.child('/moneda/');
-
-        factory.direccion = {
-            nombre: '',
-            tipo: {},
-            numero: '',
-            piso: '',
-            puerta: '',
-            torre: '',
-            cp: '',
-            lng: '',
-            lat: '',
-            localidad: {},
-            propiedades: {}
-        };
-
-        factory.refDirecciones = FireVars._FIREREF.child('/direccion/');
-
-        factory.localidad = {
-            nombre: '',
-            provincia: {},
-            direccion: {}
-        };
-
-        factory.refLocalidades = FireVars._FIREREF.child('/localidad/');
-
-        factory.provincia = {
-            nombre: '',
-            localidad: {}
-        };
-
-        factory.refProvincias = FireVars._FIREREF.child('/provincia/');
-
-        factory.tiposCalle = {
-            nombre: '',
+        factory.comentario = {
+            titulo: '',
+            detalles: '',
+            usuario: '',
+            padre: '',
+            fecha: Firebase.ServerValue.TIMESTAMP,
             status: true
         };
 
-        factory.refTiposCalle = FireVars._FIREREF.child('/tipos_calle/');
-
-        factory.usuario = {
-            nombre: '',
-            mail: '',
-            inmobiliaria: {}
-        };
-
-        factory.refUsuarios = FireVars._FIREREF.child('/usuario/');
+        factory.refComentarios = FireVars._FIREREF.child('/comentarios/');
 
         return factory;
     }
