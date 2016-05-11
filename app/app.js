@@ -6,7 +6,6 @@
         'ngRoute',
         'firebase',
         'acUtils',
-        'inmobiliarias.factory',
         'acFactory',
         'Model'
     ]).config(['$routeProvider', function ($routeProvider) {

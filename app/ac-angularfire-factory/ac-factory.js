@@ -21,7 +21,6 @@
 
         function init() {
             FireVars._FIREREF = new Firebase(_FIREREF);
-
         }
 
         function cacheFactory(ref) {
@@ -78,7 +77,7 @@
             var props = Object.getOwnPropertyNames(obj);
 
             for (var i = 0; i < props.length; i++) {
-                if (obj[props[i]].hasOwnProperty('$id')) {
+                if (obj[props[i]] != null && obj[props[i]].hasOwnProperty('$id')) {
                     var key = obj[props[i]].$id;
                     obj[props[i]] = {};
                     obj[props[i]][key] = true;
@@ -105,9 +104,12 @@
 
         function createArrayRef(ref, orderBy, startAt, endAt) {
             if (orderBy == undefined) {
-
+                // Trae solo los activos
+                //var filtered = ref.orderByChild('status').startAt(1).endAt(1);
+                //return $firebaseArray(filtered);
                 return $firebaseArray(ref);
             } else {
+                // Filtra por otras cosas
                 var filtered = ref.orderByChild(orderBy).startAt(startAt).endAt(endAt);
                 return $firebaseArray(filtered);
             }
