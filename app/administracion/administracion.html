@@ -1,9 +1,3 @@
-<div ng-controller="AdministracionCtrl as administracionCtrl">
-    <div id="administracion-nav">
-        <button ng-click="administracionCtrl.panel='administracion/propiedad.html'; administracionCtrl.isUpdate = false;">Nueva Propiedad</button>
-        <button ng-click="administracionCtrl.panel='administracion/parametros.html'">Parametrización</button>
-    </div>
-    <div id="administracion-panel" ng-include="administracionCtrl.panel">
-
-    </div>
+<div ng-controller="AdministracionController as administracionController">
+    <ac-administracion-usuarios ng-if="appCtrl.sub_menu == 'usuarios'"></ac-administracion-usuarios>
 </div>

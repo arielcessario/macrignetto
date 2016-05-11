@@ -25,7 +25,7 @@
                 }
             });
 
-            $routeProvider.when('/administracion', {
+            $routeProvider.when('/administracion/:id', {
                 templateUrl: 'administracion/administracion.html',
                 controller: 'AdministracionController',
                 data: {requiresLogin: true},
@@ -42,23 +42,18 @@
         //Constante definida para la librería ac-angularfire-factory
         .constant('_FIREREF', 'https://macrignetto.firebaseio.com/');
 
-    AppCtrl.$inject = ['FireService', '$rootScope', '$location'];
-    function AppCtrl(FireService, $rootScope, $location) {
+    AppCtrl.$inject = ['FireService', '$rootScope'];
+    function AppCtrl(FireService, $rootScope) {
         var vm = this;
 
         FireService.init();
 
         ////////// NAVEGACION //////////
-        var location = $location.path().split('/');
-        vm.menu = location[1];
-        vm.sub_menu = location[2];
-        $rootScope.$on('$routeChangeStart', function (event, next, current) {
-            var location = next.$$route.originalPath.split('/');
-            vm.menu = location[1];
-            vm.sub_menu = location[2];
+        $rootScope.$on('$routeChangeSuccess', function (event, next, current) {
+            vm.menu = next.$$route.originalPath.split('/')[1];
+            vm.sub_menu = next.params.id;
         });
         ////////// NAVEGACION //////////
-
 
     }
 })();
