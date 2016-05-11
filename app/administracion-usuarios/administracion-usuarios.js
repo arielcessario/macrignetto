@@ -31,7 +31,12 @@
 
         function save() {
             UsuariosService.save(vm.usuarios, vm.usuario).then(function (data) {
-                console.log(data);
+                //vm.usuario = vm.usuarios[-1];
+                vm.usuario = {
+                    rol: "1",
+                    status: "0"
+                };
+
             })
         }
     }
