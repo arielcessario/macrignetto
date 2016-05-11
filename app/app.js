@@ -7,7 +7,8 @@
         'firebase',
         'acUtils',
         'inmobiliarias.factory',
-        'acFactory'
+        'acFactory',
+        'Model'
     ]).config(['$routeProvider', function ($routeProvider) {
 
             $routeProvider.otherwise({redirectTo: '/main'});
