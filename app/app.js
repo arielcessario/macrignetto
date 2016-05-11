@@ -5,7 +5,9 @@
     angular.module('macrignetto', ['oc.lazyLoad',
         'ngRoute',
         'firebase',
+        'textAngular',
         'acUtils',
+        'acUploads',
         'acFactory',
         'Model'
     ]).config(['$routeProvider', function ($routeProvider) {

@@ -1,6 +1,8 @@
 (function () {
     'use strict';
-    angular.module('administracion', [['administracion-usuarios/administracion-usuarios.js']])
+    angular.module('administracion', [['administracion-usuarios/administracion-usuarios.js',
+            'administracion-notas/administracion-notas.js',
+            'administracion-eventos/administracion-eventos.js']])
         .controller('AdministracionController', AdministracionController);
 
 

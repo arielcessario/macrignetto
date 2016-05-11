@@ -51,13 +51,14 @@
 
         return service;
 
-
         function save(arr, obj) {
             var deferred = $q.defer();
 
+            obj.fecha_upd = Firebase.ServerValue.TIMESTAMP;
             if (obj.$id != undefined) {
                 deferred.resolve(update(arr, obj));
             } else {
+                obj.fecha_crea = Firebase.ServerValue.TIMESTAMP;
                 deferred.resolve(create(arr, obj));
             }
             return deferred.promise;

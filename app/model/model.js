@@ -29,10 +29,9 @@
 
         factory.evento = {
             titulo: '',
-            descripcion: '',
+            detalle: '',
             fotos: '',
             status: 1,
-            fecha_evento: Firebase.ServerValue.TIMESTAMP,
             fecha: Firebase.ServerValue.TIMESTAMP
         };
 
@@ -49,6 +48,7 @@
         factory.nota = {
             titulo: '',
             detalle: '',
+            fuente: '',
             fotos: '',
             comentarios: '',
             fecha: Firebase.ServerValue.TIMESTAMP,

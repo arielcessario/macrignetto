@@ -398,10 +398,11 @@
                         //'bower_components/angular-scroll/angular-scroll.min.js',
                         'https://cdn.firebase.com/js/client/2.4.0/firebase.js',
                         'https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js',
-//                      '//cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-rangy.min.js',
-//                      '//cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-sanitize.min.js',
-//                      '//cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.min.js',
+                        '//cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-rangy.min.js',
+                        '//cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-sanitize.min.js',
+                        '//cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.min.js',
                         'bower_components/ac-angular-utils/ac-utils.js',
+                        'bower_components/ac-angular-uploads/ac-uploads.js',
                         'ac-angular-animate/ac-animate.min.js',
                         'ac-angularfire-factory/ac-factory.js',
                         'model/model.js'
@@ -437,9 +438,34 @@
         if (raf) raf(cb);
         else window.addEventListener('load', cb);
     </script>
+    <script>
+        var cb = function () {
+            var l = document.createElement('link');
+            l.rel = 'stylesheet';
+            l.href = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css';
+            var h = document.getElementsByTagName('head')[0];
+            h.parentNode.insertBefore(l, h);
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+                webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if (raf) raf(cb);
+        else window.addEventListener('load', cb);
+    </script>
+    <script>
+        var cb = function () {
+            var l = document.createElement('link');
+            l.rel = 'stylesheet';
+            l.href = 'http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.min.css';
+            var h = document.getElementsByTagName('head')[0];
+            h.parentNode.insertBefore(l, h);
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+                webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if (raf) raf(cb);
+        else window.addEventListener('load', cb);
+    </script>
 </head>
 <body ng-cloak ng-controller="AppCtrl as appCtrl">
-
 <div ng-view></div>
 
 </body>
