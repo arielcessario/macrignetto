@@ -46,6 +46,7 @@
         .run(function ($rootScope, $location, FireVars) {
             // Para activar la seguridad en una vista, agregar data:{requiresLogin:false} dentro de $routeProvider.when */
             $rootScope.$on('$routeChangeStart', function (e, to) {
+                /*
                 var ref = FireVars._FIREREF;
                 var authData = ref.getAuth();
                 if (to && to.data && to.data.requiresLogin) {
@@ -55,6 +56,7 @@
                     } else {
                     }
                 }
+                */
             });
         })
         .controller('AppCtrl', AppCtrl)
@@ -78,6 +80,12 @@
         });
         ////////// NAVEGACION //////////
 
+        /*
+        NotasService.get().then(function (data) {
+            vm.notas = data;
+            console.log(vm.notas);
+        });
+        */
     }
 })();
 
