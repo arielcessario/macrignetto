@@ -268,7 +268,9 @@ select option {
   width: 100%;
   font-weight: lighter;
   //background-color: #17384B;
-  background: #59323c;
+  background: #B2FFDB;
+  display: flex;
+  flex-direction: column;
   /*
   background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
@@ -294,6 +296,9 @@ select option {
   animation-duration:.2s;
 
   //border: 5px solid white;
+  a{
+    text-decoration: none;
+  }
 
   .menu-desktop-btn {
     margin-top: 15px;
@@ -546,8 +551,9 @@ select option {
       .menu-desktop-btn {
         cursor: pointer;
         font-family: 'Oswald', sans-serif;
-        //color: #fff;
+        color: #000;
         font-weight: lighter;
+        text-decoration: none;
         //font-weight: lighter;
         //letter-spacing: .9px;
         //margin-top: 10px;
@@ -581,7 +587,9 @@ select option {
         //box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.44);
 
       }
-      .menu-desktop-btn:hover {
+      .menu-desktop-btn:hover,
+      .menu-desktop-btn:focus,
+      .menu-desktop-btn:active {
         //color: white;
         color:  #a1cca5;
         //border-radius: 2px;
@@ -603,7 +611,7 @@ select option {
   }
 
 }
-
+/*
 .display-menu-desktop {
   display: none;
 }
@@ -611,7 +619,7 @@ select option {
 .display-header {
   display: none;
 }
-
+*/
 //***********************************************
 .main-container {
   top: 50px;

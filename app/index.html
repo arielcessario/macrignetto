@@ -487,34 +487,13 @@
             <div id="menu-desktop-upper"></div>
             <div id="menu-desktop-lower">
                 <div id="menu-desktop-lower-inner">
-                    <div class="menu-desktop-btn ac-ripple"
-                         ng-class="{'menu-desktop-btn-selected':appCtrl.selectedPage.indexOf('NOTICIAS') > -1 }"
-                         ng-click="appCtrl.goTo({nombre: 'NOTICIAS', path: '/noticias'});"> NOTICIAS
-                    </div>
-                    <div class="menu-desktop-btn ac-ripple"
-                         ng-class="{'menu-desktop-btn-selected':appCtrl.selectedPage.indexOf('AGENDA') > -1 }"
-                         ng-click="appCtrl.goTo({nombre: 'AGENDA', path: '/agenda'});"> AGENDA
-                    </div>
-                    <div class="menu-desktop-btn ac-ripple"
-                         ng-class="{'menu-desktop-btn-selected':appCtrl.selectedPage.indexOf('QUIENES SOMOS') > -1 }"
-                         ng-click="appCtrl.goTo({nombre: 'QUIENES SOMOS', path: '/quienes_somos'});"> QUIENES SOMOS
-                    </div>
-                    <div class="menu-desktop-btn ac-ripple"
-                         ng-class="{'menu-desktop-btn-selected':appCtrl.selectedPage.indexOf('HUMOR') > -1 }"
-                         ng-click="appCtrl.goTo({nombre: 'HUMOR', path: '/humor'});"> HUMOR
-                    </div>
-                    <div class="menu-desktop-btn ac-ripple"
-                         ng-class="{'menu-desktop-btn-selected':appCtrl.selectedPage.indexOf('REVISTA') > -1 }"
-                         ng-click="appCtrl.goTo({nombre: 'REVISTA', path: '/revista'});"> REVISTA
-                    </div>
-                    <div class="menu-desktop-btn ac-ripple"
-                         ng-class="{'menu-desktop-btn-selected':appCtrl.selectedPage.indexOf('CONTACTO') > -1 }"
-                         ng-click="appCtrl.goTo({nombre: 'CONTACTO', path: '/contacto'});"> CONTACTO
-                    </div>
-                    <div class="menu-desktop-btn ac-ripple"
-                         ng-class="{'menu-desktop-btn-selected':appCtrl.selectedPage.indexOf('ADMINISTRACION') > -1 }"
-                         ng-click="appCtrl.goTo({nombre: 'ADMINISTRACION', path: '/administracion'});"> ADMINISTRACION
-                    </div>
+                    <a class="menu-desktop-btn ac-ripple" href="#/main">NOTICIAS</a>
+                    <a class="menu-desktop-btn ac-ripple" href="#/main">AGENDA</a>
+                    <a class="menu-desktop-btn ac-ripple" href="#/main">QUIENES SOMOS</a>
+                    <a class="menu-desktop-btn ac-ripple" href="#/main">HUMOR</a>
+                    <a class="menu-desktop-btn ac-ripple" href="#/main">REVISTA</a>
+                    <a class="menu-desktop-btn ac-ripple" href="#/main">CONTACTO</a>
+                    <a class="menu-desktop-btn ac-ripple" href="#/administracion/usuarios">ADMINISTRACION</a>
                 </div>
             </div>
         </div>
@@ -522,12 +501,19 @@
 </div>
 
 <div class="menu-mobile-panel" ng-class="{'menu-mobile-panel-show':appCtrl.menu_mobile_open}">
-    <div class="menu-desktop-btn ac-ripple"
+    <a class="menu-desktop-btn ac-ripple" href="#/main">NOTICIAS</a>
+    <a class="menu-desktop-btn ac-ripple" href="#/main">AGENDA</a>
+    <a class="menu-desktop-btn ac-ripple" href="#/main">QUIENES SOMOS</a>
+    <a class="menu-desktop-btn ac-ripple" href="#/main">HUMOR</a>
+    <a class="menu-desktop-btn ac-ripple" href="#/main">REVISTA</a>
+    <a class="menu-desktop-btn ac-ripple" href="#/main">CONTACTO</a>
+    <a class="menu-desktop-btn ac-ripple" href="#/administracion/usuarios">ADMINISTRACION</a>
+    <!--div class="menu-desktop-btn ac-ripple"
          ng-class="{'menu-desktop-btn-selected':appCtrl.selectedPage.indexOf(link.nombre) > -1 }"
          ripple-color="#ffffff"
          ng-repeat="link in appCtrl.links"
          ng-click="appCtrl.goTo(link); appCtrl.menu_mobile_open=false;"> {{link.nombre}}
-    </div>
+    </div-->
 </div>
 
 <div ng-include="'login/login.html'"></div>
