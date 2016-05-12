@@ -5,6 +5,9 @@
         .component('acAdministracionUsuarios', acAdministracionUsuarios())
         .factory('UsuariosService', UsuariosService);
 
+
+
+    ///// ADMINISTRACION DE USUARIOS /////
     function acAdministracionUsuarios() {
         return {
             bindings: {

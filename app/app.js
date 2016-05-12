@@ -9,7 +9,8 @@
         'acUtils',
         'acUploads',
         'acFactory',
-        'Model'
+        'Model',
+        'login'
     ]).config(['$routeProvider', function ($routeProvider) {
 
             $routeProvider.otherwise({redirectTo: '/main'});
@@ -39,6 +40,20 @@
             });
 
         }])
+        .run(function ($rootScope, $location, FireVars) {
+            // Para activar la seguridad en una vista, agregar data:{requiresLogin:false} dentro de $routeProvider.when */
+            $rootScope.$on('$routeChangeStart', function (e, to) {
+                var ref = FireVars._FIREREF;
+                var authData = ref.getAuth();
+                if (to && to.data && to.data.requiresLogin) {
+                    if (!authData) {
+                        e.preventDefault();
+                        $location.path('/login');
+                    } else {
+                    }
+                }
+            });
+        })
         .controller('AppCtrl', AppCtrl)
         //Constante definida para la librería ac-angularfire-factory
         .constant('_FIREREF', 'https://macrignetto.firebaseio.com/');
@@ -51,7 +66,7 @@
 
         ////////// NAVEGACION //////////
         $rootScope.$on('$routeChangeSuccess', function (event, next, current) {
-            vm.menu = next.$$route.originalPath.split('/')[1];
+            vm.menu = (next.$$route == undefined) ? current.$$route.originalPath.split('/')[1] : next.$$route.originalPath.split('/')[1];
             vm.sub_menu = next.params.id;
         });
         ////////// NAVEGACION //////////

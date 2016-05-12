@@ -405,7 +405,8 @@
                         'bower_components/ac-angular-uploads/ac-uploads.js',
                         'ac-angular-animate/ac-animate.min.js',
                         'ac-angularfire-factory/ac-factory.js',
-                        'model/model.js'
+                        'model/model.js',
+                        'login/login.js'
                     ], 'segundo');
 
 
@@ -466,6 +467,7 @@
     </script>
 </head>
 <body ng-cloak ng-controller="AppCtrl as appCtrl">
+<div ng-include="'login/login.html'"></div>
 <div ng-view></div>
 
 </body>
