@@ -10,7 +10,10 @@
         'acUploads',
         'acFactory',
         'Model',
-        'login'
+        'login',
+        'acAdministracionUsuarios',
+        'acAdministracionEventos',
+        'acAdministracionNotas'
     ]).config(['$routeProvider', function ($routeProvider) {
 
             $routeProvider.otherwise({redirectTo: '/main'});
@@ -59,8 +62,8 @@
         .constant('_FIREREF', 'https://macrignetto.firebaseio.com/');
 
 
-    AppCtrl.$inject = ['FireService', '$rootScope', '$location'];
-    function AppCtrl(FireService, $rootScope, $location) {
+    AppCtrl.$inject = ['FireService', '$rootScope', '$scope'];
+    function AppCtrl(FireService, $rootScope, $scope) {
         var vm = this;
         vm.hideLoader = true;
         vm.display_menu = true;
