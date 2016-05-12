@@ -55,12 +55,33 @@
             });
         })
         .controller('AppCtrl', AppCtrl)
+        .service('LinksService', LinksService)
         //Constante definida para la librería ac-angularfire-factory
         .constant('_FIREREF', 'https://macrignetto.firebaseio.com/');
 
-    AppCtrl.$inject = ['FireService', '$rootScope'];
-    function AppCtrl(FireService, $rootScope) {
+    function LinksService() {
+        this.links = [
+            {nombre: 'NOTICIAS', path: '/noticias'},
+            {nombre: 'AGENDA', path: '/agenda'},
+            {nombre: 'QUIENES SOMOS', path: '/quienes_somos'},
+            {nombre: 'CONTACTANOS', path: '/contacto'},
+            {nombre: 'HUMOR', path: '/humor'},
+            {nombre: 'REVISTA', path: '/revista'},
+            {nombre: 'CONTACTO', path: '/contacto'},
+            {nombre: 'ADMINISTRACION', path: '/administracion'}
+        ];
+
+    }
+
+    AppCtrl.$inject = ['FireService', '$rootScope', '$location', 'LinksService'];
+    function AppCtrl(FireService, $rootScope, $location, LinksService) {
         var vm = this;
+        vm.hideLoader = true;
+        vm.display_menu = true;
+        vm.display_header = true;
+        vm.links = LinksService.links;
+
+        vm.goTo = goTo;
 
         FireService.init();
 
@@ -71,6 +92,9 @@
         });
         ////////// NAVEGACION //////////
 
+        function goTo(location) {
+            $location.path(location.path);
+        }
     }
 })();
 
