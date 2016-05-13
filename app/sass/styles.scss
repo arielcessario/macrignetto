@@ -3,13 +3,18 @@ $color1: #334d00;
 
 @import "compass";
 @import "compass/reset";
-
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,900italic,900,700italic);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,100italic,300italic,400italic,700,500italic,500,900,900italic,700italic);
 body {
-  font-family: Arial;
+  font-family: 'Roboto', serif;
 }
+
 
 //SECCION PARA EL MENU
 .header {
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
   //max-width: 100%;
   width: 100%;
   height: 50px;
@@ -25,7 +30,7 @@ body {
   @media (min-width: 800px) {
     display: flex;
     justify-content: center;
-    height: 100px;
+    height: 50px;
     -webkit-box-shadow: 0px 15px 5px -9px rgba(0,0,0,0.09);
     -moz-box-shadow: 0px 15px 5px -9px rgba(0,0,0,0.09);
     box-shadow: 0px 15px 5px -9px rgba(0,0,0,0.09);
@@ -157,8 +162,12 @@ body {
 }
 
 select {
+  font-weight: lighter;
   //color: white;
   background-color: white;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 16px;
 }
 
 select option {
@@ -484,7 +493,7 @@ select option {
   max-width: 1200px;
   min-width: 600px;
   width: 1020px;
-  height: 100px;
+  height: 50px;
   #menu-desktop-logo {
     //background-color: #406276;
     background-color: transparent;
@@ -565,20 +574,20 @@ select option {
         //color: white;
         font-size: 18px;
         opacity: 0;
-        -webkit-animation:fadeIn ease-in-out 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-        -moz-animation:fadeIn ease-in-out 1;
-        animation:fadeIn ease-in-out 1;
+        -webkit-animation:fadeIn ease-in-out 2;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+        -moz-animation:fadeIn ease-in-out 2;
+        animation:fadeIn ease-in-out 2;
         -moz-animation-fill-mode:forwards;
         animation-fill-mode:forwards;
-        -webkit-animation-duration:3s;
-        -moz-animation-duration:3s;
-        animation-duration:3s;
+        -webkit-animation-duration:2s;
+        -moz-animation-duration:2s;
+        animation-duration:2s;
 
       }
 
       .menu-desktop-btn-selected {
         //color: white;
-        color: #a1cca5;
+        color: bolder;
         //border-radius: 2px;
         //background-color: #406276;
         opacity: 1;
@@ -591,15 +600,16 @@ select option {
       .menu-desktop-btn:focus,
       .menu-desktop-btn:active {
         //color: white;
-        color:  #a1cca5;
+        cursor: pointer;
+        color:  #EF037C;
         //border-radius: 2px;
         //background-color: #406276;
         opacity: 1;
-        -webkit-transition: opacity 1s ease;
-        -moz-transition: opacity 1s ease;
-        -ms-transition: opacity 1s ease;
-        -o-transition: opacity 1s ease;
-        transition: opacity 1s ease;
+        -webkit-transition: opacity 2s ease;
+        -moz-transition: opacity 2s ease;
+        -ms-transition: opacity 2s ease;
+        -o-transition: opacity 2s ease;
+        transition: opacity 2s ease;
 
         //-webkit-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.44);
         //-moz-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.44);
@@ -629,28 +639,50 @@ select option {
   }
 }
 .header-1{
-  background-color: #F29792;
+  background-color: rgba(242,151,146,1);
+  background-image: url("fondo-globos.png"), -moz-linear-gradient(top, rgba(242,151,146,1) 0%, rgba(239,1,124,1) 100%);
+  background-image: url("fondo-globos.png"), -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242,151,146,1)), color-stop(100%, rgba(239,1,124,1)));
+  background-image: url("fondo-globos.png"), -webkit-linear-gradient(top, rgba(242,151,146,1) 0%, rgba(239,1,124,1) 100%);
+  background-image: url("fondo-globos.png"), -o-linear-gradient(top, url("fondo-globos.png"), rgba(242,151,146,1) 0%, rgba(239,1,124,1) 100%);
+  background-image: url("fondo-globos.png"), -ms-linear-gradient(top, rgba(242,151,146,1) 0%, rgba(239,1,124,1) 100%);
+  background-image: url("fondo-globos.png"),linear-gradient(to bottom, rgba(242,151,146,1) 0%, rgba(239,1,124,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f29792', endColorstr='#ef017c', GradientType=0 );
+  background-repeat: no-repeat;
+  background-position: center;
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   @media (min-width: 800px) {
     height: 150px;
+    margin-top: -50px;
+
   }
 }
 h1{
+  font-family: 'Droid Serif', serif;
   text-transform: uppercase;
   font-size: 45px;
-  font-weight: bold;color:#fff;
-  text-shadow: black 0.1em 0.1em 0.2em;
+  //font-weight: bold;
+  color:#fff;
+  text-shadow:2px 2px black;
   @media (min-width: 800px) {
     font-size: 72px;
   }
+
+
 }
 .header-2 {
   display: flex;
   flex-direction: column;
   width: 100%;
+
+
+
+  h2{
+    padding: 5px;
+    font-family: 'Merriweather', serif;
+  }
 
   @media (min-width: 800px) {
     flex-direction: row;
@@ -658,6 +690,8 @@ h1{
 }
 
 .header-2-1 {
+  font-family: 'Roboto', serif;
+  font-size: 18px;
   height: 50px;
   width: 100%;
   background-color: #B2FFDB;
@@ -666,6 +700,8 @@ h1{
   justify-content: space-around;
   align-items: center;
   order: 1;
+
+
   @media (min-width: 800px) {
     order: 3;
     justify-content: center;
@@ -673,6 +709,7 @@ h1{
 }
 
 .header-2-2 {
+  font-family: 'Roboto', sans-serif;
   height: 50px;
   width: 100%;
   background-color: #fff;
@@ -681,7 +718,8 @@ h1{
   justify-content: space-around;
   align-items: center;
   order: 2;
-  font-weight: bold;
+  font-size: 22px;
+  //font-weight: bold;
   @media (min-width: 800px) {
     order: 1;
   }
@@ -727,11 +765,14 @@ h1{
 }
 
 .noticias-texto {
+  font-family: 'Merriweather', serif;
   color: #fff;
   font-size: 40px;
+  text-shadow: 2px 2px black;
   position: absolute;
   top: 70px;
   width: 100%;
+  padding: 10px;
   display: flex;
   justify-content: center;
   @media (min-width: 800px) {
@@ -741,28 +782,38 @@ h1{
 }
 
 .noticias-leer {
+
   color: #fff;
-  font-size: 40px;
+  font-size: 20px;
   position: absolute;
-  width: 100%;
+  width: 95%;
   display: flex;
   justify-content: flex-end;
   bottom: 100px;
+  text-shadow: 1px 1px black;
 }
 
 .noticias-pie {
   color: white;
-  font: bold 24px/45px Helvetica, Sans-Serif;
-  letter-spacing: -1px;
-  background: black;
-  background: rgba(0, 0, 0, 0.7);
+  text-shadow: 1.5px 1.5px black;
+  font-family: 'Merriweather', serif;
+  font-size: 25px;
+  padding: 10px;
+  background: rgba(242,151,146,.7);
+  background: -moz-linear-gradient(top, rgba(242,151,146,.7) 0%, rgba(239,1,124,.7) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242,151,146,.7)), color-stop(100%, rgba(239,1,124,.7)));
+  background: -webkit-linear-gradient(top, rgba(242,151,146,.7) 0%, rgba(239,1,124,.7) 100%);
+  background: -o-linear-gradient(top, rgba(242,151,146,.7) 0%, rgba(239,1,124,.7) 100%);
+  background: -ms-linear-gradient(top, rgba(242,151,146,.7) 0%, rgba(239,1,124,.7) 100%);
+  background: linear-gradient(to bottom, rgba(242,151,146,.7) 0%, rgba(239,1,124,.7) 100%);
   position: absolute;
   width: 100%;
   display: flex;
   flex-direction: column;
-  bottom: 0;
+  bottom: 0px;
 }
 .noticias-pie > p{
+  margin-top: 10px;
   font-size: 16px;
 }
 .hide-div {
@@ -773,6 +824,7 @@ h1{
 }
 
 h3 {
+  font-family: 'Merriweather', serif;
   background-color: #F29792;
   font-size: 40px;
   padding: 15px;
@@ -896,4 +948,9 @@ label {
   -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
   -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.form details{
+  width: 600px;
+  margin: auto;
 }
