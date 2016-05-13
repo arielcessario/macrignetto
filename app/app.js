@@ -78,12 +78,6 @@
         });
         ////////// NAVEGACION //////////
 
-        /*
-        NotasService.get().then(function (data) {
-            vm.notas = data;
-            console.log(vm.notas);
-        });
-        */
     }
 })();
 
