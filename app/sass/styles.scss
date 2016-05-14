@@ -839,21 +839,30 @@ h3 {
 .agenda-calendario {
   background-color: #fff;
   //height: 300px;
-  width: 22%;
   flex-direction: row;
   display: flex;
+  justify-content: space-around;
+  align-content: space-around;
+  align-items: center;
+  @media (min-width: 800px) {
+    width: 22%;
+  }
 }
 
 .agenda-noticia {
   //height: 500px;
-  width: 45%;
+  @media (min-width: 800px) {
+    width: 45%;
+  }
 }
 
 .agenda-img {
-  width: 33%;
   font-size: 46px;
   text-align: center;
   margin: 15px;
+  @media (min-width: 800px) {
+    width: 33%;
+  }
 }
 
 .agenda-titulo {
