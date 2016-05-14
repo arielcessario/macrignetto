@@ -29,7 +29,16 @@
     <div style="display: flex;flex-direction: column;">
         <div id="noticias" class="container">
             <div class="noticias-fila">
-                <div class="noticias-info">
+                <div ng-repeat="nota in mainCtrl.notas" class="noticias-info">
+                    <img src="images/fondo1.jpg" class="strech">
+                    <div class="noticias-texto"></div>
+                    <div class="noticias-leer"><a href="" style="text-decoration: none;color:#fff;">Leer...</a></div>
+                    <div class="noticias-pie">
+                        <div>{{nota.titulo}}</div>
+                        <p>{{nota.fuente}}</p>
+                    </div>
+                </div>
+                <!--div class="noticias-info">
                     <img src="images/fondo1.jpg" class="strech">
                     <div class="noticias-texto">Esto es una noticia de prueba 1</div>
                     <div class="noticias-leer">Leer...</div>
@@ -55,7 +64,7 @@
                         <div>Ultimo comentario</div>
                         <p>Algún comentario que pueda servir de algo</p>
                     </div>
-                </div>
+                </div-->
             </div>
             <div class="noticias-fila hide-div">
                 <div class="noticias-info">
@@ -89,12 +98,47 @@
         </div>
         <div id="agenda" class="container">
             <h3>Agenda</h3>
-            <div class="agenda-calendario"></div>
-            <div class="agenda-noticia">
-                <img class="agenda-img" src="images/agenda_img.png">
-                <div class="agenda-titulo"><h4>Titulo Agenda</h4></div>
-                <div class="agenda-info">Without a container element all positioning will be in relation to the viewport (the corner of the screen). This in combination with position: fixed can create elements that stay in one corner of the screen and don't move when the page scrolls, but only in browsers other than Explorer. On this site you might see a [top] link doing just that if you're using a compatible browser.
-                    Without a container element all positioning will be in relation to the viewport (the corner of the screen). This in combination with position: fixed can create elements that stay in one corner of the screen and don't move when the page scrolls, but only in browsers other than Explorer. On this site you might see a [top] link doing just that if you're using a compatible browser.
+            <div class="agenda-container">
+                <div class="agenda-calendario">
+                    <div id="agenda-calendar" class="agenda-dias">
+                        <div id="agenda-calendar-header">
+                            <div class="prev-m" ng-click="mainCtrl.prevMonth();"><</div>
+                            <span>{{mainCtrl.agendaMes.nombre}}</span>
+                            <div class="sig-m" ng-click="mainCtrl.nextMonth();">></div>
+                        </div>
+                        <div style="color: white; font-size: 20px;">
+                            {{mainCtrl.agendaAnio}}
+                        </div>
+                        <div id="agenda-calendar-container">
+                            <div id="calendario">
+                                <div id="calendario-header">
+                                    <div>Do</div>
+                                    <div>Lu</div>
+                                    <div>Ma</div>
+                                    <div>Mi</div>
+                                    <div>Ju</div>
+                                    <div>Vi</div>
+                                    <div>Sa</div>
+                                </div>
+                                <div id="calendario-dias">
+                                    <div class="calendario-dia"
+                                         ng-class="{'calendario-dia-with-event': dia.evento != undefined}"
+                                         ng-repeat="dia in mainCtrl.listaEventos"
+                                         ng-click="mainCtrl.selectEvento(dia.evento);"
+                                            >
+                                        {{dia.dia}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="agenda-img" src="images/agenda_img.png">
+                </div>
+                <div class="agenda-noticia">
+                    <div class="agenda-titulo"><h4>Titulo Agenda</h4></div>
+                    <div class="agenda-info">Without a container element all positioning will be in relation to the viewport (the corner of the screen). This in combination with position: fixed can create elements that stay in one corner of the screen and don't move when the page scrolls, but only in browsers other than Explorer. On this site you might see a [top] link doing just that if you're using a compatible browser.
+                        Without a container element all positioning will be in relation to the viewport (the corner of the screen). This in combination with position: fixed can create elements that stay in one corner of the screen and don't move when the page scrolls, but only in browsers other than Explorer. On this site you might see a [top] link doing just that if you're using a compatible browser.
+                    </div>
                 </div>
             </div>
         </div>
