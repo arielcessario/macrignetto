@@ -35,8 +35,23 @@
         vm.nextMonth = nextMonth;
 
         NotasService.get().then(function (data) {
-            vm.notas = data;
+            //vm.notas = data;
             console.log(vm.notas);
+
+            if(data != null || data.length > 0) {
+                for (var i = 0; i < 3; i++) {
+                    var nota = {};
+                    nota.destacada = data[i].destacada;
+                    nota.detalle = data[i].detalle;
+                    nota.fotos = data[i].fotos;
+                    nota.fuente = data[i].fuente.length > 150 ? data[i].fuente.substring(0, 150) + "....." : data[i].fuente;
+                    nota.status = data[i].status;
+                    nota.titulo = data[i].titulo.length > 25 ? data[i].titulo.substring(0, 25) + "....." : data[i].titulo;
+                    //nota.titulo = $sce.trustAsHtml((data[i].titulo.length > 25 ? data[i].titulo.substring(0, 25) + "....." : data[i].titulo));
+
+                    vm.notas.push(nota);
+                }
+            }
         });
 
         EventosService.get().then(function (data) {

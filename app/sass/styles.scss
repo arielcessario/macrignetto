@@ -811,6 +811,7 @@ h1{
   display: flex;
   flex-direction: column;
   bottom: 0px;
+  height: 65px;
 }
 .noticias-pie > p{
   margin-top: 10px;
@@ -1063,4 +1064,12 @@ label {
     }
 
   }
+}
+ac-administracion-notas {
+  top: 80px;
+  position: relative;
+}
+.foto-container {
+  display: flex;
+  flex-direction: row;
 }
