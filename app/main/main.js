@@ -4,8 +4,8 @@
         .controller('MainController', MainController);
 
 
-    MainController.$inject = ['NotasService', 'EventosService'];
-    function MainController(NotasService, EventosService) {
+    MainController.$inject = ['$scope', 'NotasService', 'EventosService', '$sce'];
+    function MainController($scope, NotasService, EventosService, $sce) {
 
         var vm = this;
         vm.notas = [];
@@ -42,11 +42,11 @@
                 for (var i = 0; i < 3; i++) {
                     var nota = {};
                     nota.destacada = data[i].destacada;
-                    nota.detalle = data[i].detalle;
+                    nota.detalle = $sce.trustAsHtml((data[i].detalle.length > 100 ? data[i].detalle.substring(0, 100) + "....." : data[i].detalle));
                     nota.fotos = data[i].fotos;
-                    nota.fuente = data[i].fuente.length > 150 ? data[i].fuente.substring(0, 150) + "....." : data[i].fuente;
+                    nota.fuente = data[i].fuente;
                     nota.status = data[i].status;
-                    nota.titulo = data[i].titulo.length > 25 ? data[i].titulo.substring(0, 25) + "....." : data[i].titulo;
+                    nota.titulo = data[i].titulo.length > 50 ? data[i].titulo.substring(0, 50) + "..." : data[i].titulo;
                     //nota.titulo = $sce.trustAsHtml((data[i].titulo.length > 25 ? data[i].titulo.substring(0, 25) + "....." : data[i].titulo));
 
                     vm.notas.push(nota);
