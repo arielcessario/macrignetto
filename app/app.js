@@ -42,6 +42,18 @@
                 }
             });
 
+            $routeProvider.when('/noticias/:id', {
+                templateUrl: 'noticias/noticias.html',
+                controller: 'NoticiasController',
+                data: {requiresLogin: false},
+                resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        // you can lazy load files for an existing module
+                        return $ocLazyLoad.load('noticias/noticias.js');
+                    }]
+                }
+            });
+
         }])
         .run(function ($rootScope, $location, FireVars) {
             // Para activar la seguridad en una vista, agregar data:{requiresLogin:false} dentro de $routeProvider.when */

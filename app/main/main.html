@@ -32,40 +32,22 @@
                 <div ng-repeat="nota in mainCtrl.notas" class="noticias-info">
                     <!--img src="images/fondo1.jpg" class="strech"-->
                     <img src="images/{{nota.fotos[0].nombre}}" class="strech">
-                    <div class="noticias-texto"></div>
+                    <div class="noticias-texto">{{nota.titulo}}</div>
                     <div class="noticias-leer"><a href="" style="text-decoration: none;color:#fff;">Leer...</a></div>
                     <div class="noticias-pie">
-                        <div>{{nota.titulo}}</div>
-                        <p>{{nota.fuente}}</p>
+                        <div>Ultimo comentario:</div>
+                        <div ng-bind-html="nota.detalle" class="noticias-detalle"></div>
                     </div>
                 </div>
             </div>
             <div class="noticias-fila hide-div">
-                <div class="noticias-info">
-                    <img src="images/fondo2.jpg" class="strech">
-                    <div class="noticias-texto">Esto es una noticia de prueba 1</div>
-                    <div class="noticias-leer">Leer...</div>
+                <div ng-repeat="nota in mainCtrl.notas" class="noticias-info">
+                    <img src="images/{{nota.fotos[0].nombre}}" class="strech">
+                    <div class="noticias-texto">{{nota.titulo}}</div>
+                    <div class="noticias-leer"><a href="" style="text-decoration: none;color:#fff;">Leer...</a></div>
                     <div class="noticias-pie">
-                        <div>Ultimo comentario</div>
-                        <p>Algún comentario que pueda servir de algo</p>
-                    </div>
-                </div>
-                <div class="noticias-info">
-                    <img src="images/fondo1.jpg" class="strech">
-                    <div class="noticias-texto">Esto es una noticia de prueba 2</div>
-                    <div class="noticias-leer">Leer...</div>
-                    <div class="noticias-pie">
-                        <div>Ultimo comentario</div>
-                        <p>Algún comentario que pueda servir de algo</p>
-                    </div>
-                </div>
-                <div class="noticias-info">
-                    <img src="images/fondo2.jpg" class="strech">
-                    <div class="noticias-texto">Esto es una noticia de prueba 3</div>
-                    <div class="noticias-leer">Leer...</div>
-                    <div class="noticias-pie">
-                        <div>Ultimo comentario</div>
-                        <p>Algún comentario que pueda servir de algo</p>
+                        <div>Ultimo comentario:</div>
+                        <div ng-bind-html="nota.detalle" class="noticias-detalle"></div>
                     </div>
                 </div>
             </div>
