@@ -33,7 +33,7 @@
                     <!--img src="images/fondo1.jpg" class="strech"-->
                     <img src="images/{{nota.fotos[0].nombre}}" class="strech">
                     <div class="noticias-texto">{{nota.titulo}}</div>
-                    <div class="noticias-leer"><a href="" style="text-decoration: none;color:#fff;">Leer...</a></div>
+                    <div class="noticias-leer"><a href="" style="text-decoration: none;color:#fff;" ng-click="mainCtrl.verNoticia(nota.id);">Leer...</a></div>
                     <div class="noticias-pie">
                         <div>Ultimo comentario:</div>
                         <div ng-bind-html="nota.detalle" class="noticias-detalle"></div>

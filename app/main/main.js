@@ -4,8 +4,8 @@
         .controller('MainController', MainController);
 
 
-    MainController.$inject = ['$scope', 'NotasService', 'EventosService', '$sce'];
-    function MainController($scope, NotasService, EventosService, $sce) {
+    MainController.$inject = ['$scope', 'NotasService', 'EventosService', '$sce', '$location'];
+    function MainController($scope, NotasService, EventosService, $sce, $location) {
 
         var vm = this;
         vm.notas = [];
@@ -33,14 +33,15 @@
         //FUNCIONES
         vm.prevMonth = prevMonth;
         vm.nextMonth = nextMonth;
+        vm.verNoticia = verNoticia;
 
         NotasService.get().then(function (data) {
-            //vm.notas = data;
-            console.log(vm.notas);
+            console.log(data);
 
             if(data != null || data.length > 0) {
                 for (var i = 0; i < 3; i++) {
                     var nota = {};
+                    nota.id = data[i].$id;
                     nota.destacada = data[i].destacada;
                     nota.detalle = $sce.trustAsHtml((data[i].detalle.length > 100 ? data[i].detalle.substring(0, 100) + "....." : data[i].detalle));
                     nota.fotos = data[i].fotos;
@@ -52,6 +53,7 @@
                     vm.notas.push(nota);
                 }
             }
+            console.log(vm.notas);
         });
 
         EventosService.get().then(function (data) {
@@ -96,6 +98,10 @@
             vm.agendaMes = (vm.agendaMes.id == 0) ? vm.meses[11] : vm.meses[vm.agendaMes.id - 1];
             vm.agendaAnio = (vm.agendaMes.id == 11) ? vm.agendaAnio - 1 : vm.agendaAnio;
             getEventos(vm.agendaAnio, vm.agendaMes.id);
+        }
+
+        function verNoticia(id) {
+            $location.path('/noticias/' + id);
         }
     }
 })();
