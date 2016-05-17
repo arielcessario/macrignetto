@@ -694,8 +694,14 @@ h1{
   font-size: 18px;
   height: 50px;
   width: 100%;
-  background-color: #B2FFDB;
-  color: #000;
+  background: rgba(178,255,219,1);
+  background: -moz-linear-gradient(top, rgba(178,255,219,1) 0%, rgba(159,224,193,1) 51%, rgba(178,255,219,1) 51%, rgba(178,255,219,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(178,255,219,1)), color-stop(51%, rgba(159,224,193,1)), color-stop(51%, rgba(178,255,219,1)), color-stop(100%, rgba(178,255,219,1)));
+  background: -webkit-linear-gradient(top, rgba(178,255,219,1) 0%, rgba(159,224,193,1) 51%, rgba(178,255,219,1) 51%, rgba(178,255,219,1) 100%);
+  background: -o-linear-gradient(top, rgba(178,255,219,1) 0%, rgba(159,224,193,1) 51%, rgba(178,255,219,1) 51%, rgba(178,255,219,1) 100%);
+  background: -ms-linear-gradient(top, rgba(178,255,219,1) 0%, rgba(159,224,193,1) 51%, rgba(178,255,219,1) 51%, rgba(178,255,219,1) 100%);
+  background: linear-gradient(to bottom, rgba(178,255,219,1) 0%, rgba(159,224,193,1) 51%, rgba(178,255,219,1) 51%, rgba(178,255,219,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2ffdb', endColorstr='#b2ffdb', GradientType=0 );  color: #000;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -712,8 +718,14 @@ h1{
   font-family: 'Roboto', sans-serif;
   height: 50px;
   width: 100%;
-  background-color: #fff;
-  color: #432918;
+  color: white;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#aebcbf+0,6e7774+50,0a0e0a+51,0a0809+100;Black+Gloss */
+  background: rgb(174,188,191); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(174,188,191,1) 0%, rgba(110,119,116,1) 50%, rgba(10,14,10,1) 51%, rgba(10,8,9,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(174,188,191,1) 0%,rgba(110,119,116,1) 50%,rgba(10,14,10,1) 51%,rgba(10,8,9,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(174,188,191,1) 0%,rgba(110,119,116,1) 50%,rgba(10,14,10,1) 51%,rgba(10,8,9,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aebcbf', endColorstr='#0a0809',GradientType=0 ); /* IE6-9 */
+
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -728,8 +740,14 @@ h1{
 .header-2-3 {
   height: 50px;
   width: 100%;
-  background-color: #B2FFDB;
-  color:#260126;
+  background: rgba(178,255,219,1);
+  background: -moz-linear-gradient(top, rgba(178,255,219,1) 0%, rgba(159,224,193,1) 51%, rgba(178,255,219,1) 51%, rgba(178,255,219,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(178,255,219,1)), color-stop(51%, rgba(159,224,193,1)), color-stop(51%, rgba(178,255,219,1)), color-stop(100%, rgba(178,255,219,1)));
+  background: -webkit-linear-gradient(top, rgba(178,255,219,1) 0%, rgba(159,224,193,1) 51%, rgba(178,255,219,1) 51%, rgba(178,255,219,1) 100%);
+  background: -o-linear-gradient(top, rgba(178,255,219,1) 0%, rgba(159,224,193,1) 51%, rgba(178,255,219,1) 51%, rgba(178,255,219,1) 100%);
+  background: -ms-linear-gradient(top, rgba(178,255,219,1) 0%, rgba(159,224,193,1) 51%, rgba(178,255,219,1) 51%, rgba(178,255,219,1) 100%);
+  background: linear-gradient(to bottom, rgba(178,255,219,1) 0%, rgba(159,224,193,1) 51%, rgba(178,255,219,1) 51%, rgba(178,255,219,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2ffdb', endColorstr='#b2ffdb', GradientType=0 );  color:#260126;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -815,7 +833,8 @@ h1{
 }
 .noticias-pie > p{
   margin-top: 10px;
-  font-size: 16px;
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
 }
 .hide-div {
   display: none;
@@ -824,10 +843,22 @@ h1{
   }
 }
 
+.noticias-detalle{
+  font-size: 14px;
+  margin-top: 5px;
+  line-height: 18px;
+}
+
 h3 {
   font-family: 'Merriweather', serif;
-  background-color: #F29792;
-  font-size: 40px;
+  background: rgba(255,93,177,1);
+  background: -moz-linear-gradient(top, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,93,177,1)), color-stop(100%, rgba(239,1,124,1)));
+  background: -webkit-linear-gradient(top, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
+  background: -o-linear-gradient(top, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
+  background: -ms-linear-gradient(top, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
+  background: linear-gradient(to bottom, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5db1', endColorstr='#ef017c', GradientType=0 );
   padding: 15px;
   color: #fff;
   font-weight: bold;
@@ -838,7 +869,12 @@ h3 {
 }
 
 .agenda-calendario {
-  background-color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f1f1f1+50,e1e1e1+51,f6f6f6+100;White+Gloss+%231 */
+  background: rgb(255,255,255); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(241,241,241,1) 50%, rgba(225,225,225,1) 51%, rgba(246,246,246,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 ); /* IE6-9 */
   //height: 300px;
   flex-direction: row;
   display: flex;
@@ -862,7 +898,12 @@ h3 {
   text-align: center;
   margin: 15px;
   @media (min-width: 800px) {
-    width: 33%;
+    width: 55%;
+    height: 391px;
+    margin: auto;
+  }
+  img{
+    height: 100%;
   }
 }
 
@@ -876,17 +917,21 @@ h3 {
   border-bottom: 1px solid;*/
 }
 h4{
-  font-size: 40px;
+  font-family: 'Merriweather', serif;
+  font-size: 50px;
   text-align: center;
   margin: 15px;
   text-transform: uppercase;
-  color:#F29792;
+  color: #20282c;
   font-weight: bold;
-  border-bottom: 1px solid #B2FFDB;
+  border-bottom: 1px solid white;
 }
 .agenda-info {
+  font-family: 'Droid Serif', serif;
+  font-weight: lighter;
   margin: 25px;
-  font-size: 24px;
+  line-height: 20px;
+  font-size: 16px;
   max-height: 280px;
   overflow-y: auto;
 }
@@ -1016,13 +1061,21 @@ label {
   height: 300px;
   margin: 30px;
   max-width: 80%;
-  background-color: #b3d4fc;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#aebcbf+0,6e7774+50,0a0e0a+51,0a0809+100;Black+Gloss */
+  background: rgb(174,188,191); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(174,188,191,1) 0%, rgba(110,119,116,1) 50%, rgba(10,14,10,1) 51%, rgba(10,8,9,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(174,188,191,1) 0%,rgba(110,119,116,1) 50%,rgba(10,14,10,1) 51%,rgba(10,8,9,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(174,188,191,1) 0%,rgba(110,119,116,1) 50%,rgba(10,14,10,1) 51%,rgba(10,8,9,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aebcbf', endColorstr='#0a0809',GradientType=0 ); /* IE6-9 */
+  -webkit-box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
 
   //@include sombras();
 
-  @media (min-width: 800px) {
-    margin-right: 0px;
-  }
+  //@media (min-width: 800px) {
+    //margin-right: 0px;
+  //}
 
   #agenda-calendar-container {
 
