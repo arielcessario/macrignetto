@@ -1,12 +1,37 @@
-<div ng-controller="NoticiasController as noticiasCtrl" class="main-container">
+<div ng-controller="NoticiasController as notaCtrl" class="main-container">
     <div style="height: 100px;background-color: #000;color:#fff">Logo</div>
-    <div style="display: flex;justify-items: center;">
+    <div class="noticia-container">
         <div>
+            <div class="nota-panel-fotos-main">
+                <img src="images/macri.png">
+            </div>
+            <div class="nota-panel-fotos-thumb">
+                <img ng-if="notaCtrl.nota.fotos[0].nombre != undefined" src="images/macri.png"
+                        ng-click="notaCtrl.fotoSelected = notaCtrl.nota.fotos[0].foto">
+                <img ng-if="notaCtrl.nota.fotos[0].nombre != undefined" src="images/macri.png"
+                     ng-click="notaCtrl.fotoSelected = notaCtrl.nota.fotos[0].foto">
+                <img ng-if="notaCtrl.nota.fotos[0].nombre != undefined" src="images/macri.png"
+                     ng-click="notaCtrl.fotoSelected = notaCtrl.nota.fotos[0].foto">
+            </div>
+            <div class="">
+                <div>
+                    <label>Comentar:</label>
+                    <a href="" ng-click="notaCtrl.volver();">Volver</a>
+                </div>
+                <textarea cols="40" rows="6"></textarea>
+            </div>
+            <div>
+                <div>
+                    <label>Ultimos comentarios:</label>
+                </div>
+                <div class="nota-comentarios">
 
+                </div>
+            </div>
         </div>
-        <div>
-            <h2>Aaaaaaa</h2>
-            <div ng-bind-html="" class="">aaaaaaaaaaa</div>
+        <div class="nota-panel-texto">
+            <h2>{{notaCtrl.nota.titulo}}</h2>
+            <div ng-bind-html="notaCtrl.nota.description" class=""></div>
         </div>
     </div>
 </div>

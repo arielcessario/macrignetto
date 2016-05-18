@@ -101,6 +101,7 @@
         }
 
         function verNoticia(id) {
+            console.log(id);
             $location.path('/noticias/' + id);
         }
     }

@@ -4,17 +4,29 @@
         .controller('NoticiasController', NoticiasController);
 
 
-    NoticiasController.$inject = ['$scope', '$routeParams', 'NotasService', '$sce'];
-    function NoticiasController($scope, $routeParams, NotasService, $sce) {
+    NoticiasController.$inject = ['$scope', '$routeParams', 'Model', 'FireService', '$sce'];
+    function NoticiasController($scope, $routeParams, Model, FireService, $sce) {
 
         var vm = this;
+        vm.fotoSelected = '';
         vm.nota = {};
 
         vm.id = $routeParams.id;
 
-        if (vm.id > 0) {
-            console.log(vm.id);
+        if (vm.id.length > 0) {
+            var refNota = Model.refNotas;
+            var arrNotas = FireService.createArrayRef(refNota);
+
+            var aux = arrNotas.$loaded(function (data) {
+                //console.log(data);
+                vm.nota = data.$getRecord(vm.id);
+                console.log(vm.nota);
+                return data;
+            });
         }
+
+        //console.log(vm.nota);
+
 
     }
 })();
