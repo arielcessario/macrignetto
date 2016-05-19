@@ -120,6 +120,8 @@
             return arrNotas.$loaded(function (data) {
                 var list = [];
                 var count = 0;
+                var destacadaSi = 0;
+                var destacadaNo = 0;
                 for (var i = 0; i < data.length; i++) {
                     var nota = {};
                     nota.id = data[i].$id;
@@ -134,8 +136,29 @@
                     list.push(nota);
 
                     count = count + (data[i].destacada == 1 ? 2 : 1);
-                    if(count >= 8)
+                    destacadaSi = destacadaSi + (data[i].destacada == 1 ? 1 : 0);
+                    destacadaNo = destacadaNo + (data[i].destacada == 0 ? 1 : 0);
+                    if(count >= 8) {
+                        console.log(count);
+                        console.log(destacadaSi);
+                        console.log(destacadaNo);
+                        if(destacadaSi == 4 && destacadaNo > 0) {
+                            for(var j=0; j < list.length; j++) {
+                                if(list[j].destacada == 0) {
+                                    list.splice(j,1);
+                                    break;
+                                }
+                            }
+                        } else if(destacadaSi == 2 && destacadaNo > 4) {
+                            for(var j=0; j < list.length; j++) {
+                                if(list[j].destacada == 0) {
+                                    list.splice(j,1);
+                                    break;
+                                }
+                            }
+                        }
                         return list;
+                    }
                 }
                 return list;
             });
