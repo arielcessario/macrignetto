@@ -769,7 +769,6 @@ h1{
   width: 25%;
   height: 270px;
   position: relative;
-  order:1;
   @media (min-width: 800px) {
     height: 320px;
   }
@@ -1145,11 +1144,20 @@ label {
 
   }
 }
-
+ac-administracion-usuarios{
+  .lista{
+    width: 350px!important;
+    margin-top: 80px!important;
+  }
+  .form{
+    width: 350px!important;
+  }
+}
 
 ac-administracion-notas {
   top: 80px;
   position: relative;
+
 
 }
 
@@ -1160,7 +1168,6 @@ ac-administracion-notas {
   background: -webkit-linear-gradient(top,  rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom,  rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
-
   font-size: 16px;
   width: 800px;
   padding: 20px;
@@ -1179,22 +1186,26 @@ ac-administracion-notas {
 
   }
   table th{
-    color: #EF077D;
+    color: white;
     width: 100%;
-    font-family: 'Roboto', sans-serif;
-    //font-weight: bolder;
-    font-size: 26px;
-    padding: 10px;
-    text-shadow: .5px .5px white;
+    font-family: 'Droid Serif', serif;
+    font-weight: bolder;
+    font-size: 30px;
+    padding: 5px;
+    //text-shadow: .5px .5px white;
+    text-transform: uppercase;
+    border-bottom: 0.5px solid #DD0374;
+
+
   }
   table td{
+    text-align: center;
     padding: 10px;
     color: white;
     font-family: 'Merriweather', serif;
     font-size: 16px;
     font-weight: 300;
-    border-top:    1px solid  white;
-    border-bottom: 1px solid white;
+    margin: 5px;
   }
   table td:hover{
     cursor: pointer;
@@ -1205,6 +1216,7 @@ ac-administracion-notas {
     ms-transition: all 0.4s ease;
     o-transition: all 0.4s ease;
     transition: all 0.4s ease;
+    -webkit-border-radius: 4px;
   }
 
 
@@ -1230,7 +1242,7 @@ ac-administracion-notas {
   box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
   div{
     vertical-align: baseline;
-    padding: 10px;
+    padding: 5px;
   }
   input{
     font-family: 'Roboto', sans-serif;
@@ -1373,8 +1385,6 @@ ac-administracion-notas {
 }
 .btn-group {
   text-align: center;
-  margin: 10px;
-  padding: 10px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e5e5e5+100;White+3D */
   background: rgb(255,255,255); /* Old browsers */
   background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6-15 */
@@ -1384,6 +1394,12 @@ ac-administracion-notas {
   -webkit-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
+  button{
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 
 }
 .btn-group > a {
@@ -1395,12 +1411,24 @@ ac-administracion-notas {
   cursor: pointer;
 }
 
-#toolbarWC{
-  padding: 10px;
-}
 .noticia-destacada{
-  width: 50%;
-  order:0;
+  width: 40%;
 }
 
+button{
+  background: rgba(255,93,177,1);
+  background: -moz-linear-gradient(top, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,93,177,1)), color-stop(100%, rgba(239,1,124,1)));
+  background: -webkit-linear-gradient(top, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
+  background: -o-linear-gradient(top, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
+  background: -ms-linear-gradient(top, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
+  background: linear-gradient(to bottom, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5db1', endColorstr='#ef017c', GradientType=0 );
+  font-family: 'Droid Serif', serif;
+  font-size: 15px;
+  border-style: none;
+  -webkit-border-radius: 4px;
+  margin: 5px;
+  color: white;
 
+}
