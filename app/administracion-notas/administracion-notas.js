@@ -119,7 +119,8 @@
             var arrNotas = FireService.createArrayRef(refNota);
             return arrNotas.$loaded(function (data) {
                 var list = [];
-                for (var i = 0; i < 6; i++) {
+                var count = 0;
+                for (var i = 0; i < data.length; i++) {
                     var nota = {};
                     nota.id = data[i].$id;
                     nota.destacada = data[i].destacada;
@@ -131,6 +132,10 @@
                     nota.titulo = getSubString(data[i].titulo, 50);
 
                     list.push(nota);
+
+                    count = count + (data[i].destacada == 1 ? 2 : 1);
+                    if(count >= 8)
+                        return list;
                 }
                 return list;
             });

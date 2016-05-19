@@ -769,6 +769,7 @@ h1{
   width: 25%;
   height: 270px;
   position: relative;
+  order:1;
   @media (min-width: 800px) {
     height: 320px;
   }
@@ -1398,6 +1399,8 @@ ac-administracion-notas {
   padding: 10px;
 }
 .noticia-destacada{
-  width: 40%;
+  width: 50%;
+  order:0;
 }
+
 
