@@ -1199,8 +1199,8 @@ ac-administracion-notas {
 
   }
   table td{
-    text-align: center;
-    padding: 10px;
+    text-align: left;
+    padding: 5px;
     color: white;
     font-family: 'Merriweather', serif;
     font-size: 16px;
@@ -1217,6 +1217,9 @@ ac-administracion-notas {
     o-transition: all 0.4s ease;
     transition: all 0.4s ease;
     -webkit-border-radius: 4px;
+  }
+  button{
+    margin-top: 40px;
   }
 
 
@@ -1248,7 +1251,7 @@ ac-administracion-notas {
     font-family: 'Roboto', sans-serif;
     font-size: 22px;
     padding: 4px;
-    width: 100%;
+    width: 96%;
   }
   label{
     font-family: 'Merriweather', serif;
@@ -1427,8 +1430,8 @@ button{
   font-family: 'Droid Serif', serif;
   font-size: 15px;
   border-style: none;
-  -webkit-border-radius: 4px;
-  margin: 5px;
+  //-webkit-border-radius: 4px;
+  margin-bottom: 5px;
   color: white;
 
 }
