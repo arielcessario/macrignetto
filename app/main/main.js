@@ -35,14 +35,9 @@
         vm.nextMonth = nextMonth;
         vm.verNoticia = verNoticia;
 
-        /*
-        NotasService.get().then(function (data) {
-            console.log(data);
-        });
-        */
 
         NotasService.getUltimasNotas().then(function(data){
-            console.log(data);
+            //console.log(data);
             vm.notas = data;
         });
 

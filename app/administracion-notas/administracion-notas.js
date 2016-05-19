@@ -124,6 +124,7 @@
                     nota.id = data[i].$id;
                     nota.destacada = data[i].destacada;
                     nota.detalle = $sce.trustAsHtml(getSubString(data[i].detalle, 100));
+                    nota.fecha = timeConverter(data[i].fecha);
                     nota.fotos = data[i].fotos;
                     nota.fuente = data[i].fuente;
                     nota.status = data[i].status;
@@ -150,6 +151,17 @@
 
         function getSubString(texto, length) {
             return texto.length > length ? texto.substring(0, length) + "..." : texto;
+        }
+
+        function timeConverter(timestamp){
+            var date = new Date(timestamp);
+            //console.log(date);
+            //console.log(date.toDateString());
+            //console.log(date.toTimeString());
+            //console.log(date.toLocaleDateString());
+            //console.log(date.toLocaleTimeString());
+
+            return date.toLocaleString();
         }
     }
 
