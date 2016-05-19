@@ -168,6 +168,8 @@ select {
   margin-left: 5px;
   margin-right: 5px;
   font-size: 16px;
+  height: 30px;
+  width: 300px;
 }
 
 select option {
@@ -1146,12 +1148,12 @@ label {
 }
 ac-administracion-usuarios{
   .lista{
-    width: 350px!important;
+    //width: 350px!important;
     margin-top: 80px!important;
   }
-  .form{
-    width: 350px!important;
-  }
+  //.form{
+    //width: 350px!important;
+  //}
 }
 
 ac-administracion-notas {
@@ -1169,7 +1171,7 @@ ac-administracion-notas {
   background: linear-gradient(to bottom,  rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
   font-size: 16px;
-  width: 800px;
+  width: 80%;
   padding: 20px;
   margin: auto;
   margin-top: 10px;
@@ -1182,7 +1184,10 @@ ac-administracion-notas {
     margin-bottom: 30px;
     padding: 5px;
     font-family: 'Roboto', sans-serif;
-    width: 100%;
+    width: 88%;
+    -webkit-box-shadow: 2px 3px 5px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 3px 5px -2px rgba(0,0,0,0.75);
+    box-shadow: 2px 3px 5px -2px rgba(0,0,0,0.75);
 
   }
   table th{
@@ -1226,7 +1231,6 @@ ac-administracion-notas {
 }
 
 .form{
-  text-align: center;
   background: rgba(255,255,255,1);
   background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
@@ -1237,7 +1241,7 @@ ac-administracion-notas {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
   font-family: 'Droid Serif', serif;
   font-size: 16px;
-  width: 800px;
+  width: 80%;
   padding: 20px;
   margin: 10px auto;
   -webkit-box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
@@ -1433,5 +1437,10 @@ button{
   //-webkit-border-radius: 4px;
   margin-bottom: 5px;
   color: white;
-
 }
+
+.fa-search{
+  font-size: 50px!important;
+  color: white;
+  margin: 13px;
+ }
