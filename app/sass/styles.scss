@@ -760,20 +760,33 @@ h1{
   //height: 600px;
 }
 .noticias-info {
-  width: 100%;
+  //width: 100%;
+  width: 25%;
   height: 270px;
   position: relative;
   @media (min-width: 800px) {
     height: 320px;
   }
 }
-
+.noticias-info:nth-child(5) {
+  //width: 33%;
+}
+.noticias-info:nth-child(6) {
+  //width: 33%;
+}
+.noticias-info:nth-child(7) {
+  //width: 33%;
+}
+.noticia-destacada{
+  width: 33%;
+}
 .noticias-fila {
   display: flex;
   flex-direction: column;
 
   @media (min-width: 800px) {
     flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
@@ -1092,7 +1105,7 @@ label {
   //@include sombras();
 
   //@media (min-width: 800px) {
-  //margin-right: 0px;
+    //margin-right: 0px;
   //}
 
   #agenda-calendar-container {
@@ -1171,7 +1184,7 @@ ac-administracion-notas {
     font-weight: bolder;
     font-size: 22px;
     padding-bottom: 10px;
-  }
+   }
   table td{
     padding: 5px;
   }

@@ -29,7 +29,7 @@
     <div style="display: flex;flex-direction: column;">
         <div id="noticias" class="container">
             <div class="noticias-fila">
-                <div ng-repeat="nota in mainCtrl.notas" class="noticias-info">
+                <div ng-repeat="nota in mainCtrl.notas" class="noticias-info" ng-class="{'noticia-destacada':nota.destacada == 1}">
                     <!--img src="images/fondo1.jpg" class="strech"-->
                     <img src="images/{{nota.fotos[0].nombre}}" class="strech">
                     <div class="noticias-texto">{{nota.titulo}}</div>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <div class="noticias-fila hide-div">
+            <!--div class="noticias-fila hide-div">
                 <div ng-repeat="nota in mainCtrl.notas" class="noticias-info">
                     <img src="images/{{nota.fotos[0].nombre}}" class="strech">
                     <div class="noticias-texto">{{nota.titulo}}</div>
@@ -50,7 +50,7 @@
                         <div ng-bind-html="nota.detalle" class="noticias-detalle"></div>
                     </div>
                 </div>
-            </div>
+            </div-->
         </div>
         <div id="agenda" class="container">
             <h3>Agenda</h3>

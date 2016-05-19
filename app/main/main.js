@@ -35,25 +35,15 @@
         vm.nextMonth = nextMonth;
         vm.verNoticia = verNoticia;
 
+        /*
         NotasService.get().then(function (data) {
             console.log(data);
+        });
+        */
 
-            if(data != null || data.length > 0) {
-                for (var i = 0; i < 3; i++) {
-                    var nota = {};
-                    nota.id = data[i].$id;
-                    nota.destacada = data[i].destacada;
-                    nota.detalle = $sce.trustAsHtml((data[i].detalle.length > 100 ? data[i].detalle.substring(0, 100) + "....." : data[i].detalle));
-                    nota.fotos = data[i].fotos;
-                    nota.fuente = data[i].fuente;
-                    nota.status = data[i].status;
-                    nota.titulo = data[i].titulo.length > 50 ? data[i].titulo.substring(0, 50) + "..." : data[i].titulo;
-                    //nota.titulo = $sce.trustAsHtml((data[i].titulo.length > 25 ? data[i].titulo.substring(0, 25) + "....." : data[i].titulo));
-
-                    vm.notas.push(nota);
-                }
-            }
-            console.log(vm.notas);
+        NotasService.getUltimasNotas().then(function(data){
+            console.log(data);
+            vm.notas = data;
         });
 
         EventosService.get().then(function (data) {

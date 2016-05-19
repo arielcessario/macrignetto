@@ -81,13 +81,13 @@
         }
     }
 
-    NotasService.$inject = ['FireService', 'Model', '$q'];
-    function NotasService(FireService, Model, $q) {
+    NotasService.$inject = ['FireService', 'Model', '$q', '$sce'];
+    function NotasService(FireService, Model, $q, $sce) {
 
         var service = this;
         service.get = get;
         service.save = save;
-
+        service.getUltimasNotas = getUltimasNotas;
 
         return service;
 
@@ -114,6 +114,28 @@
             });
         }
 
+        function getUltimasNotas() {
+            var refNota = Model.refNotas;
+            var arrNotas = FireService.createArrayRef(refNota);
+            return arrNotas.$loaded(function (data) {
+                var list = [];
+                for (var i = 0; i < 6; i++) {
+                    var nota = {};
+                    nota.id = data[i].$id;
+                    nota.destacada = data[i].destacada;
+                    nota.detalle = $sce.trustAsHtml(getSubString(data[i].detalle, 100));
+                    nota.fotos = data[i].fotos;
+                    nota.fuente = data[i].fuente;
+                    nota.status = data[i].status;
+                    nota.titulo = getSubString(data[i].titulo, 50);
+
+                    list.push(nota);
+                }
+                return list;
+            });
+        }
+
+
         function create(arr, obj) {
             return arr.$add(FireService.formatObj(obj)).then(function (data) {
                 return data;
@@ -124,6 +146,10 @@
             return arr.$save(FireService.formatObj(obj)).then(function (data) {
                 return data;
             });
+        }
+
+        function getSubString(texto, length) {
+            return texto.length > length ? texto.substring(0, length) + "..." : texto;
         }
     }
 
