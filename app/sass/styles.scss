@@ -765,7 +765,8 @@ h1{
   //height: 600px;
 }
 .noticias-info {
-  width: 100%;
+  //width: 100%;
+  width: 25%;
   height: 270px;
   position: relative;
   @media (min-width: 800px) {
@@ -779,6 +780,7 @@ h1{
 
   @media (min-width: 800px) {
     flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
@@ -839,7 +841,8 @@ h1{
   bottom: 0px;
   //height: 65px;
   height: 85px;
-  width: 100%;
+  //width: 100%;
+  width: 99%;
 }
 /*
 .noticias-pie  p{
@@ -1392,5 +1395,9 @@ ac-administracion-notas {
 }
 
 #toolbarWC{
-padding: 10px;
+  padding: 10px;
 }
+.noticia-destacada{
+  width: 40%;
+}
+
