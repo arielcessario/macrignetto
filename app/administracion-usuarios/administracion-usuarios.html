@@ -1,5 +1,5 @@
 <div class="lista">
-    <input type="text" class="buscador" ng-model="$ctrl.filtro">
+    <input type="text" class="buscador" placeholder="Ingrese su búsqueda..." ng-model="$ctrl.filtro">
     <table>
         <thead>
         <tr>
@@ -49,31 +49,35 @@
 </div>
 <div class="form details">
     <div>
-        <input type="text" ng-model="$ctrl.usuario.nombre">
         <label for="">Nombre</label>
+        <input type="text" ng-model="$ctrl.usuario.nombre">
+
     </div>
     <div>
-        <input type="text" ng-model="$ctrl.usuario.apellido">
         <label for="">Apellido</label>
+        <input type="text" ng-model="$ctrl.usuario.apellido">
+
     </div>
     <div>
-        <input type="text" ng-model="$ctrl.usuario.email">
         <label for="">Email</label>
+        <input type="text" ng-model="$ctrl.usuario.email">
+
     </div>
     <div>
         <select name="" id="" ng-model="$ctrl.usuario.rol">
+            <label for="">Rol</label>
+
             <option value="0">Administrador</option>
             <option value="1">Redactor</option>
             <option value="2">Usuario</option>
         </select>
-        <label for="">Rol</label>
     </div>
     <div>
         <select name="" id="" ng-model="$ctrl.usuario.status">
+            <label for="">Estado</label>
             <option value="0">Inactivo</option>
             <option value="1">Activo</option>
         </select>
-        <label for="">Estado</label>
     </div>
     <div class="botonera">
         <button ng-click="$ctrl.detailsOpen = fa.se; $ctrl.save();">Guardar</button>

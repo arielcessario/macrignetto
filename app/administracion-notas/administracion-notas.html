@@ -1,5 +1,5 @@
 <div class="lista">
-    <input type="text" class="buscador" ng-model="$ctrl.filtro">
+    <input type="text" class="buscador" placeholder="Ingrese su búsqueda..." ng-model="$ctrl.filtro">
     <table>
         <thead>
         <tr>
@@ -54,12 +54,13 @@
 </div>
 <div class="form details">
     <div>
-        <input type="text" ng-model="$ctrl.nota.titulo">
         <label for="">Titulo</label>
+        <input type="text" ng-model="$ctrl.nota.titulo">
     </div>
     <div>
-        <input type="text" ng-model="$ctrl.nota.fuente">
         <label for="">Fuente</label>
+        <input type="text" ng-model="$ctrl.nota.fuente">
+
     </div>
     <div>
         <div text-angular ng-model="$ctrl.nota.detalle"></div>
