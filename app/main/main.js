@@ -25,7 +25,7 @@
             {id: 9, nombre: 'OCTUBRE'},
             {id: 10, nombre: 'NOVIEMBRE'},
             {id: 11, nombre: 'DICIEMBRE'}];
-        vm.agendaMes = vm.meses[vm.fecha.getMonth()];
+        vm.agendaMes = vm.meses[vm.fecha.getMonth() + 1];
         vm.agendaAnio = vm.anio;
         vm.listaEventos = [];
         vm.evento = {};
@@ -56,28 +56,32 @@
             var fecha = new Date(data[max].fecha);
 
             year = parseInt(fecha.getFullYear());
-            month = parseInt(fecha.getMonth()) - 1;
+            month = parseInt(fecha.getMonth()) + 1;
             getEventos(year, month);
         });
 
         function getEventos(year, month) {
 
-
-            var diasMes = new Date(year, month + 1, 0).getTime();
-            var diasMesNext = new Date(year, month + 1, 30).getTime();
-
+            var diasMes = new Date(year, month, 0).getDate();
             vm.listaEventos = [];
             var event = {};
-
-            for (var i = 0; i < vm.eventos.length; i++) {
-
+            for (var i = 1; i < diasMes + 1; i++) {
                 event = {dia: i, evento: undefined};
-                if (vm.eventos[i].fecha > diasMes && vm.eventos[i].fecha < diasMesNext) {
-                    event.evento = {dia: i, evento: vm.eventos[i]};
-                }
                 vm.listaEventos.push(event);
             }
-            console.log(vm.listaEventos);
+
+            for (var i in vm.eventos) {
+                // Conseguir el día del evento
+                // comparar con el día del listEventos
+                var anioEvento = (new Date(vm.eventos[i].fecha)).getFullYear();
+                var mesEvento = (new Date(vm.eventos[i].fecha)).getMonth() + 1;
+                if (anioEvento == year && mesEvento == month) {
+                    vm.listaEventos[(new Date(vm.eventos[i].fecha)).getDate() - 1].evento = vm.eventos[i];
+                }
+
+
+            }
+            vm.evento = vm.listaEventos[0];
 
         }
 

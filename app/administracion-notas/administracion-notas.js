@@ -139,9 +139,9 @@
                     destacadaSi = destacadaSi + (data[i].destacada == 1 ? 1 : 0);
                     destacadaNo = destacadaNo + (data[i].destacada == 0 ? 1 : 0);
                     if(count >= 8) {
-                        console.log(count);
-                        console.log(destacadaSi);
-                        console.log(destacadaNo);
+                        //console.log(count);
+                        //console.log(destacadaSi);
+                        //console.log(destacadaNo);
                         if(destacadaSi == 4 && destacadaNo > 0) {
                             for(var j=0; j < list.length; j++) {
                                 if(list[j].destacada == 0) {
