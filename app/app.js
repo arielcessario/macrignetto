@@ -14,7 +14,8 @@
         'acContacts',
         'acAdministracionUsuarios',
         'acAdministracionEventos',
-        'acAdministracionNotas'
+        'acAdministracionNotas',
+        'acAdministracionComics'
     ]).config(['$routeProvider', function ($routeProvider) {
 
             $routeProvider.otherwise({redirectTo: '/main'});
@@ -107,6 +108,7 @@
         vm.display_header = true;
 
         FireService.init();
+
 
         ////////// NAVEGACION //////////
         $rootScope.$on('$routeChangeSuccess', function (event, next, current) {

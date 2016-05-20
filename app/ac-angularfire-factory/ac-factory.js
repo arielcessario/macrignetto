@@ -16,6 +16,7 @@
         service.bindTo = bindTo;
         service.getIndex = getIndex;
         service.formatObj = formatObj;
+        service.getUserData = getUserData;
 
         return service;
 
@@ -65,6 +66,11 @@
                     return i;
                 }
             }
+        }
+
+        function getUserData(){
+            var ref = FireVars._FIREREF;
+            return ref.getAuth();
         }
 
         /**

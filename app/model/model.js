@@ -32,18 +32,21 @@
             detalle: '',
             fotos: '',
             status: 1,
-            fecha: Firebase.ServerValue.TIMESTAMP
+            fecha: Firebase.ServerValue.TIMESTAMP,
+            usuario: ''
         };
 
         factory.refEventos = FireVars._FIREREF.child('/eventos/');
 
-        factory.historieta = {
-            url: '',
-            status: 1,
-            fecha: Firebase.ServerValue.TIMESTAMP
+        factory.comic = {
+            fecha: Firebase.ServerValue.TIMESTAMP,
+            imagen: '',
+            comentarios: '',
+            usuario: '',
+            status: 1
         };
 
-        factory.refHistorietas = FireVars._FIREREF.child('/historietas/');
+        factory.refComics = FireVars._FIREREF.child('/comics/');
 
         factory.nota = {
             titulo: '',
@@ -53,7 +56,8 @@
             comentarios: '',
             fecha: Firebase.ServerValue.TIMESTAMP,
             destacada: false,
-            status: 1
+            status: 1,
+            usuario: ''
         };
 
         factory.refNotas = FireVars._FIREREF.child('/notas/');

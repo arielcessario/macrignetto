@@ -87,10 +87,12 @@
             for (var i in vm.eventos) {
                 // Conseguir el día del evento
                 // comparar con el día del listEventos
-                var anioEvento = (new Date(vm.eventos[i].fecha)).getFullYear();
-                var mesEvento = (new Date(vm.eventos[i].fecha)).getMonth() + 1;
-                if (anioEvento == year && mesEvento == month) {
-                    vm.listaEventos[(new Date(vm.eventos[i].fecha)).getDate() - 1].evento = vm.eventos[i];
+                if (typeof vm.eventos[i] === "object") {
+                    var anioEvento = (new Date(vm.eventos[i].fecha)).getFullYear();
+                    var mesEvento = (new Date(vm.eventos[i].fecha)).getMonth() + 1;
+                    if (anioEvento == year && mesEvento == month) {
+                        vm.listaEventos[(new Date(vm.eventos[i].fecha)).getDate() - 1].evento = vm.eventos[i];
+                    }
                 }
 
 
@@ -126,7 +128,7 @@
         }
 
         function sendMail() {
-            if(vm.enviando){
+            if (vm.enviando) {
                 return;
             }
             vm.enviando = true;

@@ -44,13 +44,12 @@
         }
     }
 
-    UsuariosService.$inject = ['FireService', 'Model', '$q'];
-    function UsuariosService(FireService, Model, $q) {
+    UsuariosService.$inject = ['FireService', 'Model', '$q', 'FireVars'];
+    function UsuariosService(FireService, Model, $q, FireVars) {
 
         var service = this;
         service.get = get;
         service.save = save;
-
 
         return service;
 

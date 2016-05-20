@@ -124,13 +124,7 @@
             var refEvento = Model.refEventos;
             var arrEventos = FireService.createArrayRef(refEvento);
             return arrEventos.$loaded(function (data) {
-                var response = [];
-                for (var i in data) {
-                    if (typeof data[i] === "object") {
-                        response.push(data[i]);
-                    }
-                }
-                return response;
+                return data;
             });
         }
 
