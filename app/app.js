@@ -11,6 +11,7 @@
         'acFactory',
         'Model',
         'login',
+        'acContacts',
         'acAdministracionUsuarios',
         'acAdministracionEventos',
         'acAdministracionNotas'

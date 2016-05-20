@@ -855,7 +855,7 @@ h1{
   //height: 65px;
   height: 85px;
   //width: 100%;
-  width: 99%;
+  width: calc(100% - 2px);
 }
 /*
 .noticias-pie  p{
@@ -938,6 +938,7 @@ h3 {
     -webkit-box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
     box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
+    min-width: 600px;
   }
   img{
     height: 100%;
@@ -970,6 +971,7 @@ h4{
   line-height: 20px;
   font-size: 16px;
   max-height: 280px;
+  min-height: 280px;
   overflow-y: auto;
 }
 h5{
@@ -1061,6 +1063,7 @@ label {
     justify-content: center;
     align-content: space-around;
     align-items: center;
+    height: 470px;
   }
 }
 .prev-m:hover,

@@ -1,11 +1,15 @@
 (function () {
     'use strict';
+
+    var scripts = document.getElementsByTagName("script");
+    var currentScriptPath = scripts[scripts.length - 1].src;
+
     angular.module('main', ['ngRoute'])
         .controller('MainController', MainController);
 
 
-    MainController.$inject = ['$scope', 'NotasService', 'EventosService', '$sce', '$location'];
-    function MainController($scope, NotasService, EventosService, $sce, $location) {
+    MainController.$inject = ['$scope', 'NotasService', 'EventosService', '$sce', '$location', 'ContactsService'];
+    function MainController($scope, NotasService, EventosService, $sce, $location, ContactsService) {
 
         var vm = this;
         vm.notas = [];
@@ -31,10 +35,20 @@
         vm.evento = {};
         vm.eventos = [];
 
+        vm.email = '';
+        vm.nombre = '';
+        vm.mensaje = '';
+        vm.asunto = '';
+        //vm.enviado = false;
+        vm.enviando = false;
+
+
         //FUNCIONES
         vm.prevMonth = prevMonth;
         vm.nextMonth = nextMonth;
         vm.verNoticia = verNoticia;
+        vm.sendMail = sendMail;
+        vm.selectEvento = selectEvento;
 
 
         NotasService.getUltimasNotas().then(function (data) {
@@ -100,6 +114,36 @@
         function verNoticia(id) {
             console.log(id);
             $location.path('/noticias/' + id);
+        }
+
+        function selectEvento(evento) {
+            console.log(evento);
+            if (evento != undefined) {
+                vm.evento = evento;
+                vm.evento.detalle = $sce.trustAsHtml(evento.detalle);
+            }
+
+        }
+
+        function sendMail() {
+            if(vm.enviando){
+                return;
+            }
+            vm.enviando = true;
+
+            ContactsService.sendMail(vm.email,
+                [{mail: 'arielcessario@gmail.com'}, {mail: 'mmaneff@gmail.com'}, {mail: 'diegoyankelevich@gmail.com'}],
+                vm.nombre,
+                vm.mensaje,
+                vm.asunto,
+                function (data, result) {
+                    vm.enviando = false;
+
+                    vm.email = '';
+                    vm.nombre = '';
+                    vm.asunto = '';
+                    vm.mensaje = '';
+                });
         }
     }
 })();

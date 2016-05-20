@@ -95,12 +95,10 @@
                         </div>
                     </div>
                 </div>
-                <img class="agenda-img" src="images/agenda_img.png">
+                <img class="agenda-img" src="images/{{mainCtrl.evento.fotos[0].nombre}}">
                 <div class="agenda-noticia">
-                    <div class="agenda-titulo"><h4>Titulo Agenda</h4></div>
-                    <div class="agenda-info">Without a container element all positioning will be in relation to the viewport (the corner of the screen). This in combination with position: fixed can create elements that stay in one corner of the screen and don't move when the page scrolls, but only in browsers other than Explorer. On this site you might see a [top] link doing just that if you're using a compatible browser.
-                        Without a container element all positioning will be in relation to the viewport (the corner of the screen). This in combination with position: fixed can create elements that stay in one corner of the screen and don't move when the page scrolls, but only in browsers other than Explorer. On this site you might see a [top] link doing just that if you're using a compatible browser.
-                    </div>
+                    <div class="agenda-titulo"><h4>{{mainCtrl.evento.titulo}}</h4></div>
+                    <div class="agenda-info" ng-bind-html="mainCtrl.evento.detalle"></div>
                 </div>
             </div>
         </div>
@@ -118,24 +116,39 @@
                 </div>
             </div>
         </div>
-        <div id="contacto" class="container">
+        <div id="contacto" class="container" form-id="contacto">
             <h5>Contacto</h5>
             <div class="contacto-form">
                 <div class="form-group">
                     <label>Nombre</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control"
+                           ac-validator is-required="Debe ingresar un nombre"
+                           ng-model="mainCtrl.nombre" id="contacto-nombre">
                 </div>
                 <div class="form-group">
                     <label>Mail</label>
-                    <input type="text" class="form-control">
+                    <input type="email" class="form-control"
+                           ac-validator is-mail="El mail es incorrecto"
+                           ng-model="mainCtrl.email" id="contacto-mail">
+                </div>
+                <div class="form-group">
+                    <label>Asunto</label>
+                    <input type="text" class="form-control"
+                           ac-validator is-required="Debe ingresar un tema de consulta"
+                           ng-model="mainCtrl.asunto" id="contacto-asunto">
                 </div>
                 <div class="form-group">
                     <label>Consulta</label>
-                    <input type="text" class="form-control">
+                    <textarea class="form-control text-area"
+                            ac-validator is-required="Debe ingresar una consulta"
+                            ng-model="mainCtrl.mensaje"
+                            name="" id="contacto-consulta"
+                            rows="10" cols="50"></textarea>
                 </div>
-                <button <a href="enviar">Enviar</a></button>
-
-                </div>
+                <button id="enviar-consulta" ac-validator ng-click="mainCtrl.sendMail();">Enviar</button>
+            </div>
+            <div class="send-mail ac-mensaje-custom-show" ng-if="mainCtrl.enviando">
+                Su consulta fue enviada
             </div>
         </div>
     </div>
