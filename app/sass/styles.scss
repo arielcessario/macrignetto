@@ -781,6 +781,7 @@ h1{
   width: 25%;
   height: 270px;
   position: relative;
+  order:1;
   @media (min-width: 800px) {
     height: 320px;
   }
@@ -876,6 +877,8 @@ h1{
   font-size: 14px;
   margin-top: 5px;
   line-height: 18px;
+  //padding: 5px 10px;
+  //font-size: 16px;
 }
 
 h3 {
@@ -1162,7 +1165,7 @@ ac-administracion-usuarios{
     margin-top: 80px!important;
   }
   //.form{
-    //width: 350px!important;
+  //width: 350px!important;
   //}
 }
 
@@ -1296,24 +1299,26 @@ ac-administracion-notas {
   margin-left: auto;
 }
 .noticias-pie > div {
-  padding: 13px 10px 5px;
+  //padding: 13px 10px 5px;
   font-weight: 600;
   font-size: 22px;
   font-family: 'Merriweather', serif;
   line-height: 15px;
+  padding: 0px 2px;
+  padding-top: 15px;
 
   p{
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-
-
   }
 }
+/*
 .noticias-detalle {
   padding: 5px 10px;
   font-size: 16px;
 }
+*/
 .noticia-container{
   display: flex;
   flex-direction: column;
@@ -1334,7 +1339,7 @@ ac-administracion-notas {
   border-radius: 5px;
   //border: 3px solid white;
   max-height: 600px;
- width: 100%;
+  width: 100%;
   -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.75);
@@ -1429,7 +1434,8 @@ ac-administracion-notas {
 }
 
 .noticia-destacada{
-  width: 40%;
+  width: 50%;
+  order: 0;
 }
 
 button{
@@ -1464,7 +1470,7 @@ button:hover{
 }
 
 .fa-search{
-    font-size: 50px!important;
+  font-size: 50px!important;
   color: white;
   margin: 13px;
 }
@@ -1478,4 +1484,5 @@ button:hover{
   font-size: 22px;
   color: black;
 }
+
 
