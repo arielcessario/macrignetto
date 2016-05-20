@@ -1485,9 +1485,14 @@ button:hover{
   color: black;
 }
 
-.social-like{
+.btn-facebook{
   top: 10px;
   left: 10px;
+  position: absolute;
+}
+.btn-twitter{
+  top: 10px;
+  left: 60px;
   position: absolute;
 }
 
