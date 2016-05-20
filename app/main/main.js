@@ -29,6 +29,7 @@
         vm.agendaAnio = vm.anio;
         vm.listaEventos = [];
         vm.evento = {};
+        vm.eventos = [];
 
         //FUNCIONES
         vm.prevMonth = prevMonth;
@@ -36,41 +37,48 @@
         vm.verNoticia = verNoticia;
 
 
-        NotasService.getUltimasNotas().then(function(data){
+        NotasService.getUltimasNotas().then(function (data) {
             //console.log(data);
             vm.notas = data;
         });
 
         EventosService.get().then(function (data) {
-            vm.listaEventos = data;
-            console.log(vm.listaEventos);
 
-            /*
-             var year = vm.anio;
-             var month = vm.agendaMes.id;
+            data.sort(function (a, b) {
+                return a.fecha - b.fecha;
+            });
 
-             var fecha = data.fecha.format('dd-mm-yyyy');
-             year = parseInt(fecha.split('-')[2]);
-             month = parseInt(fecha.split('-')[1]) - 1;
-             vm.agendaMes = vm.meses[month];
-             */
+            vm.eventos = data;
+            var year = vm.anio;
+            var month = vm.agendaMes.id;
 
-            getEventos(2016, 5);
+            var max = data.length - 1;
+            var fecha = new Date(data[max].fecha);
+
+            year = parseInt(fecha.getFullYear());
+            month = parseInt(fecha.getMonth()) - 1;
+            getEventos(year, month);
         });
 
         function getEventos(year, month) {
-            var diasMes = new Date(year, month + 1, 0).getDate();
+
+
+            var diasMes = new Date(year, month + 1, 0).getTime();
+            var diasMesNext = new Date(year, month + 1, 30).getTime();
+
             vm.listaEventos = [];
             var event = {};
 
-            for (var i = 1; i < diasMes + 1; i++) {
+            for (var i = 0; i < vm.eventos.length; i++) {
 
                 event = {dia: i, evento: undefined};
-                for (var x = 0; x < 29; x++) {
-                    event.evento = {dia: i, evento: undefined};
+                if (vm.eventos[i].fecha > diasMes && vm.eventos[i].fecha < diasMesNext) {
+                    event.evento = {dia: i, evento: vm.eventos[i]};
                 }
                 vm.listaEventos.push(event);
             }
+            console.log(vm.listaEventos);
+
         }
 
         function nextMonth() {
