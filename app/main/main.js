@@ -105,7 +105,7 @@
                 vm.evento.fotos = vm.listaEventos[0].evento.fotos;
             }
 
-            console.log(vm.evento);
+            //console.log(vm.evento);
             if(vm.evento.evento == undefined) {
                 getLastEvento();
             }
@@ -117,7 +117,7 @@
                     return a.fecha - b.fecha;
                 });
 
-                console.log(data[data.length - 1]);
+                //console.log(data[data.length - 1]);
 
                 vm.evento.detalle = $sce.trustAsHtml(data[data.length - 1].detalle);
                 vm.evento.titulo = data[data.length - 1].titulo;
