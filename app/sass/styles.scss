@@ -798,8 +798,10 @@ h1{
   order:1;
   overflow: hidden;
   img{
-    height: 100%;
-    margin: auto;
+    min-width: 956px;
+    margin-left: calc(50% - 478px)!important;
+
+
       }
 
   @media (min-width: 800px) {
@@ -817,10 +819,10 @@ h1{
   }
 }
 
-.strech {
-  width: 100%;
+//.strech {
+//width: 100%;
   //height: 100%;
-}
+//}
 
 .trech img{
   height: 100%!important;
@@ -967,6 +969,7 @@ h3 {
     min-width: 600px;
   }
   img{
+    width: 100%;
     height: 100%;
   }
 }
@@ -1523,14 +1526,19 @@ button:hover{
 .btn-facebook{
   top: 10px;
   left: 5px;
-
   border-radius:20px;
   position: absolute;
+  img{
+    min-width: 30px!important;
+  }
 }
 .btn-twitter{
   top: 10px;
   left: 40px;
   position: absolute;
+  img{
+    min-width: 30px!important;
+  }
 }
 
 .sub-menu{
