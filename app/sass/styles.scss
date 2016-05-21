@@ -1022,7 +1022,8 @@ footer{
   width: 80%;
   margin: 0 auto;
   @media (min-width: 800px) {
-    width: 40%;
+    //width: 40%;
+    width: 300px;
   }
 }
 .form-group {

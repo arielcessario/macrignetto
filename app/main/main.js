@@ -39,7 +39,7 @@
         vm.nombre = '';
         vm.mensaje = '';
         vm.asunto = '';
-        //vm.enviado = false;
+        vm.enviado = false;
         vm.enviando = false;
 
 
@@ -136,9 +136,11 @@
             ContactsService.sendMail(vm.email,
                 [{mail: 'arielcessario@gmail.com'}, {mail: 'mmaneff@gmail.com'}, {mail: 'diegoyankelevich@gmail.com'}],
                 vm.nombre,
-                vm.mensaje,
                 vm.asunto,
+                vm.mensaje,
                 function (data, result) {
+                    console.log(data);
+                    console.log(result);
                     vm.enviando = false;
 
                     vm.email = '';
@@ -146,6 +148,7 @@
                     vm.asunto = '';
                     vm.mensaje = '';
                 });
+
         }
     }
 })();
