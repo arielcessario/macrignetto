@@ -101,7 +101,7 @@
         var service = this;
         service.get = get;
         service.save = save;
-
+        service.getLastEvento = getLastEvento;
 
         return service;
 
@@ -136,6 +136,17 @@
 
         function update(arr, obj) {
             return arr.$save(FireService.formatObj(obj)).then(function (data) {
+                return data;
+            });
+        }
+
+        function getLastEvento() {
+            var currentDate = new Date();
+            var firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+            var refEvento = Model.refEventos;
+            var arrEventos = FireService.createArrayRef(refEvento, 'fecha', firstDay.getTime(), currentDate.getTime());
+            return arrEventos.$loaded(function (data) {
+                //console.log(data);
                 return data;
             });
         }

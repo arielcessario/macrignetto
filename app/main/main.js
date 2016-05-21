@@ -62,6 +62,8 @@
                 return a.fecha - b.fecha;
             });
 
+            //console.log(data);
+
             vm.eventos = data;
             var year = vm.anio;
             var month = vm.agendaMes.id;
@@ -94,11 +96,33 @@
                         vm.listaEventos[(new Date(vm.eventos[i].fecha)).getDate() - 1].evento = vm.eventos[i];
                     }
                 }
-
-
             }
-            vm.evento = vm.listaEventos[0];
 
+            vm.evento = vm.listaEventos[0];
+            if(vm.listaEventos[0].evento != undefined) {
+                vm.evento.detalle = $sce.trustAsHtml(vm.listaEventos[0].evento.detalle);
+                vm.evento.titulo = vm.listaEventos[0].evento.titulo;
+                vm.evento.fotos = vm.listaEventos[0].evento.fotos;
+            }
+
+            console.log(vm.evento);
+            if(vm.evento.evento == undefined) {
+                getLastEvento();
+            }
+        }
+
+        function getLastEvento() {
+            EventosService.getLastEvento().then(function (data) {
+                data.sort(function (a, b) {
+                    return a.fecha - b.fecha;
+                });
+
+                console.log(data[data.length - 1]);
+
+                vm.evento.detalle = $sce.trustAsHtml(data[data.length - 1].detalle);
+                vm.evento.titulo = data[data.length - 1].titulo;
+                vm.evento.fotos = data[data.length - 1].fotos;
+            });
         }
 
         function nextMonth() {
@@ -124,7 +148,6 @@
                 vm.evento = evento;
                 vm.evento.detalle = $sce.trustAsHtml(evento.detalle);
             }
-
         }
 
         function sendMail() {
