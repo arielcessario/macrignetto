@@ -1,5 +1,6 @@
 <div class="lista">
-    <i class="fa fa-search" aria-hidden="true"></i><input type="text" class="buscador" placeholder="Ingrese su búsqueda..." ng-model="$ctrl.filtro">
+    <i class="fa fa-search" aria-hidden="true"></i><input type="text" class="buscador"
+                                                          placeholder="Ingrese su búsqueda..." ng-model="$ctrl.filtro">
     <table>
         <thead>
         <tr>
@@ -8,7 +9,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="row in $ctrl.usuarios | filter:$ctrl.filtro | limitTo:$ctrl.limit:$ctrl.start"
+        <tr ng-repeat="row in $ctrl.usuarios | filter:$ctrl.filtro| paginacion:'usuarios' | limitTo:$ctrl.limit:$ctrl.start "
             ng-click="$ctrl.usuario=row;$ctrl.detailsOpen = true;">
             <td class="">{{row.nombre}}</td>
             <td class="">{{row.apellido}}</td>

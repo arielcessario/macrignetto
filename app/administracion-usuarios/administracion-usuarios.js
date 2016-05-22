@@ -27,8 +27,8 @@
         vm.usuario = {};
         vm.save = save;
         vm.start = 0;
-        $timeout(function(){
-            vm.limit = (vm.limit == undefined) ? 10 : vm.limit;
+        $timeout(function () {
+            vm.limit = (vm.limit == undefined) ? 2 : vm.limit;
         }, 0);
 
         UsuariosService.get().then(function (data) {
@@ -73,7 +73,7 @@
             var refUsuario = Model.refUsuarios;
             var arrUsuarios = FireService.createArrayRef(refUsuario);
             return arrUsuarios.$loaded(function (data) {
-                AcPaginacionVars.setPaginacion('usuarios',data.length);
+                //AcPaginacionVars.setPaginacion('usuarios', data.length);
                 return data;
             });
         }
