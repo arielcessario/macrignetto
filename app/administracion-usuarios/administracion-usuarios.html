@@ -9,13 +9,13 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="row in $ctrl.usuarios | filter:$ctrl.filtro| paginacion:'usuarios' | limitTo:$ctrl.limit:$ctrl.start "
+        <tr ng-repeat="row in $ctrl.usuarios | filter:$ctrl.filtro| paginacion:'usuarios':$ctrl.limit | limitTo:$ctrl.limit:$ctrl.start "
             ng-click="$ctrl.usuario=row;$ctrl.detailsOpen = true;">
             <td class="">{{row.nombre}}</td>
             <td class="">{{row.apellido}}</td>
         </tr>
         </tbody>
-        <ac-paginacion obj="'usuarios'" limit="$ctrl.limit" start="$ctrl.start"></ac-paginacion>
+        <ac-paginacion obj="'usuarios'" start="$ctrl.start"></ac-paginacion>
         <!--<tfoot>-->
         <!--<tr>-->
         <!--<td colspan="4">-->
