@@ -745,7 +745,7 @@ h1{
 .header-2-2 {
   font-family: 'Roboto', sans-serif;
   height: 50px;
-  width: 97%;
+  width: 100%;
   color: white;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#aebcbf+0,6e7774+50,0a0e0a+51,0a0809+100;Black+Gloss */
   background: rgb(174,188,191); /* Old browsers */
@@ -760,6 +760,7 @@ h1{
   //font-weight: bold;
   @media (min-width: 800px) {
     order: 1;
+    width: 97%;
   }
 }
 
@@ -792,20 +793,20 @@ h1{
 }
 .noticias-info {
   //width: 100%;
-  width: 25%;
+  width: 100%;
   height: 400px;
   position: relative;
   order:1;
   overflow: hidden;
+
+  @media (min-width: 800px) {
+    //height: 400px;
+    width: 25%;
+  }
+
   img{
     min-width: 956px;
     margin-left: calc(50% - 478px)!important;
-
-
-      }
-
-  @media (min-width: 800px) {
-    height: 400px;
   }
 }
 
@@ -1471,8 +1472,11 @@ ac-administracion-notas {
 }
 
 .noticia-destacada{
-  width: 50%;
+  width: 100%;
   order: 0;
+  @media (min-width: 800px) {
+    width: 50%;
+  }
 }
 
 button{
