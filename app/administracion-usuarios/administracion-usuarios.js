@@ -6,27 +6,30 @@
         .factory('UsuariosService', UsuariosService);
 
 
-
     ///// ADMINISTRACION DE USUARIOS /////
     function acAdministracionUsuarios() {
         return {
             bindings: {
-                searchFunction: '&'
+                limit: '<'
             },
             templateUrl: 'administracion-usuarios/administracion-usuarios.html',
             controller: AcUsuariosController
         }
     }
 
-    AcUsuariosController.$inject = ['UsuariosService'];
+    AcUsuariosController.$inject = ['UsuariosService', '$timeout'];
     /**
      * @constructor
      */
-    function AcUsuariosController(UsuariosService) {
+    function AcUsuariosController(UsuariosService, $timeout) {
         var vm = this;
         vm.usuarios = [];
         vm.usuario = {};
         vm.save = save;
+        vm.start = 0;
+        $timeout(function(){
+            vm.limit = (vm.limit == undefined) ? 2 : vm.limit;
+        }, 0);
 
         UsuariosService.get().then(function (data) {
             vm.usuarios = data;
@@ -44,8 +47,8 @@
         }
     }
 
-    UsuariosService.$inject = ['FireService', 'Model', '$q', 'FireVars'];
-    function UsuariosService(FireService, Model, $q, FireVars) {
+    UsuariosService.$inject = ['FireService', 'Model', '$q', 'AcPaginacionVars'];
+    function UsuariosService(FireService, Model, $q, AcPaginacionVars) {
 
         var service = this;
         service.get = get;
@@ -70,6 +73,7 @@
             var refUsuario = Model.refUsuarios;
             var arrUsuarios = FireService.createArrayRef(refUsuario);
             return arrUsuarios.$loaded(function (data) {
+                AcPaginacionVars.setPaginacion('usuarios',data.length);
                 return data;
             });
         }

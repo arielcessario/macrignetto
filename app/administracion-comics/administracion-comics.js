@@ -63,8 +63,8 @@
         }
     }
 
-    ComicsService.$inject = ['FireService', 'Model', '$q'];
-    function ComicsService(FireService, Model, $q) {
+    ComicsService.$inject = ['FireService', 'Model', '$q', 'AcPaginacionVars'];
+    function ComicsService(FireService, Model, $q, AcPaginacionVars) {
 
         var service = this;
         service.get = get;
@@ -94,6 +94,8 @@
             var refComic = Model.refComics;
             var arrComics = FireService.createArrayRef(refComic);
             return arrComics.$loaded(function (data) {
+                AcPaginacionVars.setPaginacion('comics',data.length);
+
                 return data;
             });
         }

@@ -12,6 +12,7 @@
         'Model',
         'login',
         'acContacts',
+        'acPaginacion',
         'acAdministracionUsuarios',
         'acAdministracionEventos',
         'acAdministracionNotas',
