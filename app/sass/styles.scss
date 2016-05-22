@@ -806,7 +806,9 @@ h1{
 
   img{
     min-width: 956px;
-    margin-left: calc(50% - 478px)!important;
+    @media (min-width: 800px) {
+      margin-left: calc(50% - 478px)!important;
+    }
   }
 }
 
