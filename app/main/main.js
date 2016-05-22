@@ -8,8 +8,8 @@
         .controller('MainController', MainController);
 
 
-    MainController.$inject = ['$scope', 'NotasService', 'EventosService', '$sce', '$location', 'ContactsService'];
-    function MainController($scope, NotasService, EventosService, $sce, $location, ContactsService) {
+    MainController.$inject = ['$scope', 'NotasService', 'EventosService', '$sce', '$location', 'ContactsService', 'ComicsService'];
+    function MainController($scope, NotasService, EventosService, $sce, $location, ContactsService, ComicsService) {
 
         var vm = this;
         vm.notas = [];
@@ -34,6 +34,7 @@
         vm.listaEventos = [];
         vm.evento = {};
         vm.eventos = [];
+        vm.comics = [];
 
         vm.email = '';
         vm.nombre = '';
@@ -149,6 +150,11 @@
                 vm.evento.detalle = $sce.trustAsHtml(evento.detalle);
             }
         }
+
+        ComicsService.get().then(function (data) {
+            console.log(data);
+            vm.comics = data;
+        })
 
         function sendMail() {
             if (vm.enviando) {
