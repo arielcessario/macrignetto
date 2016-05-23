@@ -801,7 +801,7 @@ h1{
 
   @media (min-width: 800px) {
     //height: 400px;
-    width: 25%;
+    width: 24.9%;
   }
 
   img{
@@ -1550,7 +1550,7 @@ ac-administracion-notas {
   width: 100%;
   order: 0;
   @media (min-width: 800px) {
-    width: 50%;
+    width: 49.8%;
   }
 }
 
@@ -1584,6 +1584,11 @@ button:hover{
   o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
+.comic-destacada, .comic-info{
+  border: 0.1px solid red;
+}
+
+
 
 .fa-search{
   font-size: 50px!important;
@@ -1627,3 +1632,4 @@ button:hover{
   display: flex;
   align-items: center;
 }
+
