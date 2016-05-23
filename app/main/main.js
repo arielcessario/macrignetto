@@ -151,10 +151,16 @@
             }
         }
 
-        ComicsService.get().then(function (data) {
+        /*
+         ComicsService.get().then(function (data) {
+         console.log(data);
+         vm.comics = data;
+         })
+         */
+        ComicsService.getUltimosComics().then(function (data) {
             console.log(data);
             vm.comics = data;
-        })
+        });
 
         function sendMail() {
             if (vm.enviando) {

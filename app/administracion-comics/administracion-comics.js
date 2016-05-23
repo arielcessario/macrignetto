@@ -69,6 +69,7 @@
         var service = this;
         service.get = get;
         service.save = save;
+        service.getUltimosComics = getUltimosComics;
 
 
         return service;
@@ -109,6 +110,43 @@
         function update(arr, obj) {
             return arr.$save(FireService.formatObj(obj)).then(function (data) {
                 return data;
+            });
+        }
+
+        function getUltimosComics() {
+            var refComic = Model.refComics;
+            var arrComics = FireService.createArrayRef(refComic);
+            return arrComics.$loaded(function (data) {
+                var list = [];
+                var count = 0;
+                var destacadaSi = 0;
+                var destacadaNo = 0;
+                for (var i = 0; i < data.length; i++) {
+                    list.push(data[i]);
+
+                    count = count + (data[i].status == 1 ? 1 : 2);
+                    destacadaSi = destacadaSi + (data[i].status == 2 ? 1 : 0);
+                    destacadaNo = destacadaNo + (data[i].status == 1 ? 1 : 0);
+                    if(count >= 6) {
+                        if(destacadaSi == 4 && destacadaNo > 0) {
+                            for(var j=0; j < list.length; j++) {
+                                if(list[j].status == 0) {
+                                    list.splice(j,1);
+                                    break;
+                                }
+                            }
+                        } else if(destacadaSi == 2 && destacadaNo > 4) {
+                            for(var j=0; j < list.length; j++) {
+                                if(list[j].status == 0) {
+                                    list.splice(j,1);
+                                    break;
+                                }
+                            }
+                        }
+                        return list;
+                    }
+                }
+                return list;
             });
         }
     }
