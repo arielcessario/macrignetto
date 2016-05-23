@@ -127,7 +127,7 @@
                     count = count + (data[i].status == 1 ? 1 : 2);
                     destacadaSi = destacadaSi + (data[i].status == 2 ? 1 : 0);
                     destacadaNo = destacadaNo + (data[i].status == 1 ? 1 : 0);
-                    if(count >= 6) {
+                    if(count >= 8) {
                         if(destacadaSi == 4 && destacadaNo > 0) {
                             for(var j=0; j < list.length; j++) {
                                 if(list[j].status == 0) {
