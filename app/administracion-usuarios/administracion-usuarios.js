@@ -28,7 +28,7 @@
         vm.save = save;
         vm.start = 0;
         $timeout(function () {
-            vm.limit = (vm.limit == undefined) ? 3 : vm.limit;
+            vm.limit = (vm.limit == undefined) ? 10 : vm.limit;
         }, 0);
 
         UsuariosService.get().then(function (data) {

@@ -1,87 +1,71 @@
-<div class="lista">
-    <i class="fa fa-search" aria-hidden="true"></i><input type="text" class="buscador"
-                                                          placeholder="Ingrese su búsqueda..." ng-model="$ctrl.filtro">
-    <table>
-        <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="row in $ctrl.usuarios | filter:$ctrl.filtro| paginacion:'usuarios':$ctrl.limit | limitTo:$ctrl.limit:$ctrl.start "
-            ng-click="$ctrl.usuario=row;$ctrl.detailsOpen = true;">
-            <td class="">{{row.nombre}}</td>
-            <td class="">{{row.apellido}}</td>
-        </tr>
-        </tbody>
-        <ac-paginacion obj="'usuarios'" start="$ctrl.start"></ac-paginacion>
-        <!--<tfoot>-->
-        <!--<tr>-->
-        <!--<td colspan="4">-->
-        <!--<div class="table-td">-->
-        <!--<button class="btn-paginacion-first"-->
-        <!--ng-click="$ctrl.first();">Primera-->
-        <!--</button>-->
-        <!--<button class="btn-paginacion-prev"-->
-        <!--ng-click="$ctrl.prev();">Ant.-->
-        <!--</button>-->
-        <!--<div class="paginacion-paginas">-->
-        <!--<span>{{'PAGE' | xlat}} {{$ctrl.pagina}} {{'OF' | xlat}} {{$ctrl.paginas}}</span>-->
-        <!--</div>-->
-        <!--<div class="paginacion-go-to">{{'GO_TO' | xlat}} <input type="number"-->
-        <!--ng-model="$ctrl.pagina"-->
-        <!--ng-keyup="$ctrl.goToPagina();">-->
-        <!--</div>-->
+<div class="pantalla-administracion-top">
+    <div class="details">
+        <div class="title-administracion">DETALLES</div>
+        <div class="input">
+            <label for="">Nombre</label>
+            <input type="text" ng-model="$ctrl.usuario.nombre">
 
-        <!--<button class="btn-paginacion-next"-->
-        <!--ng-click="$ctrl.next();">Sig.-->
-        <!--</button>-->
-        <!--<button class="btn-paginacion-last"-->
-        <!--ng-click="$ctrl.last();">Última-->
-        <!--</button>-->
-        <!--</div>-->
-        <!--</td>-->
-        <!--</tr>-->
-        <!--</tfoot>-->
-    </table>
-    <div class="botonera">
-        <button ng-click="$ctrl.detailsOpen = true; $ctrl.usuario = {} ;">Nuevo</button>
-    </div>
-</div>
-<div class="form details">
-    <div>
-        <label for="">Nombre</label>
-        <input type="text" ng-model="$ctrl.usuario.nombre">
+        </div>
+        <div class="input">
+            <label for="">Apellido</label>
+            <input type="text" ng-model="$ctrl.usuario.apellido">
 
-    </div>
-    <div>
-        <label for="">Apellido</label>
-        <input type="text" ng-model="$ctrl.usuario.apellido">
+        </div>
+        <div class="input">
+            <label for="">Email</label>
+            <input type="text" ng-model="$ctrl.usuario.email">
 
-    </div>
-    <div>
-        <label for="">Email</label>
-        <input type="text" ng-model="$ctrl.usuario.email">
-
-    </div>
-    <div>
-        <select name="" id="" ng-model="$ctrl.usuario.rol">
+        </div>
+        <div class="input">
             <label for="">Rol</label>
+            <select name="" id="" ng-model="$ctrl.usuario.rol">
+                <label for="">Rol</label>
 
-            <option value="0">Administrador</option>
-            <option value="1">Redactor</option>
-            <option value="2">Usuario</option>
-        </select>
-    </div>
-    <div>
-        <select name="" id="" ng-model="$ctrl.usuario.status">
+                <option value="0">Administrador</option>
+                <option value="1">Redactor</option>
+                <option value="2">Usuario</option>
+            </select>
+        </div>
+        <div class="input">
             <label for="">Estado</label>
-            <option value="0">Inactivo</option>
-            <option value="1">Activo</option>
-        </select>
+            <select name="" id="" ng-model="$ctrl.usuario.status">
+                <label for="">Estado</label>
+                <option value="0">Inactivo</option>
+                <option value="1">Activo</option>
+            </select>
+        </div>
+        <div class="botonera">
+            <button ng-click="$ctrl.detailsOpen = fa.se; $ctrl.save();">Guardar</button>
+        </div>
     </div>
-    <div class="botonera">
-        <button ng-click="$ctrl.detailsOpen = fa.se; $ctrl.save();">Guardar</button>
+    <div class="lista">
+        <div class="title-administracion">SELECCIONA DE LA LISTA</div>
+        <div class="search-administracion">
+            <i class="fa fa-search" aria-hidden="true"></i><input type="text" class="buscador"
+                                                                  placeholder="Ingrese su búsqueda..."
+                                                                  ng-model="$ctrl.filtro">
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Rol</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in $ctrl.usuarios | filter:$ctrl.filtro| paginacion:'usuarios':$ctrl.limit | limitTo:$ctrl.limit:$ctrl.start "
+                ng-click="$ctrl.usuario=row;$ctrl.detailsOpen = true;">
+                <td class="">{{row.nombre}}</td>
+                <td class="">{{row.apellido}}</td>
+                <td class="">{{row.rol}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <ac-paginacion obj="'usuarios'" start="$ctrl.start"></ac-paginacion>
+        <div class="botonera">
+            <button ng-click="$ctrl.detailsOpen = true; $ctrl.usuario = {} ;">Nuevo</button>
+        </div>
     </div>
+
 </div>
