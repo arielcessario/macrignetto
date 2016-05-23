@@ -36,6 +36,7 @@
         </div>
         <div class="botonera">
             <button ng-click="$ctrl.detailsOpen = fa.se; $ctrl.save();">Guardar</button>
+            <button ng-click="$ctrl.detailsOpen = true; $ctrl.usuario = {} ;">Nuevo</button>
         </div>
     </div>
     <div class="lista">
@@ -63,9 +64,7 @@
             </tbody>
         </table>
         <ac-paginacion obj="'usuarios'" start="$ctrl.start"></ac-paginacion>
-        <div class="botonera">
-            <button ng-click="$ctrl.detailsOpen = true; $ctrl.usuario = {} ;">Nuevo</button>
-        </div>
+
     </div>
 
 </div>
