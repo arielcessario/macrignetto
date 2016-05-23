@@ -958,7 +958,8 @@ h1 {
   //height: 65px;
   height: 85px;
   //width: 100%;
-  width: calc(100% - 2px);
+  //width: calc(100% - 2px);
+  width: 100%;
 }
 
 /*
@@ -1049,7 +1050,8 @@ h3 {
 
 #agenda img {
 
-  min-width: 700px !important;
+  //min-width: 700px !important;
+  min-width: 600px!important;
   //margin-left: calc(50% - 478px)!important;
 
 }
@@ -1139,6 +1141,7 @@ footer{
   @media (min-width: 800px) {
     //width: 40%;
     width: 300px;
+    margin-top: 50px;
   }
 }
 
