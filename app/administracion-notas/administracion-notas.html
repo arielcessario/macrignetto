@@ -1,123 +1,123 @@
-<div class="lista">
-    <i class="fa fa-search" aria-hidden="true"></i><input type="text" class="buscador" placeholder="Ingrese su búsqueda..." ng-model="$ctrl.filtro">
-    <table>
-        <thead>
-        <tr>
-            <th>Titulo</th>
-            <th>Fecha</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="row in $ctrl.notas | filter:$ctrl.filtro | limitTo:$ctrl.limit:$ctrl.start"
-            ng-click="$ctrl.nota=row;
+<div class="pantalla-administracion-top">
+    <div class="main-image">
+
+        <div class="title-administracion">IMAGEN PRINCIPAL</div>
+        <div class="left">
+            <div class="input">
+                <label for="">Destacada</label>
+                <select name="" id="" ng-model="$ctrl.nota.destacada">
+                    <option value="0">No</option>
+                    <option value="1">Si</option>
+                </select>
+            </div>
+        </div>
+        <div id="foto-main" class="input-foto-main">
+            <img ng-src="{{'images/'+$ctrl.foto_main.nombre}}" alt="" height="100p">
+            <input type="file" name="images" id="images"
+                   ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,1,'')"/>
+        </div>
+
+    </div>
+    <div class="lista">
+        <div class="title-administracion">SELECCIONA DE LA LISTA</div>
+        <div class="search-administracion">
+            <i class="fa fa-search" aria-hidden="true"></i><input type="text" class="buscador"
+                                                                  placeholder="Ingrese su búsqueda..."
+                                                                  ng-model="$ctrl.filtro">
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Fecha</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in $ctrl.notas | filter:$ctrl.filtro | limitTo:$ctrl.limit:$ctrl.start"
+                ng-click="$ctrl.nota=row;
             $ctrl.foto_01.nombre = row.fotos[0].nombre;
             $ctrl.foto_02.nombre = row.fotos[1].nombre;
             $ctrl.foto_03.nombre = row.fotos[2].nombre;
             $ctrl.foto_04.nombre = row.fotos[3].nombre;
             $ctrl.detailsOpen = true;">
-            <td class="">{{row.titulo}}</td>
-            <td class="">{{row.fecha | date}}</td>
-        </tr>
-        </tbody>
-        <!--<tfoot>-->
-        <!--<tr>-->
-        <!--<td colspan="4">-->
-        <!--<div class="table-td">-->
-        <!--<button class="btn-paginacion-first"-->
-        <!--ng-click="$ctrl.first();">Primera-->
-        <!--</button>-->
-        <!--<button class="btn-paginacion-prev"-->
-        <!--ng-click="$ctrl.prev();">Ant.-->
-        <!--</button>-->
-        <!--<div class="paginacion-paginas">-->
-        <!--<span>{{'PAGE' | xlat}} {{$ctrl.pagina}} {{'OF' | xlat}} {{$ctrl.paginas}}</span>-->
-        <!--</div>-->
-        <!--<div class="paginacion-go-to">{{'GO_TO' | xlat}} <input type="number"-->
-        <!--ng-model="$ctrl.pagina"-->
-        <!--ng-keyup="$ctrl.goToPagina();">-->
-        <!--</div>-->
+                <td class="">{{row.titulo}}</td>
+                <td class="">{{row.fecha | date}}</td>
+            </tr>
+            </tbody>
 
-        <!--<button class="btn-paginacion-next"-->
-        <!--ng-click="$ctrl.next();">Sig.-->
-        <!--</button>-->
-        <!--<button class="btn-paginacion-last"-->
-        <!--ng-click="$ctrl.last();">Última-->
-        <!--</button>-->
-        <!--</div>-->
-        <!--</td>-->
-        <!--</tr>-->
-        <!--</tfoot>-->
-    </table>
-    <div class="botonera">
-        <button ng-click="$ctrl.detailsOpen = true; $ctrl.nota = {} ;">Nuevo</button>
+        </table>
     </div>
 </div>
-<div class="form details">
-    <div>
-        <label for="">Titulo</label>
-        <input type="text" ng-model="$ctrl.nota.titulo">
-    </div>
-    <div>
-        <label for="">Fuente</label>
-        <input type="text" ng-model="$ctrl.nota.fuente">
+<div class="pantalla-administracion-bottom">
+    <div class="details">
+        <div class="title-administracion">DETALLES</div>
+        <div class="input">
+            <label for="">Titulo</label>
+            <input type="text" ng-model="$ctrl.nota.titulo">
+        </div>
+        <div class="input">
+            <label for="">Fuente</label>
+            <input type="text" ng-model="$ctrl.nota.fuente">
 
-    </div>
-    <div>
-        <label for="">Detalle</label>
-        <div text-angular ng-model="$ctrl.nota.detalle"></div>
-    </div>
-    <div>
-        <label for="">Destacada</label>
-        <select name="" id="" ng-model="$ctrl.nota.destacada">
-            <option value="0">No</option>
-            <option value="1">Si</option>
-        </select>
-    </div>
-    <div>
-        <label for="">Estado</label>
-        <select name="" id="" ng-model="$ctrl.nota.status">
-            <option value="0">Inactivo</option>
-            <option value="1">Activo</option>
-        </select>
-    </div>
-    <div class="foto-container">
-        <div class="foto">
+        </div>
+        <div class="input">
+            <label for="">Detalle</label>
+            <div text-angular ng-model="$ctrl.nota.detalle"></div>
+        </div>
+        <div class="input">
+            <label for="">Destacada</label>
+            <select name="" id="" ng-model="$ctrl.nota.destacada">
+                <option value="0">No</option>
+                <option value="1">Si</option>
+            </select>
+        </div>
+        <div class="input">
+            <label for="">Estado</label>
+            <select name="" id="" ng-model="$ctrl.nota.status">
+                <option value="0">Inactivo</option>
+                <option value="1">Activo</option>
+            </select>
+        </div>
+        <div class="foto-container">
+            <div class="foto">
 
-            <div id="slider-01-foto" class="input-foto">
-                <img ng-src="{{'images/'+$ctrl.foto_01.nombre}}" alt="" height="100" width="150">
-                <input type="file" name="images" id="images"
-                       ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,1,'')"/>
+                <div id="slider-01-foto" class="input-foto">
+                    <img ng-src="{{'images/'+$ctrl.foto_01.nombre}}" alt="" height="100" width="150">
+                    <input type="file" name="images" id="images"
+                           ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,1,'')"/>
+                </div>
+            </div>
+
+            <div class="foto">
+
+                <div id="slider-02-foto" class="input-foto">
+                    <img ng-src="{{'images/'+$ctrl.foto_02.nombre}}" alt="" height=100" width="150">
+                    <input type="file" name="images" id="images"
+                           ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,2,'')"/>
+                </div>
+            </div>
+
+            <div class="foto">
+
+                <div id="slider-03-foto" class="input-foto">
+                    <img ng-src="{{'images/'+$ctrl.foto_03.nombre}}" alt="" height="100" width="150">
+                    <input type="file" name="images" id="images"
+                           ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,3,'')"/>
+                </div>
+            </div>
+
+            <div class="foto">
+
+                <div id="slider-04-foto" class="input-foto">
+                    <img ng-src="{{'images/'+$ctrl.foto_04.nombre}}" alt="" height="100" width="150">
+                    <input type="file" name="images" id="images"
+                           ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,4,'')"/>
+                </div>
             </div>
         </div>
-
-        <div class="foto">
-
-            <div id="slider-02-foto" class="input-foto">
-                <img ng-src="{{'images/'+$ctrl.foto_02.nombre}}" alt="" height=100" width="150">
-                <input type="file" name="images" id="images"
-                       ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,2,'')"/>
-            </div>
+        <div class="botonera">
+            <button ng-click="$ctrl.detailsOpen = fa.se; $ctrl.save();">Guardar</button>
+            <button ng-click="$ctrl.detailsOpen = true; $ctrl.nota = {} ;">Nuevo</button>
         </div>
-
-        <div class="foto">
-
-            <div id="slider-03-foto" class="input-foto">
-                <img ng-src="{{'images/'+$ctrl.foto_03.nombre}}" alt="" height="100" width="150">
-                <input type="file" name="images" id="images"
-                       ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,3,'')"/>
-            </div>
-        </div>
-
-        <div class="foto">
-
-            <div id="slider-04-foto" class="input-foto">
-                <img ng-src="{{'images/'+$ctrl.foto_04.nombre}}" alt="" height="100" width="150">
-                <input type="file" name="images" id="images"
-                       ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,4,'')"/>
-            </div>
-        </div>
-    </div>
-    <div class="botonera">
-        <button ng-click="$ctrl.detailsOpen = fa.se; $ctrl.save();">Guardar</button>
     </div>
 </div>

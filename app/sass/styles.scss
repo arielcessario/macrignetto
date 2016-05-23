@@ -20,23 +20,23 @@ body {
   }
 }
 
-
 //SECCION PARA EL MENU
 .header {
   font-family: 'Merriweather', serif;
   font-weight: bolder;
-  color:black;
+  color: black;
   //max-width: 100%;
   width: 100%;
   height: 50px;
-  background: rgba(252,234,187,1);
-  background: -moz-linear-gradient(top, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(252,234,187,1)), color-stop(50%, rgba(252,205,77,1)), color-stop(51%, rgba(248,181,0,1)), color-stop(100%, rgba(251,223,147,1)));
-  background: -webkit-linear-gradient(top, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
-  background: -o-linear-gradient(top, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
-  background: -ms-linear-gradient(top, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
-  background: linear-gradient(to bottom, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#fbdf93', GradientType=0 );  /*-webkit-transition: all 0.4s ease;
+  background: rgba(252, 234, 187, 1);
+  background: -moz-linear-gradient(top, rgba(252, 234, 187, 1) 0%, rgba(252, 205, 77, 1) 50%, rgba(248, 181, 0, 1) 51%, rgba(251, 223, 147, 1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(252, 234, 187, 1)), color-stop(50%, rgba(252, 205, 77, 1)), color-stop(51%, rgba(248, 181, 0, 1)), color-stop(100%, rgba(251, 223, 147, 1)));
+  background: -webkit-linear-gradient(top, rgba(252, 234, 187, 1) 0%, rgba(252, 205, 77, 1) 50%, rgba(248, 181, 0, 1) 51%, rgba(251, 223, 147, 1) 100%);
+  background: -o-linear-gradient(top, rgba(252, 234, 187, 1) 0%, rgba(252, 205, 77, 1) 50%, rgba(248, 181, 0, 1) 51%, rgba(251, 223, 147, 1) 100%);
+  background: -ms-linear-gradient(top, rgba(252, 234, 187, 1) 0%, rgba(252, 205, 77, 1) 50%, rgba(248, 181, 0, 1) 51%, rgba(251, 223, 147, 1) 100%);
+  background: linear-gradient(to bottom, rgba(252, 234, 187, 1) 0%, rgba(252, 205, 77, 1) 50%, rgba(248, 181, 0, 1) 51%, rgba(251, 223, 147, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fceabb', endColorstr='#fbdf93', GradientType=0);
+  /*-webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -ms-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
@@ -48,17 +48,16 @@ body {
     display: flex;
     justify-content: center;
     height: 50px;
-    -webkit-box-shadow: 0px 15px 5px -9px rgba(0,0,0,0.09);
-    -moz-box-shadow: 0px 15px 5px -9px rgba(0,0,0,0.09);
-    box-shadow: 0px 15px 5px -9px rgba(0,0,0,0.09);
+    -webkit-box-shadow: 0px 15px 5px -9px rgba(0, 0, 0, 0.09);
+    -moz-box-shadow: 0px 15px 5px -9px rgba(0, 0, 0, 0.09);
+    box-shadow: 0px 15px 5px -9px rgba(0, 0, 0, 0.09);
   }
 }
 
-
-.btn-comenzar{
+.btn-comenzar {
   color: black;
   cursor: pointer;
-  font-size:16px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 45px;
   max-width: 160px;
@@ -72,11 +71,12 @@ body {
   -ms-transition: all 0.4s;
   -o-transition: all 0.4s;
   transition: all 0.4s;
-  &:hover { text-decoration: none; }
+  &:hover {
+    text-decoration: none;
+  }
 }
 
-
-.btn-comenzar{
+.btn-comenzar {
   background: rgba(red, 0);
   border-bottom: 1px solid;
   color: cadetblue;
@@ -90,21 +90,21 @@ body {
   }
 }
 
-.texto-main{
+.texto-main {
   text-align: center;
   font-family: 'Oswald', sans-serif;
   font-size: 30px;
   color: cadetblue;
   margin-top: 50px;
   padding: 20px;
-  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-  -moz-animation:fadeIn ease-in 1;
-  animation:fadeIn ease-in 1;
-  -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
-  -webkit-animation-duration:2s;
-  -moz-animation-duration:2s;
-  animation-duration:2s;
+  -webkit-animation: fadeIn ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  animation-duration: 2s;
   text-transform: uppercase;
 
   @media (max-width: 500px) {
@@ -114,7 +114,7 @@ body {
 
 }
 
-.texto-main2{
+.texto-main2 {
   max-width: 1000px;
   //text-align: left;
   text-align: center;
@@ -125,21 +125,21 @@ body {
   margin-top: 10px;
   margin: auto;
   padding: 20px;
-  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-  -moz-animation:fadeIn ease-in 1;
-  animation:fadeIn ease-in 1;
-  -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
-  -webkit-animation-duration:3s;
-  -moz-animation-duration:3s;
-  animation-duration:3s;
+  -webkit-animation: fadeIn ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  animation-duration: 3s;
   @media (max-width: 500px) {
     font-size: 18px;
     margin-top: 0px;
   }
 }
 
-.texto-main3{
+.texto-main3 {
   max-width: 1000px;
   //text-align: left;
   text-align: center;
@@ -150,14 +150,14 @@ body {
   margin-top: 10px;
   margin: auto;
   padding: 20px;
-  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-  -moz-animation:fadeIn ease-in 1;
-  animation:fadeIn ease-in 1;
-  -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
-  -webkit-animation-duration:3s;
-  -moz-animation-duration:3s;
-  animation-duration:3s;
+  -webkit-animation: fadeIn ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  animation-duration: 3s;
   @media (max-width: 500px) {
     font-size: 16px;
     margin-top: 0px;
@@ -205,7 +205,7 @@ select option {
   transform: rotate(180deg);
 }
 
-.buscador{
+.buscador {
   font-family: 'Merriweather', serif;
   font-size: 16px;
 }
@@ -262,10 +262,32 @@ select option {
   }
 }
 
-@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 .menu-mobile {
   display: flex;
@@ -295,7 +317,6 @@ select option {
   }
 }
 
-
 .menu-mobile-panel {
   font-family: 'Oswald', sans-serif;
   width: 100%;
@@ -311,7 +332,8 @@ select option {
   background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
   background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
   background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);*/
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );  position: fixed;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=0);
+  position: fixed;
   bottom: 0px;
   top: 50px;
   z-index: 500;
@@ -319,17 +341,17 @@ select option {
   text-align: center;
   padding-top: 24px;
   opacity: 0;
-  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-  -moz-animation:fadeIn ease-in 1;
-  animation:fadeIn ease-in 1;
-  -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
-  -webkit-animation-duration:.2s;
-  -moz-animation-duration:.2s;
-  animation-duration:.2s;
+  -webkit-animation: fadeIn ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: .2s;
+  -moz-animation-duration: .2s;
+  animation-duration: .2s;
 
   //border: 5px solid white;
-  a{
+  a {
     text-decoration: none;
   }
 
@@ -381,7 +403,6 @@ select option {
   -o-animation: menu-mobile-leave 0.4s;
   animation: menu-mobile-leave 0.4s;
 }
-
 
 @keyframes menu-mobile-enter {
   0% {
@@ -461,28 +482,26 @@ select option {
       //animation: latido 1s infinite;
       pointer-events: none;
 
-
     }
   }
 
 }
 
-
 #menu-mobile-logo {
   opacity: 0;
   margin-bottom: 30px;
-  -webkit-animation:fadeIn ease-in-out 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-  -moz-animation:fadeIn ease-in-out 1;
-  animation:fadeIn ease-in-out 1;
-  -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
-  -webkit-animation-duration:4s;
-  -moz-animation-duration:4s;
-  animation-duration:4s;
+  -webkit-animation: fadeIn ease-in-out 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation: fadeIn ease-in-out 1;
+  animation: fadeIn ease-in-out 1;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 4s;
+  -moz-animation-duration: 4s;
+  animation-duration: 4s;
 }
 
-@keyframes latido{
-  0%{
+@keyframes latido {
+  0% {
 
     -webkit-transform: scale(5, 5);
     -moz-transform: scale(5, 5);
@@ -490,7 +509,7 @@ select option {
     -o-transform: scale(5, 5);
     transform: scale(5, 5);
   }
-  75%{
+  75% {
 
     -webkit-transform: scale(5.2, 5.2);
     -moz-transform: scale(5.2, 5.2);
@@ -498,7 +517,7 @@ select option {
     -o-transform: scale(5.2, 5.2);
     transform: scale(5.2, 5.2);
   }
-  100%{
+  100% {
 
     -webkit-transform: scale(5, 5);
     -moz-transform: scale(5, 5);
@@ -599,14 +618,14 @@ select option {
         //color: white;
         font-size: 18px;
         opacity: 0;
-        -webkit-animation:fadeIn ease-in-out 2;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-        -moz-animation:fadeIn ease-in-out 2;
-        animation:fadeIn ease-in-out 2;
-        -moz-animation-fill-mode:forwards;
-        animation-fill-mode:forwards;
-        -webkit-animation-duration:2s;
-        -moz-animation-duration:2s;
-        animation-duration:2s;
+        -webkit-animation: fadeIn ease-in-out 2; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+        -moz-animation: fadeIn ease-in-out 2;
+        animation: fadeIn ease-in-out 2;
+        -moz-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-duration: 2s;
+        -moz-animation-duration: 2s;
+        animation-duration: 2s;
 
       }
 
@@ -626,7 +645,7 @@ select option {
       .menu-desktop-btn:active {
         //color: white;
         cursor: pointer;
-        color:  #EF037C;
+        color: #EF037C;
         //border-radius: 2px;
         //background-color: #406276;
         opacity: 1;
@@ -646,6 +665,7 @@ select option {
   }
 
 }
+
 /*
 .display-menu-desktop {
   display: none;
@@ -663,15 +683,16 @@ select option {
     top: 100px;
   }
 }
-.header-1{
-  background-color: rgba(242,151,146,1);
-  background-image: url("fondo-globos.png"), -moz-linear-gradient(top, rgba(242,151,146,1) 0%, rgba(239,1,124,1) 100%);
-  background-image: url("fondo-globos.png"), -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242,151,146,1)), color-stop(100%, rgba(239,1,124,1)));
-  background-image: url("fondo-globos.png"), -webkit-linear-gradient(top, rgba(242,151,146,1) 0%, rgba(239,1,124,1) 100%);
-  background-image: url("fondo-globos.png"), -o-linear-gradient(top, url("fondo-globos.png"), rgba(242,151,146,1) 0%, rgba(239,1,124,1) 100%);
-  background-image: url("fondo-globos.png"), -ms-linear-gradient(top, rgba(242,151,146,1) 0%, rgba(239,1,124,1) 100%);
-  background-image: url("fondo-globos.png"),linear-gradient(to bottom, rgba(242,151,146,1) 0%, rgba(239,1,124,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f29792', endColorstr='#ef017c', GradientType=0 );
+
+.header-1 {
+  background-color: rgba(242, 151, 146, 1);
+  background-image: url("fondo-globos.png"), -moz-linear-gradient(top, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background-image: url("fondo-globos.png"), -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242, 151, 146, 1)), color-stop(100%, rgba(239, 1, 124, 1)));
+  background-image: url("fondo-globos.png"), -webkit-linear-gradient(top, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background-image: url("fondo-globos.png"), -o-linear-gradient(top, url("fondo-globos.png"), rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background-image: url("fondo-globos.png"), -ms-linear-gradient(top, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background-image: url("fondo-globos.png"), linear-gradient(to bottom, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f29792', endColorstr='#ef017c', GradientType=0);
   background-repeat: no-repeat;
   background-position: center;
   height: 100px;
@@ -684,27 +705,26 @@ select option {
 
   }
 }
-h1{
+
+h1 {
   font-family: 'Droid Serif', serif;
   text-transform: uppercase;
   font-size: 45px;
   //font-weight: bold;
-  color:#fff;
-  text-shadow:2px 2px black;
+  color: #fff;
+  text-shadow: 2px 2px black;
   @media (min-width: 800px) {
     font-size: 72px;
   }
 
-
 }
+
 .header-2 {
   display: flex;
   flex-direction: column;
   width: 100%;
 
-
-
-  h2{
+  h2 {
     text-transform: uppercase;
     padding: 5px;
     font-family: 'Merriweather', serif;
@@ -716,25 +736,24 @@ h1{
 }
 
 .header-2-1 {
-  color: white!important;
+  color: white !important;
 
   font-family: 'Roboto', serif;
   font-size: 16px;
   height: 50px;
   width: 100%;
-  background-color: rgba(242,151,146,1);
-  background-image: -moz-linear-gradient(top, rgba(242,151,146,1) 0%, rgba(239,1,124,1) 100%);
-  background-image:  -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242,151,146,1)), color-stop(100%, rgba(239,1,124,1)));
-  background-image: -webkit-linear-gradient(top, rgba(242,151,146,1) 0%, rgba(239,1,124,1) 100%);
-  background-image: -o-linear-gradient(top, url("fondo-globos.png"), rgba(242,151,146,1) 0%, rgba(239,1,124,1) 100%);
-  background-image: -ms-linear-gradient(top, rgba(242,151,146,1) 0%, rgba(239,1,124,1) 100%);
-  background-image: linear-gradient(to bottom, rgba(242,151,146,1) 0%, rgba(239,1,124,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f29792', endColorstr='#ef017c', GradientType=0 );
+  background-color: rgba(242, 151, 146, 1);
+  background-image: -moz-linear-gradient(top, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242, 151, 146, 1)), color-stop(100%, rgba(239, 1, 124, 1)));
+  background-image: -webkit-linear-gradient(top, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background-image: -o-linear-gradient(top, url("fondo-globos.png"), rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background-image: -ms-linear-gradient(top, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background-image: linear-gradient(to bottom, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f29792', endColorstr='#ef017c', GradientType=0);
   display: flex;
   justify-content: space-around;
   align-items: center;
   order: 1;
-
 
   @media (min-width: 800px) {
     order: 3;
@@ -748,11 +767,11 @@ h1{
   width: 100%;
   color: white;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#aebcbf+0,6e7774+50,0a0e0a+51,0a0809+100;Black+Gloss */
-  background: rgb(174,188,191); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(174,188,191,1) 0%, rgba(110,119,116,1) 50%, rgba(10,14,10,1) 51%, rgba(10,8,9,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(174,188,191,1) 0%,rgba(110,119,116,1) 50%,rgba(10,14,10,1) 51%,rgba(10,8,9,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(174,188,191,1) 0%,rgba(110,119,116,1) 50%,rgba(10,14,10,1) 51%,rgba(10,8,9,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-   display: flex;
+  background: rgb(174, 188, 191); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(174, 188, 191, 1) 0%, rgba(110, 119, 116, 1) 50%, rgba(10, 14, 10, 1) 51%, rgba(10, 8, 9, 1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(174, 188, 191, 1) 0%, rgba(110, 119, 116, 1) 50%, rgba(10, 14, 10, 1) 51%, rgba(10, 8, 9, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(174, 188, 191, 1) 0%, rgba(110, 119, 116, 1) 50%, rgba(10, 14, 10, 1) 51%, rgba(10, 8, 9, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  display: flex;
   justify-content: space-around;
   align-items: center;
   order: 2;
@@ -768,35 +787,37 @@ h1{
   height: 50px;
   width: 100%;
   width: 100%;
-  background-color: rgba(242,151,146,1);
-  background-image: -moz-linear-gradient(top, rgba(242,151,146,1) 0%, rgba(239,1,124,1) 100%);
-  background-image:  -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242,151,146,1)), color-stop(100%, rgba(239,1,124,1)));
-  background-image: -webkit-linear-gradient(top, rgba(242,151,146,1) 0%, rgba(239,1,124,1) 100%);
-  background-image: -o-linear-gradient(top, url("fondo-globos.png"), rgba(242,151,146,1) 0%, rgba(239,1,124,1) 100%);
-  background-image: -ms-linear-gradient(top, rgba(242,151,146,1) 0%, rgba(239,1,124,1) 100%);
-  background-image: linear-gradient(to bottom, rgba(242,151,146,1) 0%, rgba(239,1,124,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f29792', endColorstr='#ef017c', GradientType=0 );
-   display: flex;
+  background-color: rgba(242, 151, 146, 1);
+  background-image: -moz-linear-gradient(top, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242, 151, 146, 1)), color-stop(100%, rgba(239, 1, 124, 1)));
+  background-image: -webkit-linear-gradient(top, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background-image: -o-linear-gradient(top, url("fondo-globos.png"), rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background-image: -ms-linear-gradient(top, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background-image: linear-gradient(to bottom, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f29792', endColorstr='#ef017c', GradientType=0);
+  display: flex;
   justify-content: center;
   align-items: center;
   order: 3;
-  h2{
-    color: white!important;
-    font-size: 30px!important;
+  h2 {
+    color: white !important;
+    font-size: 30px !important;
   }
   @media (min-width: 800px) {
     order: 2;
   }
 }
-.container{
+
+.container {
   //height: 600px;
 }
+
 .noticias-info, .comic-info {
   //width: 100%;
   width: 100%;
   height: 400px;
   position: relative;
-  order:1;
+  order: 1;
   overflow: hidden;
 
   @media (min-width: 800px) {
@@ -804,13 +825,13 @@ h1{
     width: 25%;
   }
 
-  img{
+  img {
 
     min-width: 956px;
 
     @media (min-width: 800px) {
-      margin-left: calc(50% - 478px)!important;
-      background: rgba(0,255,255, 0.5);
+      margin-left: calc(50% - 478px) !important;
+      background: rgba(0, 255, 255, 0.5);
       transition: all .3s linear;
     }
   }
@@ -822,9 +843,9 @@ h1{
   margin-right: 20px;
   margin-bottom: 20px;
   cursor: pointer;
-  box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
+  box-shadow: rgba(0, 0, 0, .2) 3px 5px 5px;
 
-  .noticias-texto{
+  .noticias-texto {
     opacity: 0;
   }
 }
@@ -837,18 +858,33 @@ h1{
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0,0,0, 0.5);
+  background: rgba(0, 0, 0, 0.5);
   transition: all .2s linear;
 }
 
-.tint:hover:before { background: none; }
+.tint:hover:before {
+  background: none;
+}
 
-.t2:before { background: rgba(0,0,255, 0.5); }
-.t3:before { background: rgba(255,0,0, 0.5); }
-.t4:before { background: rgba(0,255,0, 0.5); }
-.t5:before { background: rgba(255,0,240, 0.5); }
-.t6:before { background: rgba(255,102,0, 0.6); }
+.t2:before {
+  background: rgba(0, 0, 255, 0.5);
+}
 
+.t3:before {
+  background: rgba(255, 0, 0, 0.5);
+}
+
+.t4:before {
+  background: rgba(0, 255, 0, 0.5);
+}
+
+.t5:before {
+  background: rgba(255, 0, 240, 0.5);
+}
+
+.t6:before {
+  background: rgba(255, 102, 0, 0.6);
+}
 
 .noticias-fila, .comic-fila {
   display: flex;
@@ -862,11 +898,11 @@ h1{
 
 //.strech {
 //width: 100%;
-  //height: 100%;
+//height: 100%;
 //}
 
-.trech img{
-  height: 100%!important;
+.trech img {
+  height: 100% !important;
 }
 
 .noticias-texto {
@@ -906,11 +942,11 @@ h1{
   font-size: 22px;
   //padding: 10px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#aebcbf+0,6e7774+50,0a0e0a+51,0a0809+100;Black+Gloss */
-  background: rgb(174,188,191); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(174,188,191,1) 0%, rgba(110,119,116,1) 50%, rgba(10,14,10,1) 51%, rgba(10,8,9,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(174,188,191,1) 0%,rgba(110,119,116,1) 50%,rgba(10,14,10,1) 51%,rgba(10,8,9,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(174,188,191,1) 0%,rgba(110,119,116,1) 50%,rgba(10,14,10,1) 51%,rgba(10,8,9,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aebcbf', endColorstr='#0a0809',GradientType=0 ); /* IE6-9 */
+  background: rgb(174, 188, 191); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(174, 188, 191, 1) 0%, rgba(110, 119, 116, 1) 50%, rgba(10, 14, 10, 1) 51%, rgba(10, 8, 9, 1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(174, 188, 191, 1) 0%, rgba(110, 119, 116, 1) 50%, rgba(10, 14, 10, 1) 51%, rgba(10, 8, 9, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(174, 188, 191, 1) 0%, rgba(110, 119, 116, 1) 50%, rgba(10, 14, 10, 1) 51%, rgba(10, 8, 9, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aebcbf', endColorstr='#0a0809', GradientType=0); /* IE6-9 */
   border-style: solid;
   border-width: 1px;
   border-color: cadetblue;
@@ -924,6 +960,7 @@ h1{
   //width: 100%;
   width: calc(100% - 2px);
 }
+
 /*
 .noticias-pie  p{
   //color: white!important;
@@ -940,7 +977,7 @@ h1{
   }
 }
 
-.noticias-detalle{
+.noticias-detalle {
   font-size: 14px;
   margin-top: 5px;
   line-height: 18px;
@@ -950,14 +987,14 @@ h1{
 
 h3 {
   font-family: 'Merriweather', serif;
-  background: rgba(255,93,177,1);
-  background: -moz-linear-gradient(top, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,93,177,1)), color-stop(100%, rgba(239,1,124,1)));
-  background: -webkit-linear-gradient(top, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
-  background: -o-linear-gradient(top, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
-  background: -ms-linear-gradient(top, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
-  background: linear-gradient(to bottom, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5db1', endColorstr='#ef017c', GradientType=0 );
+  background: rgba(255, 93, 177, 1);
+  background: -moz-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 93, 177, 1)), color-stop(100%, rgba(239, 1, 124, 1)));
+  background: -webkit-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background: -o-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background: -ms-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background: linear-gradient(to bottom, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5db1', endColorstr='#ef017c', GradientType=0);
   padding: 15px;
   color: #fff;
   font-weight: bold;
@@ -969,11 +1006,11 @@ h3 {
 
 .agenda-calendario {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f1f1f1+50,e1e1e1+51,f6f6f6+100;White+Gloss+%231 */
-  background: rgb(255,255,255); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(241,241,241,1) 50%, rgba(225,225,225,1) 51%, rgba(246,246,246,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 ); /* IE6-9 */
+  background: rgb(255, 255, 255); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6', GradientType=0); /* IE6-9 */
   //height: 300px;
   flex-direction: row;
   display: flex;
@@ -998,26 +1035,24 @@ h3 {
   margin: 15px;
 
   @media (min-width: 800px) {
-    width: 50%!important;
+    width: 50% !important;
     height: 100%;
     position: relative;
     overflow: hidden;
     border: 5px #DD0374 solid;
-    -webkit-box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
-    box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
   }
 
 }
 
-#agenda img{
+#agenda img {
 
-    min-width: 700px!important;
-    //margin-left: calc(50% - 478px)!important;
+  min-width: 700px !important;
+  //margin-left: calc(50% - 478px)!important;
 
 }
-
-
 
 .agenda-titulo {
   /*font-size: 42px;
@@ -1028,7 +1063,8 @@ h3 {
   font-weight: bold;
   border-bottom: 1px solid;*/
 }
-h4{
+
+h4 {
   font-family: 'Merriweather', serif;
   font-size: 45px;
   text-align: center;
@@ -1038,6 +1074,7 @@ h4{
   font-weight: bold;
   border-bottom: 1px solid white;
 }
+
 .agenda-info {
   font-family: 'Droid Serif', serif;
   font-weight: lighter;
@@ -1048,7 +1085,8 @@ h4{
   min-height: 280px;
   overflow-y: auto;
 }
-h5{
+
+h5 {
   font-size: 56px;
   text-align: center;
   margin: 15px;
@@ -1056,14 +1094,16 @@ h5{
   color: #F29792;
   font-weight: bold;
 }
-.comic-fila{
+
+.comic-fila {
   display: flex;
   flex-direction: column;
   @media (min-width: 800px) {
     flex-direction: row;
   }
 }
-.comic-container{
+
+.comic-container {
   width: 100%;
   height: 270px;
   position: relative;
@@ -1077,6 +1117,7 @@ ac-login {
   top: 150px;
   z-index: 1;
 }
+
 /*
 footer{
   cursor: pointer;
@@ -1092,7 +1133,7 @@ footer{
   height: 50px
 }
 */
-.contacto-form{
+.contacto-form {
   width: 80%;
   margin: 0 auto;
   @media (min-width: 800px) {
@@ -1100,15 +1141,18 @@ footer{
     width: 300px;
   }
 }
+
 .form-group {
   margin-bottom: 15px;
 }
+
 label {
   display: inline-block;
   max-width: 100%;
   margin-bottom: 5px;
   font-weight: 700;
 }
+
 .form-control {
   display: block;
   width: 100%;
@@ -1125,11 +1169,12 @@ label {
   border-bottom: 2px solid black;
 }
 
-.form details{
+.form details {
   width: 600px;
   margin: auto;
 }
-.agenda-container{
+
+.agenda-container {
   display: flex;
   flex-direction: column;
 
@@ -1141,6 +1186,7 @@ label {
     height: 470px;
   }
 }
+
 .prev-m:hover,
 .sig-m:hover {
   color: #17384B;
@@ -1185,14 +1231,14 @@ label {
   margin: 30px;
   max-width: 80%;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#aebcbf+0,6e7774+50,0a0e0a+51,0a0809+100;Black+Gloss */
-  background: rgb(174,188,191); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(174,188,191,1) 0%, rgba(110,119,116,1) 50%, rgba(10,14,10,1) 51%, rgba(10,8,9,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(174,188,191,1) 0%,rgba(110,119,116,1) 50%,rgba(10,14,10,1) 51%,rgba(10,8,9,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(174,188,191,1) 0%,rgba(110,119,116,1) 50%,rgba(10,14,10,1) 51%,rgba(10,8,9,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aebcbf', endColorstr='#0a0809',GradientType=0 ); /* IE6-9 */
-  -webkit-box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
-  box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
+  background: rgb(174, 188, 191); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(174, 188, 191, 1) 0%, rgba(110, 119, 116, 1) 50%, rgba(10, 14, 10, 1) 51%, rgba(10, 8, 9, 1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(174, 188, 191, 1) 0%, rgba(110, 119, 116, 1) 50%, rgba(10, 14, 10, 1) 51%, rgba(10, 8, 9, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(174, 188, 191, 1) 0%, rgba(110, 119, 116, 1) 50%, rgba(10, 14, 10, 1) 51%, rgba(10, 8, 9, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aebcbf', endColorstr='#0a0809', GradientType=0); /* IE6-9 */
+  -webkit-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
 
   //@include sombras();
 
@@ -1242,49 +1288,45 @@ label {
   }
 }
 
-
-
-
-.form{
-  background: rgba(255,255,255,1);
-  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
-  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-  background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-  background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
+.form {
+  background: rgba(255, 255, 255, 1);
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(47%, rgba(246, 246, 246, 1)), color-stop(100%, rgba(237, 237, 237, 1)));
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+  background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=0);
   font-family: 'Droid Serif', serif;
   font-size: 16px;
   width: 80%;
   padding: 20px;
   margin: 10px auto;
-  -webkit-box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
-  box-shadow: 0px 2px 10px -1px rgba(0,0,0,0.75);
-  div{
+  -webkit-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
+  div {
     vertical-align: baseline;
     padding: 10px;
   }
-  input{
+  input {
     font-family: 'Roboto', sans-serif;
     font-size: 22px;
     padding: 4px;
     width: 96%;
   }
-  label{
+  label {
     font-family: 'Merriweather', serif;
     font-size: 22px;
   }
 }
 
-
-
 .foto-container {
   display: flex;
   flex-direction: row;
 }
-.footer{
+
+.footer {
   position: relative;
   bottom: -130px;
   width: 100%;
@@ -1294,12 +1336,14 @@ label {
   justify-content: center;
   align-items: center;
 }
-.footer-container{
+
+.footer-container {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
+
 .noticias-pie > div {
   //padding: 13px 10px 5px;
   font-weight: 600;
@@ -1309,19 +1353,20 @@ label {
   padding: 0px 15px;
   padding-top: 15px;
 
-  p{
+  p {
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
   }
 }
+
 /*
 .noticias-detalle {
   padding: 5px 10px;
   font-size: 16px;
 }
 */
-.noticia-container{
+.noticia-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1330,13 +1375,15 @@ label {
     flex-direction: row;
   }
 }
+
 .nota-panel-fotos-main {
   overflow: hidden;
   margin-top: 10px;
   width: 100%;
   height: 600px;
 }
-.nota-panel-fotos-main > img{
+
+.nota-panel-fotos-main > img {
   //margin-left: 15px;
   border-radius: 5px;
   //border: 3px solid white;
@@ -1347,10 +1394,12 @@ label {
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.75);
 
 }
+
 .nota-panel-fotos-thumb {
   margin-top: 5px;
 }
-.nota-panel-fotos-thumb > img{
+
+.nota-panel-fotos-thumb > img {
   //margin-left: 15px;
   cursor: pointer;
   max-width: 15%;
@@ -1360,6 +1409,7 @@ label {
   -moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.75);
 }
+
 .nota-panel-texto {
   color: white;
   padding: 10px;
@@ -1369,6 +1419,7 @@ label {
     width: 57%;
   }
 }
+
 .nota-panel-texto > h2 {
   width: 100%;
   margin-bottom: 15px;
@@ -1378,47 +1429,55 @@ label {
   color: #DD0374;
   font-family: 'Roboto', sans-serif;
 }
-.nota-comentarios{
+
+.nota-comentarios {
   height: 60px;
   overflow-y: auto;
 }
+
 .nota-comentar {
   margin-top: 25px;
 }
+
 .nota-comentar > textarea {
   width: 98%;
 }
+
 .notas-comentarios {
   margin-top: 25px;
 }
+
 .nota-comentar > div > a {
   float: right;
   text-decoration: none;
   color: #000;
 }
+
 .nota-comentar > div > a:hover {
   color: #DD0374;
 }
-.nota-texto-container{
-  h2{
+
+.nota-texto-container {
+  h2 {
     font-family: 'Merriweather', serif;
     font-size: 50px;
     color: #DD0374;
   }
   color: #000;
 }
+
 .btn-group {
   text-align: center;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e5e5e5+100;White+3D */
-  background: rgb(255,255,255); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+  background: rgb(255, 255, 255); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e5e5e5', GradientType=0); /* IE6-9 */
   -webkit-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
-  button{
+  button {
     margin-left: 1px;
     margin-right: 1px;
     margin-top: 10px;
@@ -1426,16 +1485,18 @@ label {
   }
 
 }
+
 .btn-group > a {
   text-decoration: none;
-  color:#000;
+  color: #000;
 }
+
 .btn-group > a:hover {
   color: #DD0374;
   cursor: pointer;
 }
 
-.noticia-destacada, .comic-destacada{
+.noticia-destacada, .comic-destacada {
   width: 100%;
   order: 0;
   @media (min-width: 800px) {
@@ -1443,7 +1504,7 @@ label {
   }
 }
 
-button{
+button {
   background-color: white;
   font-family: 'Droid Serif', serif;
   font-size: 16px;
@@ -1451,22 +1512,22 @@ button{
   //-webkit-border-radius: 4px;
   margin-bottom: 5px;
   color: #DD0374;
-  -webkit-box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.45);
-  -moz-box-shadow: 0px 2px 2px -1px rgba(0,0,0,0.45);
-  box-shadow: 0px 2px 2px -1px rgba(0,0,0,0.45);
+  -webkit-box-shadow: 0px 2px 3px -1px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.45);
+  box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.45);
 }
 
-button:hover{
+button:hover {
   color: white;
   cursor: pointer;
-  background: rgba(255,93,177,1);
-  background: -moz-linear-gradient(top, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,93,177,1)), color-stop(100%, rgba(239,1,124,1)));
-  background: -webkit-linear-gradient(top, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
-  background: -o-linear-gradient(top, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
-  background: -ms-linear-gradient(top, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
-  background: linear-gradient(to bottom, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5db1', endColorstr='#ef017c', GradientType=0 );
+  background: rgba(255, 93, 177, 1);
+  background: -moz-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 93, 177, 1)), color-stop(100%, rgba(239, 1, 124, 1)));
+  background: -webkit-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background: -o-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background: -ms-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background: linear-gradient(to bottom, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5db1', endColorstr='#ef017c', GradientType=0);
   -webkit-transition: all 0.2s ease;
   moz-transition: all 0.2s ease;
   ms-transition: all 0.2s ease;
@@ -1474,42 +1535,42 @@ button:hover{
   transition: all 0.2s ease;
 }
 
-.fa-search{
-  font-size: 50px!important;
+.fa-search {
+  font-size: 50px !important;
   color: white;
   margin: 13px;
 
 }
 
-
-.sample{
+.sample {
   margin-bottom: 20px;
 }
 
-.fa-file-archive-o{
+.fa-file-archive-o {
   font-size: 22px;
   color: black;
 }
 
-.btn-facebook{
+.btn-facebook {
   top: 10px;
   left: 5px;
-  border-radius:20px;
+  border-radius: 20px;
   position: absolute;
-  img{
-    min-width: 30px!important;
-  }
-}
-.btn-twitter{
-  top: 10px;
-  left: 40px;
-  position: absolute;
-  img{
-    min-width: 30px!important;
+  img {
+    min-width: 30px !important;
   }
 }
 
-.sub-menu{
+.btn-twitter {
+  top: 10px;
+  left: 40px;
+  position: absolute;
+  img {
+    min-width: 30px !important;
+  }
+}
+
+.sub-menu {
   position: relative;
   top: 50px;
   height: 50px;
@@ -1517,10 +1578,13 @@ button:hover{
   align-items: center;
 }
 
-
 ////// ADMINISTRACION ////////
 .administracion {
   margin-top: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   .title-administracion {
     font-size: 1.5em;
     color: white;
@@ -1534,13 +1598,13 @@ button:hover{
       width: 100%;
       flex-wrap: wrap;
       min-height: 450px;
+      max-width: 1000px;
 
       .lista {
         position: relative;
         background-color: lightgray;
         width: 600px;
         min-width: 360px;
-        padding: 10px;
         display: flex;
         flex-direction: column;
 
@@ -1599,16 +1663,18 @@ button:hover{
           bottom: 10px;
         }
       }
-      .details {
+      .main-image {
+
+      }
+      .details, .main-image {
         background-color: lightgray;
-        padding: 10px;
         width: 400px;
         min-width: 360px;
         .input {
           display: flex;
           flex-direction: column;
           input, select {
-            width: 100%;
+            width: calc(90% - 20px);
             padding: 0px !important;
             margin: 5px 2px 5px 2px;
           }
@@ -1616,6 +1682,26 @@ button:hover{
 
       }
 
+    }
+
+    .pantalla-administracion-bottom {
+      max-width: 1000px;
+      .details {
+        background-color: lightgray;
+        padding: 10px;
+        width: 100%;
+        min-width: 360px;
+        .input {
+          display: flex;
+          flex-direction: column;
+          input, select, .ta-root {
+            width: calc(90% - 20px);
+            padding: 0px !important;
+            margin: 5px 2px 5px 2px;
+          }
+        }
+
+      }
     }
   }
 }
