@@ -813,7 +813,6 @@ h1 {
 }
 
 .noticias-info, .comic-info {
-  //width: 100%;
   width: 100%;
   height: 400px;
   position: relative;
@@ -821,27 +820,24 @@ h1 {
   overflow: hidden;
 
   @media (min-width: 800px) {
-    //height: 400px;
     width: 25%;
   }
 
   img {
-
     min-width: 956px;
+    min-height: 100%;
 
     @media (min-width: 800px) {
-      margin-left: calc(50% - 478px) !important;
+      margin-left: calc(50% - 477px) !important;
       background: rgba(0, 255, 255, 0.5);
       transition: all .3s linear;
+
     }
   }
 }
 
 .tint {
   position: relative;
-  float: left;
-  margin-right: 20px;
-  margin-bottom: 20px;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, .2) 3px 5px 5px;
 
@@ -852,7 +848,6 @@ h1 {
 
 .tint:before {
   content: "";
-  display: block;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -866,25 +861,6 @@ h1 {
   background: none;
 }
 
-.t2:before {
-  background: rgba(0, 0, 255, 0.5);
-}
-
-.t3:before {
-  background: rgba(255, 0, 0, 0.5);
-}
-
-.t4:before {
-  background: rgba(0, 255, 0, 0.5);
-}
-
-.t5:before {
-  background: rgba(255, 0, 240, 0.5);
-}
-
-.t6:before {
-  background: rgba(255, 102, 0, 0.6);
-}
 
 .noticias-fila, .comic-fila {
   display: flex;
@@ -918,7 +894,7 @@ h1 {
   display: flex;
   justify-content: center;
   @media (min-width: 800px) {
-    font-size: 48px;
+    font-size: 38px;
   }
 }
 
