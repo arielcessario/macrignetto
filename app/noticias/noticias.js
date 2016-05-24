@@ -11,22 +11,18 @@
         vm.fotoSelected = '';
         vm.nota = {};
 
+        vm.comentarios = FireService.cacheFactory(Model.refComentarios);
+
         vm.id = $routeParams.id;
 
         if (vm.id.length > 0) {
-            var refNota = Model.refNotas;
-            var arrNotas = FireService.createArrayRef(refNota);
+            var nota = Model.refNotas.child(vm.id);
 
-            var aux = arrNotas.$loaded(function (data) {
-                //console.log(data);
-                vm.nota = data.$getRecord(vm.id);
-                console.log(vm.nota);
-                return data;
+            nota.on('value', function(snap){
+                vm.nota = snap.val();
+
             });
+
         }
-
-        //console.log(vm.nota);
-
-
     }
 })();
