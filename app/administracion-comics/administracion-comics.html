@@ -1,76 +1,50 @@
-<div class="lista">
-    <input type="text" class="buscador" ng-model="$ctrl.filtro">
-    <table>
-        <thead>
-        <tr>
-            <th>Titulo</th>
-            <th>Fecha</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="row in $ctrl.comics | filter:$ctrl.filtro | limitTo:$ctrl.limit:$ctrl.start"
-            ng-click="$ctrl.select(row);
-            $ctrl.detailsOpen = true;">
-            <td class="">{{row.titulo}}</td>
-            <td class="">{{row.fecha | date}}</td>
-        </tr>
-        </tbody>
-        <!--<tfoot>-->
-        <!--<tr>-->
-        <!--<td colspan="4">-->
-        <!--<div class="table-td">-->
-        <!--<button class="btn-paginacion-first"-->
-        <!--ng-click="$ctrl.first();">Primera-->
-        <!--</button>-->
-        <!--<button class="btn-paginacion-prev"-->
-        <!--ng-click="$ctrl.prev();">Ant.-->
-        <!--</button>-->
-        <!--<div class="paginacion-paginas">-->
-        <!--<span>{{'PAGE' | xlat}} {{$ctrl.pagina}} {{'OF' | xlat}} {{$ctrl.paginas}}</span>-->
-        <!--</div>-->
-        <!--<div class="paginacion-go-to">{{'GO_TO' | xlat}} <input type="number"-->
-        <!--ng-model="$ctrl.pagina"-->
-        <!--ng-keyup="$ctrl.goToPagina();">-->
-        <!--</div>-->
-
-        <!--<button class="btn-paginacion-next"-->
-        <!--ng-click="$ctrl.next();">Sig.-->
-        <!--</button>-->
-        <!--<button class="btn-paginacion-last"-->
-        <!--ng-click="$ctrl.last();">Última-->
-        <!--</button>-->
-        <!--</div>-->
-        <!--</td>-->
-        <!--</tr>-->
-        <!--</tfoot>-->
-    </table>
-    <div class="botonera">
-        <button ng-click="$ctrl.detailsOpen = true; $ctrl.comic = {} ;">Nuevo</button>
-    </div>
-</div>
-<div class="form details">
-
-    <div>
-        <label for="">Estado</label>
-        <select name="" id="" ng-model="$ctrl.comic.status">
-                        <option value="0">Inactivo</option>
-            <option value="1">Activo</option>
-        </select>
-    </div>
-    <div class="foto-container">
-        <div class="foto">
-            <span>Imagen</span>
-
-            <div id="slider-01-foto" class="input-foto">
-                <img ng-src="{{'images/'+$ctrl.imagen.nombre}}" alt="" height="50" width="50">
-                <input type="file" name="images" id="images"
-                       ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,1,'')"/>
+<div class="pantalla-administracion-top">
+    <div class="details">
+        <div class="title-administracion">Detalles</div>
+        <div class="left">
+            <div class="input">
+                <label for="">Estado</label>
+                <select name="" id="" ng-model="$ctrl.comic.status">
+                    <option value="0">Inactivo</option>
+                    <option value="1">Activo</option>
+                </select>
             </div>
         </div>
-
-
+        <span>Imagen</span>
+        <div id="foto-main" class="input-foto-main">
+            <img ng-src="{{'images/'+$ctrl.imagen.nombre}}" alt="" height="50p">
+            <input type="file" name="images" id="images"
+                   ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,1,'')"/>
+        </div>
+        <div class="botonera">
+            <button ng-click="$ctrl.detailsOpen = false; $ctrl.save();">Guardar</button>
+            <button ng-click="$ctrl.detailsOpen = true; $ctrl.usuario = {} ;">Nuevo</button>
+        </div>
     </div>
-    <div class="botonera">
-        <button ng-click="$ctrl.detailsOpen = false; $ctrl.save();">Guardar</button>
+
+    <div class="lista">
+        <div class="title-administracion">Selecciona de la lista</div>
+        <div class="search-administracion">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <input type="text" class="buscador"
+                    placeholder="Ingrese su búsqueda..."
+                    ng-model="$ctrl.filtro">
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="row in $ctrl.comics | filter:$ctrl.filtro| paginacion:'comics':$ctrl.limit | limitTo:$ctrl.limit:$ctrl.start "
+                    ng-click="$ctrl.comic=row;$ctrl.detailsOpen = true;">
+                    <td class="">{{row.titulo}}</td>
+                    <td class="">{{row.fecha | date}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <ac-paginacion obj="'comic'" start="$ctrl.start"></ac-paginacion>
     </div>
 </div>
