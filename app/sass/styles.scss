@@ -1715,8 +1715,6 @@ button:hover {
         background: -webkit-linear-gradient(top,  rgba(252,234,187,1) 0%,rgba(248,181,0,1) 12%,rgba(252,205,77,1) 12%,rgba(252,205,77,1) 12%,rgba(251,223,147,1) 100%); /* Chrome10-25,Safari5.1-6 */
         background: linear-gradient(to bottom,  rgba(252,234,187,1) 0%,rgba(248,181,0,1) 12%,rgba(252,205,77,1) 12%,rgba(252,205,77,1) 12%,rgba(251,223,147,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#fbdf93',GradientType=0 ); /* IE6-9 */
-
-
         border: 2px solid white;
         -webkit-border-radius: 5px;
         min-width: 360px;
@@ -1735,7 +1733,7 @@ button:hover {
           }
           input, select {
             width: calc(90% - 10px);
-            padding: 2px !important;
+            padding-left: 5px !important;
             margin: 5px 2px 5px 2px;
             font-family: 'Roboto', sans-serif;
             font-size: 16px;
