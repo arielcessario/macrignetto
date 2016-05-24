@@ -475,7 +475,7 @@
     </script>
 </head>
 
-<body ng-cloak ng-controller="AppCtrl as appCtrl">
+<body ng-cloak ng-controller="AppCtrl as appCtrl" style="height: 100%;">
 <div class="header"
      ng-class="{'display-header': !appCtrl.display_header, 'header-as-main': appCtrl.selectedPage == 'INICIO'}">
     <div class="menu-mobile menu-type-mobile">
@@ -519,7 +519,7 @@
 
 <div ng-include="'login/login.html'"></div>
 
-<div ng-view></div>
+<div ng-view style="height: 100%;overflow: auto;"></div>
 
 <footer class="footer">
     <div class="footer-container">

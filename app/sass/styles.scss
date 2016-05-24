@@ -1606,13 +1606,12 @@ button:hover {
   background: linear-gradient(to bottom,  rgba(255,93,177,1) 0%,rgba(239,1,124,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5db1', endColorstr='#ef017c',GradientType=0 ); /* IE6-9 */
 }
-
-
+/*
 .input {
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
 }
+*/
 label {
   display: inline-block;
   max-width: 100%;
