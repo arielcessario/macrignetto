@@ -25,7 +25,6 @@ body {
   font-family: 'Merriweather', serif;
   font-weight: bolder;
   color: black;
-  //max-width: 100%;
   width: 100%;
   height: 50px;
   background: rgba(252, 234, 187, 1);
@@ -36,11 +35,6 @@ body {
   background: -ms-linear-gradient(top, rgba(252, 234, 187, 1) 0%, rgba(252, 205, 77, 1) 50%, rgba(248, 181, 0, 1) 51%, rgba(251, 223, 147, 1) 100%);
   background: linear-gradient(to bottom, rgba(252, 234, 187, 1) 0%, rgba(252, 205, 77, 1) 50%, rgba(248, 181, 0, 1) 51%, rgba(251, 223, 147, 1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fceabb', endColorstr='#fbdf93', GradientType=0);
-  /*-webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -ms-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;*/
   position: fixed;
   top: 0;
   z-index: 1000;
@@ -116,7 +110,6 @@ body {
 
 .texto-main2 {
   max-width: 1000px;
-  //text-align: left;
   text-align: center;
   font-family: 'Oswald', sans-serif;
   font-size: 22px;
@@ -141,7 +134,6 @@ body {
 
 .texto-main3 {
   max-width: 1000px;
-  //text-align: left;
   text-align: center;
   font-family: 'Oswald', sans-serif;
   font-size: 18px;
@@ -180,7 +172,6 @@ body {
 
 select {
   font-weight: lighter;
-  //color: white;
   background-color: white;
   margin-left: 5px;
   margin-right: 5px;
@@ -292,12 +283,7 @@ select option {
 .menu-mobile {
   display: flex;
   height: 100%;
-  //  background-color: #ffffff;
-  //  width: 20px;
-  //  position: fixed;
   z-index: 100;
-  //  left: 20px;
-  //  top: 10px;
 
   .header-separator {
     height: 40px;
@@ -312,7 +298,6 @@ select option {
     padding: 5px;
     margin-right: 15px;
     text-align: right;
-    //background-color: green;
     margin-top: 6px;
   }
 }
@@ -321,17 +306,9 @@ select option {
   font-family: 'Oswald', sans-serif;
   width: 100%;
   font-weight: lighter;
-  //background-color: #17384B;
   background: #B2FFDB;
   display: flex;
   flex-direction: column;
-  /*
-  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
-  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-  background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-  background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);*/
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=0);
   position: fixed;
   bottom: 0px;
@@ -350,7 +327,6 @@ select option {
   -moz-animation-duration: .2s;
   animation-duration: .2s;
 
-  //border: 5px solid white;
   a {
     text-decoration: none;
   }
@@ -477,11 +453,7 @@ select option {
       -o-transform: scale(5, 5);
       transform: scale(5, 5);
 
-      //-webkit-animation: latido 1s infinite;
-      //-o-animation: latido 1s infinite;
-      //animation: latido 1s infinite;
       pointer-events: none;
-
     }
   }
 
@@ -529,7 +501,6 @@ select option {
 
 .menu-desktop {
   display: flex;
-  //flex-direction: row;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
@@ -539,7 +510,6 @@ select option {
   width: 1020px;
   height: 50px;
   #menu-desktop-logo {
-    //background-color: #406276;
     background-color: transparent;
     margin-right: 10px;
     margin-left: 10px;
@@ -558,9 +528,7 @@ select option {
     transition: transform 0.4s ease;
 
     img {
-      //margin-left: 10px;
-      //padding-bottom: 10px;
-      //margin: 20px 0;
+
     }
 
   }
@@ -585,7 +553,6 @@ select option {
       background-color: transparent;
       max-height: 35px;
       padding: 5px;
-      //margin-bottom: 30px;
       max-width: 100%;
 
       -webkit-transition: all .4s ease-in-out;
@@ -607,15 +574,8 @@ select option {
         color: #000;
         font-weight: bold;
         text-decoration: none;
-        //font-weight: lighter;
-        //letter-spacing: .9px;
-        //margin-top: 10px;
-        //margin-right: 15px;
         padding: 5px 8px;
-        //font-size: 16px;
-        //max-height: 26px;
         position: relative;
-        //color: white;
         font-size: 18px;
         opacity: 0;
         -webkit-animation: fadeIn ease-in-out 2; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
@@ -626,39 +586,23 @@ select option {
         -webkit-animation-duration: 2s;
         -moz-animation-duration: 2s;
         animation-duration: 2s;
-
       }
 
       .menu-desktop-btn-selected {
-        //color: white;
         color: bolder;
-        //border-radius: 2px;
-        //background-color: #406276;
         opacity: 1;
-        //-webkit-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.44);
-        //-moz-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.44);
-        //box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.44);
-
       }
       .menu-desktop-btn:hover,
       .menu-desktop-btn:focus,
       .menu-desktop-btn:active {
-        //color: white;
         cursor: pointer;
         color: #EF037C;
-        //border-radius: 2px;
-        //background-color: #406276;
         opacity: 1;
         -webkit-transition: opacity 2s ease;
         -moz-transition: opacity 2s ease;
         -ms-transition: opacity 2s ease;
         -o-transition: opacity 2s ease;
         transition: opacity 2s ease;
-
-        //-webkit-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.44);
-        //-moz-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.44);
-        //box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.44);
-
       }
 
     }
@@ -666,15 +610,6 @@ select option {
 
 }
 
-/*
-.display-menu-desktop {
-  display: none;
-}
-
-.display-header {
-  display: none;
-}
-*/
 //***********************************************
 .main-container {
   top: 50px;
@@ -710,7 +645,6 @@ h1 {
   font-family: 'Droid Serif', serif;
   text-transform: uppercase;
   font-size: 45px;
-  //font-weight: bold;
   color: #fff;
   text-shadow: 2px 2px black;
   @media (min-width: 800px) {
@@ -776,7 +710,6 @@ h1 {
   align-items: center;
   order: 2;
   font-size: 22px;
-  //font-weight: bold;
   @media (min-width: 800px) {
     order: 1;
     width: 97%;
@@ -809,7 +742,7 @@ h1 {
 }
 
 .container {
-  //height: 600px;
+
 }
 
 .noticias-info, .comic-info {
@@ -831,7 +764,6 @@ h1 {
       margin-left: calc(50% - 477px) !important;
       background: rgba(0, 255, 255, 0.5);
       transition: all .3s linear;
-
     }
   }
 }
@@ -872,11 +804,6 @@ h1 {
   }
 }
 
-//.strech {
-//width: 100%;
-//height: 100%;
-//}
-
 .trech img {
   height: 100% !important;
 }
@@ -899,7 +826,6 @@ h1 {
 }
 
 .noticias-leer {
-
   color: #fff;
   font-size: 20px;
   position: absolute;
@@ -916,7 +842,6 @@ h1 {
   font-family: 'Merriweather', serif;
   font-weight: 600;
   font-size: 22px;
-  //padding: 10px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#aebcbf+0,6e7774+50,0a0e0a+51,0a0809+100;Black+Gloss */
   background: rgb(174, 188, 191); /* Old browsers */
   background: -moz-linear-gradient(top, rgba(174, 188, 191, 1) 0%, rgba(110, 119, 116, 1) 50%, rgba(10, 14, 10, 1) 51%, rgba(10, 8, 9, 1) 100%); /* FF3.6-15 */
@@ -927,26 +852,13 @@ h1 {
   border-width: 1px;
   border-color: cadetblue;
   position: absolute;
-  //width: 100%;
   display: flex;
   flex-direction: column;
   bottom: 0px;
-  //height: 65px;
   height: 85px;
-  //width: 100%;
-  //width: calc(100% - 2px);
   width: 100%;
 }
 
-/*
-.noticias-pie  p{
-  //color: white!important;
-  font-weight: 300;
-  margin-top: 11px;
-  font-size: 16px;
-  font-family: 'Roboto', sans-serif;
-}
-*/
 .hide-div {
   display: none;
   @media (min-width: 800px) {
@@ -958,8 +870,6 @@ h1 {
   font-size: 14px;
   margin-top: 5px;
   line-height: 18px;
-  //padding: 5px 10px;
-  //font-size: 16px;
 }
 
 h3 {
@@ -988,7 +898,6 @@ h3 {
   background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6', GradientType=0); /* IE6-9 */
-  //height: 300px;
   flex-direction: row;
   display: flex;
   justify-content: space-around;
@@ -1000,7 +909,7 @@ h3 {
 }
 
 .agenda-noticia {
-  //height: 500px;
+
   @media (min-width: 800px) {
     width: 25%;
   }
@@ -1025,32 +934,21 @@ h3 {
 }
 
 #agenda img {
-
-  //min-width: 700px !important;
-  min-width: 601px!important;
-  //margin-left: calc(50% - 478px)!important;
-
+  min-width: 600px!important;
 }
-
 .agenda-titulo {
-  /*font-size: 42px;
-  text-align: center;
-  margin: 15px;
-  text-transform: uppercase;
-  color:lightcoral;
-  font-weight: bold;
-  border-bottom: 1px solid;*/
+
 }
 
 h4 {
   font-family: 'Merriweather', serif;
-  font-size: 45px;
+  font-size: 34px;
   text-align: center;
   margin: 33px;
   text-transform: uppercase;
-  color: #20282c;
+  color: #DD0374;
   font-weight: bold;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid lightgreen;
 }
 
 .agenda-info {
@@ -1096,57 +994,16 @@ ac-login {
   z-index: 1;
 }
 
-/*
-footer{
-  cursor: pointer;
-  font-weight: bolder;
-  background-color: #B2FFDB;
-  font-size: 16px;
-  display: flex;
-  //flex-direction: row;
-  //flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  color:#000;
-  height: 50px
-}
-*/
 .contacto-form {
   width: 80%;
   margin: 0 auto;
   @media (min-width: 800px) {
-    //width: 40%;
     width: 300px;
     margin-top: 50px;
   }
 }
 
-.form-group {
-  margin-bottom: 15px;
-}
 
-label {
-  display: inline-block;
-  max-width: 100%;
-  margin-bottom: 5px;
-  font-weight: 700;
-}
-
-.form-control {
-  display: block;
-  width: 100%;
-  height: 30px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #555;
-  border: 1px solid #ccc;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  border-bottom: 2px solid black;
-}
 
 .form details {
   width: 600px;
@@ -1183,8 +1040,6 @@ label {
   margin-top: 5px;
   font-size: 20px;
   span {
-    //margin-left: 30px;
-    //margin-right: 30px;
     margin-left: 15px;
     margin-right: 15px;
     width: 120px;
@@ -1194,7 +1049,6 @@ label {
 
 #agenda-calendar {
   border: 4px solid white;
-  //@include background-image(linear-gradient(to right, #1c3e52, #3f6175));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1219,14 +1073,7 @@ label {
   -moz-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
 
-  //@include sombras();
-
-  //@media (min-width: 800px) {
-  //margin-right: 0px;
-  //}
-
   #agenda-calendar-container {
-
     background-color: white;
     padding-left: 10px;
     padding-right: 10px;
@@ -1307,7 +1154,6 @@ label {
 
 .footer {
   position: relative;
-  //bottom: -243px;
   width: 100%;
   height: 60px;
   background-color: #B2FFDB;
@@ -1324,7 +1170,6 @@ label {
 }
 
 .noticias-pie > div {
-  //padding: 13px 10px 5px;
   font-weight: 600;
   font-size: 22px;
   font-family: 'Merriweather', serif;
@@ -1339,12 +1184,6 @@ label {
   }
 }
 
-/*
-.noticias-detalle {
-  padding: 5px 10px;
-  font-size: 16px;
-}
-*/
 .noticia-container {
   display: flex;
   flex-direction: column;
@@ -1363,15 +1202,12 @@ label {
 }
 
 .nota-panel-fotos-main > img {
-  //margin-left: 15px;
   border-radius: 5px;
-  //border: 3px solid white;
   max-height: 600px;
   width: 100%;
   -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.75);
-
 }
 
 .nota-panel-fotos-thumb {
@@ -1379,7 +1215,6 @@ label {
 }
 
 .nota-panel-fotos-thumb > img {
-  //margin-left: 15px;
   cursor: pointer;
   max-width: 15%;
   height: 45px;
@@ -1488,7 +1323,6 @@ button {
   font-family: 'Droid Serif', serif;
   font-size: 16px;
   border-style: none;
-  //-webkit-border-radius: 4px;
   margin-bottom: 5px;
   color: #DD0374;
   -webkit-box-shadow: 0px 2px 3px -1px rgba(0, 0, 0, 0.45);
@@ -1518,7 +1352,6 @@ button:hover {
   font-size: 50px !important;
   color: white;
   margin: 13px;
-
 }
 
 .sample {
@@ -1579,8 +1412,6 @@ button:hover {
   flex-direction: row;
   justify-content: center;
 
-
-
   .title-administracion {
     font-family: 'Droid Serif', serif;
     font-weight: bold;
@@ -1617,7 +1448,6 @@ button:hover {
         box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.45);
         border: 2px solid white;
 
-
         .search-administracion {
           margin: 10px 0 10px 0;
           display: inline;
@@ -1633,7 +1463,6 @@ button:hover {
         }
         .fa-search:before {
           font-size: 39px;
-          //margin: 2px !important;
           position: absolute;
         }
         .fa-search {
@@ -1658,7 +1487,6 @@ button:hover {
               th {
                 color: white;
                 font-family: 'Merriweather', serif;
-                //font-weight: bold;
                 font-size: 18px;
                 padding: 10px;
                 text-align: left;
@@ -1777,4 +1605,31 @@ button:hover {
   background: -webkit-linear-gradient(top,  rgba(255,93,177,1) 0%,rgba(239,1,124,1) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom,  rgba(255,93,177,1) 0%,rgba(239,1,124,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5db1', endColorstr='#ef017c',GradientType=0 ); /* IE6-9 */
+}
+
+
+.input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+.form-control {
+  width: calc(100% - 24px);
+  height: 30px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  border: 1px solid #ccc;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 2px solid black;
 }
