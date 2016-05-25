@@ -10,19 +10,18 @@
         var vm = this;
         vm.fotoSelected = '';
         vm.nota = {};
-
-        vm.comentarios = FireService.cacheFactory(Model.refComentarios);
-
+        vm.objNota = {};
+        vm.comentarios = [];
         vm.id = $routeParams.id;
 
+
         if (vm.id.length > 0) {
-            var nota = Model.refNotas.child(vm.id);
-
-            nota.on('value', function(snap){
-                vm.nota = snap.val();
-
+            vm.objNota = FireService.createObjectRef(Model.refNotas.child(vm.id));
+            vm.objNota.$loaded(function (data) {
+                vm.nota = data;
             });
-
         }
+
+
     }
 })();

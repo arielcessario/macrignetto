@@ -1,0 +1,15 @@
+<div class="nota-comentar">
+    <div style="width: 100%;">
+        <label>Comentar:</label>
+    </div>
+    <textarea cols="40" rows="6" ng-model="$ctrl.comentario.detalles"></textarea>
+    <button ng-click="$ctrl.save()">Guardar</button>
+</div>
+<div class="notas-comentarios">
+    <div>
+        <label>Ultimos comentarios:</label>
+    </div>
+    <div class="nota-comentarios">
+        <div ng-repeat="row in $ctrl.comentarios">{{row.detalles}}</div>
+    </div>
+</div>
