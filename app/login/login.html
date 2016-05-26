@@ -3,7 +3,7 @@
 </div>
 
 <div class="login-panel" ng-if="$ctrl.showLoginPanel && !$ctrl.isLogged">
-    <div class="login-panel-form" ng-if="$ctrl.showLoginPanel && !$ctrl.isLogged">
+    <div class="login-panel-form" ng-class="{'moved-login-form':$ctrl.showLoginPanel && !$ctrl.isLogged}">
         <div class="ingreso" ng-if="!$ctrl.creando">
             <div class="input">
                 <input type="text" ng-model="$ctrl.email">

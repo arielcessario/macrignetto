@@ -1648,11 +1648,6 @@ ac-login {
     bottom: 0px;
 
     background-color: rgba(0, 0, 0, 0.8);
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
 
     display: flex;
     flex-direction: column;
@@ -1662,6 +1657,12 @@ ac-login {
       height: 300px;
       width: 200px;
       background-color: white;
+
+      -webkit-transform: translateY(-1000px);
+      -moz-transform: translateY(-1000px);
+      -ms-transform: translateY(-1000px);
+      -o-transform: translateY(-1000px);
+      transform: translateY(-1000px);
     }
   }
 
@@ -1674,33 +1675,64 @@ ac-login {
 }
 
 .login-panel.ng-enter, .login-panel.ng-leave {
-  -webkit-transition: 1s linear all;
-  -moz-transition: 1s linear all;
-  -ms-transition: 1s linear all;
-  -o-transition: 1s linear all;
-  transition: 1s linear all;
+  -webkit-transition: 0.5s opacity ;
+  -moz-transition: 0.5s opacity ;
+  -ms-transition: 0.5s opacity ;
+  -o-transition: 0.5s opacity ;
+  transition: 0.5s opacity ;
 }
 
 /* du début de l'entrée */
 .login-panel.ng-enter {
-  max-height: 0;
   opacity: 0;
 }
 
 /* à la fin de l'entrée */
 .login-panel.ng-enter.ng-enter-active {
-  max-height: 999px;
   opacity: 1;
 }
 
 /* du début de la sortie */
 .login-panel.ng-leave {
-  max-height: 999px;
   opacity: 1;
 }
 
 /* à la fin de la sortie */
 .login-panel.ng-leave.ng-leave-active {
-  max-height: 0;
-  opacity: 1;
+  opacity: 0;
 }
+
+
+
+
+.moved-login-form{
+  -webkit-animation: movement-login-form 1s;
+  -o-animation: movement-login-form 1s;
+  animation: movement-login-form 1s;
+  -webkit-transform: translateY(0px) !important;
+  -moz-transform: translateY(0px) !important;
+  -ms-transform: translateY(0px) !important;
+  -o-transform: translateY(0px) !important;
+  transform: translateY(0px) !important;
+}
+
+@keyframes movement-login-form {
+  0%{
+    -webkit-transform: translateY(-1000px);
+    -moz-transform: translateY(-1000px);
+    -ms-transform: translateY(-1000px);
+    -o-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+  }
+
+  100%{
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  
+}
+
+
