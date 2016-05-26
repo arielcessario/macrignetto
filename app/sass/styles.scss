@@ -999,17 +999,13 @@ ac-login {
   margin: 0 auto;
   @media (min-width: 800px) {
     width: 300px;
-    margin-top: 50px;
+    margin: 50px auto;
   }
 }
-
-
-
 .form details {
   width: 600px;
   margin: auto;
 }
-
 .agenda-container {
   display: flex;
   flex-direction: column;
@@ -1621,7 +1617,7 @@ label {
 .form-control {
   width: calc(100% - 24px);
   height: 30px;
-  padding: 6px 12px;
+  padding: 2px 10px;
   font-size: 14px;
   line-height: 1.42857143;
   color: #555;
