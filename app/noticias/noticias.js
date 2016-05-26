@@ -4,8 +4,8 @@
         .controller('NoticiasController', NoticiasController);
 
 
-    NoticiasController.$inject = ['$scope', '$routeParams', 'Model', 'FireService', '$sce'];
-    function NoticiasController($scope, $routeParams, Model, FireService, $sce) {
+    NoticiasController.$inject = ['$scope', '$routeParams', 'Model', 'FireService'];
+    function NoticiasController($scope, $routeParams, Model, FireService) {
 
         var vm = this;
         vm.fotoSelected = '';
@@ -13,7 +13,6 @@
         vm.objNota = {};
         vm.comentarios = [];
         vm.id = $routeParams.id;
-
 
         if (vm.id.length > 0) {
             vm.objNota = FireService.createObjectRef(Model.refNotas.child(vm.id));

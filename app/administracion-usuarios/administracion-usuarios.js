@@ -47,8 +47,8 @@
         }
     }
 
-    UsuariosService.$inject = ['FireService', 'Model', '$q', 'AcPaginacionVars'];
-    function UsuariosService(FireService, Model, $q, AcPaginacionVars) {
+    UsuariosService.$inject = ['FireService', 'Model', '$q', 'FireVars'];
+    function UsuariosService(FireService, Model, $q, FireVars) {
 
         var service = this;
         service.get = get;
@@ -63,6 +63,7 @@
             if (obj.$id != undefined) {
                 deferred.resolve(update(arr, obj));
             } else {
+                obj.usuario = FireVars._FIREREF.getAuth().uid;
                 obj.fecha_crea = Firebase.ServerValue.TIMESTAMP;
                 deferred.resolve(create(arr, obj));
             }

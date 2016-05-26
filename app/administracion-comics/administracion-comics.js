@@ -63,8 +63,8 @@
         }
     }
 
-    ComicsService.$inject = ['FireService', 'Model', '$q', 'AcPaginacionVars'];
-    function ComicsService(FireService, Model, $q, AcPaginacionVars) {
+    ComicsService.$inject = ['FireService', 'Model', '$q', 'FireVars'];
+    function ComicsService(FireService, Model, $q, FireVars) {
 
         var service = this;
         service.get = get;
@@ -83,6 +83,7 @@
             if (obj.$id != undefined) {
                 deferred.resolve(update(arr, obj));
             } else {
+                obj.usuario = FireVars._FIREREF.getAuth().uid;
                 obj.fecha_crea = Firebase.ServerValue.TIMESTAMP;
                 obj.usuario = FireService.getUserData().uid;
 
@@ -95,8 +96,6 @@
             var refComic = Model.refComics;
             var arrComics = FireService.createArrayRef(refComic);
             return arrComics.$loaded(function (data) {
-                AcPaginacionVars.setPaginacion('comics',data.length);
-
                 return data;
             });
         }

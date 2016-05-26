@@ -43,6 +43,7 @@
             imagen: '',
             comentarios: '',
             usuario: '',
+
             status: 1
         };
 

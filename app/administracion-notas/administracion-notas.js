@@ -81,8 +81,8 @@
         }
     }
 
-    NotasService.$inject = ['FireService', 'Model', '$q', '$sce'];
-    function NotasService(FireService, Model, $q, $sce) {
+    NotasService.$inject = ['FireService', 'Model', '$q', '$sce', 'FireVars'];
+    function NotasService(FireService, Model, $q, $sce, FireVars) {
 
         var service = this;
         service.get = get;
@@ -100,6 +100,7 @@
             if (obj.$id != undefined) {
                 deferred.resolve(update(arr, obj));
             } else {
+                obj.usuario = FireVars._FIREREF.getAuth().uid;
                 obj.fecha = Firebase.ServerValue.TIMESTAMP;
                 deferred.resolve(create(arr, obj));
             }

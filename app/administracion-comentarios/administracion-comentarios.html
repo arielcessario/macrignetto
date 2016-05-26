@@ -10,6 +10,8 @@
         <label>Ultimos comentarios:</label>
     </div>
     <div class="nota-comentarios">
-        <div ng-repeat="row in $ctrl.comentarios">{{row.detalles}}</div>
+        <div ng-repeat="row in $ctrl.comentarios">{{row.detalles}}
+            <button ng-if="$ctrl.usuario== row.usuario" ng-click="$ctrl.remove(row)">Borrar</button>
+        </div>
     </div>
 </div>

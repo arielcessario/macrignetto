@@ -17,23 +17,33 @@
         }
     }
 
-    AcComentariosController.$inject = ['ComentariosService', 'FireService', '$scope', 'Model'];
+    AcComentariosController.$inject = ['ComentariosService', 'FireService', 'FireVars', 'Model'];
     /**
      * @constructor
      */
-    function AcComentariosController(ComentariosService, FireService, $scope, Model) {
+    function AcComentariosController(ComentariosService, FireService, FireVars, Model) {
         var vm = this;
         vm.comentarios = [];
         vm.comentario = {};
         vm.save = save;
+        vm.remove = remove;
         vm.start = 0;
         vm.arrComentarios = FireService.cacheFactory(Model.refComentarios);
+        vm.usuario = FireVars._FIREREF.getAuth().uid;
 
         vm.obj.$loaded(function () {
             vm.comentarios = vm.arrComentarios.$load(vm.obj.comentarios);
 
         });
 
+        function remove(obj) {
+
+
+            ComentariosService.remove(obj).then(function () {
+                vm.comentario = {};
+                vm.comentarios = vm.arrComentarios.$load(vm.obj.comentarios);
+            });
+        }
 
         function save() {
 
@@ -58,12 +68,13 @@
 
     }
 
-    ComentariosService.$inject = ['FireService', 'Model', '$q'];
-    function ComentariosService(FireService, Model, $q) {
+    ComentariosService.$inject = ['FireService', 'Model', '$q', 'FireVars'];
+    function ComentariosService(FireService, Model, $q, FireVars) {
 
         var service = this;
         service.get = get;
         service.save = save;
+        service.remove = remove;
 
         return service;
 
@@ -74,6 +85,7 @@
             if (obj.$id != undefined) {
                 deferred.resolve(update(arr, obj));
             } else {
+                obj.usuario = FireVars._FIREREF.getAuth().uid;
                 obj.fecha_crea = Firebase.ServerValue.TIMESTAMP;
                 deferred.resolve(create(arr, obj));
             }
@@ -99,6 +111,26 @@
             return arr.$save(FireService.formatObj(obj)).then(function (data) {
                 return data;
             });
+        }
+
+        function remove(obj) {
+
+
+            var deferred = $q.defer();
+            var refNoticia = Model.refNotas.child(Object.getOwnPropertyNames(obj.nota)[0]).child('comentarios').child(obj.$id);
+            var refComentario = Model.refComentarios.child(obj.$id);
+
+            refNoticia.remove(removeNoticiaCallback);
+
+            function removeNoticiaCallback() {
+                refComentario.remove(removeComentarioCallback);
+            }
+
+            function removeComentarioCallback() {
+                deferred.resolve();
+            }
+
+            return deferred.promise;
         }
     }
 
