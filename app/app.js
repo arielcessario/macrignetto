@@ -4,6 +4,7 @@
 // Declare app level module which depends on views, and components
     angular.module('macrignetto', ['oc.lazyLoad',
         'ngRoute',
+        'ngAnimate',
         'firebase',
         'textAngular',
         'acUtils',
