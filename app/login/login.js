@@ -1,15 +1,8 @@
 (function () {
     'use strict';
     angular.module('login', [])
-        .controller('LoginController', LoginController)
         .component('acLogin', acLogin());
 
-
-    LoginController.$inject = [];
-    function LoginController() {
-
-
-    }
     ///// COMPONENTE LOGIN /////
     function acLogin() {
         return {
@@ -17,41 +10,7 @@
                 loginOk: '<',
                 loginKo: '<'
             },
-            template: '<div class="login" ng-if="!$ctrl.isLogged">' +
-            '<div class="ingreso" ng-if="!$ctrl.creando">' +
-            '<div class="input" >' +
-            '<input type="text" ng-model="$ctrl.email">' +
-            '<label>Email</label>' +
-            '</div>' +
-            '<div class="input">' +
-            '<input type="password" ng-model="$ctrl.password">' +
-            '<label>Password</label>' +
-            '</div>' +
-            '</div>' +
-            '<div class="creacion" ng-if="$ctrl.creando">' +
-            '<div class="input"  >' +
-            '<input type="text" ng-model="$ctrl.nombre">' +
-            '<label>Nombre</label>' +
-            '</div>' +
-            '<div class="input"  >' +
-            '<input type="text" ng-model="$ctrl.email">' +
-            '<label>Email</label>' +
-            '</div>' +
-            '<div class="input">' +
-            '<input type="password" ng-model="$ctrl.password">' +
-            '<label>Password</label>' +
-            '</div>' +
-            '</div>' +
-            '<div class="botonera">' +
-            '<button ng-if="!$ctrl.creando" ng-click="$ctrl.login()">Ingresar</button>' +
-            '<button ng-if="!$ctrl.creando" ng-click="$ctrl.creando = true;">Nuevo</button>' +
-            '<button ng-if="$ctrl.creando" ng-click="$ctrl.creando = false;">Ingresar</button>' +
-            '<button ng-if="$ctrl.creando" ng-click="$ctrl.createUser();">Crear</button>' +
-            '</div>' +
-            '</div>' +
-            '<div  ng-if="$ctrl.isLogged" class="logout">' +
-            '<button ng-click="$ctrl.logout()">Salir</button>' +
-            '</div> ',
+            templateUrl: 'login/login.html',
             controller: AcLoginController
         }
     }

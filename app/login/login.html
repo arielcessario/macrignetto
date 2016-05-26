@@ -1,3 +1,42 @@
-<div ng-controller="LoginController as loginController">
-    <ac-login></ac-login>
+<div class="login" ng-if="!$ctrl.isLogged">
+    <button ng-click="$ctrl.showLoginPanel = true;">Ingresar</button>
+</div>
+
+<div class="login-panel" ng-if="$ctrl.showLoginPanel && !$ctrl.isLogged">
+    <div class="login-panel-form">
+        <div class="ingreso" ng-if="!$ctrl.creando">
+            <div class="input">
+                <input type="text" ng-model="$ctrl.email">
+                <label>Email</label>
+            </div>
+            <div class="input">
+                <input type="password" ng-model="$ctrl.password">
+                <label>Password</label>
+            </div>
+        </div>
+        <div class="creacion" ng-if="$ctrl.creando">
+            <div class="input">
+                <input type="text" ng-model="$ctrl.nombre">
+                <label>Nombre</label>
+            </div>
+            <div class="input">
+                <input type="text" ng-model="$ctrl.email">
+                <label>Email</label>
+            </div>
+            <div class="input">
+                <input type="password" ng-model="$ctrl.password">
+                <label>Password</label>
+            </div>
+        </div>
+        <div class="botonera">
+            <button ng-if="!$ctrl.creando" ng-click="$ctrl.login()">Aceptar</button>
+            <button ng-if="!$ctrl.creando" ng-click="$ctrl.creando = true;">Nuevo</button>
+            <button ng-if="$ctrl.creando" ng-click="$ctrl.creando = false;">Ingresar</button>
+            <button ng-if="$ctrl.creando" ng-click="$ctrl.createUser();">Crear</button>
+            <button ng-click="$ctrl.showLoginPanel = false;$ctrl.creando=false;">Cancelar</button>
+        </div>
+    </div>
+</div>
+<div ng-if="$ctrl.isLogged" class="logout">
+    <button ng-click="$ctrl.logout()">Salir</button>
 </div>
