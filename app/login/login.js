@@ -88,6 +88,7 @@
                     }
 
                     vm.isLogged = true;
+                    vm.usuario = getName(authData);
                     //$location.path(vm.loginOk);
                     if (!$scope.$$phase) {
                         $scope.$apply();
