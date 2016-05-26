@@ -1673,21 +1673,34 @@ ac-login {
 
 }
 
-.login.ng-enter, .login.ng-leave,
-.logout.ng-enter, .logout.ng-leave {
-  transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 5s;
+.login-panel.ng-enter, .login-panel.ng-leave {
+  -webkit-transition: 1s linear all;
+  -moz-transition: 1s linear all;
+  -ms-transition: 1s linear all;
+  -o-transition: 1s linear all;
+  transition: 1s linear all;
 }
 
-.login.ng-enter,
-.login.ng-leave.ng-leave-active,
-.logout.ng-enter,
-.logout.ng-leave.ng-leave-active {
+/* du début de l'entrée */
+.login-panel.ng-enter {
+  max-height: 0;
   opacity: 0;
 }
 
-.login.ng-leave,
-.login.ng-enter.ng-enter-active,
-.logout.ng-leave,
-.logout.ng-enter.ng-enter-active {
+/* à la fin de l'entrée */
+.login-panel.ng-enter.ng-enter-active {
+  max-height: 999px;
+  opacity: 1;
+}
+
+/* du début de la sortie */
+.login-panel.ng-leave {
+  max-height: 999px;
+  opacity: 1;
+}
+
+/* à la fin de la sortie */
+.login-panel.ng-leave.ng-leave-active {
+  max-height: 0;
   opacity: 1;
 }
