@@ -53,8 +53,20 @@
 
 
         NotasService.getUltimasNotas().then(function (data) {
-            //console.log(data);
-            vm.notas = data;
+            console.log(data);
+            for (var i = 0; i < data.length; i++) {
+                var nota = {};
+                nota.id = data[i].$id;
+                nota.destacada = data[i].destacada;
+                nota.detalle = $sce.trustAsHtml(getSubString(data[i].detalle, 100));
+                nota.fecha = data[i].fecha;
+                nota.fotos = data[i].fotos;
+                nota.fuente = data[i].fuente;
+                nota.status = data[i].status;
+                nota.titulo = getSubString(data[i].titulo, 50);
+
+                vm.notas.push(nota);
+            }
         });
 
         EventosService.get().then(function (data) {
@@ -158,7 +170,7 @@
          })
          */
         ComicsService.getUltimosComics().then(function (data) {
-            console.log(data);
+            //console.log(data);
             vm.comics = data;
         });
 
@@ -184,6 +196,10 @@
                     vm.mensaje = '';
                 });
 
+        }
+
+        function getSubString(texto, length) {
+            return texto.length > length ? texto.substring(0, length) + "..." : texto;
         }
     }
 })();

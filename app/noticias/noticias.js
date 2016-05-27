@@ -4,8 +4,8 @@
         .controller('NoticiasController', NoticiasController);
 
 
-    NoticiasController.$inject = ['$scope', '$routeParams', 'Model', 'FireService'];
-    function NoticiasController($scope, $routeParams, Model, FireService) {
+    NoticiasController.$inject = ['$scope', '$routeParams', 'Model', 'FireService', '$sce'];
+    function NoticiasController($scope, $routeParams, Model, FireService, $sce) {
 
         var vm = this;
         vm.fotoSelected = '';
@@ -17,7 +17,8 @@
         if (vm.id.length > 0) {
             vm.objNota = FireService.createObjectRef(Model.refNotas.child(vm.id));
             vm.objNota.$loaded(function (data) {
-                vm.nota = data; 
+                vm.nota = data;
+                vm.nota.detalle = $sce.trustAsHtml(data.detalle);
             });
         }
 

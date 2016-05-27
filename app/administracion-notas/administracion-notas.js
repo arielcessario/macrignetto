@@ -118,6 +118,8 @@
         function getUltimasNotas() {
             var refNota = Model.refNotas;
             var arrNotas = FireService.createArrayRef(refNota);
+            var comentarios = FireService.cacheFactory(Model.refComentarios);
+
             return arrNotas.$loaded(function (data) {
                 var list = [];
                 var count = 0;
@@ -125,14 +127,14 @@
                 var destacadaNo = 0;
                 for (var i = 0; i < data.length; i++) {
                     var nota = {};
-                    nota.id = data[i].$id;
+                    nota.$id = data[i].$id;
                     nota.destacada = data[i].destacada;
-                    nota.detalle = $sce.trustAsHtml(getSubString(data[i].detalle, 100));
+                    nota.detalle = data[i].detalle;
                     nota.fecha = timeConverter(data[i].fecha);
                     nota.fotos = data[i].fotos;
                     nota.fuente = data[i].fuente;
                     nota.status = data[i].status;
-                    nota.titulo = getSubString(data[i].titulo, 50);
+                    nota.titulo = data[i].titulo;
 
                     list.push(nota);
 
@@ -140,9 +142,6 @@
                     destacadaSi = destacadaSi + (data[i].destacada == 1 ? 1 : 0);
                     destacadaNo = destacadaNo + (data[i].destacada == 0 ? 1 : 0);
                     if(count >= 8) {
-                        //console.log(count);
-                        //console.log(destacadaSi);
-                        //console.log(destacadaNo);
                         if(destacadaSi == 4 && destacadaNo > 0) {
                             for(var j=0; j < list.length; j++) {
                                 if(list[j].destacada == 0) {
@@ -165,7 +164,6 @@
             });
         }
 
-
         function create(arr, obj) {
             return arr.$add(FireService.formatObj(obj)).then(function (data) {
                 return data;
@@ -176,10 +174,6 @@
             return arr.$save(FireService.formatObj(obj)).then(function (data) {
                 return data;
             });
-        }
-
-        function getSubString(texto, length) {
-            return texto.length > length ? texto.substring(0, length) + "..." : texto;
         }
 
         function timeConverter(timestamp){
