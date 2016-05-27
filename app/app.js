@@ -18,7 +18,8 @@
         'acAdministracionEventos',
         'acAdministracionNotas',
         'acAdministracionComics',
-        'acAdministracionComentarios'
+        'acAdministracionComentarios',
+        'acContacto'
     ]).config(['$routeProvider', function ($routeProvider) {
 
             $routeProvider.otherwise({redirectTo: '/main'});

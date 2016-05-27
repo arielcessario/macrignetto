@@ -4,8 +4,8 @@
         .controller('NoticiasController', NoticiasController);
 
 
-    NoticiasController.$inject = ['$scope', 'Model', 'FireService', '$sce', 'NotasService'];
-    function NoticiasController($scope, Model, FireService, $sce, NotasService) {
+    NoticiasController.$inject = ['$scope', 'Model', 'FireService', '$sce', 'NotasService', '$location'];
+    function NoticiasController($scope, Model, FireService, $sce, NotasService, $location) {
 
         var vm = this;
         vm.fotoSelected = '';
@@ -13,6 +13,8 @@
         vm.notas = [];
         vm.objNota = {};
         vm.comentarios = [];
+
+        vm.verNoticia = verNoticia;
 
 
         NotasService.get().then(function (data) {
@@ -36,6 +38,11 @@
                 vm.notas.push(nota);
             }
         });
+
+        function verNoticia(id) {
+            console.log(id);
+            $location.path('/nota/' + id);
+        }
 
         function getSubString(texto, length) {
             return texto.length > length ? texto.substring(0, length) + "..." : texto;

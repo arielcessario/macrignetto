@@ -4,14 +4,17 @@
         .controller('HumorController', HumorController);
 
 
-    HumorController.$inject = ['$scope', 'Model', 'FireService', '$sce'];
-    function HumorController($scope, Model, FireService, $sce) {
+    HumorController.$inject = ['$scope', 'Model', 'FireService', '$sce', 'ComicsService'];
+    function HumorController($scope, Model, FireService, $sce, ComicsService) {
 
         var vm = this;
         vm.fotoSelected = '';
-        vm.nota = {};
+        vm.comics = [];
 
-
+        ComicsService.get().then(function (data) {
+            console.log(data);
+            vm.comics = data;
+        })
 
     }
 })();
