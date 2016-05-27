@@ -157,7 +157,7 @@
 
         function verNoticia(id) {
             console.log(id);
-            $location.path('/noticias/' + id);
+            $location.path('/nota/' + id);
         }
 
         function selectEvento(evento) {

@@ -47,7 +47,19 @@
                 }
             });
 
-            $routeProvider.when('/noticias/:id', {
+            $routeProvider.when('/nota/:id', {
+                templateUrl: 'nota/nota.html',
+                controller: 'NotaController',
+                data: {requiresLogin: false},
+                resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        // you can lazy load files for an existing module
+                        return $ocLazyLoad.load('nota/nota.js');
+                    }]
+                }
+            });
+
+            $routeProvider.when('/noticias', {
                 templateUrl: 'noticias/noticias.html',
                 controller: 'NoticiasController',
                 data: {requiresLogin: false},
