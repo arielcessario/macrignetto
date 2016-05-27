@@ -1,37 +1,42 @@
-<div ng-controller="NoticiasController as notaCtrl" class="main-container">
-    <div style="height: 100px;background-color: #000;color:#fff">Logo</div>
+<div ng-controller="NoticiasController as notaCtrl" class="common-container">
+    <div style="height: 100px;background-color: #000;color:#fff;display: flex; align-items: center;">
+        <img ng-src="images/logo.png" height="70" style="margin-left: 20px;">
+        <span style="margin-left: 20px;font-size: 32px;">{{notaCtrl.nota.titulo}}</span>
+    </div>
     <div class="noticia-container">
-        <div>
-            <div class="sample">
-                <lable>Buscar por:</lable>
-                <select>
-                    <option value="1" selected>Nombre</option>
-                    <option value="2">Titulo</option>
-                </select>
-                <lable>Ordenar por:</lable>
-                <select>
-                    <option value="1" selected>Asc</option>
-                    <option value="2">Desc</option>
-                </select>
+        <div style="width: 80%;display: flex;">
+            <div>
+                <div class="sample">
+                    <lable>Buscar por:</lable>
+                    <select style="font-size: 12px;width: 30%;">
+                        <option value="1" selected>Nombre</option>
+                        <option value="2">Titulo</option>
+                    </select>
+                    <lable>Ordenar por:</lable>
+                    <select style="font-size: 12px;width: 30%;">
+                        <option value="1" selected>Asc</option>
+                        <option value="2">Desc</option>
+                    </select>
+                </div>
+                <div class="nota-panel-fotos-main">
+                    <img src="images/macri.png">
+                </div>
+                <div class="nota-panel-fotos-thumb">
+                    <img ng-if="notaCtrl.nota.fotos[0].nombre != undefined" src="images/macri.png"
+                         ng-click="notaCtrl.fotoSelected = notaCtrl.nota.fotos[0].nombre">
+                    <img ng-if="notaCtrl.nota.fotos[0].nombre != undefined" src="images/macri.png"
+                         ng-click="notaCtrl.fotoSelected = notaCtrl.nota.fotos[0].nombre">
+                    <img ng-if="notaCtrl.nota.fotos[0].nombre != undefined" src="images/macri.png"
+                         ng-click="notaCtrl.fotoSelected = notaCtrl.nota.fotos[0].nombre">
+                    <img ng-if="notaCtrl.nota.fotos[0].nombre != undefined" src="images/macri.png"
+                         ng-click="notaCtrl.fotoSelected = notaCtrl.nota.fotos[0].nombre">
+                </div>
+                <ac-administracion-comentarios obj="notaCtrl.objNota"></ac-administracion-comentarios>
+                <a class="button" href="#/main" style="margin-bottom: 20px;">Volver</a>
             </div>
-            <div class="nota-panel-fotos-main">
-                <img src="images/macri.png">
+            <div class="nota-panel-texto">
+                <div ng-bind-html="notaCtrl.nota.detalle" class="nota-texto-container"></div>
             </div>
-            <div class="nota-panel-fotos-thumb">
-                <img ng-if="notaCtrl.nota.fotos[0].nombre != undefined" src="images/macri.png"
-                     ng-click="notaCtrl.fotoSelected = notaCtrl.nota.fotos[0].nombre">
-                <img ng-if="notaCtrl.nota.fotos[0].nombre != undefined" src="images/macri.png"
-                     ng-click="notaCtrl.fotoSelected = notaCtrl.nota.fotos[0].nombre">
-                <img ng-if="notaCtrl.nota.fotos[0].nombre != undefined" src="images/macri.png"
-                     ng-click="notaCtrl.fotoSelected = notaCtrl.nota.fotos[0].nombre">
-                <img ng-if="notaCtrl.nota.fotos[0].nombre != undefined" src="images/macri.png"
-                     ng-click="notaCtrl.fotoSelected = notaCtrl.nota.fotos[0].nombre">
-            </div>
-            <ac-administracion-comentarios obj="notaCtrl.objNota"></ac-administracion-comentarios>
-        </div>
-        <div class="nota-panel-texto">
-            <h2>{{notaCtrl.nota.titulo}}</h2>
-            <div ng-bind-html="notaCtrl.nota.detalle" class="nota-texto-container"></div>
         </div>
     </div>
 </div>

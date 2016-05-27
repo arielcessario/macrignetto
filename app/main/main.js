@@ -58,7 +58,7 @@
                 var nota = {};
                 nota.id = data[i].$id;
                 nota.destacada = data[i].destacada;
-                nota.detalle = $sce.trustAsHtml(getSubString(data[i].detalle, 100));
+                nota.detalle = data[i].detalle != undefined ? $sce.trustAsHtml(getSubString(data[i].detalle, 100)) : '';
                 nota.fecha = data[i].fecha;
                 nota.fotos = data[i].fotos;
                 nota.fuente = data[i].fuente;
