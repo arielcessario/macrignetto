@@ -126,23 +126,21 @@
                     count = count + (data[i].status == 1 ? 1 : 2);
                     destacadaSi = destacadaSi + (data[i].status == 2 ? 1 : 0);
                     destacadaNo = destacadaNo + (data[i].status == 1 ? 1 : 0);
-                    if(count >= 8) {
-                        if(destacadaSi == 4 && destacadaNo > 0) {
-                            for(var j=0; j < list.length; j++) {
-                                if(list[j].status == 0) {
-                                    list.splice(j,1);
-                                    break;
-                                }
-                            }
-                        } else if(destacadaSi == 2 && destacadaNo > 4) {
-                            for(var j=0; j < list.length; j++) {
-                                if(list[j].status == 0) {
-                                    list.splice(j,1);
-                                    break;
-                                }
-                            }
+                }
+
+                if(destacadaSi == 4 && destacadaNo > 0) {
+                    for(var j=0; j < list.length; j++) {
+                        if(list[j].status == 1) {
+                            list.splice(j,1);
+                            break;
                         }
-                        return list;
+                    }
+                } else if(destacadaSi == 2 && destacadaNo > 4) {
+                    for(var j=0; j < list.length; j++) {
+                        if(list[j].status == 1) {
+                            list.splice(j,1);
+                            break;
+                        }
                     }
                 }
                 return list;

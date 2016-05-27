@@ -136,6 +136,19 @@
                     nota.status = data[i].status;
                     nota.titulo = data[i].titulo;
 
+                    //pregunto si tiene comentarios. si tiene retorno el ultimo el el listado????
+                    if(data[i].comentarios != undefined) {
+                        var comentario = {}
+                        comentario.detalles = 'detalle de prueba';
+                        comentario.fecha_crea = 1464295078819;
+                        comentario.fecha_upd = 1464295078819;
+                        comentario.nota = {};
+                        comentario.usuario = "e92e57c5-4e4f-4d0c-b481-838950852773";
+
+                        nota.comentario = comentario;
+                    }
+
+
                     list.push(nota);
 
                     count = count + (data[i].destacada == 1 ? 2 : 1);

@@ -64,6 +64,11 @@
                 nota.fuente = data[i].fuente;
                 nota.status = data[i].status;
                 nota.titulo = getSubString(data[i].titulo, 50);
+                if(data[i].comentario != undefined) {
+                    nota.ultimo_comentario = data[i].destacada == 1 ? getSubString(data[i].comentario.detalles, 200) : getSubString(data[i].comentario.detalles, 100);
+                } else {
+                    nota.ultimo_comentario = 'Se el primero en comentar';
+                }
 
                 vm.notas.push(nota);
             }
