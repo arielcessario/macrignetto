@@ -119,7 +119,7 @@
             vm.evento = vm.listaEventos[0];
             if(vm.listaEventos[0].evento != undefined) {
                 vm.evento.detalle = $sce.trustAsHtml(vm.listaEventos[0].evento.detalle);
-                vm.evento.titulo = vm.listaEventos[0].evento.titulo;
+                vm.evento.titulo = $sce.trustAsHtml(getSubString(vm.listaEventos[0].evento.titulo, 20));
                 vm.evento.fotos = vm.listaEventos[0].evento.fotos;
             }
 
@@ -138,7 +138,7 @@
                 //console.log(data[data.length - 1]);
 
                 vm.evento.detalle = $sce.trustAsHtml(data[data.length - 1].detalle);
-                vm.evento.titulo = data[data.length - 1].titulo;
+                vm.evento.titulo = $sce.trustAsHtml(getSubString(data[data.length - 1].titulo, 20));
                 vm.evento.fotos = data[data.length - 1].fotos;
             });
         }

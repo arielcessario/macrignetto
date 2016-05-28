@@ -8,23 +8,51 @@
     ///// Contactenos /////
     function acContacto() {
         return {
-            bindings: {
-                limit: '<'
-            },
             templateUrl: 'ac-contacto/ac-contacto.html',
             controller: AcContactoController
         }
     }
 
-    AcContactoController.$inject = ['UsuariosService', '$timeout'];
+    AcContactoController.$inject = ['ContactsService'];
     /**
      * @constructor
      */
-    function AcContactoController(UsuariosService, $timeout) {
+    function AcContactoController(ContactsService) {
         var vm = this;
-        vm.usuarios = [];
-        vm.usuario = {};
+        vm.email = '';
+        vm.nombre = '';
+        vm.mensaje = '';
+        vm.asunto = '';
+        vm.enviado = false;
+        vm.enviando = false;
 
+        //FUNCIONES
+        vm.sendMail = sendMail;
+
+
+        function sendMail() {
+            if (vm.enviando) {
+                return;
+            }
+            vm.enviando = true;
+
+            ContactsService.sendMail(vm.email,
+                [{mail: 'arielcessario@gmail.com'}, {mail: 'mmaneff@gmail.com'}, {mail: 'diegoyankelevich@gmail.com'}],
+                vm.nombre,
+                vm.asunto,
+                vm.mensaje,
+                function (data, result) {
+                    console.log(data);
+                    console.log(result);
+                    vm.enviando = false;
+
+                    vm.email = '';
+                    vm.nombre = '';
+                    vm.asunto = '';
+                    vm.mensaje = '';
+                });
+
+        }
 
     }
 

@@ -21,11 +21,8 @@
         </div>
         <div class="input" style="margin-bottom: 15px;">
             <label>Consulta</label>
-                    <textarea class="form-control text-area"
-                              ac-validator is-required="Debe ingresar una consulta"
-                              ng-model="$ctrl.mensaje"
-                              name="" id="contacto-consulta"
-                              rows="10" cols="50"></textarea>
+            <textarea class="form-control text-area" ac-validator is-required="Debe ingresar una consulta"
+                      ng-model="$ctrl.mensaje" name="" id="contacto-consulta" rows="10" cols="50"></textarea>
         </div>
         <button id="enviar-consulta" ac-validator ng-click="$ctrl.sendMail();">Enviar</button>
     </div>
