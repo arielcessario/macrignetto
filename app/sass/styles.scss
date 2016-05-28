@@ -1789,3 +1789,13 @@ ac-login {
   height: 35px;
 }
 */
+.img-container{
+  cursor: pointer;
+  max-width: 40%;
+  height: 100px;
+  margin: 0 5px;
+  border: 1px #DD0374 solid;
+  -webkit-box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.75);
+}
