@@ -1,0 +1,15 @@
+<div ng-controller="ComicController as comicCtrl" class="common-container">
+    <div style="height: 100px;background-color: #000;color:#fff;display: flex; align-items: center;">
+        <img ng-src="images/logo.png" height="70" style="margin-left: 20px;">
+        <span style="margin-left: 20px;font-size: 32px;">{{comicCtrl.comic.titulo}}</span>
+    </div>
+    <div class="noticia-container">
+        <div style="width: 80%;display: flex;flex-direction: column;">
+            <img ng-src="images/{{comicCtrl.comic.imagen}}">
+            <div>
+                <ac-administracion-comentarios obj="comicCtrl.objComic"></ac-administracion-comentarios>
+                <a class="button" href="#/main" style="margin-bottom: 20px;">Volver</a>
+            </div>
+        </div>
+    </div>
+</div>

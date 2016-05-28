@@ -96,6 +96,18 @@
                 }
             });
 
+            $routeProvider.when('/comic/:id', {
+                templateUrl: 'comic/comic.html',
+                controller: 'ComicController',
+                data: {requiresLogin: false},
+                resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        // you can lazy load files for an existing module
+                        return $ocLazyLoad.load('comic/comic.js');
+                    }]
+                }
+            });
+
         }])
         .run(function ($rootScope, $location, FireVars) {
             // Para activar la seguridad en una vista, agregar data:{requiresLogin:false} dentro de $routeProvider.when */

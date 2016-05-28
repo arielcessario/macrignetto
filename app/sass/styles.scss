@@ -1350,7 +1350,8 @@ button:hover, .button:hover {
 .fa-search {
   font-size: 50px !important;
   color: white;
-  margin: 13px;
+  //margin: 13px;
+  margin: 5px 15px;
 }
 
 .sample {
@@ -1783,4 +1784,8 @@ ac-login {
   /* standard transition styles */
   opacity:1;
 }
-
+/*
+.common-container > .search-administracion > i {
+  height: 35px;
+}
+*/

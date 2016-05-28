@@ -19,17 +19,17 @@
                     </select>
                 </div>
                 <div class="nota-panel-fotos-main">
-                    <img src="images/macri.png">
+                    <img ng-src="images/{{notaCtrl.nota.fotos[0].nombre}}">
                 </div>
                 <div class="nota-panel-fotos-thumb">
-                    <img ng-if="notaCtrl.nota.fotos[0].nombre != undefined" src="images/macri.png"
+                    <img ng-if="notaCtrl.nota.fotos[0].nombre != undefined" ng-src="images/{{notaCtrl.nota.fotos[0].nombre}}"
                          ng-click="notaCtrl.fotoSelected = notaCtrl.nota.fotos[0].nombre">
-                    <img ng-if="notaCtrl.nota.fotos[0].nombre != undefined" src="images/macri.png"
-                         ng-click="notaCtrl.fotoSelected = notaCtrl.nota.fotos[0].nombre">
-                    <img ng-if="notaCtrl.nota.fotos[0].nombre != undefined" src="images/macri.png"
-                         ng-click="notaCtrl.fotoSelected = notaCtrl.nota.fotos[0].nombre">
-                    <img ng-if="notaCtrl.nota.fotos[0].nombre != undefined" src="images/macri.png"
-                         ng-click="notaCtrl.fotoSelected = notaCtrl.nota.fotos[0].nombre">
+                    <img ng-if="notaCtrl.nota.fotos[1].nombre != undefined" ng-src="images/{{notaCtrl.nota.fotos[1].nombre}}"
+                         ng-click="notaCtrl.fotoSelected = notaCtrl.nota.fotos[1].nombre">
+                    <img ng-if="notaCtrl.nota.fotos[2].nombre != undefined" ng-src="images/{{notaCtrl.nota.fotos[2].nombre}}"
+                         ng-click="notaCtrl.fotoSelected = notaCtrl.nota.fotos[2].nombre">
+                    <img ng-if="notaCtrl.nota.fotos[3].nombre != undefined" ng-src="images/{{notaCtrl.nota.fotos[3].nombre}}"
+                         ng-click="notaCtrl.fotoSelected = notaCtrl.nota.fotos[3].nombre">
                 </div>
                 <ac-administracion-comentarios obj="notaCtrl.objNota"></ac-administracion-comentarios>
                 <a class="button" href="#/main" style="margin-bottom: 20px;">Volver</a>
