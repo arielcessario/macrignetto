@@ -29,7 +29,7 @@
         vm.remove = remove;
         vm.start = 0;
         vm.arrComentarios = FireService.cacheFactory(Model.refComentarios);
-        vm.usuario = FireVars._FIREREF.getAuth().uid;
+        vm.usuario = (FireVars._FIREREF.getAuth() == null) ? null : FireVars._FIREREF.getAuth().uid;
 
         vm.obj.$loaded(function () {
             vm.comentarios = vm.arrComentarios.$load(vm.obj.comentarios);

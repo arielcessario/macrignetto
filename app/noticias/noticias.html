@@ -30,7 +30,7 @@
     <div class="noticia-container" style="margin: 0;">
         <div id="noticias" class="container">
             <div class="noticias-fila">
-                <div ng-repeat="nota in noticiasCtrl.notas" class="noticias-info" ng-class="{'noticia-destacada':nota.destacada == 1}">
+                <div ng-repeat="nota in noticiasCtrl.notas | filter:$ctrl.filtro" class="noticias-info noticia-result" ng-class="{'noticia-destacada':nota.destacada == 1}">
                     <a href="" class="btn-facebook" title="Me gusta">
                         <img src="images/like.png" class="" height="30" width="30">
                     </a>
