@@ -135,6 +135,7 @@
                     nota.fuente = data[i].fuente;
                     nota.status = data[i].status;
                     nota.titulo = data[i].titulo;
+                    nota.categoria = data[i].categoria != undefined ? data[i].categoria : 1 ;
 
                     //pregunto si tiene comentarios. si tiene retorno el ultimo el el listado????
                     if(data[i].comentarios != undefined) {

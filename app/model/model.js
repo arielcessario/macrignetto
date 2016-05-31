@@ -58,7 +58,8 @@
             fecha: Firebase.ServerValue.TIMESTAMP,
             destacada: false,
             status: 1,
-            usuario: ''
+            usuario: '',
+            categoria: ''
         };
 
         factory.refNotas = FireVars._FIREREF.child('/notas/');

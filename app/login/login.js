@@ -23,14 +23,63 @@
         var vm = this;
         vm.email = '';
         vm.password = '';
+        vm.oldPassword = '';
+        vm.newPassword = '';
         vm.nombre = '';
-        vm.creando = false;
+        vm.panel = 1;
 
         vm.isLogged = false;
 
+        //FUNCIONES
         vm.login = login;
         vm.logout = logout;
         vm.createUser = createUser;
+        vm.resetPassword = resetPassword;
+        vm.changePassword = changePassword;
+
+
+        function changePassword() {
+            FireVars._FIREREF.changePassword({
+                email       : vm.email,
+                oldPassword : vm.oldPassword,
+                newPassword : vm.newPassword
+            }, function(error) {
+                if (error) {
+                    switch (error.code) {
+                        case "INVALID_PASSWORD":
+                            console.log("The specified user account password is incorrect.");
+                            break;
+                        case "INVALID_USER":
+                            console.log("The specified user account does not exist.");
+                            break;
+                        default:
+                            console.log("Error changing password:", error);
+                    }
+                } else {
+                    vm.oldPassword = '';
+                    vm.newPassword = '';
+                    console.log("User password changed successfully!");
+                }
+            });
+        }
+
+        function resetPassword() {
+            FireVars._FIREREF.resetPassword({
+                email : vm.email
+            }, function(error) {
+                if (error) {
+                    switch (error.code) {
+                        case "INVALID_USER":
+                            console.log("The specified user account does not exist.");
+                            break;
+                        default :
+                            console.log("Error resetting password:", error);
+                    }
+                } else {
+                    console.log("Password reset email sent successfully");
+                }
+            });
+        }
 
 
         function logout(){
@@ -38,8 +87,8 @@
             vm.isLogged = false;
             $location.path('/main');
         }
-        function createUser() {
 
+        function createUser() {
             Model.refUsuarios.createUser({
                 email    : vm.email,
                 password : vm.password

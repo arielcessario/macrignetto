@@ -1715,10 +1715,25 @@ ac-login {
   }
 
 }
+/*
 #close1, #close2 {
   float: right;
   color: #fff;
   font-size: 15px;
+  text-decoration: none;
+}
+*/
+.login-close {
+  float: right;
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+}
+.forgot-link{
+  font-size: 14px;
+  line-height: 45px;
+  color: #5DC3A7;
+  display: inline-block;
   text-decoration: none;
 }
 .login-panel.ng-enter, .login-panel.ng-leave {
