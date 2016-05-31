@@ -64,9 +64,10 @@
         }
 
         function resetPassword() {
-            FireVars._FIREREF.resetPassword({
-                email : vm.email
-            }, function(error) {
+            console.log(vm.email);
+            var credentials = {email: vm.email};
+            FireVars._FIREREF.resetPassword(credentials, function(error) {
+                console.log(error);
                 if (error) {
                     switch (error.code) {
                         case "INVALID_USER":

@@ -1685,7 +1685,7 @@ ac-login {
         flex-direction: column;
         label {
           font-family: 'Droid Serif', serif;
-          font-size: 18px !important;
+          font-size: 14px !important;
           margin-top: 5px;
           margin-bottom: 5px;
         }
@@ -1704,6 +1704,12 @@ ac-login {
       .botonera {
         display: flex;
         justify-content: center;
+
+        button{
+          font-size: 13px;
+          padding: 5px;
+          width: 100px;
+        }
       }
     }
   }
