@@ -76,6 +76,7 @@
                             console.log("Error resetting password:", error);
                     }
                 } else {
+                    vm.email = '';
                     console.log("Password reset email sent successfully");
                 }
             });
@@ -107,6 +108,8 @@
                 console.log("Login Failed!", error);
                 //$location.path(vm.loginKo);
             } else {
+                vm.email = '';
+                vm.password = '';
                 console.log("Authenticated successfully with payload:", authData);
             }
         }
