@@ -35,7 +35,7 @@
             </form>
         </div>
         <div class="creacion" ng-if="$ctrl.panel == 3">
-            <span>Cambiar Contraseña<a href="" class="login-close" ng-click="$ctrl.showLoginPanel = false;$ctrl.panel = 1;">x</a></span>
+            <span>Cambiar ContraseÃ±a<a href="" class="login-close" ng-click="$ctrl.showLoginPanel = false;$ctrl.panel = 1;">x</a></span>
             <form style="margin: 15px 30px;">
                 <div class="input">
                     <label>Email</label>
@@ -52,7 +52,7 @@
             </form>
         </div>
         <div class="creacion" ng-if="$ctrl.panel == 4">
-            <span>Recuperar Contraseña<a href="" class="login-close" ng-click="$ctrl.showLoginPanel = false;$ctrl.panel = 1;">x</a></span>
+            <span>Recuperar ContraseÃ±a<a href="" class="login-close" ng-click="$ctrl.showLoginPanel = false;$ctrl.panel = 1;">x</a></span>
             <form style="margin: 15px 30px;">
                 <div class="input">
                     <label>Email</label>
@@ -66,12 +66,12 @@
             <button ng-if="$ctrl.panel != 1" ng-click="$ctrl.panel = 1">Ingresar</button>
             <button ng-if="$ctrl.panel == 2" ng-click="$ctrl.createUser();">Crear</button>
             <button ng-if="$ctrl.panel == 3" ng-click="$ctrl.changePassword();">Cambiar</button>
-            <button ng-if="$ctrl.panel != 3" ng-click="$ctrl.panel = 3;">Cambiar Contraseña</button>
-            <button ng-if="$ctrl.panel == 4" ng-click="$ctrl.resetPassword();">Recuperar Contraseña</button>
+            <button ng-if="$ctrl.panel != 3" ng-click="$ctrl.panel = 3;">Cambiar ContraseÃ±a</button>
+            <button ng-if="$ctrl.panel == 4" ng-click="$ctrl.resetPassword();">Recuperar ContraseÃ±a</button>
             <button ng-click="$ctrl.showLoginPanel = false;$ctrl.panel = 1">Cancelar</button>
         </div>
         <div style="text-align: center">
-            <a href="" class="forgot-link" ng-if="$ctrl.panel != 4" ng-click="$ctrl.panel = 4">Recuperar Contraseña</a>
+            <a href="" class="forgot-link" ng-if="$ctrl.panel != 4" ng-click="$ctrl.panel = 4">Recuperar ContraseÃ±a</a>
         </div>
     </div>
 </div>
