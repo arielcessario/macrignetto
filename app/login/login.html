@@ -65,7 +65,8 @@
             <button ng-if="$ctrl.panel != 2" ng-click="$ctrl.panel = 2">Nuevo</button>
             <button ng-if="$ctrl.panel != 1" ng-click="$ctrl.panel = 1">Ingresar</button>
             <button ng-if="$ctrl.panel == 2" ng-click="$ctrl.createUser();">Crear</button>
-            <button ng-if="$ctrl.panel == 3" ng-click="$ctrl.changePassword();">Cambiar Contraseña</button>
+            <button ng-if="$ctrl.panel == 3" ng-click="$ctrl.changePassword();">Cambiar</button>
+            <button ng-if="$ctrl.panel != 3" ng-click="$ctrl.panel = 3;">Cambiar Contraseña</button>
             <button ng-if="$ctrl.panel == 4" ng-click="$ctrl.resetPassword();">Recuperar Contraseña</button>
             <button ng-click="$ctrl.showLoginPanel = false;$ctrl.panel = 1">Cancelar</button>
         </div>
