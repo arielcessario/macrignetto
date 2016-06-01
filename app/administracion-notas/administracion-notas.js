@@ -118,13 +118,13 @@
         function getUltimasNotas() {
             var refNota = Model.refNotas;
             var arrNotas = FireService.createArrayRef(refNota);
-            var comentarios = FireService.cacheFactory(Model.refComentarios);
 
             return arrNotas.$loaded(function (data) {
                 var list = [];
                 var count = 0;
                 var destacadaSi = 0;
                 var destacadaNo = 0;
+
                 for (var i = 0; i < data.length; i++) {
                     var nota = {};
                     nota.$id = data[i].$id;
@@ -140,15 +140,13 @@
                     //pregunto si tiene comentarios. si tiene retorno el ultimo el el listado????
                     if(data[i].comentarios != undefined) {
                         var comentario = {}
-                        comentario.detalles = 'detalle de prueba';
-                        comentario.fecha_crea = 1464295078819;
-                        comentario.fecha_upd = 1464295078819;
+                        comentario.detalles = 'fsdfdsfds';
+                        comentario.fecha_crea = 1463583419658;
+                        comentario.fecha_upd = 1463583419658;
                         comentario.nota = {};
                         comentario.usuario = "e92e57c5-4e4f-4d0c-b481-838950852773";
-
                         nota.comentario = comentario;
                     }
-
 
                     list.push(nota);
 
