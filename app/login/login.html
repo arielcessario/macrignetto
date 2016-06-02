@@ -4,74 +4,41 @@
 
 <div class="login-panel" ng-if="$ctrl.showLoginPanel && !$ctrl.isLogged">
     <div class="login-panel-form" ng-class="{'moved-login-form':$ctrl.showLoginPanel && !$ctrl.isLogged}">
-        <div class="ingreso" ng-if="$ctrl.panel == 1">
-            <span>Login<a href="" class="login-close" ng-click="$ctrl.showLoginPanel = false;$ctrl.panel = 1;">x</a></span>
-            <form style="margin: 15px 30px;">
-                <div class="input">
-                    <label>Email</label>
-                    <input type="text" ng-model="$ctrl.email">
-                </div>
-                <div class="input">
-                    <label>Password</label>
-                    <input type="password" ng-model="$ctrl.password">
-                </div>
-            </form>
+
+        <h1>Ingresa tus datos!</h1>
+
+
+        <div class="ingreso" ng-if="!$ctrl.creando">
+
+            <div class="input">
+                <label>Email</label>
+                <input type="text" ng-model="$ctrl.email">
+            </div>
+            <div class="input">
+                <label>Password</label>
+                <input type="password" ng-model="$ctrl.password">
+            </div>
         </div>
-        <div class="creacion" ng-if="$ctrl.panel == 2">
-            <span>Crear Usuario<a href="" class="login-close" ng-click="$ctrl.showLoginPanel = false;$ctrl.panel = 1;">x</a></span>
-            <form style="margin: 15px 30px;">
-                <div class="input">
-                    <label>Nombre</label>
-                    <input type="text" ng-model="$ctrl.nombre">
-                </div>
-                <div class="input">
-                    <label>Email</label>
-                    <input type="text" ng-model="$ctrl.email">
-                </div>
-                <div class="input">
-                    <label>Password</label>
-                    <input type="password" ng-model="$ctrl.password">
-                </div>
-            </form>
-        </div>
-        <div class="creacion" ng-if="$ctrl.panel == 3">
-            <span>Cambiar Contraseña<a href="" class="login-close" ng-click="$ctrl.showLoginPanel = false;$ctrl.panel = 1;">x</a></span>
-            <form style="margin: 15px 30px;">
-                <div class="input">
-                    <label>Email</label>
-                    <input type="text" ng-model="$ctrl.email">
-                </div>
-                <div class="input">
-                    <label>Old Password</label>
-                    <input type="password" ng-model="$ctrl.oldPassword">
-                </div>
-                <div class="input">
-                    <label>New Password</label>
-                    <input type="password" ng-model="$ctrl.newPassword">
-                </div>
-            </form>
-        </div>
-        <div class="creacion" ng-if="$ctrl.panel == 4">
-            <span>Recuperar Contraseña<a href="" class="login-close" ng-click="$ctrl.showLoginPanel = false;$ctrl.panel = 1;">x</a></span>
-            <form style="margin: 15px 30px;">
-                <div class="input">
-                    <label>Email</label>
-                    <input type="text" ng-model="$ctrl.email">
-                </div>
-            </form>
+        <div class="creacion" ng-if="$ctrl.creando">
+            <div class="input">
+                <label>Nombre</label>
+                <input type="text" ng-model="$ctrl.nombre">
+            </div>
+            <div class="input">
+                <label>Email</label>
+                <input type="text" ng-model="$ctrl.email">
+            </div>
+            <div class="input">
+                <label>Password</label>
+                <input type="password" ng-model="$ctrl.password">
+            </div>
         </div>
         <div class="botonera">
-            <button ng-if="$ctrl.panel == 1" ng-click="$ctrl.login();">Aceptar</button>
-            <button ng-if="$ctrl.panel != 2" ng-click="$ctrl.panel = 2">Nuevo</button>
-            <button ng-if="$ctrl.panel != 1" ng-click="$ctrl.panel = 1">Ingresar</button>
-            <button ng-if="$ctrl.panel == 2" ng-click="$ctrl.createUser();">Crear</button>
-            <button ng-if="$ctrl.panel == 3" ng-click="$ctrl.changePassword();">Cambiar</button>
-            <button ng-if="$ctrl.panel != 3" ng-click="$ctrl.panel = 3;">Cambiar Contraseña</button>
-            <button ng-if="$ctrl.panel == 4" ng-click="$ctrl.resetPassword();">Recuperar Contraseña</button>
-            <button ng-click="$ctrl.showLoginPanel = false;$ctrl.panel = 1">Cancelar</button>
-        </div>
-        <div style="text-align: center">
-            <a href="" class="forgot-link" ng-if="$ctrl.panel != 4" ng-click="$ctrl.panel = 4">Recuperar Contraseña</a>
+            <button ng-if="!$ctrl.creando" ng-click="$ctrl.login()">Aceptar</button>
+            <button ng-if="!$ctrl.creando" ng-click="$ctrl.creando = true;">Nuevo</button>
+            <button ng-if="$ctrl.creando" ng-click="$ctrl.creando = false;">Ingresar</button>
+            <button ng-if="$ctrl.creando" ng-click="$ctrl.createUser();">Crear</button>
+            <button ng-click="$ctrl.showLoginPanel = false;$ctrl.creando=false;">Cancelar</button>
         </div>
     </div>
 </div>
