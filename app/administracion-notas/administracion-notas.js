@@ -126,17 +126,23 @@
                 data.forEach(function(nota){
                     //console.log(nota);
                     if(nota.comentarios != undefined) {
-                        console.log(nota.comentarios);
+                        //console.log(nota.comentarios);
                         var arrComentarios = FireService.cacheFactory(Model.refComentarios);
                         var comentarios = arrComentarios.$load(nota.comentarios);
-                        console.log(comentarios);
+                        //console.log(comentarios);
+                        var list = [];
                         comentarios.forEach(function(refComentario){
                             console.log(refComentario);
+                            var comentario = {};
+                            comentario.$id = refComentario.$id;
+                            comentario.detalles = refComentario.detalles;
+                            list.push(comentario);
                             //var obj = FireService.createObjectRef(refComentario);
                             //console.log(obj);
                         });
+                        console.log(list);
                     } else {
-                        console.log('Nota ' + nota.$id + ' no tiene comentarios');
+                        //console.log('Nota ' + nota.$id + ' no tiene comentarios');
                     }
                 })
                 return data;

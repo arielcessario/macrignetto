@@ -52,7 +52,7 @@
         vm.selectEvento = selectEvento;
 
         NotasService.test().then(function (data){
-            console.log(data);
+            //console.log(data);
         });
 
         NotasService.getUltimasNotas().then(function (data) {

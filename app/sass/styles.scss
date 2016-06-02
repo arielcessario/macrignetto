@@ -1400,7 +1400,12 @@ button:hover, .button:hover {
     font-weight: 200;
     color: white;
   }
-
+  a:hover,
+  a:focus,
+  a:active {
+    text-decoration: underline;
+    color:#fccd4d;
+  }
 }
 
 ////// ADMINISTRACION ////////
@@ -1865,3 +1870,47 @@ ac-login {
   -moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.75);
 }
+ac-paginacion > .table-td {
+  display: flex;
+  justify-content: space-around;
+}
+.input-foto-main{
+  display: flex;
+  flex-direction: column;
+}
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.inputfile-1 + label {
+  color: #f1e5e6;
+  background-color: #d3394c;
+}
+.inputfile + label {
+  max-width: 80%;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0.625rem 1.25rem;
+}
+.inputfile + label svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+  margin-top: -0.25em;
+  margin-right: 0.25em;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+
+
