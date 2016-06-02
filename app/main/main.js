@@ -51,9 +51,12 @@
         vm.sendMail = sendMail;
         vm.selectEvento = selectEvento;
 
+        NotasService.test().then(function (data){
+            console.log(data);
+        });
 
         NotasService.getUltimasNotas().then(function (data) {
-            console.log(data);
+            //console.log(data);
             for (var i = 0; i < data.length; i++) {
                 var nota = {};
                 nota.id = data[i].$id;

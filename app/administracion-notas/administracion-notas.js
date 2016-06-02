@@ -88,6 +88,7 @@
         service.get = get;
         service.save = save;
         service.getUltimasNotas = getUltimasNotas;
+        service.test = test;
 
         return service;
 
@@ -111,6 +112,33 @@
             var refNota = Model.refNotas;
             var arrNotas = FireService.createArrayRef(refNota);
             return arrNotas.$loaded(function (data) {
+                return data;
+            });
+        }
+
+        /**
+         * ESTE METODO SOLO LO USE DE PRUEBA PARA Y PARA MI FUNCIONA
+         * @returns {*}
+         */
+        function test() {
+            var arrNotas = FireService.createArrayRef(Model.refNotas);
+            return arrNotas.$loaded(function (data) {
+                data.forEach(function(nota){
+                    //console.log(nota);
+                    if(nota.comentarios != undefined) {
+                        console.log(nota.comentarios);
+                        var arrComentarios = FireService.cacheFactory(Model.refComentarios);
+                        var comentarios = arrComentarios.$load(nota.comentarios);
+                        console.log(comentarios);
+                        comentarios.forEach(function(refComentario){
+                            console.log(refComentario);
+                            //var obj = FireService.createObjectRef(refComentario);
+                            //console.log(obj);
+                        });
+                    } else {
+                        console.log('Nota ' + nota.$id + ' no tiene comentarios');
+                    }
+                })
                 return data;
             });
         }
@@ -139,6 +167,8 @@
 
                     //pregunto si tiene comentarios. si tiene retorno el ultimo el el listado????
                     if(data[i].comentarios != undefined) {
+                        //var co = ComentariosService.getById('-KIj6YnXMhDKgyFd_NlO');
+                        //console.log(co);
                         var comentario = {}
                         comentario.detalles = 'fsdfdsfds';
                         comentario.fecha_crea = 1463583419658;

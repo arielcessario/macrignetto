@@ -75,8 +75,20 @@
         service.get = get;
         service.save = save;
         service.remove = remove;
+        //service.getById = getById;
 
         return service;
+
+        /*
+        function getById(id) {
+            var refComentario = Model.refComentarios.child(id);
+            var obj = FireService.createObjectRef(refComentario);
+
+            return obj.$loaded(function(data) {
+                return data;
+            });
+        }
+        */
 
         function save(arr, obj) {
             var deferred = $q.defer();
