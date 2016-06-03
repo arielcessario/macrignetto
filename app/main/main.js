@@ -162,12 +162,16 @@
         }
 
         function selectEvento(evento) {
-            console.log(evento);
+            //console.log(evento);
             if (evento != undefined) {
                 vm.evento = evento;
                 vm.evento.detalle = evento.detalle;
-                vm.evento.titulo = getSubString(data[data.length - 1].titulo, 20);
-                vm.evento.fotos = data[data.length - 1].fotos;
+                vm.evento.titulo = getSubString(evento.titulo, 20);
+                vm.evento.fotos = evento.fotos[0].nombre;
+            } else {
+                vm.evento.detalle = 'No existe un evento cargado para la fecha seleccionada';
+                vm.evento.titulo = 'Sin Evento';
+                vm.evento.fotos = 'no_image.png';
             }
         }
 
