@@ -44,7 +44,7 @@
                     <div class="noticias-leer"><a href="" style="text-decoration: none;color:#fff;" ng-click="mainCtrl.verNoticia(nota.id);">Leer...</a></div>
                     <div class="noticias-pie">
                         <div>Ultimo comentario:</div>
-                        <div class="noticias-detalle">{{comentario}}</div>
+                        <div class="noticias-detalle">{{comentario.length > 0 ? comentario[0].detalles : 'Se el primero en comentar'}}</div>
                     </div>
                 </div>
             </div>
