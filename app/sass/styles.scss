@@ -20,6 +20,24 @@ body {
   }
 }
 
+@-webkit-keyframes fadeintop {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+  }
+
+  90% {
+    opacity: .4;
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+  }
+}
+
+
+
 //SECCION PARA EL MENU
 .header {
   font-family: 'Merriweather', serif;
@@ -46,6 +64,11 @@ body {
     -moz-box-shadow: 0px 15px 5px -9px rgba(0, 0, 0, 0.09);
     box-shadow: 0px 15px 5px -9px rgba(0, 0, 0, 0.09);
   }
+}
+
+
+.login-panel-form .botonera{
+  margin-bottom: 10px;
 }
 
 .btn-comenzar {
@@ -811,16 +834,16 @@ h1 {
   text-align: left;
   font-family: 'Merriweather', serif;
   color: #fff;
-  font-size: 36px;
+  font-size: 42px;
   text-shadow: 2px 2px black;
   position: absolute;
-  top: 35px;
+  top: 1px;
   margin: 20px;
-  line-height: 47px;
+  line-height: 57px;
   display: flex;
   justify-content: center;
-  @media (min-width: 800px) {
-    font-size: 38px;
+  @media (min-width: 1000px) {
+    font-size: 53px;
   }
 }
 
@@ -863,14 +886,13 @@ h1 {
   font-weight: 600;
   font-size: 22px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff5db1+0,ef017c+100;Pink+3D+%231 */
-  background: rgb(255, 93, 177); /* Old browsers */
-  background: -moz-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: rgba(255, 93, 177, .5); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(255, 93, 177, .5) 0%, rgba(239, 1, 124, .5) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255, 93, 177, .5) 0%, rgba(239, 1, 124, .5) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255, 93, 177, .5) 0%, rgba(239, 1, 124, .5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5db1', endColorstr='#ef017c', GradientType=0); /* IE6-9 */
   border-style: solid;
-  border-width: 1px;
-  border-color: cadetblue;
+  border-color: white;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -957,6 +979,7 @@ h3 {
 }
 
 .agenda-titulo {
+  margin-top: -23px;
 
 }
 
@@ -973,11 +996,11 @@ h4 {
 
 .agenda-info {
   font-family: 'Droid Serif', serif;
-  font-weight: lighter;
+  font-weight: bold;
   margin: 25px;
-  line-height: 20px;
+  line-height: 27px;
   font-size: 16px;
-  max-height: 280px;
+  max-height: 317px;
   min-height: 280px;
   overflow-y: auto;
 }
@@ -1334,7 +1357,35 @@ ac-login {
   order: 0;
   @media (min-width: 800px) {
     width: 50%;
+    //border: 1px solid black;
+
   }
+}
+
+
+.comic-destacada img{
+  -webkit-filter: blur(2px); /* Chrome, Safari, Opera */
+  filter: blur(2px);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+  background-color: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+  background-color: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background-color: radial-gradient(ellipse at center,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+.comic-destacada img:hover{
+  cursor: pointer;
+  -ms-transform: scale(2,2); /* IE 9 */
+  -webkit-transform: scale(2,2); /* Safari */
+  transform: scale(2,2);
+  -webkit-filter: blur(0px); /* Chrome, Safari, Opera */
+  filter: blur(0px);
+  -webkit-transition: all 0.2s cubic-bezier(.17,.67,.83,.67);
+  moz-transition: all 0.2s cubic-bezier(.17,.67,.83,.67);
+  ms-transition: all 0.2s cubic-bezier(.17,.67,.83,.67);
+  o-transition: all 0.2s cubic-bezier(.17,.67,.83,.67);
+  transition: all 0.2s cubic-bezier(.17,.67,.83,.67);
 }
 
 button, .button {
@@ -1684,21 +1735,39 @@ ac-login {
     justify-content: center;
     align-items: center;
     .login-panel-form {
-      width: 300px;
-      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fceabb+0,fccd4d+22,f8b500+22,f8b500+22,875710+100 */
-      background: rgb(252,234,187); /* Old browsers */
-      background: -moz-linear-gradient(top,  rgba(252,234,187,1) 0%, rgba(252,205,77,1) 22%, rgba(248,181,0,1) 22%, rgba(248,181,0,1) 22%, rgba(135,87,16,1) 100%); /* FF3.6-15 */
-      background: -webkit-linear-gradient(top,  rgba(252,234,187,1) 0%,rgba(252,205,77,1) 22%,rgba(248,181,0,1) 22%,rgba(248,181,0,1) 22%,rgba(135,87,16,1) 100%); /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to bottom,  rgba(252,234,187,1) 0%,rgba(252,205,77,1) 22%,rgba(248,181,0,1) 22%,rgba(248,181,0,1) 22%,rgba(135,87,16,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#875710',GradientType=0 ); /* IE6-9 */
-
-
+      width: 395px;
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff5db1+0,ef017c+100;Pink+3D+%231 */
+      background: rgb(255, 93, 177); /* Old browsers */
+      background: -moz-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5db1', endColorstr='#ef017c', GradientType=0); /* IE6-9 */
       padding: 15px;
       -webkit-transform: translateY(-1000px);
       -moz-transform: translateY(-1000px);
       -ms-transform: translateY(-1000px);
       -o-transform: translateY(-1000px);
       transform: translateY(-1000px);
+
+
+      a{
+
+        font-family: 'Droid Serif', serif;
+        color: white;
+        font-size: 16px;
+
+      }
+
+      span{
+        font-family: 'Droid Serif', serif;
+        font-size: 22px;
+        font-weight: bold;
+        color: black;
+        margin-left: 26px;
+        text-transform: uppercase;
+
+
+      }
       input{
         width: 100%;
         border-style: none;
@@ -1707,6 +1776,8 @@ ac-login {
         height: 30px;
         margin-top: 10px;
         margin-bottom: 30px;
+        padding: 5px;
+        font-size: 18px;
 
       }
 
