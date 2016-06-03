@@ -8,13 +8,14 @@
     function NoticiasController($scope, Model, FireService, NotasService, $location) {
 
         var vm = this;
-        vm.fotoSelected = '';
-        vm.nota = {};
         vm.notas = [];
         vm.objNota = {};
         vm.comentarios = [];
 
+        //FUNCIONES
         vm.verNoticia = verNoticia;
+
+        vm.arrComentarios = FireService.cacheFactory(Model.refComentarios);
 
 
         NotasService.get().then(function (data) {
