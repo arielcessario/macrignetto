@@ -29,10 +29,9 @@
     <div style="display: flex;flex-direction: column;">
         <div id="noticias" class="container">
             <div class="noticias-fila">
-                <div ng-repeat="nota in mainCtrl.notas" class="noticias-info" ng-class="{'noticia-destacada':nota.destacada == 1}">
-                    <!--img src="images/fondo1.jpg" class="strech"-->
+                <div ng-repeat="nota in mainCtrl.notas" ng-init="comentario = mainCtrl.arrComentarios.$load((nota.comentarios));"
+                     class="noticias-info" ng-class="{'noticia-destacada':nota.destacada == 1}">
                     <a href="" class="btn-facebook" title="Me gusta">
-
                         <img src="images/like.png" class="" height="30" width="30">
                     </a>
                     <a href="" class="btn-twitter" title="Seguir">
@@ -45,7 +44,7 @@
                     <div class="noticias-leer"><a href="" style="text-decoration: none;color:#fff;" ng-click="mainCtrl.verNoticia(nota.id);">Leer...</a></div>
                     <div class="noticias-pie">
                         <div>Ultimo comentario:</div>
-                        <div class="noticias-detalle">{{nota.ultimo_comentario}}</div>
+                        <div class="noticias-detalle">{{comentario}}</div>
                     </div>
                 </div>
             </div>

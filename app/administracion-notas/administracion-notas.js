@@ -88,14 +88,12 @@
         service.get = get;
         service.save = save;
         service.getUltimasNotas = getUltimasNotas;
-        service.test = test;
 
         return service;
 
 
         function save(arr, obj) {
             var deferred = $q.defer();
-
 
             obj.fecha_upd = Firebase.ServerValue.TIMESTAMP;
             if (obj.$id != undefined) {
@@ -116,10 +114,7 @@
             });
         }
 
-        /**
-         * ESTE METODO SOLO LO USE DE PRUEBA PARA Y PARA MI FUNCIONA
-         * @returns {*}
-         */
+        /*
         function test() {
             var arrNotas = FireService.createArrayRef(Model.refNotas);
             return arrNotas.$loaded(function (data) {
@@ -148,6 +143,7 @@
                 return data;
             });
         }
+        */
 
         function getUltimasNotas() {
             var refNota = Model.refNotas;

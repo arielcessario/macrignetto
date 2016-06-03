@@ -8,8 +8,10 @@
         .controller('MainController', MainController);
 
 
-    MainController.$inject = ['$scope', 'NotasService', 'EventosService', '$sce', '$location', 'ContactsService', 'ComicsService'];
-    function MainController($scope, NotasService, EventosService, $sce, $location, ContactsService, ComicsService) {
+    MainController.$inject = ['$scope', 'NotasService', 'EventosService', '$sce', '$location', 'ContactsService',
+        'ComicsService', 'FireService', 'Model'];
+    function MainController($scope, NotasService, EventosService, $sce, $location, ContactsService,
+                            ComicsService, FireService, Model) {
 
         var vm = this;
         vm.notas = [];
@@ -51,10 +53,27 @@
         vm.sendMail = sendMail;
         vm.selectEvento = selectEvento;
 
-        NotasService.test().then(function (data){
-            //console.log(data);
+        vm.arrComentarios = FireService.cacheFactory(Model.refComentarios);
+
+        NotasService.get().then(function (data) {
+            console.log(data);
+            for (var i = 0; i < data.length; i++) {
+                var nota = {};
+                nota.id = data[i].$id;
+                nota.destacada = data[i].destacada;
+                nota.detalle = data[i].detalle != undefined ? $sce.trustAsHtml(getSubString(data[i].detalle, 100)) : '';
+                nota.fecha = data[i].fecha;
+                nota.fotos = data[i].fotos;
+                nota.fuente = data[i].fuente;
+                nota.status = data[i].status;
+                nota.titulo = getSubString(data[i].titulo, 50);
+                nota.comentarios = (data[i].comentarios != undefined) ? data[i].comentarios : {};
+
+                vm.notas.push(nota);
+            }
         });
 
+        /*
         NotasService.getUltimasNotas().then(function (data) {
             //console.log(data);
             for (var i = 0; i < data.length; i++) {
@@ -76,6 +95,7 @@
                 vm.notas.push(nota);
             }
         });
+        */
 
         EventosService.get().then(function (data) {
 
