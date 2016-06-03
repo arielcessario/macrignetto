@@ -166,6 +166,8 @@
             if (evento != undefined) {
                 vm.evento = evento;
                 vm.evento.detalle = evento.detalle;
+                vm.evento.titulo = getSubString(data[data.length - 1].titulo, 20);
+                vm.evento.fotos = data[data.length - 1].fotos;
             }
         }
 
