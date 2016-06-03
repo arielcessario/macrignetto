@@ -165,7 +165,7 @@
             console.log(evento);
             if (evento != undefined) {
                 vm.evento = evento;
-                vm.evento.detalle = $sce.trustAsHtml(evento.detalle);
+                vm.evento.detalle = evento.detalle;
             }
         }
 
