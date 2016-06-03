@@ -159,10 +159,11 @@
                 });
 
                 //console.log(data[data.length - 1]);
-
-                vm.evento.detalle = $sce.trustAsHtml(data[data.length - 1].detalle);
-                vm.evento.titulo = $sce.trustAsHtml(getSubString(data[data.length - 1].titulo, 20));
-                vm.evento.fotos = data[data.length - 1].fotos;
+                if(data[data.length - 1] != undefined) {
+                    vm.evento.detalle = $sce.trustAsHtml(data[data.length - 1].detalle);
+                    vm.evento.titulo = $sce.trustAsHtml(getSubString(data[data.length - 1].titulo, 20));
+                    vm.evento.fotos = data[data.length - 1].fotos;
+                }
             });
         }
 
