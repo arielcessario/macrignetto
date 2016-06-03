@@ -4,8 +4,8 @@
         .controller('NoticiasController', NoticiasController);
 
 
-    NoticiasController.$inject = ['$scope', 'Model', 'FireService', '$sce', 'NotasService', '$location'];
-    function NoticiasController($scope, Model, FireService, $sce, NotasService, $location) {
+    NoticiasController.$inject = ['$scope', 'Model', 'FireService', 'NotasService', '$location'];
+    function NoticiasController($scope, Model, FireService, NotasService, $location) {
 
         var vm = this;
         vm.fotoSelected = '';
@@ -23,17 +23,13 @@
                 var nota = {};
                 nota.id = data[i].$id;
                 nota.destacada = data[i].destacada;
-                nota.detalle = data[i].detalle != undefined ? $sce.trustAsHtml(getSubString(data[i].detalle, 100)) : '';
+                nota.detalle = data[i].detalle != undefined ? getSubString(data[i].detalle, 100) : '';
                 nota.fecha = data[i].fecha;
                 nota.fotos = data[i].fotos;
                 nota.fuente = data[i].fuente;
                 nota.status = data[i].status;
                 nota.titulo = getSubString(data[i].titulo, 50);
-                if(data[i].comentario != undefined) {
-                    nota.ultimo_comentario = data[i].destacada == 1 ? getSubString(data[i].comentario.detalles, 200) : getSubString(data[i].comentario.detalles, 100);
-                } else {
-                    nota.ultimo_comentario = 'Se el primero en comentar';
-                }
+                nota.comentarios = (data[i].comentarios != undefined) ? data[i].comentarios : {};
 
                 vm.notas.push(nota);
             }

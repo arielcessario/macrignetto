@@ -8,9 +8,9 @@
         .controller('MainController', MainController);
 
 
-    MainController.$inject = ['$scope', 'NotasService', 'EventosService', '$sce', '$location', 'ContactsService',
+    MainController.$inject = ['$scope', 'NotasService', 'EventosService', '$location', 'ContactsService',
         'ComicsService', 'FireService', 'Model'];
-    function MainController($scope, NotasService, EventosService, $sce, $location, ContactsService,
+    function MainController($scope, NotasService, EventosService, $location, ContactsService,
                             ComicsService, FireService, Model) {
 
         var vm = this;
@@ -61,7 +61,7 @@
                 var nota = {};
                 nota.id = data[i].$id;
                 nota.destacada = data[i].destacada;
-                nota.detalle = data[i].detalle != undefined ? $sce.trustAsHtml(getSubString(data[i].detalle, 100)) : '';
+                nota.detalle = data[i].detalle != undefined ? getSubString(data[i].detalle, 100) : '';
                 nota.fecha = data[i].fecha;
                 nota.fotos = data[i].fotos;
                 nota.fuente = data[i].fuente;
@@ -102,7 +102,6 @@
             data.sort(function (a, b) {
                 return a.fecha - b.fecha;
             });
-
             //console.log(data);
 
             vm.eventos = data;
@@ -114,6 +113,7 @@
 
             year = parseInt(fecha.getFullYear());
             month = parseInt(fecha.getMonth()) + 1;
+
             getEventos(year, month);
         });
 
@@ -141,8 +141,8 @@
 
             vm.evento = vm.listaEventos[0];
             if(vm.listaEventos[0].evento != undefined) {
-                vm.evento.detalle = $sce.trustAsHtml(vm.listaEventos[0].evento.detalle);
-                vm.evento.titulo = $sce.trustAsHtml(getSubString(vm.listaEventos[0].evento.titulo, 20));
+                vm.evento.detalle = vm.listaEventos[0].evento.detalle;
+                vm.evento.titulo = getSubString(vm.listaEventos[0].evento.titulo, 20);
                 vm.evento.fotos = vm.listaEventos[0].evento.fotos;
             }
 
@@ -160,8 +160,8 @@
 
                 //console.log(data[data.length - 1]);
                 if(data[data.length - 1] != undefined) {
-                    vm.evento.detalle = $sce.trustAsHtml(data[data.length - 1].detalle);
-                    vm.evento.titulo = $sce.trustAsHtml(getSubString(data[data.length - 1].titulo, 20));
+                    vm.evento.detalle = data[data.length - 1].detalle;
+                    vm.evento.titulo = getSubString(data[data.length - 1].titulo, 20);
                     vm.evento.fotos = data[data.length - 1].fotos;
                 }
             });
@@ -192,12 +192,6 @@
             }
         }
 
-        /*
-         ComicsService.get().then(function (data) {
-         console.log(data);
-         vm.comics = data;
-         })
-         */
         ComicsService.getUltimosComics().then(function (data) {
             //console.log(data);
             vm.comics = data;

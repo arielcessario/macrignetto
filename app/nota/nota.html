@@ -1,25 +1,13 @@
 <div ng-controller="NotaController as notaCtrl" class="common-container">
-    <div style="height: 100px;background-color: #000;color:#fff;display: flex; align-items: center;">
+    <div class="container-titulo">
         <img ng-src="images/logo.png" height="70" style="margin-left: 20px;">
         <span style="margin-left: 20px;font-size: 32px;">{{notaCtrl.nota.titulo}}</span>
     </div>
     <div class="noticia-container">
-        <div style="width: 80%;display: flex;">
-            <div>
-                <div class="sample">
-                    <lable>Buscar por:</lable>
-                    <select style="font-size: 12px;width: 30%;">
-                        <option value="1" selected>Nombre</option>
-                        <option value="2">Titulo</option>
-                    </select>
-                    <lable>Ordenar por:</lable>
-                    <select style="font-size: 12px;width: 30%;">
-                        <option value="1" selected>Asc</option>
-                        <option value="2">Desc</option>
-                    </select>
-                </div>
+        <div class="container-flex">
+            <div class="nota-col-1">
                 <div class="nota-panel-fotos-main">
-                    <img ng-src="images/{{notaCtrl.nota.fotos[0].nombre}}">
+                    <img ng-src="images/{{notaCtrl.fotoSelected}}">
                 </div>
                 <div class="nota-panel-fotos-thumb">
                     <img ng-if="notaCtrl.nota.fotos[0].nombre != undefined" ng-src="images/{{notaCtrl.nota.fotos[0].nombre}}"
@@ -34,7 +22,7 @@
                 <ac-administracion-comentarios obj="notaCtrl.objNota"></ac-administracion-comentarios>
                 <a class="button" href="#/main" style="margin-bottom: 20px;">Volver</a>
             </div>
-            <div class="nota-panel-texto">
+            <div class="nota-panel-texto nota-col-2">
                 <div ng-bind-html="notaCtrl.nota.detalle" class="nota-texto-container"></div>
             </div>
         </div>

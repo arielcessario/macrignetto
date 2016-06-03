@@ -11,7 +11,9 @@
     </div>
     <div class="nota-comentarios">
         <div ng-repeat="row in $ctrl.comentarios">{{row.detalles}}
-            <button ng-if="$ctrl.usuario== row.usuario" ng-click="$ctrl.remove(row)">Borrar</button>
+            <img ng-mouseover="row.img = 'trash_hover.png'" ng-mouseleave="row.img='trash.png'"
+                 ng-src="images/{{row.img == undefined ? 'trash.png' : row.img }}"
+                 ng-if="$ctrl.usuario== row.usuario" ng-click="$ctrl.remove(row)">
         </div>
     </div>
 </div>

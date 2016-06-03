@@ -25,6 +25,7 @@
         var vm = this;
         vm.comentarios = [];
         vm.comentario = {};
+        vm.img='trash.png';
         vm.save = save;
         vm.remove = remove;
         vm.start = 0;
