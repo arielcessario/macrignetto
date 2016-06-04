@@ -68,6 +68,7 @@
                 nota.status = data[i].status;
                 nota.titulo = getSubString(data[i].titulo, 50);
                 nota.comentarios = (data[i].comentarios != undefined) ? data[i].comentarios : {};
+                nota.color = (i % 2 == 0) ? 1 : 2;
 
                 vm.notas.push(nota);
             }
@@ -162,12 +163,12 @@
         }
 
         function selectEvento(evento) {
-            //console.log(evento);
+            console.log(evento);
             if (evento != undefined) {
                 vm.evento = evento;
                 vm.evento.detalle = evento.detalle;
                 vm.evento.titulo = getSubString(evento.titulo, 20);
-                vm.evento.fotos = evento.fotos[0].nombre;
+                vm.evento.fotos = evento.fotos;
             } else {
                 vm.evento.detalle = 'No existe un evento cargado para la fecha seleccionada';
                 vm.evento.titulo = 'Sin Evento';
