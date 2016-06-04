@@ -44,7 +44,7 @@
                     <div class="noticias-leer"><a href="" style="text-decoration: none;color:#fff;" ng-click="mainCtrl.verNoticia(nota.id);">Leer...</a></div>
                     <div class="noticias-pie" ng-class="{'nota-pie-color-1':nota.color == 1, 'nota-pie-color-2':nota.color == 2}">
                         <div>Ultimo comentario:</div>
-                        <div class="noticias-detalle">{{comentario.length > 0 ? comentario[0].detalles : 'Se el primero en comentar'}}</div>
+                        <div class="noticias-detalle">{{comentario.length > 0 ? comentario[comentario.length-1].detalles : 'Se el primero en comentar'}}</div>
                     </div>
                 </div>
             </div>
