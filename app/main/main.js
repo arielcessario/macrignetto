@@ -31,7 +31,7 @@
             {id: 9, nombre: 'OCTUBRE'},
             {id: 10, nombre: 'NOVIEMBRE'},
             {id: 11, nombre: 'DICIEMBRE'}];
-        vm.agendaMes = vm.meses[vm.fecha.getMonth() + 1];
+        vm.agendaMes = vm.meses[vm.fecha.getMonth()];
         vm.agendaAnio = vm.anio;
         vm.listaEventos = [];
         vm.evento = {};
@@ -76,11 +76,10 @@
 
 
         EventosService.get().then(function (data) {
-
             data.sort(function (a, b) {
                 return a.fecha - b.fecha;
             });
-            //console.log(data);
+            console.log(data);
 
             vm.eventos = data;
             var year = vm.anio;
@@ -96,14 +95,18 @@
         });
 
         function getEventos(year, month) {
+            console.log(year);
+            console.log(month);
 
-            var diasMes = new Date(year, month, 0).getDate();
+            var diasMes = new Date(year, month + 1, 0).getDate();
+            console.log(diasMes);
             vm.listaEventos = [];
             var event = {};
             for (var i = 1; i < diasMes + 1; i++) {
                 event = {dia: i, evento: undefined};
                 vm.listaEventos.push(event);
             }
+            console.log(vm.listaEventos);
 
             for (var i in vm.eventos) {
                 // Conseguir el día del evento
@@ -132,9 +135,11 @@
 
         function getLastEvento() {
             EventosService.getLastEvento().then(function (data) {
+                //console.log(data);
                 data.sort(function (a, b) {
                     return a.fecha - b.fecha;
                 });
+
 
                 //console.log(data[data.length - 1]);
                 if(data[data.length - 1] != undefined) {
@@ -169,10 +174,6 @@
                 vm.evento.detalle = evento.detalle;
                 vm.evento.titulo = getSubString(evento.titulo, 20);
                 vm.evento.fotos = evento.fotos;
-            } else {
-                vm.evento.detalle = 'No existe un evento cargado para la fecha seleccionada';
-                vm.evento.titulo = 'Sin Evento';
-                vm.evento.fotos = 'no_image.png';
             }
         }
 
