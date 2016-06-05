@@ -27,6 +27,10 @@
         vm.usuario = {};
         vm.save = save;
         vm.start = 0;
+
+        vm.getStatus = getStatus;
+        vm.getRol = getRol;
+
         $timeout(function () {
             vm.limit = (vm.limit == undefined) ? 10 : vm.limit;
         }, 0);
@@ -44,6 +48,32 @@
                 };
 
             })
+        }
+
+        function getStatus(status) {
+            if(status != undefined){
+                if(status == 0)
+                    return 'Inactivo';
+                else
+                    return 'Activo';
+            } else {
+                return 'Inactivo';
+            }
+        }
+
+        function getRol(rol){
+            if(rol != undefined){
+                switch (rol){
+                    case 0:
+                        return 'Administrador';
+                    case 1:
+                        return 'Redactor';
+                    default:
+                        return 'Usuario';
+                }
+            } else {
+                console.log('No tiene la propiedad rol');
+            }
         }
     }
 

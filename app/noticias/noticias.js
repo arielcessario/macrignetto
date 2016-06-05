@@ -9,17 +9,16 @@
 
         var vm = this;
         vm.notas = [];
-        vm.objNota = {};
-        vm.comentarios = [];
 
         //FUNCIONES
         vm.verNoticia = verNoticia;
 
         vm.arrComentarios = FireService.cacheFactory(Model.refComentarios);
+        vm.arrUsuarios = FireService.cacheFactory(Model.refUsuarios);
 
 
         NotasService.get().then(function (data) {
-            console.log(data);
+            //console.log(data);
             for (var i = 0; i < data.length; i++) {
                 var nota = {};
                 nota.id = data[i].$id;
@@ -31,9 +30,11 @@
                 nota.status = data[i].status;
                 nota.titulo = getSubString(data[i].titulo, 50);
                 nota.comentarios = (data[i].comentarios != undefined) ? data[i].comentarios : {};
+                nota.color = (i % 2 == 0) ? 1 : 2;
 
                 vm.notas.push(nota);
             }
+            //console.log(vm.notas);
         });
 
         function verNoticia(id) {

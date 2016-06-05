@@ -35,7 +35,7 @@
 
         vm.save = save;
         vm.updateFotoProyecto = updateFotoProyecto;
-
+        vm.getCategoria = getCategoria;
 
         function updateFotoProyecto(filelist, id, sub_folder) {
             UploadService.addImages(filelist, id, sub_folder, function (data) {
@@ -78,6 +78,21 @@
                 };
 
             })
+        }
+
+        function getCategoria(categoria) {
+            if(categoria != undefined){
+                switch (categoria){
+                    case 1:
+                        return 'Economía';
+                    case 2:
+                        return 'Política';
+                    default:
+                        return 'Comunidad';
+                }
+            } else {
+                console.log('No tiene la propiedad categoria');
+            }
         }
     }
 
