@@ -19,6 +19,7 @@
         'acAdministracionNotas',
         'acAdministracionComics',
         'acAdministracionComentarios',
+        'acAdministracionRevistas',
         'acContacto'
     ]).config(['$routeProvider', function ($routeProvider) {
 
@@ -72,7 +73,19 @@
                 }
             });
 
-            $routeProvider.when('/revista', {
+            $routeProvider.when('/revistas', {
+                templateUrl: 'revistas/revistas.html',
+                controller: 'RevistasController',
+                data: {requiresLogin: false},
+                resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        // you can lazy load files for an existing module
+                        return $ocLazyLoad.load('revistas/revistas.js');
+                    }]
+                }
+            });
+
+            $routeProvider.when('/revista/:id', {
                 templateUrl: 'revista/revista.html',
                 controller: 'RevistaController',
                 data: {requiresLogin: false},
@@ -128,12 +141,14 @@
         .constant('_FIREREF', 'https://macrignetto.firebaseio.com/');
 
 
-    AppCtrl.$inject = ['FireService', '$rootScope', '$scope'];
-    function AppCtrl(FireService, $rootScope, $scope) {
+    AppCtrl.$inject = ['FireService', '$rootScope', '$scope', '$location'];
+    function AppCtrl(FireService, $rootScope, $scope, $location) {
         var vm = this;
         vm.hideLoader = true;
         vm.display_menu = true;
         vm.display_header = true;
+
+        vm.volver = volver;
 
         FireService.init();
 
@@ -144,6 +159,11 @@
             vm.sub_menu = next.params.id;
         });
         ////////// NAVEGACION //////////
+
+
+        function volver(view){
+            $location.path('/' + view);
+        }
 
     }
 })();

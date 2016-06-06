@@ -20,7 +20,7 @@
                          ng-click="notaCtrl.fotoSelected = notaCtrl.nota.fotos[3].nombre">
                 </div>
                 <ac-administracion-comentarios obj="notaCtrl.objNota"></ac-administracion-comentarios>
-                <button href="#/main" style="margin-bottom: 20px;">Volver</button>
+                <button ng-click="appCtrl.volver('main');" style="margin-bottom: 20px;">Volver</button>
             </div>
             <div class="nota-panel-texto nota-col-2">
                 <div ng-bind-html="notaCtrl.nota.detalle" class="nota-texto-container"></div>

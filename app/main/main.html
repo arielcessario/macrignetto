@@ -29,7 +29,8 @@
     <div style="display: flex;flex-direction: column;">
         <div id="noticias" class="container">
             <div class="noticias-fila">
-                <div ng-repeat="nota in mainCtrl.notas" ng-init="comentario = mainCtrl.arrComentarios.$load((nota.comentarios));"
+                <div ng-repeat="nota in mainCtrl.notas"
+                     ng-init="comentario = mainCtrl.arrComentarios.$load((nota.comentarios));"
                      class="noticias-info" ng-class="{'noticia-destacada':nota.destacada == 1}">
                     <a href="" class="btn-facebook" title="Me gusta">
                         <img src="images/like.png" class="" height="30" width="30">
@@ -43,7 +44,7 @@
                         <div class="noticias-texto">{{nota.titulo}}</div>
                     <div class="noticias-leer"><a href="" style="text-decoration: none;color:#fff;" ng-click="mainCtrl.verNoticia(nota.id);">Leer...</a></div>
                     <div class="noticias-pie" ng-class="{'nota-pie-color-1':nota.color == 1, 'nota-pie-color-2':nota.color == 2}">
-                        <div>Ultimo comentario:</div>
+                        <div ng-init="usuario = mainCtrl.getUsuario(comentario[comentario.length-1]);">Ultimo comentario: {{(usuario != undefined ? usuario.apellido + ' ' + usuario.nombre : '')}}</div>
                         <div class="noticias-detalle">{{comentario.length > 0 ? comentario[comentario.length-1].detalles : 'Se el primero en comentar'}}</div>
                     </div>
                 </div>

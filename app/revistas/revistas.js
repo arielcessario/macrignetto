@@ -1,30 +1,21 @@
 (function () {
     'use strict';
     angular.module('noticias', ['ngRoute'])
-        .controller('NoticiasController', NoticiasController);
+        .controller('RevistasController', RevistasController);
 
 
-    NoticiasController.$inject = ['$scope', 'Model', 'FireService', 'NotasService', '$location'];
-    function NoticiasController($scope, Model, FireService, NotasService, $location) {
+    RevistasController.$inject = ['$scope', 'Model', 'FireService', 'NotasService', '$location'];
+    function RevistasController($scope, Model, FireService, NotasService, $location) {
 
         var vm = this;
         vm.notas = [];
 
         //FUNCIONES
-        vm.verNoticia = verNoticia;
-        vm.getUsuario = getUsuario;
+        vm.verRevista = verRevista;
 
         vm.arrComentarios = FireService.cacheFactory(Model.refComentarios);
+        vm.arrUsuarios = FireService.cacheFactory(Model.refUsuarios);
 
-
-        function getUsuario(comentario) {
-            if(comentario != undefined) {
-                var usuario = FireService.createObjectRef(Model.refUsuarios.child("b52490b0-e64a-401b-8b2d-cb92c3d39af3"));
-                return usuario;
-            } else {
-                return undefined;
-            }
-        }
 
         NotasService.get().then(function (data) {
             //console.log(data);
@@ -46,9 +37,9 @@
             //console.log(vm.notas);
         });
 
-        function verNoticia(id) {
+        function verRevista(id) {
             console.log(id);
-            $location.path('/nota/' + id);
+            $location.path('/revista/' + id);
         }
 
         function getSubString(texto, length) {

@@ -1,0 +1,33 @@
+<div ng-controller="RevistasController as revistasCtrl" class="common-container">
+    <div style="height: 100px;background-color: #000;color:#fff;display: flex; align-items: center;">
+        <img ng-src="images/logo.png" height="70" style="margin-left: 20px;">
+        <span style="margin-left: 20px;font-size: 32px;">Revistas</span>
+        <div class="busquedas">
+            <lable>Buscar por:</lable>
+            <select>
+                <option value="1" selected>Nombre</option>
+                <option value="2">Titulo</option>
+            </select>
+            <lable>Ordenar por:</lable>
+            <select>
+                <option value="1" selected>Asc</option>
+                <option value="2">Desc</option>
+            </select>
+        </div>
+    </div>
+    <div class="search-administracion" style="background-color: yellow;">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input type="text" class="buscador" placeholder="Ingrese su búsqueda..." ng-model="$ctrl.filtro">
+    </div>
+    <div class="noticia-container" style="margin: 0;">
+        <div id="noticias" class="container">
+            <div class="noticias-fila">
+
+            </div>
+        </div>
+    </div>
+    <div style="width: 80%;display: flex;">
+        <button ng-click="appCtrl.volver('main');" style="margin-bottom: 20px;">Volver</button>
+    </div>
+    <ac-contacto></ac-contacto>
+</div>

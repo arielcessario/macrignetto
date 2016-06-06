@@ -75,6 +75,16 @@
 
         factory.refComentarios = FireVars._FIREREF.child('/comentarios/');
 
+        factory.revista = {
+            titulo: '',
+            edicion: '',
+            link: '',
+            usuario: '',
+            fecha: Firebase.ServerValue.TIMESTAMP
+        };
+
+        factory.refRevistas = FireVars._FIREREF.child('/revistas/');
+
         return factory;
     }
 

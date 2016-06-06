@@ -142,12 +142,13 @@
         }
 
         function getLastEvento() {
-            var currentDate = new Date();
-            var firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+            //var currentDate = new Date();
+            //var firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
             var refEvento = Model.refEventos;
-            var arrEventos = FireService.createArrayRef(refEvento, 'fecha', firstDay.getTime(), currentDate.getTime());
+            //var arrEventos = FireService.createArrayRef(refEvento, 'fecha', firstDay.getTime(), currentDate.getTime());
+            var arrEventos = FireService.createArrayRef(refEvento);
             return arrEventos.$loaded(function (data) {
-                //console.log(data);
+                console.log(data);
                 return data;
             });
         }

@@ -52,8 +52,31 @@
         vm.verNoticia = verNoticia;
         vm.sendMail = sendMail;
         vm.selectEvento = selectEvento;
+        vm.getUsuario = getUsuario;
 
         vm.arrComentarios = FireService.cacheFactory(Model.refComentarios);
+
+        function getUsuario(comentario) {
+            var usuario;
+
+            if(comentario != undefined) {
+                comentario.$loaded(function () {
+                    //usuario = FireService.createObjectRef(Model.refUsuarios.child(comentario.usuario));
+                    usuario = Model.refUsuarios.child(comentario.usuario);
+                    console.log(usuario);
+                    return usuario;
+                });
+                /*
+                usuario = Model.refUsuarios.child(comentario.usuario);
+                usuario.$loaded(function (data) {
+                    var aux = data;
+                    console.log(aux);
+                });
+                */
+            }
+            //console.log(usuario);
+            return usuario;
+        }
 
         NotasService.get().then(function (data) {
             //console.log(data);
@@ -79,7 +102,7 @@
             data.sort(function (a, b) {
                 return a.fecha - b.fecha;
             });
-            console.log(data);
+            //console.log(data);
 
             vm.eventos = data;
             var year = vm.anio;
@@ -95,18 +118,18 @@
         });
 
         function getEventos(year, month) {
-            console.log(year);
-            console.log(month);
+            //console.log(year);
+            //console.log(month);
 
             var diasMes = new Date(year, month + 1, 0).getDate();
-            console.log(diasMes);
+            //console.log(diasMes);
             vm.listaEventos = [];
             var event = {};
             for (var i = 1; i < diasMes + 1; i++) {
                 event = {dia: i, evento: undefined};
                 vm.listaEventos.push(event);
             }
-            console.log(vm.listaEventos);
+            //console.log(vm.listaEventos);
 
             for (var i in vm.eventos) {
                 // Conseguir el día del evento
@@ -120,17 +143,23 @@
                 }
             }
 
-            vm.evento = vm.listaEventos[0];
+            //vm.evento = vm.listaEventos[0].evento;
             if(vm.listaEventos[0].evento != undefined) {
                 vm.evento.detalle = vm.listaEventos[0].evento.detalle;
                 vm.evento.titulo = getSubString(vm.listaEventos[0].evento.titulo, 20);
                 vm.evento.fotos = vm.listaEventos[0].evento.fotos;
-            }
-
-            //console.log(vm.evento);
-            if(vm.evento.evento == undefined) {
+            } else {
+                //console.log('Recupero el ultimo evento');
                 getLastEvento();
             }
+
+            /*
+            //console.log(vm.evento);
+            if(vm.evento == undefined) {
+                console.log('Evento undefined');
+                getLastEvento();
+            }
+            */
         }
 
         function getLastEvento() {
@@ -139,7 +168,6 @@
                 data.sort(function (a, b) {
                     return a.fecha - b.fecha;
                 });
-
 
                 //console.log(data[data.length - 1]);
                 if(data[data.length - 1] != undefined) {

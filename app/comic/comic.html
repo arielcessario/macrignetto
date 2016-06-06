@@ -10,7 +10,7 @@
             <div class="comic-flex">
                 <div class="comic-col-1">
                     <ac-administracion-comentarios obj="comicCtrl.objComic"></ac-administracion-comentarios>
-                    <a class="button" href="#/main" style="margin-bottom: 20px;">Volver</a>
+                    <button ng-click="appCtrl.volver('main');" style="margin-bottom: 20px;">Volver</button>
                 </div>
                 <div class="comic-col-2" style="margin:10px;">
                     <img ng-repeat="comic in comicCtrl.comics" ng-src="images/{{comic.imagen}}"
@@ -18,7 +18,7 @@
                          class="img-container" title="{{comic.titulo}}">
                 </div>
             </div>
-            <ac-contacto></ac-contacto>
         </div>
     </div>
+    <ac-contacto></ac-contacto>
 </div>
