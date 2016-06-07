@@ -1,13 +1,8 @@
 <div ng-controller="MainController as mainCtrl" class="main-container">
     <div class="header-1">
-
-
         <img src="images/logo.png" class="" width="250">
-
-
-
     </div>
-    <div class="header-2">
+    <!--div class="header-2">
         <div class="header-2-1">
             <lable>Buscar por:</lable>
             <select>
@@ -28,9 +23,14 @@
         <div class="header-2-3">
             <h2 style="font-size: 40px;color:#260126;font-weight: bold;">Noticias</h2>
         </div>
+    </div-->
+    <div class="search-administracion" style="background-color: yellow;">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input type="text" class="buscador" placeholder="Ingrese su busqueda..." ng-model="appCtrl.textProyecto">
     </div>
     <div style="display: flex;flex-direction: column;">
         <div id="noticias" class="container">
+            <h3>Noticias</h3>
             <div class="noticias-fila">
                 <div ng-repeat="nota in mainCtrl.notas"
                      ng-init="comentario = mainCtrl.arrComentarios.$load((nota.comentarios));"
@@ -47,7 +47,9 @@
                         <div class="noticias-texto">{{nota.titulo}}</div>
                     <div class="noticias-leer"><a href="" style="text-decoration: none;color:#fff;" ng-click="mainCtrl.verNoticia(nota.id);">Leer...</a></div>
                     <div class="noticias-pie" ng-class="{'nota-pie-color-1':nota.color == 1, 'nota-pie-color-2':nota.color == 2}">
-                        <div ng-init="mainCtrl.getUsuario(comentario[comentario.length-1]);">Ultimo comentario: {{(comentario[comentario.length-1].usuario != undefined ? comentario[comentario.length-1].usuario.apellido + ' ' + comentario[comentario.length-1].usuario.nombre : '')}}</div>
+                        <div ng-init="mainCtrl.getUsuario(comentario[comentario.length-1]);">Ultimo comentario:
+                            <span class="comentario-usuario">{{(comentario[comentario.length-1].usuario != undefined ? comentario[comentario.length-1].usuario.apellido + ' ' + comentario[comentario.length-1].usuario.nombre : '')}}</span>
+                        </div>
                         <div class="noticias-detalle">{{comentario.length > 0 ? comentario[comentario.length-1].detalles : 'Se el primero en comentar'}}</div>
                     </div>
                 </div>

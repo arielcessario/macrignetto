@@ -121,6 +121,18 @@
                 }
             });
 
+            $routeProvider.when('/resultados', {
+                templateUrl: 'resultados/resultados.html',
+                controller: 'ResultadoController',
+                data: {requiresLogin: false},
+                resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+                    loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        // you can lazy load files for an existing module
+                        return $ocLazyLoad.load('resultados/resultados.js');
+                    }]
+                }
+            });
+
         }])
         .run(function ($rootScope, $location, FireVars) {
             // Para activar la seguridad en una vista, agregar data:{requiresLogin:false} dentro de $routeProvider.when */
@@ -141,12 +153,13 @@
         .constant('_FIREREF', 'https://macrignetto.firebaseio.com/');
 
 
-    AppCtrl.$inject = ['FireService', '$rootScope', '$scope', '$location'];
-    function AppCtrl(FireService, $rootScope, $scope, $location) {
+    AppCtrl.$inject = ['FireService', '$rootScope', '$scope', '$location', '$timeout'];
+    function AppCtrl(FireService, $rootScope, $scope, $location, $timeout) {
         var vm = this;
         vm.hideLoader = true;
         vm.display_menu = true;
         vm.display_header = true;
+        vm.textProyecto = '';
 
         vm.volver = volver;
 
@@ -160,11 +173,41 @@
         });
         ////////// NAVEGACION //////////
 
+        $scope.$watch('appCtrl.textProyecto', function (newVal, oldVal) {
+            if (newVal != oldVal && newVal != undefined) {
+                filterByText();
+                console.log(vm.textProyecto);
+            }
+        });
+
+        function filterByText() {
+            AppService.search = vm.textProyecto;
+            $location.path('/resultados');
+
+            $timeout(function () {
+                vm.textProyecto = '';
+            }, 1000);
+        }
 
         function volver(view){
             $location.path('/' + view);
         }
+    }
+
+    AppService.$inject = ['$rootScope'];
+    function AppService($rootScope) {
+        this.search = '';
+        this.origen = '/main';
+
+        this.listen = function (callback) {
+            $rootScope.$on('result', callback);
+        };
+
+        this.broadcast = function () {
+            $rootScope.$broadcast('result');
+        };
 
     }
+
 })();
 

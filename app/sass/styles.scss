@@ -2138,3 +2138,15 @@ ac-paginacion > .table-td{
   flex-direction: row;
   justify-content: space-around;
 }
+.comentario-usuario{
+  font-size: 16px;
+}
+.issuu {
+  background-color: transparent;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
+  @media(max-width: 500px) {
+    margin: 20px;
+  }
+}
