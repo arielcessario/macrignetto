@@ -28,7 +28,6 @@
         vm.save = save;
         vm.start = 0;
 
-        vm.getStatus = getStatus;
         vm.getRol = getRol;
 
         $timeout(function () {
@@ -48,17 +47,6 @@
                 };
 
             })
-        }
-
-        function getStatus(status) {
-            if(status != undefined){
-                if(status == 0)
-                    return 'Inactivo';
-                else
-                    return 'Activo';
-            } else {
-                return 'Inactivo';
-            }
         }
 
         function getRol(rol){

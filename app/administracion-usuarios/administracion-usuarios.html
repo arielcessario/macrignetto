@@ -56,7 +56,7 @@
                 <td class="">{{row.nombre}}</td>
                 <td class="">{{row.apellido}}</td>
                 <td class="">{{$ctrl.getRol(row.rol)}}</td>
-                <td class="">{{$ctrl.getStatus(row.status)}}</td>
+                <td class="">{{row.status == 0 ? 'Inactivo' : 'Activo'}}</td>
             </tr>
             </tbody>
         </table>

@@ -56,27 +56,20 @@
 
         vm.arrComentarios = FireService.cacheFactory(Model.refComentarios);
 
-        function getUsuario(comentario) {
-            var usuario;
 
+        function getUsuario(comentario) {
+            var usuario = {};
             if(comentario != undefined) {
-                comentario.$loaded(function () {
-                    //usuario = FireService.createObjectRef(Model.refUsuarios.child(comentario.usuario));
-                    usuario = Model.refUsuarios.child(comentario.usuario);
+                return comentario.$loaded().then(function () {
+                    //console.log(comentario.usuario);
+                    usuario = FireService.createObjectRef(Model.refUsuarios.child(comentario.usuario));
                     console.log(usuario);
                     return usuario;
                 });
-                /*
-                usuario = Model.refUsuarios.child(comentario.usuario);
-                usuario.$loaded(function (data) {
-                    var aux = data;
-                    console.log(aux);
-                });
-                */
             }
-            //console.log(usuario);
             return usuario;
         }
+
 
         NotasService.get().then(function (data) {
             //console.log(data);
