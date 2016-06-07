@@ -18,11 +18,12 @@
 
 
         function getUsuario(comentario) {
+            var usuario = {};
             if(comentario != undefined) {
-                var usuario = FireService.createObjectRef(Model.refUsuarios.child("b52490b0-e64a-401b-8b2d-cb92c3d39af3"));
-                return usuario;
-            } else {
-                return undefined;
+                comentario.$loaded().then(function () {
+                    usuario = FireService.createObjectRef(Model.refUsuarios.child(comentario.usuario));
+                    comentario.usuario = usuario;
+                });
             }
         }
 
