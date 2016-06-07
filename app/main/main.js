@@ -60,14 +60,14 @@
         function getUsuario(comentario) {
             var usuario = {};
             if(comentario != undefined) {
-                return comentario.$loaded().then(function () {
+                comentario.$loaded().then(function () {
                     //console.log(comentario.usuario);
                     usuario = FireService.createObjectRef(Model.refUsuarios.child(comentario.usuario));
-                    console.log(usuario);
-                    return usuario;
+//                    console.log(usuario);
+                    comentario.usuario = usuario;
+                    console.log(comentario.usuario);
                 });
             }
-            return usuario;
         }
 
 
