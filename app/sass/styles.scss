@@ -901,7 +901,7 @@ h1 {
   text-shadow: .5px .5px black;
   font-family: 'Merriweather', serif;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 16px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff5db1+0,ef017c+100;Pink+3D+%231 */
   //background: rgba(255, 93, 177, .5); /* Old browsers */
   //background: -moz-linear-gradient(top, rgba(255, 93, 177, .5) 0%, rgba(239, 1, 124, .5) 100%); /* FF3.6-15 */
@@ -918,22 +918,26 @@ h1 {
   width: 100%;
 }
 .nota-pie-color-1 {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#600c00+0,3f0700+100&0.66+0,0.8+100 */
-  background: -moz-linear-gradient(top,  rgba(96,12,0,0.66) 0%, rgba(63,7,0,0.8) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(96,12,0,0.66) 0%,rgba(63,7,0,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(96,12,0,0.66) 0%,rgba(63,7,0,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a8600c00', endColorstr='#cc3f0700',GradientType=0 ); /* IE6-9 */
-
+  background-color: rgba(242, 151, 146, 1);
+  background-image: -moz-linear-gradient(top, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242, 151, 146, 1)), color-stop(100%, rgba(239, 1, 124, 1)));
+  background-image: -webkit-linear-gradient(top, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background-image: -o-linear-gradient(top, url("fondo-globos.png"), rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background-image: -ms-linear-gradient(top, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background-image: linear-gradient(to bottom, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f29792', endColorstr='#ef017c', GradientType=0);
   border-style: solid;
   border-color: white;
 }
 .nota-pie-color-2 {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#910400+0,600b00+100&0.66+0,0.8+100 */
-  background: -moz-linear-gradient(top,  rgba(145,4,0,0.66) 0%, rgba(96,11,0,0.8) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(145,4,0,0.66) 0%,rgba(96,11,0,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(145,4,0,0.66) 0%,rgba(96,11,0,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a8910400', endColorstr='#cc600b00',GradientType=0 ); /* IE6-9 */
-
+  background-color: rgba(242, 151, 146, 1);
+  background-image: -moz-linear-gradient(top, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242, 151, 146, 1)), color-stop(100%, rgba(239, 1, 124, 1)));
+  background-image: -webkit-linear-gradient(top, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background-image: -o-linear-gradient(top, url("fondo-globos.png"), rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background-image: -ms-linear-gradient(top, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background-image: linear-gradient(to bottom, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f29792', endColorstr='#ef017c', GradientType=0);
   border-style: solid;
   border-color: white;
 }
@@ -1250,11 +1254,11 @@ ac-login {
 
 .noticias-pie > div {
   font-weight: 600;
-  font-size: 27px;
+  font-size: 20px;
   font-family: 'Merriweather', serif;
   line-height: 15px;
   padding: 0px 15px;
-  padding-top: 17px;
+  padding-top: 12px;
 
   p {
     font-size: 14px;
@@ -1267,12 +1271,7 @@ ac-login {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fefcea+0,f1da36+100&1+0,0.27+100;Gold+3D */
-  background: -moz-linear-gradient(top,  rgba(254,252,234,1) 0%, rgba(241,218,54,0.27) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(254,252,234,1) 0%,rgba(241,218,54,0.27) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(254,252,234,1) 0%,rgba(241,218,54,0.27) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#45f1da36',GradientType=0 ); /* IE6-9 */
-
+  background: white;
   @media (min-width: 800px) {
     flex-direction: row;
   }
@@ -1457,12 +1456,14 @@ ac-login {
 }
 
 button, .button {
-  background-color: white;
-  font-family: 'Droid Serif', serif;
+  background-color: black;
+  font-family: 'Oswald', sans-serif;
   font-size: 16px;
+  font-weight: lighter;
   border-style: none;
   margin-bottom: 5px;
-  color: black;
+  background: rgba(255, 93, 177, 1);
+  padding: 7px;
   -webkit-box-shadow: 0px 2px 3px -1px rgba(0, 0, 0, 0.45);
   -moz-box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.45);
   box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.45);
@@ -1535,8 +1536,9 @@ button:hover, .button:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#45484d', endColorstr='#000000', GradientType=0); /* IE6-9 */
   a {
     text-decoration: none;
-    font-family: 'Merriweather', serif;
+    font-family: 'Oswald', sans-serif;
     font-weight: 200;
+    font-size: 25px;
     color: white;
   }
 
@@ -2037,13 +2039,14 @@ ac-login {
   cursor: pointer;
 }
 .container-titulo {
-  min-height: 185px;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b5bdc8+0,828c95+36,28343b+100;Grey+Black+3D */
-  background: rgb(181,189,200); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(181,189,200,1) 0%, rgba(130,140,149,1) 36%, rgba(40,52,59,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=0 ); /* IE6-9 */
+  min-height: 120px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c4c4c+0,595959+12,666666+25,474747+39,2c2c2c+50,000000+51,111111+60,2b2b2b+76,1c1c1c+91,131313+100;Black+Gloss+%231 */
+  background: rgb(76,76,76); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(76,76,76,1) 0%,rgba(89,89,89,1) 12%,rgba(102,102,102,1) 25%,rgba(71,71,71,1) 39%,rgba(44,44,44,1) 50%,rgba(0,0,0,1) 51%,rgba(17,17,17,1) 60%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 91%,rgba(19,19,19,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(76,76,76,1) 0%,rgba(89,89,89,1) 12%,rgba(102,102,102,1) 25%,rgba(71,71,71,1) 39%,rgba(44,44,44,1) 50%,rgba(0,0,0,1) 51%,rgba(17,17,17,1) 60%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 91%,rgba(19,19,19,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+
   color:#fff;
   display: flex;
   align-items: center;
@@ -2055,10 +2058,10 @@ ac-login {
     font-weight: bold;
     text-transform: uppercase;
     font-size: 43px!important;
-    line-height: 54px;
-    padding-bottom: 20px;
+    line-height: 45px;
+    padding-bottom: 5px;
     width: 85%;
-    padding-top: 20px;
+    padding-top: 5px;
     -webkit-animation: fadeIn ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
     -moz-animation: fadeIn ease-in 1;
     animation: fadeIn ease-in 1;
