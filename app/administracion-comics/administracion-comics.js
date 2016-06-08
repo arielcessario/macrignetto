@@ -44,7 +44,11 @@
 
 
         ComicsService.get().then(function (data) {
-            console.log(data);
+            //console.log(data);
+            data.sort(function (a, b) {
+                return b.fecha_crea - a.fecha_crea;
+            });
+
             vm.comics = data;
         });
 

@@ -61,7 +61,7 @@
 
         NotasService.get().then(function (data) {
             data.sort(function (a, b) {
-                return a.fecha - b.fecha;
+                return b.fecha - a.fecha;
             });
 
             vm.notas = data;

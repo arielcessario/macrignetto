@@ -46,10 +46,8 @@
         <table>
             <thead>
             <tr>
-                <th>Titulo</th>
                 <th>Fecha</th>
-                <th>Destacada</th>
-                <th>Estado</th>
+                <th>Titulo</th>
                 <th>Categoria</th>
             </tr>
             </thead>
@@ -61,10 +59,8 @@
             $ctrl.foto_03.nombre = row.fotos[2].nombre;
             $ctrl.foto_04.nombre = row.fotos[3].nombre;
             $ctrl.detailsOpen = true;">
-                <td class="">{{row.titulo}}</td>
                 <td class="">{{row.fecha | date}}</td>
-                <td class="">{{row.destacada == 0 ? 'No' : 'Si'}}</td>
-                <td class="">{{row.status == 0 ? 'Inactivo' : 'Activo'}}</td>
+                <td class="">{{row.titulo.length > 50 ? row.titulo.substring(0,50) + '...' : row.titulo}}</td>
                 <td class="">{{$ctrl.getCategoria(row.categoria)}}</td>
             </tr>
             </tbody>
@@ -126,7 +122,7 @@
             </div>
         </div>
         <div class="botonera">
-            <button ng-click="$ctrl.detailsOpen = false; $ctrl.save();">Guardar</button>
+            <button ng-click="$ctrl.detailsOpen = fa.se; $ctrl.save();">Guardar</button>
             <button ng-click="$ctrl.detailsOpen = true; $ctrl.nota = {} ;">Nuevo</button>
         </div>
     </div>
