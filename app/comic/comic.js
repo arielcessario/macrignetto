@@ -20,13 +20,12 @@
             vm.objComic.$loaded(function (data) {
                 //console.log(data);
                 vm.comic = data;
+                vm.fotoSelected = data.imagen;
             });
         }
 
         ComicsService.get().then(function (data) {
             //console.log(data);
-            vm.fotoSelected = data[0].imagen;
-
             if(data.length > 5) {
                 for(var i=0; i < 5; i++) {
                     vm.comics.push(data[i]);
