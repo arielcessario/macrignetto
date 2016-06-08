@@ -184,9 +184,11 @@
             AppService.search = vm.textProyecto;
             $location.path('/resultados');
 
+            /*
             $timeout(function () {
                 vm.textProyecto = '';
             }, 1000);
+            */
         }
 
         function volver(view){
