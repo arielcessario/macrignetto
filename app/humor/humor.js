@@ -16,7 +16,7 @@
         ComicsService.get().then(function (data) {
             console.log(data);
             vm.comics = data;
-        })
+        });
 
         function verComic(id) {
             console.log(id);

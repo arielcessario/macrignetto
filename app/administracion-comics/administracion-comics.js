@@ -124,30 +124,43 @@
 
                 data.sort(function (a, b) {
                     //return a.fecha - b.fecha;
-                    return b.fecha - a.fecha;
+                    return b.fecha_crea - a.fecha_crea;
                 });
 
                 for (var i = 0; i < data.length; i++) {
-                    list.push(data[i]);
+                    var comic = {};
+                    comic.$id = data[i].$id;
+                    comic.fecha_crea = data[i].fecha_crea;
+                    comic.fecha_upd = data[i].fecha_upd;
+                    comic.imagen = data[i].imagen;
+                    comic.status = data[i].status;
+                    comic.titulo = data[i].titulo;
+                    comic.usuario = data[i].usuario;
+                    comic.destacada = data[i].destacada != undefined ? data[i].destacada : 1;
+                    //comic.comentarios = (data[i].comentarios != undefined) ? data[i].comentarios : {};
 
-                    count = count + (data[i].status == 1 ? 1 : 2);
-                    destacadaSi = destacadaSi + (data[i].status == 2 ? 1 : 0);
-                    destacadaNo = destacadaNo + (data[i].status == 1 ? 1 : 0);
-                }
+                    list.push(comic);
 
-                if(destacadaSi == 4 && destacadaNo > 0) {
-                    for(var j=0; j < list.length; j++) {
-                        if(list[j].status == 1) {
-                            list.splice(j,1);
-                            break;
+                    count = count + (data[i].destacada == 1 ? 2 : 1);
+                    destacadaSi = destacadaSi + (data[i].destacada == 1 ? 1 : 0);
+                    destacadaNo = destacadaNo + (data[i].destacada == 0 ? 1 : 0);
+                    if(count >= 8) {
+                        if(destacadaSi == 4 && destacadaNo > 0) {
+                            for(var j=0; j < list.length; j++) {
+                                if(list[j].destacada == 0) {
+                                    list.splice(j,1);
+                                    break;
+                                }
+                            }
+                        } else if(destacadaSi == 2 && destacadaNo > 4) {
+                            for(var j=0; j < list.length; j++) {
+                                if(list[j].destacada == 0) {
+                                    list.splice(j,1);
+                                    break;
+                                }
+                            }
                         }
-                    }
-                } else if(destacadaSi == 2 && destacadaNo > 4) {
-                    for(var j=0; j < list.length; j++) {
-                        if(list[j].status == 1) {
-                            list.splice(j,1);
-                            break;
-                        }
+                        return list;
                     }
                 }
                 return list;
