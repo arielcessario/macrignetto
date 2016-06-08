@@ -2,12 +2,12 @@
     <div class="details">
         <div class="title-administracion">Detalles</div>
         <div class="input">
-            <label for="">Nombre</label>
-            <input type="text" ng-model="$ctrl.usuario.nombre">
-        </div>
-        <div class="input">
             <label for="">Apellido</label>
             <input type="text" ng-model="$ctrl.usuario.apellido">
+        </div>
+        <div class="input">
+            <label for="">Nombre</label>
+            <input type="text" ng-model="$ctrl.usuario.nombre">
         </div>
         <div class="input">
             <label for="">Email</label>
@@ -44,17 +44,17 @@
         <table>
             <thead>
             <tr>
-                <th>Nombre</th>
                 <th>Apellido</th>
+                <th>Nombre</th>
                 <th>Rol</th>
                 <th>Estado</th>
             </tr>
             </thead>
             <tbody>
             <tr ng-repeat="row in $ctrl.usuarios | filter:$ctrl.filtro| paginacion:'usuarios':$ctrl.limit | limitTo:$ctrl.limit:$ctrl.start "
-                ng-click="$ctrl.usuario=row;$ctrl.detailsOpen = true;">
-                <td class="">{{row.nombre}}</td>
+                ng-click="$ctrl.usuario=row;$ctrl.detailsOpen = true;" ng-class="{'row-enabled':row.status == 0}">
                 <td class="">{{row.apellido}}</td>
+                <td class="">{{row.nombre}}</td>
                 <td class="">{{$ctrl.getRol(row.rol)}}</td>
                 <td class="">{{row.status == 0 ? 'Inactivo' : 'Activo'}}</td>
             </tr>

@@ -35,6 +35,10 @@
         }, 0);
 
         UsuariosService.get().then(function (data) {
+            data.sort(function (a, b) {
+                return a.apellido - b.apellido;
+            });
+
             vm.usuarios = data;
         });
 

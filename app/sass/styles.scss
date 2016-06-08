@@ -2136,6 +2136,7 @@ ac-paginacion > .table-td{
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: center;
 }
 .comentario-usuario{
   font-size: 16px;
@@ -2251,4 +2252,7 @@ ac-paginacion > .table-td{
   color: #d44950;
   font-size: 16px;
   font-weight: 500;
+}
+.row-enabled {
+  color: #d44950;
 }
