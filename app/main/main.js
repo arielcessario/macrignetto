@@ -65,14 +65,13 @@
                     usuario = FireService.createObjectRef(Model.refUsuarios.child(comentario.usuario));
 //                    console.log(usuario);
                     comentario.usuario = usuario;
-                    console.log(comentario.usuario);
+                    //console.log(comentario.usuario);
                 });
             }
         }
 
         //NotasService.get().then(function (data) {
         NotasService.getUltimasNotas().then(function (data) {
-            //console.log(data);
             for (var i = 0; i < data.length; i++) {
                 var nota = {};
                 nota.id = data[i].$id;

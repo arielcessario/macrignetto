@@ -60,6 +60,10 @@
         }
 
         NotasService.get().then(function (data) {
+            data.sort(function (a, b) {
+                return a.fecha - b.fecha;
+            });
+
             vm.notas = data;
         });
 
@@ -138,6 +142,11 @@
                 var count = 0;
                 var destacadaSi = 0;
                 var destacadaNo = 0;
+
+                data.sort(function (a, b) {
+                    //return a.fecha - b.fecha;
+                    return b.fecha - a.fecha;
+                });
 
                 for (var i = 0; i < data.length; i++) {
                     var nota = {};

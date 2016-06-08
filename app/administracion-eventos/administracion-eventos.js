@@ -148,7 +148,7 @@
             //var arrEventos = FireService.createArrayRef(refEvento, 'fecha', firstDay.getTime(), currentDate.getTime());
             var arrEventos = FireService.createArrayRef(refEvento);
             return arrEventos.$loaded(function (data) {
-                console.log(data);
+                //console.log(data);
                 return data;
             });
         }
