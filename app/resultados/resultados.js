@@ -43,7 +43,7 @@
             }
         });
 
-        ComicsService.getUltimosComics().then(function (data) {
+        ComicsService.get().then(function (data) {
             //console.log(data);
             vm.comics = data;
         });
