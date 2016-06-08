@@ -2,21 +2,39 @@
     <div class="main-image">
 
         <div class="title-administracion">Imagen principal</div>
-        <div class="left">
-            <div class="input">
-                <label for="">Destacada</label>
-                <select name="" id="" ng-model="$ctrl.nota.destacada">
-                    <option value="0">No</option>
-                    <option value="1">Si</option>
-                </select>
-            </div>
-        </div>
         <div id="foto-main" class="input-foto-main">
             <img ng-src="{{'images/'+$ctrl.foto_01.nombre}}" alt="" height="100p" width="100p">
             <input type="file" name="images" id="file-1" class=""
                    ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,1,'')"/>
         </div>
-
+        <div class="left">
+            <div class="input">
+                <label for="">Destacada</label>
+                <select name="" id="" ng-model="$ctrl.nota.destacada">
+                    <option value="1">Si</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+        </div>
+        <div class="left">
+            <div class="input">
+                <label for="">Estado</label>
+                <select name="" id="" ng-model="$ctrl.nota.status">
+                    <option value="1">Activo</option>
+                    <option value="0">Inactivo</option>
+                </select>
+            </div>
+        </div>
+        <div class="left">
+            <div class="input">
+                <label for="">Categoria</label>
+                <select name="" id="" ng-model="$ctrl.nota.categoria">
+                    <option value="3">Comunidad</option>
+                    <option value="1">Economía</option>
+                    <option value="2">Política</option>
+                </select>
+            </div>
+        </div>
     </div>
     <div class="lista">
         <div class="title-administracion">Selecciona de la lista</div>
@@ -70,28 +88,6 @@
             <label for="">Detalle</label>
             <div text-angular ng-model="$ctrl.nota.detalle"></div>
         </div>
-        <div class="input">
-            <label for="">Destacada</label>
-            <select name="" id="" ng-model="$ctrl.nota.destacada">
-                <option value="1">Si</option>
-                <option value="0">No</option>
-            </select>
-        </div>
-        <div class="input">
-            <label for="">Estado</label>
-            <select name="" id="" ng-model="$ctrl.nota.status">
-                <option value="1">Activo</option>
-                <option value="0">Inactivo</option>
-            </select>
-        </div>
-        <div class="input">
-            <label for="">Categoria</label>
-            <select name="" id="" ng-model="$ctrl.nota.categoria">
-                <option value="3">Comunidad</option>
-                <option value="1">Economía</option>
-                <option value="2">Política</option>
-            </select>
-        </div>
         <div class="foto-container">
             <div class="foto">
 
@@ -130,7 +126,7 @@
             </div>
         </div>
         <div class="botonera">
-            <button ng-click="$ctrl.detailsOpen = fa.se; $ctrl.save();">Guardar</button>
+            <button ng-click="$ctrl.detailsOpen = false; $ctrl.save();">Guardar</button>
             <button ng-click="$ctrl.detailsOpen = true; $ctrl.nota = {} ;">Nuevo</button>
         </div>
     </div>
