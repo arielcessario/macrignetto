@@ -129,37 +129,6 @@
             });
         }
 
-        /*
-        function test() {
-            var arrNotas = FireService.createArrayRef(Model.refNotas);
-            return arrNotas.$loaded(function (data) {
-                data.forEach(function(nota){
-                    //console.log(nota);
-                    if(nota.comentarios != undefined) {
-                        //console.log(nota.comentarios);
-                        var arrComentarios = FireService.cacheFactory(Model.refComentarios);
-                        var comentarios = arrComentarios.$load(nota.comentarios);
-                        //console.log(comentarios);
-                        var list = [];
-                        comentarios.forEach(function(refComentario){
-                            console.log(refComentario);
-                            var comentario = {};
-                            comentario.$id = refComentario.$id;
-                            comentario.detalles = refComentario.detalles;
-                            list.push(comentario);
-                            //var obj = FireService.createObjectRef(refComentario);
-                            //console.log(obj);
-                        });
-                        console.log(list);
-                    } else {
-                        //console.log('Nota ' + nota.$id + ' no tiene comentarios');
-                    }
-                })
-                return data;
-            });
-        }
-        */
-
         function getUltimasNotas() {
             var refNota = Model.refNotas;
             var arrNotas = FireService.createArrayRef(refNota);
@@ -175,25 +144,14 @@
                     nota.$id = data[i].$id;
                     nota.destacada = data[i].destacada;
                     nota.detalle = data[i].detalle;
-                    nota.fecha = timeConverter(data[i].fecha);
+                    //nota.fecha = timeConverter(data[i].fecha);
+                    nota.fecha = data[i].fecha;
                     nota.fotos = data[i].fotos;
                     nota.fuente = data[i].fuente;
                     nota.status = data[i].status;
                     nota.titulo = data[i].titulo;
                     nota.categoria = data[i].categoria != undefined ? data[i].categoria : 1 ;
-
-                    //pregunto si tiene comentarios. si tiene retorno el ultimo el el listado????
-                    if(data[i].comentarios != undefined) {
-                        //var co = ComentariosService.getById('-KIj6YnXMhDKgyFd_NlO');
-                        //console.log(co);
-                        var comentario = {}
-                        comentario.detalles = 'fsdfdsfds';
-                        comentario.fecha_crea = 1463583419658;
-                        comentario.fecha_upd = 1463583419658;
-                        comentario.nota = {};
-                        comentario.usuario = "e92e57c5-4e4f-4d0c-b481-838950852773";
-                        nota.comentario = comentario;
-                    }
+                    nota.comentarios = (data[i].comentarios != undefined) ? data[i].comentarios : {};
 
                     list.push(nota);
 
