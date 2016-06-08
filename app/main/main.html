@@ -103,7 +103,8 @@
             <h3>Comics</h3>
             <div class="comic-fila">
                 <div ng-repeat="comic in mainCtrl.comics" class="comic-info" ng-class="{'comic-destacada':comic.status == 1}">
-                    <img ng-src="images/{{comic.imagen == undefined ? 'no_image.png' : comic.imagen}}" class="strech">
+                    <img ng-src="images/{{comic.imagen == undefined ? 'no_image.png' : comic.imagen}}"
+                         ng-click="mainCtrl.verComic(comic.$id);" class="strech" title="{{comic.titulo}}">
                 </div>
             </div>
         </div>

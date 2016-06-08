@@ -50,6 +50,7 @@
         vm.prevMonth = prevMonth;
         vm.nextMonth = nextMonth;
         vm.verNoticia = verNoticia;
+        vm.verComic = verComic;
         vm.sendMail = sendMail;
         vm.selectEvento = selectEvento;
         vm.getUsuario = getUsuario;
@@ -70,7 +71,6 @@
             }
         }
 
-        //NotasService.get().then(function (data) {
         NotasService.getUltimasNotas().then(function (data) {
             for (var i = 0; i < data.length; i++) {
                 var nota = {};
@@ -144,14 +144,6 @@
                 //console.log('Recupero el ultimo evento');
                 getLastEvento();
             }
-
-            /*
-            //console.log(vm.evento);
-            if(vm.evento == undefined) {
-                console.log('Evento undefined');
-                getLastEvento();
-            }
-            */
         }
 
         function getLastEvento() {
@@ -187,6 +179,11 @@
             $location.path('/nota/' + id);
         }
 
+        function verComic(id) {
+            console.log(id);
+            $location.path('/comic/' + id);
+        }
+
         function selectEvento(evento) {
             console.log(evento);
             if (evento != undefined) {
@@ -198,7 +195,6 @@
         }
 
         ComicsService.getUltimosComics().then(function (data) {
-            //console.log(data);
             vm.comics = data;
         });
 
