@@ -42,10 +42,7 @@
                 <div ng-repeat="revista in resultadoCtrl.revistas | filter:$ctrl.filtro" class="nota-result" >
                     <img ng-src="images/{{revista.link == undefined ? 'no_image.png' : revista.link}}"
                          class="strech" height="100" width="100">
-                    <div>
-                        <div class="nota-titulo-result">{{nota.titulo}}</div>
-                        <div class="nota-detalle-result" ng-bind-html="nota.detalle"></div>
-                    </div>
+
                 </div>
             </div>
         </div>
