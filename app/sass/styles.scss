@@ -2178,20 +2178,29 @@ ac-paginacion > .table-td{
 .opciones{
   display: flex;
   flex-direction: row;
+  margin-left: 2%;
 }
-.btn-opciones{
+.btn-opcion{
   cursor: pointer;
+  font-size: 38px;
+  margin: 10px 5px;
+  font-weight: 700;
 }
-.btn-opciones:hover{
+.btn-opcion-selected,
+.btn-opcion:hover{
   color: #DD0374;
 }
 .nota-result{
   width: 25%;
   display: flex;
   flex-direction: row;
+  height: 150px;
+  margin: 5px 5px 5px 0;
 }
 .nota-titulo-result{
-
+  font-size: 18px;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 .nota-detalle-result{
 
@@ -2199,7 +2208,20 @@ ac-paginacion > .table-td{
 .noticia-container > .container {
   width: 95%;
 }
+.comic-result{
+  width: 250px;
+  height: 150px;
+  margin: 5px;
 
+  img{
+    cursor: pointer;
+  }
+
+  .strech{
+    height: 100%;
+    width: 100%;
+  }
+}
 
 .header-secciones{
   display: flex;

@@ -35,7 +35,7 @@
                 nota.fotos = data[i].fotos;
                 nota.fuente = data[i].fuente;
                 nota.status = data[i].status;
-                nota.titulo = getSubString(data[i].titulo, 50);
+                nota.titulo = getSubString(data[i].titulo, 25);
                 nota.comentarios = (data[i].comentarios != undefined) ? data[i].comentarios : {};
                 nota.color = (i % 2 == 0) ? 1 : 2;
 
