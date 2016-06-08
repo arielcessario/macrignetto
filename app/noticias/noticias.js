@@ -18,17 +18,19 @@
 
 
         function getUsuario(comentario) {
-            var usuario = {};
             if(comentario != undefined) {
                 comentario.$loaded().then(function () {
-                    usuario = FireService.createObjectRef(Model.refUsuarios.child(comentario.usuario));
+                    var usuario = FireService.createObjectRef(Model.refUsuarios.child(comentario.usuario));
                     comentario.usuario = usuario;
                 });
             }
         }
 
         NotasService.get().then(function (data) {
-            //console.log(data);
+            data.sort(function (a, b) {
+                return b.fecha - a.fecha;
+            });
+
             for (var i = 0; i < data.length; i++) {
                 var nota = {};
                 nota.id = data[i].$id;
@@ -44,7 +46,6 @@
 
                 vm.notas.push(nota);
             }
-            //console.log(vm.notas);
         });
 
         function verNoticia(id) {

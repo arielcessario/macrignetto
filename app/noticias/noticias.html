@@ -25,8 +25,8 @@
                     <div class="noticias-texto">{{nota.titulo}}</div>
                     <div class="noticias-leer"><a href="" style="text-decoration: none;color:#fff;" ng-click="noticiasCtrl.verNoticia(nota.id);">Leer...</a></div>
                     <div class="noticias-pie" ng-class="{'nota-pie-color-1':nota.color == 1, 'nota-pie-color-2':nota.color == 2}">
-                        <div ng-init="usuario = noticiasCtrl.getUsuario(comentario[comentario.length-1]);">Ultimo comentario:
-                            <span class="comentario-usuario">{{(usuario != undefined ? usuario.apellido + ' ' + usuario.nombre : '')}}</span>
+                        <div ng-init="noticiasCtrl.getUsuario(comentario[comentario.length-1]);">Ultimo comentario:
+                            <span class="comentario-usuario">{{(comentario[comentario.length-1].usuario != undefined ? comentario[comentario.length-1].usuario.apellido + ' ' + comentario[comentario.length-1].usuario.nombre : '')}}</span>
                         </div>
                         <div class="noticias-detalle">{{comentario.length > 0 ? comentario[comentario.length-1].detalles : 'Se el primero en comentar'}}</div>
                     </div>
