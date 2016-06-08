@@ -58,7 +58,15 @@
             return texto.length > length ? texto.substring(0, length) + "..." : texto;
         }
 
-        function filtrar() {
+        console.log(vm.value);
+
+        function filtrar(textBusqueda) {
+            if(vm.value.length > 0) {
+
+            } else {
+                vm.value = textBusqueda;
+            }
+
             /*
             ProyectService.get(function (data) {
                 ProyectService.getByParams('nombre', vm.value, 'false', function (data) {

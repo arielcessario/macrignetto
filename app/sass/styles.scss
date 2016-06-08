@@ -2175,3 +2175,27 @@ ac-paginacion > .table-td{
 .pantalla-administracion{
   width: 100% !important;
 }
+.opciones{
+  display: flex;
+  flex-direction: row;
+}
+.btn-opciones{
+  cursor: pointer;
+}
+.btn-opciones:hover{
+  color: #DD0374;
+}
+.nota-result{
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+}
+.nota-titulo-result{
+
+}
+.nota-detalle-result{
+
+}
+.noticia-container > .container {
+  width: 95%;
+}
