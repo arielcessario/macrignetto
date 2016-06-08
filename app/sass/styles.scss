@@ -2181,8 +2181,6 @@ ac-paginacion > .table-td{
 }
 .btn-opciones{
   cursor: pointer;
-  font-size: 28px;
-  margin: 10px 5px;
 }
 .btn-opciones:hover{
   color: #DD0374;
@@ -2193,11 +2191,37 @@ ac-paginacion > .table-td{
   flex-direction: row;
 }
 .nota-titulo-result{
-  font-size: 18px;
+
 }
 .nota-detalle-result{
 
 }
 .noticia-container > .container {
   width: 95%;
+}
+
+
+.header-secciones{
+  display: flex;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff5db1+0,ef017c+100;Pink+3D+%231 */
+  background: rgb(255, 93, 177); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5db1', endColorstr='#ef017c', GradientType=0); /* IE6-9 */
+  padding-bottom: 10px;
+  padding-top: 10px;
+  color: white;
+  text-align: left!important;;
+
+  span{
+    margin: auto!important;
+    color: white;
+    text-align: left!important;
+    width: 100%;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-family: 'Droid Serif', serif;
+    font-weight: bolder;
+  }
 }
