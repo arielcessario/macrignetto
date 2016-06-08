@@ -15,11 +15,11 @@
         }
     }
 
-    AcEventosController.$inject = ['EventosService', 'UploadVars', 'UploadService', 'taOptions'];
+    AcEventosController.$inject = ['$scope', 'EventosService', 'UploadVars', 'UploadService', 'taOptions'];
     /**
      * @constructor
      */
-    function AcEventosController(EventosService, UploadVars, UploadService, taOptions) {
+    function AcEventosController($scope, EventosService, UploadVars, UploadService, taOptions) {
         var vm = this;
         vm.eventos = [];
         vm.evento = {};
@@ -71,6 +71,10 @@
         }
 
         EventosService.get().then(function (data) {
+            data.sort(function (a, b) {
+                return b.fecha - a.fecha;
+            });
+
             vm.eventos = data;
         });
 

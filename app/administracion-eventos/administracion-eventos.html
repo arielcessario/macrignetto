@@ -4,20 +4,17 @@
         <div class="title-administracion">Detalles</div>
         <div class="left">
             <div class="input">
-                <label for="">Titulo</label>
-                <input type="text" ng-model="$ctrl.evento.titulo">
-            </div>
-        </div>
-        <div class="left">
-            <div class="input">
                 <label for="">Fecha</label>
                 <input type="date" ng-model="$ctrl.fecha"/>
             </div>
         </div>
-        <div class="left">
-            <div class="input">
-                <label for="">Detalle</label>
-                <div text-angular ng-model="$ctrl.evento.detalle"></div>
+        <div class="foto-container">
+            <div class="foto">
+                <div id="slider-01-foto" class="input-foto">
+                    <img ng-src="{{'images/'+$ctrl.foto_01.nombre}}" alt="" height="100" width="150">
+                    <input type="file" name="images" id="images"
+                           ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,1,'')"/>
+                </div>
             </div>
         </div>
         <div class="left">
@@ -40,16 +37,16 @@
         <table>
             <thead>
             <tr>
-                <th>Titulo</th>
                 <th>Fecha</th>
+                <th>Titulo</th>
                 <th>Estado</th>
             </tr>
             </thead>
             <tbody>
             <tr ng-repeat="row in $ctrl.eventos | filter:$ctrl.filtro | paginacion:'evento':$ctrl.limit | limitTo:$ctrl.limit:$ctrl.start"
                 ng-click="$ctrl.select(row); $ctrl.detailsOpen = true;">
-                <td class="">{{row.titulo}}</td>
                 <td class="">{{row.fecha | date}}</td>
+                <td class="">{{row.titulo}}</td>
                 <td class="">{{row.status == 0 ? 'Inactivo' : 'Activo'}}</td>
             </tr>
             </tbody>
@@ -65,49 +62,8 @@
             <input type="text" ng-model="$ctrl.evento.titulo">
         </div>
         <div class="input">
-            <label for="">Fecha</label>
-            <input type="date" ng-model="$ctrl.fecha"/>
-        </div>
-        <div class="input">
             <label for="">Detalle</label>
             <div text-angular ng-model="$ctrl.evento.detalle"></div>
-        </div>
-        <div class="input">
-            <label for="">Estado</label>
-            <select name="" id="" ng-model="$ctrl.evento.status">
-                <option value="0">Inactivo</option>
-                <option value="1">Activo</option>
-            </select>
-        </div>
-        <div class="foto-container">
-            <div class="foto">
-                <div id="slider-01-foto" class="input-foto">
-                    <img ng-src="{{'images/'+$ctrl.foto_01.nombre}}" alt="" height="100" width="150">
-                    <input type="file" name="images" id="images"
-                           ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,1,'')"/>
-                </div>
-            </div>
-            <div class="foto">
-                <div id="slider-02-foto" class="input-foto">
-                    <img ng-src="{{'images/'+$ctrl.foto_02.nombre}}" alt="" height=100" width="150">
-                    <input type="file" name="images" id="images"
-                           ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,2,'')"/>
-                </div>
-            </div>
-            <div class="foto">
-                <div id="slider-03-foto" class="input-foto">
-                    <img ng-src="{{'images/'+$ctrl.foto_03.nombre}}" alt="" height="100" width="150">
-                    <input type="file" name="images" id="images"
-                           ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,3,'')"/>
-                </div>
-            </div>
-            <div class="foto">
-                <div id="slider-04-foto" class="input-foto">
-                    <img ng-src="{{'images/'+$ctrl.foto_04.nombre}}" alt="" height="100" width="150">
-                    <input type="file" name="images" id="images"
-                           ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,4,'')"/>
-                </div>
-            </div>
         </div>
         <div class="botonera">
             <button ng-click="$ctrl.detailsOpen = false; $ctrl.save();">Guardar</button>
