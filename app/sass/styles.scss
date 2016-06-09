@@ -654,14 +654,14 @@ select option {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f29792', endColorstr='#ef017c', GradientType=0);
   background-repeat: no-repeat;
   background-position: center;
-  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  //height: 100px;
+  margin-top: 50px;
   @media (min-width: 800px) {
     height: 150px;
     margin-top: -50px;
-
   }
 }
 
@@ -1010,7 +1010,9 @@ h3 {
 }
 
 #agenda img {
-  min-width: 600px !important;
+  @media (min-width: 800px) {
+    min-width: 600px !important;
+  }
 }
 
 .agenda-titulo {
