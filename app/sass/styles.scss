@@ -2286,11 +2286,13 @@ ac-paginacion > .table-td{
 
 }
 .nota-titulo-result{
-  font-size: 18px;
+  font-family: 'Droid Serif', serif;
+  font-size: 22px;
   margin-bottom: 5px;
   font-weight: bold;
 }
 .nota-detalle-result{
+  overflow: auto;
 
 }
 
@@ -2347,9 +2349,20 @@ ac-paginacion > .table-td{
   color: #d44950;
 }
 .revista-info{
-
-  height: 300px;
-  width: 25%;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff5db1+0,ef017c+100;Pink+3D+%231 */
+  background: rgb(255, 93, 177); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5db1', endColorstr='#ef017c', GradientType=0); /* IE6-9 */
+  width: 24%;
+  padding: 10px;
+  margin: 10px auto;
+  div{
+    font-size: 22px;
+    font-family: 'Droid Serif', serif;
+    color: white;
+  }
 
   .strech {
     height: 100%;
