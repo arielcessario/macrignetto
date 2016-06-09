@@ -26,6 +26,7 @@
         vm.oldPassword = '';
         vm.newPassword = '';
         vm.nombre = '';
+        vm.apellido = '';
         vm.panel = 1;
 
         vm.isLogged = false;
@@ -165,7 +166,8 @@
         function getName(authData) {
             switch (authData.provider) {
                 case 'password':
-                    return authData.password.email.replace(/@.*/, '');
+                    //return authData.password.email.replace(/@.*/, '');
+                    return authData.password.email;
                 case 'twitter':
                     return authData.twitter.displayName;
                 case 'facebook':
