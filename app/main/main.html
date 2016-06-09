@@ -41,11 +41,12 @@
                     <a href="" class="btn-twitter" title="Seguir">
                         <img src="images/tweet.png" class="" height="30" width="30">
                     </a>
-                    <figure class="tint">
-                    <img ng-src="images/{{nota.fotos[0].nombre == undefined ? 'no_image.png' : nota.fotos[0].nombre}}" class="strech">
+                    <figure class="tint" ng-click="mainCtrl.verNoticia(nota.id);">
+                        <img ng-src="images/{{nota.fotos[0].nombre == undefined ? 'no_image.png' : nota.fotos[0].nombre}}"
+                             class="strech" >
                     </figure>
                         <div class="noticias-texto">{{nota.titulo}}</div>
-                    <div class="noticias-leer"><a href="" style="text-decoration: none;color:#fff;" ng-click="mainCtrl.verNoticia(nota.id);">Leer...</a></div>
+                    <!--div class="noticias-leer"><a href="" style="text-decoration: none;color:#fff;" ng-click="mainCtrl.verNoticia(nota.id);">Leer...</a></div-->
                     <div class="noticias-pie" ng-class="{'nota-pie-color-1':nota.color == 1, 'nota-pie-color-2':nota.color == 2}">
                         <div ng-init="mainCtrl.getUsuario(comentario[comentario.length-1]);">Ultimo comentario:
                             <span class="comentario-usuario">{{(comentario[comentario.length-1].usuario != undefined ? comentario[comentario.length-1].usuario.apellido + ' ' + comentario[comentario.length-1].usuario.nombre : '')}}</span>
