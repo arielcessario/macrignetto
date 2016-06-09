@@ -2275,11 +2275,14 @@ ac-paginacion > .table-td{
   color: #DD0374;
 }
 .nota-result{
-  width: 25%;
+  background-color: white;
+  padding: 10px;
+  width: 22%;
   display: flex;
   flex-direction: row;
   height: 150px;
-  margin: 5px 5px 5px 0;
+  margin: 10px auto;
+
 }
 .nota-titulo-result{
   font-size: 18px;
@@ -2299,9 +2302,14 @@ ac-paginacion > .table-td{
     cursor: pointer;
   }
 
-  .strech{
-    height: 100%;
-    width: 100%;
+
+}
+
+.strech{
+  width: 160px!important;
+  height: 100%;
+  img{
+    min-width: 160px;
   }
 }
 

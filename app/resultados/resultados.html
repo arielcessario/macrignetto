@@ -24,7 +24,7 @@
             <div class="noticias-fila">
                 <div ng-repeat="nota in resultadoCtrl.notas | filter:resultadoCtrl.value" class="nota-result" >
                     <img ng-src="images/{{nota.fotos[0].nombre == undefined ? 'no_image.png' : nota.fotos[0].nombre}}"
-                         class="strech" height="100" width="100">
+                         class="strech">
                     <div style="margin-left: 5px;">
                         <div class="nota-titulo-result">{{nota.titulo}}</div>
                         <div class="nota-detalle-result" ng-bind-html="nota.detalle"></div>
