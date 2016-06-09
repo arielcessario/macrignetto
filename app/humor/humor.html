@@ -9,7 +9,8 @@
     </div>
     <div class="noticia-container" style="margin: 0;">
         <div class="comic-fila">
-            <div ng-repeat="comic in humorCtrl.comics | filter:$ctrl.filtro" class="comic-info" ng-class="{'comic-destacada':comic.status == 1}">
+            <div ng-repeat="comic in humorCtrl.comics | filter:$ctrl.filtro" class="comic-info comic-anime"
+                 ng-class="{'comic-destacada':comic.destacada == 1}">
                 <img ng-src="images/{{comic.imagen == undefined ? 'no_image.png' : comic.imagen}}"
                      class="strech" ng-click="humorCtrl.verComic(comic.$id);">
                 <!--div class="noticias-leer">

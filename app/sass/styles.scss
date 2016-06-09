@@ -1452,7 +1452,8 @@ ac-login {
 }
 
 
-.comic-destacada img{
+.comic-destacada img,
+.comic-anime img{
   -webkit-filter: blur(2px); /* Chrome, Safari, Opera */
   filter: blur(2px);
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
@@ -1463,7 +1464,8 @@ ac-login {
 
 }
 
-.comic-destacada img:hover{
+.comic-destacada img:hover,
+.comic-anime img:hover{
   cursor: pointer;
   -ms-transform: scale(2,2); /* IE 9 */
   -webkit-transform: scale(2,2); /* Safari */
