@@ -1266,13 +1266,13 @@ ac-login {
 .noticia-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a4a9b5+0,828c95+36,28343b+100 */
-  background: rgb(164,169,181); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(164,169,181,1) 0%, rgba(130,140,149,1) 36%, rgba(40,52,59,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(164,169,181,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(164,169,181,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4a9b5', endColorstr='#28343b',GradientType=0 ); /* IE6-9 */
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#45484d+0,000000+100;Black+3D+%231 */
+  background: rgb(69,72,77); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(69,72,77,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+
   @media (min-width: 800px) {
     flex-direction: row;
   }
@@ -1284,7 +1284,7 @@ ac-login {
   width: 100%;
   @media (min-width: 800px) {
     margin-top: 10px;
-    height: 350px;
+    height: 270px;
   }
 }
 
@@ -1312,14 +1312,18 @@ ac-login {
 }
 
 .nota-panel-texto {
+  background-color: white;
   color: white;
-  width: 98%;
-  margin-top: 20px;
+  width: 100%;
+  -webkit-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.35);
 
   @media (min-width: 800px) {
     width: 75%;
-    padding: 10px;
-    margin: 10px;
+    padding: 30px;
+    margin: 25px;
+    margin-top: 0px!important;
   }
 }
 
@@ -1335,9 +1339,25 @@ ac-login {
 
 .nota-comentarios {
   height: 100px;
+  color: white;
+  line-height: 22px;
   overflow-y: auto;
+  font-weight: lighter;
   font-family: 'Merriweather', serif;
-  font-size: 16px;
+  font-size: 15px;
+  padding: 10px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff5db1+0,ef017c+100;Pink+3D+%231 */
+  background: rgb(255, 93, 177); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5db1', endColorstr='#ef017c', GradientType=0); /* IE6-9 */
+
+  div{
+    border-style: solid;
+    border-bottom: 1px solid lightgrey;
+    margin: 5px;
+  }
 
   img{
     width: 15px!important;
@@ -1346,6 +1366,7 @@ ac-login {
 
 .nota-comentar {
   margin-top: 25px;
+
 }
 
 .nota-comentar > textarea {
@@ -2120,6 +2141,9 @@ ac-login {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  label{
+    color: white!important;
+  }
   @media (min-width: 800px) {
     width: 95%;
     flex-direction: row;
