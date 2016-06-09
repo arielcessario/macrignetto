@@ -153,13 +153,12 @@
         .constant('_FIREREF', 'https://macrignetto.firebaseio.com/');
 
 
-    AppCtrl.$inject = ['FireService', '$rootScope', '$scope', '$location', '$timeout'];
-    function AppCtrl(FireService, $rootScope, $scope, $location, $timeout) {
+    AppCtrl.$inject = ['FireService', '$rootScope', '$scope', '$location'];
+    function AppCtrl(FireService, $rootScope, $scope, $location) {
         var vm = this;
         vm.hideLoader = true;
         vm.display_menu = true;
         vm.display_header = true;
-        vm.textProyecto = '';
 
         vm.volver = volver;
 
@@ -173,43 +172,12 @@
         });
         ////////// NAVEGACION //////////
 
-        $scope.$watch('appCtrl.textProyecto', function (newVal, oldVal) {
-            if (newVal != oldVal && newVal != undefined) {
-                filterByText();
-                console.log(vm.textProyecto);
-            }
-        });
-
-        function filterByText() {
-            AppService.search = vm.textProyecto;
-            $location.path('/resultados');
-
-            /*
-            $timeout(function () {
-                vm.textProyecto = '';
-            }, 1000);
-            */
-        }
 
         function volver(view){
             $location.path('/' + view);
         }
     }
 
-    AppService.$inject = ['$rootScope'];
-    function AppService($rootScope) {
-        this.search = '';
-        this.origen = '/main';
-
-        this.listen = function (callback) {
-            $rootScope.$on('result', callback);
-        };
-
-        this.broadcast = function () {
-            $rootScope.$broadcast('result');
-        };
-
-    }
 
 })();
 

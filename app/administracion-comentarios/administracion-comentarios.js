@@ -33,7 +33,7 @@
         vm.usuario = (FireVars._FIREREF.getAuth() == null) ? null : FireVars._FIREREF.getAuth().uid;
 
         vm.obj.$loaded(function () {
-            vm.comentarios = vm.arrComentarios.$load(vm.obj.comentarios);
+            vm.comentarios = vm.arrComentarios.$load(vm.obj.comentarios != undefined ? vm.obj.comentarios : {});
 
         });
 

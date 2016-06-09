@@ -5,16 +5,18 @@
     var currentScriptPath = scripts[scripts.length - 1].src;
 
     angular.module('main', ['ngRoute'])
-        .controller('MainController', MainController);
+        .controller('MainController', MainController)
+        .service('MainService', MainService);
 
 
     MainController.$inject = ['$scope', 'NotasService', 'EventosService', '$location', 'ContactsService',
-        'ComicsService', 'FireService', 'Model'];
+        'ComicsService', 'FireService', 'Model', 'MainService', '$timeout'];
     function MainController($scope, NotasService, EventosService, $location, ContactsService,
-                            ComicsService, FireService, Model) {
+                            ComicsService, FireService, Model, MainService, $timeout) {
 
         var vm = this;
         vm.notas = [];
+        vm.textFiltro = '';
         vm.fecha = new Date();
         vm.anio = vm.fecha.getFullYear();
         vm.mes = '' + vm.fecha.getMonth();
@@ -225,5 +227,37 @@
         function getSubString(texto, length) {
             return texto.length > length ? texto.substring(0, length) + "..." : texto;
         }
+
+        $scope.$watch('mainCtrl.textFiltro', function (newVal, oldVal) {
+            if (newVal != oldVal && newVal != undefined) {
+                filterByText();
+                console.log(vm.textFiltro);
+            }
+        });
+
+        function filterByText() {
+            MainService.search = vm.textFiltro;
+            $location.path('/resultados');
+
+            $timeout(function () {
+                vm.textFiltro = '';
+            }, 1000);
+        }
     }
+
+    MainService.$inject = ['$rootScope'];
+    function MainService($rootScope) {
+        this.search = '';
+        this.origen = '/main';
+
+        this.listen = function (callback) {
+            $rootScope.$on('result', callback);
+        };
+
+        this.broadcast = function () {
+            $rootScope.$broadcast('result');
+        };
+
+    }
+
 })();
