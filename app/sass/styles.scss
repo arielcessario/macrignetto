@@ -2292,7 +2292,12 @@ ac-paginacion > .table-td{
   font-weight: bold;
 }
 .nota-detalle-result{
+  font-size: 14px;
+  line-height: 17px;
   overflow: auto;
+  margin-top: 10px;
+  font-family: 'Droid Serif', serif;
+  font-weight: 200;
 
 }
 
@@ -2301,7 +2306,7 @@ ac-paginacion > .table-td{
   height: 150px;
   margin: 5px;
 
-  img{
+  img:hover{
     cursor: pointer;
   }
 
