@@ -22,9 +22,10 @@
     <div class="noticia-container" style="margin: 0;">
         <div ng-if="resultadoCtrl.opcion == 1" id="noticias" class="container">
             <div class="noticias-fila">
-                <div ng-repeat="nota in resultadoCtrl.notas | filter:resultadoCtrl.value" class="nota-result" >
+                <div ng-repeat="nota in resultadoCtrl.notas | filter:resultadoCtrl.value"
+                     class="nota-result" ng-click="resultadoCtrl.verNota(nota.id);">
                     <img ng-src="images/{{nota.fotos[0].nombre == undefined ? 'no_image.png' : nota.fotos[0].nombre}}"
-                         class="strech">
+                         class="strech" >
                     <div style="margin-left: 5px;">
                         <div class="nota-titulo-result">{{nota.titulo}}</div>
                         <div class="nota-detalle-result" ng-bind-html="nota.detalle"></div>
@@ -34,7 +35,8 @@
         </div>
         <div ng-if="resultadoCtrl.opcion == 2" id="humor" class="container">
             <div class="noticias-fila">
-                <div ng-repeat="comic in resultadoCtrl.comics | filter:resultadoCtrl.value" class="comic-result" >
+                <div ng-repeat="comic in resultadoCtrl.comics | filter:resultadoCtrl.value"
+                     class="comic-result" ng-click="resultadoCtrl.verComic(comic.$id);">
                     <img ng-src="images/{{comic.imagen == undefined ? 'no_image.png' : comic.imagen}}"
                          class="strech" title="{{comic.titulo}}">
                 </div>
@@ -42,10 +44,13 @@
         </div>
         <div ng-if="resultadoCtrl.opcion == 3" id="revistas" class="container">
             <div class="noticias-fila">
-                <div ng-repeat="revista in resultadoCtrl.revistas | filter:$ctrl.filtro" class="nota-result" >
-                    <img ng-src="images/{{revista.link == undefined ? 'no_image.png' : revista.link}}"
-                         class="strech" height="100" width="100">
-
+                <div ng-repeat="link in resultadoCtrl.links | filter:$ctrl.filtro" class="revista-info" >
+                    <div>{{link.nombre}}</div>
+                    <iframe class="issuu"
+                            width="300"
+                            height="200"
+                            ng-src="{{link.link}}" frameborder="0" allowfullscreen>
+                    </iframe>
                 </div>
             </div>
         </div>

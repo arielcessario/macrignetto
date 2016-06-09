@@ -3,14 +3,14 @@
     var scripts = document.getElementsByTagName("script");
     var currentScriptPath = scripts[scripts.length - 1].src;
 
-    angular.module('resultados', ['ngRoute'])
+    angular.module('resultados', ['ngRoute', ['resultados/issuu.min.js']])
         .controller('ResultadoController', ResultadoController);
 
 
     ResultadoController.$inject = ['$scope', '$location', '$routeParams', 'NotasService',
-        'ComicsService', 'RevistasService'];
+        'ComicsService', 'RevistasService', '$sce'];
     function ResultadoController($scope, $location, $routeParams, NotasService,
-                                 ComicsService, RevistasService) {
+                                 ComicsService, RevistasService, $sce) {
 
 
         var vm = this;
@@ -18,11 +18,14 @@
         vm.notas = [];
         vm.comics = [];
         vm.revistas = [];
+        vm.links = [];
         vm.value = '';
         document.getElementById('resultados-search-box').focus();
 
         // FUNCTIONS
         vm.filtrar = filtrar;
+        vm.verNota = verNota;
+        vm.verComic = verComic;
 
         NotasService.get().then(function (data) {
             //console.log(data);
@@ -48,17 +51,20 @@
             vm.comics = data;
         });
 
-        /*
-        RevistasService.get().then()(function(data){
+        RevistasService.get().then(function (data) {
+            //console.log(data);
             vm.revistas = data;
+
+            for (var i = 0; i < data.length; i++) {
+                vm.links.push({link:$sce.trustAsResourceUrl('//e.issuu.com/embed.html#' + data[i].link), nombre: data[i].titulo});
+            }
         });
-        */
 
         function getSubString(texto, length) {
             return texto.length > length ? texto.substring(0, length) + "..." : texto;
         }
 
-        console.log(vm.value);
+        //console.log(vm.value);
 
         function filtrar(textBusqueda) {
             if(vm.value.length > 0) {
@@ -78,8 +84,13 @@
             */
         }
 
+        function verNota(id) {
+            $location.path('/nota/' + id);
+        }
 
-
+        function verComic(id) {
+            $location.path('/comic/' + id);
+        }
 
     }
 })();
