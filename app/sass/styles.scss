@@ -832,7 +832,7 @@ h1 {
 
 }
 
-.noticias-fila, .comic-fila {
+.noticias-fila, .comic-fila, .revista-fila {
   display: flex;
   flex-direction: column;
 
@@ -2336,4 +2336,13 @@ ac-paginacion > .table-td{
 }
 .row-enabled {
   color: #d44950;
+}
+.revista-info{
+  height: 300px;
+  width: 20%;
+
+  .strech {
+    height: 100%;
+    width: 100%;
+  }
 }

@@ -28,6 +28,10 @@
 
 
         RevistasService.get().then(function (data) {
+            data.sort(function (a, b) {
+                return a.edicion - b.edicion;
+            });
+
             vm.revistas = data;
         });
 

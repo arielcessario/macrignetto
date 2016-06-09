@@ -8,9 +8,19 @@
         <input type="text" class="buscador" placeholder="Ingrese su búsqueda..." ng-model="$ctrl.filtro">
     </div>
     <div class="noticia-container" style="margin: 0;">
-        <div id="noticias" class="container">
-            <div class="noticias-fila">
-
+        <div class="revista-fila">
+            <div ng-repeat="link in revistasCtrl.links | filter:$ctrl.filtro" class="revista-info" >
+                <!--img ng-src="images/{{revista.imagen == undefined ? 'revista.jpg' : 'revista.jpg'}}"
+                     class="strech" ng-click="revistasCtrl.verRevista(revista.$id);"-->
+                <!--div class="noticias-leer">
+                    <a href="" style="text-decoration: none;color:#000;" ng-click="humorCtrl.verComic(comic.$id);">Ver Comic</a>
+                </div-->
+                <div>{{link.nombre}}</div>
+                <iframe class="issuu"
+                        width="300"
+                        height="200"
+                        ng-src="{{link.link}}" frameborder="0" allowfullscreen>
+                </iframe>
             </div>
         </div>
     </div>
