@@ -38,7 +38,7 @@
                 <div ng-repeat="comic in resultadoCtrl.comics | filter:resultadoCtrl.value"
                      class="comic-result" ng-click="resultadoCtrl.verComic(comic.$id);">
                     <img ng-src="images/{{comic.imagen == undefined ? 'no_image.png' : comic.imagen}}"
-                         class="strech" title="{{comic.titulo}}">
+                         title="{{comic.titulo}}">
                 </div>
             </div>
         </div>

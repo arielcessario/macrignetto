@@ -2276,7 +2276,7 @@ ac-paginacion > .table-td{
   color: #DD0374;
 }
 .nota-result{
-  background-color: white;
+  background-color: rgba(255, 255, 255, 1);
   padding: 10px;
   width: 22%;
   display: flex;
@@ -2284,12 +2284,37 @@ ac-paginacion > .table-td{
   height: 150px;
   margin: 10px auto;
 
+  .strech{
+    height: auto!important;
+    margin-top: 0px!important;
+    margin-bottom: 0px!important;
+  }
+
 }
+
+
+.nota-result:hover{
+  background: rgba(255, 93, 177, 1); /* Old browsers */
+  -webkit-transition: all 0.2s ease;
+  moz-transition: all 0.2s ease;
+  ms-transition: all 0.2s ease;
+  o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  color:white;
+}
+
 .nota-titulo-result{
   font-family: 'Droid Serif', serif;
   font-size: 22px;
   margin-bottom: 5px;
   font-weight: bold;
+  -webkit-transition: all 0.2s ease;
+  moz-transition: all 0.2s ease;
+  ms-transition: all 0.2s ease;
+  o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
 .nota-detalle-result{
   font-size: 14px;
@@ -2302,24 +2327,48 @@ ac-paginacion > .table-td{
 }
 
 .comic-result{
+  overflow: hidden;
   width: 250px;
   height: 150px;
-  margin: 5px;
+  margin: 10px auto;
+  -webkit-transition: all 0.2s ease;
+  moz-transition: all 0.2s ease;
+  ms-transition: all 0.2s ease;
+  o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  cursor: pointer;
 
+  img{
+    width: 100%;
+    border: 2px solid black;
+    margin-top: calc(50% - 140px) !important;
+
+  }
   img:hover{
     cursor: pointer;
-  }
+    border: 2px solid rgb(255, 93, 177);
+    -ms-transform: scale(2,2); /* IE 9 */
+    -webkit-transform: scale(2,2); /* Safari */
+    transform: scale(2,2);
+    -webkit-transition: all 0.2s ease;
+    moz-transition: all 0.2s ease;
+    ms-transition: all 0.2s ease;
+    o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 
+  }
 
 }
 
 .strech{
   width: 161px!important;
   height: 100%;
+  margin: 10px auto;
   img{
     min-width: 160px;
   }
 }
+
 
 .header-secciones{
   display: flex;
