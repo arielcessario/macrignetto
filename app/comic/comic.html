@@ -13,9 +13,10 @@
                     <button ng-click="appCtrl.volver('main');" style="margin-bottom: 20px;">Volver</button>
                 </div>
                 <div class="comic-col-2" style="margin:10px;">
+                    <div style="font-family: 'Merriweather', serif;color:#fff;margin-bottom: 5px;font-size: 22px;">Ultimos Comics</div>
                     <img  ng-repeat="comic in comicCtrl.comics" ng-src="images/{{comic.imagen}}"
-                         ng-click="comicCtrl.fotoSelected = comic.imagen"
-                         class="foto-secundaria-comic" title="{{comic.titulo}}">
+                          ng-click="comicCtrl.verComic(comic.$id);" style="cursor: pointer;"
+                          class="foto-secundaria-comic" title="{{comic.titulo}}">
                 </div>
             </div>
         </div>

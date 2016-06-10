@@ -4,8 +4,8 @@
         .controller('ComicController', ComicController);
 
 
-    ComicController.$inject = ['$scope', '$routeParams', 'Model', 'FireService', 'ComicsService'];
-    function ComicController($scope, $routeParams, Model, FireService, ComicsService) {
+    ComicController.$inject = ['$scope', '$routeParams', 'Model', 'FireService', 'ComicsService', '$location'];
+    function ComicController($scope, $routeParams, Model, FireService, ComicsService, $location) {
 
         var vm = this;
         vm.fotoSelected = '';
@@ -14,6 +14,8 @@
         vm.comics = [];
         vm.comentarios = [];
         vm.id = $routeParams.id;
+
+        vm.verComic = verComic;
 
         if (vm.id.length > 0) {
             vm.objComic = FireService.createObjectRef(Model.refComics.child(vm.id));
@@ -25,7 +27,7 @@
         }
 
         ComicsService.get().then(function (data) {
-            //console.log(data);
+
             if(data.length > 5) {
                 for(var i=0; i < 5; i++) {
                     vm.comics.push(data[i]);
@@ -34,6 +36,11 @@
                 vm.comics = data;
             }
         });
+
+        function verComic(id) {
+            console.log(id);
+            $location.path('/comic/' + id);
+        }
 
     }
 
