@@ -15,15 +15,32 @@
         vm.getUsuario = getUsuario;
 
         vm.arrComentarios = FireService.cacheFactory(Model.refComentarios);
+        vm.arrUsuarios = FireService.cacheFactory(Model.refUsuarios);
 
+        vm.usuario = {};
+
+        /*
+         function getUsuario(comentario) {
+         if(comentario != undefined) {
+         comentario.$loaded().then(function () {
+         var usuario = FireService.createObjectRef(Model.refUsuarios.child(comentario.usuario));
+         comentario.usuario = usuario;
+         });
+         }
+         }
+         */
 
         function getUsuario(comentario) {
+            var usuario = {};
             if(comentario != undefined) {
                 comentario.$loaded().then(function () {
-                    var usuario = FireService.createObjectRef(Model.refUsuarios.child(comentario.usuario));
-                    comentario.usuario = usuario;
+                    //console.log(comentario.usuario);
+                    usuario = vm.arrUsuarios.$load(comentario.usuario);
+                    console.log(usuario);
+                    vm.usuario = usuario;
                 });
             }
+            return usuario;
         }
 
         NotasService.get().then(function (data) {
