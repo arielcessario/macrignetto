@@ -36,8 +36,15 @@
 
         vm.save = save;
         vm.select = select;
+        vm.nuevo = nuevo;
         vm.updateFotoProyecto = updateFotoProyecto;
 
+
+        function nuevo() {
+            vm.fecha = new Date();
+            vm.evento = {};
+            document.getElementById('fecha-box').focus();
+        }
 
         function updateFotoProyecto(filelist, id, sub_folder) {
             UploadService.addImages(filelist, id, sub_folder, function (data) {

@@ -73,11 +73,11 @@
         <div class="title-administracion">Detalles</div>
         <div class="input">
             <label for="">Titulo</label>
-            <input type="text" ng-model="$ctrl.nota.titulo" class="custom-file-input"/>
+            <input type="text" ng-model="$ctrl.nota.titulo" class="" id="titulo-box"/>
         </div>
         <div class="input">
             <label for="">Fuente</label>
-            <input type="text" ng-model="$ctrl.nota.fuente"class="custom-file-input" />
+            <input type="text" ng-model="$ctrl.nota.fuente"class="" />
 
         </div>
         <div class="input">
@@ -109,7 +109,7 @@
         </div>
         <div class="botonera">
             <button ng-click="$ctrl.detailsOpen = false; $ctrl.save();">Guardar</button>
-            <button ng-click="$ctrl.detailsOpen = true; $ctrl.nota = {} ;">Nuevo</button>
+            <button ng-click="$ctrl.detailsOpen = true; $ctrl.nuevo();">Nuevo</button>
         </div>
     </div>
 </div>

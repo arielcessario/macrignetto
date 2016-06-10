@@ -36,6 +36,12 @@
         vm.save = save;
         vm.updateFotoProyecto = updateFotoProyecto;
         vm.getCategoria = getCategoria;
+        vm.nuevo = nuevo;
+
+        function nuevo() {
+            vm.nota = {};
+            document.getElementById('titulo-box').focus();
+        }
 
         function updateFotoProyecto(filelist, id, sub_folder) {
             UploadService.addImages(filelist, id, sub_folder, function (data) {

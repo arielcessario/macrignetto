@@ -5,7 +5,7 @@
         <div class="left">
             <div class="input">
                 <label for="">Fecha</label>
-                <input type="date" ng-model="$ctrl.fecha"/>
+                <input type="date" ng-model="$ctrl.fecha" id="fecha-box"/>
             </div>
         </div>
         <div class="foto-container">
@@ -67,7 +67,7 @@
         </div>
         <div class="botonera">
             <button ng-click="$ctrl.detailsOpen = false; $ctrl.save();">Guardar</button>
-            <button ng-click="$ctrl.detailsOpen = true; $ctrl.evento = {} ;">Nuevo</button>
+            <button ng-click="$ctrl.detailsOpen = true; $ctrl.nuevo();">Nuevo</button>
         </div>
     </div>
 </div>
