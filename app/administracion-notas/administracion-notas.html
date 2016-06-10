@@ -4,7 +4,7 @@
         <div class="title-administracion">Opciones</div>
         <div id="foto-main" class="input-foto-main">
             <img ng-src="{{'images/'+$ctrl.foto_01.nombre}}" alt="" height="100p" width="100p">
-            <input type="file" name="images" id="file-1" class=""
+            <input type="file" name="images" id="file-1" class="custom-file-input"
                    ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,1,'')"/>
         </div>
         <div class="left">
@@ -73,11 +73,11 @@
         <div class="title-administracion">Detalles</div>
         <div class="input">
             <label for="">Titulo</label>
-            <input type="text" ng-model="$ctrl.nota.titulo">
+            <input type="text" ng-model="$ctrl.nota.titulo" class="custom-file-input"/>
         </div>
         <div class="input">
             <label for="">Fuente</label>
-            <input type="text" ng-model="$ctrl.nota.fuente">
+            <input type="text" ng-model="$ctrl.nota.fuente"class="custom-file-input" />
 
         </div>
         <div class="input">
@@ -89,21 +89,21 @@
                 <div id="slider-02-foto" class="input-foto">
                     <img ng-src="{{'images/'+$ctrl.foto_02.nombre}}" alt="" height=100" width="150">
                     <input type="file" name="images" id="images"
-                           ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,2,'')"/>
+                           ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,2,'')" class="custom-file-input"/>
                 </div>
             </div>
             <div class="foto">
                 <div id="slider-03-foto" class="input-foto">
                     <img ng-src="{{'images/'+$ctrl.foto_03.nombre}}" alt="" height="100" width="150">
                     <input type="file" name="images" id="images"
-                           ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,3,'')"/>
+                           ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,3,'')"class="custom-file-input" />
                 </div>
             </div>
             <div class="foto">
                 <div id="slider-04-foto" class="input-foto">
                     <img ng-src="{{'images/'+$ctrl.foto_04.nombre}}" alt="" height="100" width="150">
                     <input type="file" name="images" id="images"
-                           ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,4,'')"/>
+                           ac-upload-files="$ctrl.updateFotoProyecto(selectedFileList,4,'')" class="custom-file-input"/>
                 </div>
             </div>
         </div>

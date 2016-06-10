@@ -62,9 +62,11 @@ body {
 
 
 .login-panel-form .botonera{
-  margin-bottom: 10px;
+  margin-bottom: 10px!important;
 }
-
+.botonera{
+  text-align: center;
+}
 .btn-comenzar {
   color: black;
   cursor: pointer;
@@ -189,8 +191,8 @@ body {
 select {
   font-weight: lighter;
   background-color: white;
-  margin-left: 5px;
-  margin-right: 5px;
+  //margin-left: 5px;
+  //margin-right: 5px;
   font-size: 16px;
   height: 30px;
   width: 34%;
@@ -210,6 +212,12 @@ select option {
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
+  -webkit-transition: all 0.4s ease-in;
+  -moz-transition: all 0.4s ease-in;
+  -ms-transition: all 0.4s ease-in;
+  -o-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+
 }
 
 .buscador, .buscador-main {
@@ -230,11 +238,11 @@ select option {
   margin-top: 15px;
   margin-left: 15px;
 
-  -webkit-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  -ms-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  transition: all 0.4s;
+  -webkit-transition: all 0.4s ease-in;
+  -moz-transition: all 0.4s ease-in;
+  -ms-transition: all 0.4s ease-in;
+  -o-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
 
   transform-origin: 13px 13px;
   transform-style: preserve-3D;
@@ -244,13 +252,15 @@ select option {
     width: 25px;
     height: 4px;
     border-radius: 2px;
-    background-color: #000;
+    background-color: white;
     margin: 4px;
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
     -ms-transition: all 0.4s;
     -o-transition: all 0.4s;
     transition: all 0.4s;
+
+
   }
 
   .nav-button-top-transformed {
@@ -328,11 +338,13 @@ select option {
 .menu-mobile-panel {
   font-family: 'Oswald', sans-serif;
   width: 100%;
-  font-weight: lighter;
-  background: #B2FFDB;
+  background: rgb(164,169,181); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(164,169,181,1) 0%, rgba(130,140,149,1) 36%, rgba(40,52,59,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(164,169,181,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(164,169,181,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4a9b5', endColorstr='#28343b',GradientType=0 ); /* IE6-9 */
   display: flex;
   flex-direction: column;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=0);
   position: fixed;
   bottom: 0px;
   top: 50px;
@@ -1234,6 +1246,7 @@ ac-login {
 }
 
 .foto-container {
+  margin-bottom: 10px;
   display: flex;
   flex-direction: row;
 }
@@ -1648,7 +1661,7 @@ button:hover, .button:hover {
         //-webkit-border-radius: 5px;
         box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.45);
         border: 2px solid white;
-        @media (max-width:600px) {
+        @media (max-width:800px) {
           width: 100%;
         }
 
@@ -1758,7 +1771,6 @@ button:hover, .button:hover {
         background: -webkit-linear-gradient(top,  rgba(164,169,181,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* Chrome10-25,Safari5.1-6 */
         background: linear-gradient(to bottom,  rgba(164,169,181,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4a9b5', endColorstr='#28343b',GradientType=0 ); /* IE6-9 */
-
         border: 2px solid white;
         //-webkit-border-radius: 5px;
         //min-width: 360px;
@@ -1766,6 +1778,9 @@ button:hover, .button:hover {
         padding: 14px;
         margin-left: 5px;
         box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.45);
+        @media (max-width: 800px) {
+          width: 100%;
+        }
 
         .input {
           display: flex;
@@ -1779,8 +1794,8 @@ button:hover, .button:hover {
           }
           input, select {
             width: calc(100% - 10px);
-            padding-left: 5px !important;
-            margin: 5px 2px 5px 2px;
+            //padding-left: 5px !important;
+            //margin: 5px 2px 5px 2px;
             font-family: 'Roboto', sans-serif;
             font-size: 16px;
             border-style: none;
@@ -1893,12 +1908,12 @@ ac-login {
     align-items: center;
     .login-panel-form {
       width: 395px;
-      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff5db1+0,ef017c+100;Pink+3D+%231 */
-      background: rgb(255, 93, 177); /* Old browsers */
-      background: -moz-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* FF3.6-15 */
-      background: -webkit-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to bottom, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5db1', endColorstr='#ef017c', GradientType=0); /* IE6-9 */
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#878d96+0,596a72+100 */
+      background: rgb(135,141,150); /* Old browsers */
+      background: -moz-radial-gradient(center, ellipse cover,  rgba(135,141,150,1) 0%, rgba(89,106,114,1) 100%); /* FF3.6-15 */
+      background: -webkit-radial-gradient(center, ellipse cover,  rgba(135,141,150,1) 0%,rgba(89,106,114,1) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: radial-gradient(ellipse at center,  rgba(135,141,150,1) 0%,rgba(89,106,114,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#878d96', endColorstr='#596a72',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
       padding: 15px;
       -webkit-transform: translateY(-1000px);
       -moz-transform: translateY(-1000px);
@@ -2451,6 +2466,9 @@ ac-paginacion > .table-td{
   width: 24%;
   padding: 10px;
   margin: 10px auto;
+  @media (max-width: 600px) {
+    width: 95%;
+  }
   div{
     font-size: 22px;
     font-family: 'Droid Serif', serif;
@@ -2461,4 +2479,82 @@ ac-paginacion > .table-td{
     height: 100%;
     width: 100%;
   }
+}
+
+
+.custom-file-input {
+  visibility: hidden;
+  width: 0;
+  position: relative;
+}
+.custom-file-input::before {
+  content: 'Subir archivo';
+  font-family: 'Oswald', sans-serif;
+  font-weight: lighter!important;
+  position: absolute;
+  bottom: 0;
+  display: inline-block;
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff5db1+0,ef017c+100;Pink+3D+%231 */
+  background: rgb(255, 93, 177); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5db1', endColorstr='#ef017c', GradientType=0); /* IE6-9 */
+  -webkit-box-shadow: 0px 2px 3px -1px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.45);
+  box-shadow: 0px 2px 2px -1px rgba(0, 0, 0, 0.45);
+  padding: 2px;
+  color: white;
+  border-style: none;
+  outline: none;
+  margin-left: 5px;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-size: 14px;
+  visibility: visible;
+  moz-transition: all 0.2s ease;
+  ms-transition: all 0.2s ease;
+  o-transition: all 0.2s ease;
+  transition: all 0.2s ease;}
+
+.custom-file-input:hover::before {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e5e5e5+100;White+3D */
+  background: rgb(255, 255, 255); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e5e5e5', GradientType=0); /* IE6-9 */
+  color: black;
+  moz-transition: all 0.2s ease;
+  ms-transition: all 0.2s ease;
+  o-transition: all 0.2s ease;
+  transition: all 0.2s ease;}
+
+.custom-file-input:active::before {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e5e5e5+100;White+3D */
+  background: rgb(255, 255, 255); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e5e5e5', GradientType=0); /* IE6-9 */
+  color: black;
+  moz-transition: all 0.2s ease;
+  ms-transition: all 0.2s ease;
+  o-transition: all 0.2s ease;
+  transition: all 0.2s ease;}
+
+
+
+.administracion img{
+  width: 80px!important;
+  height: 50px!important;
+}
+
+.input-foto{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
+  height: 80px;
+  width: 75px;
 }
