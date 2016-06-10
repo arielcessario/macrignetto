@@ -17,11 +17,11 @@
         }
     }
 
-    AcComentariosController.$inject = ['ComentariosService', 'FireService', 'FireVars', 'Model'];
+    AcComentariosController.$inject = ['ComentariosService', 'FireService', 'FireVars', 'Model', 'LoginService'];
     /**
      * @constructor
      */
-    function AcComentariosController(ComentariosService, FireService, FireVars, Model) {
+    function AcComentariosController(ComentariosService, FireService, FireVars, Model, LoginService) {
         var vm = this;
         vm.comentarios = [];
         vm.comentario = {};
@@ -47,26 +47,31 @@
         }
 
         function save() {
+            if(LoginService.isLogged) {
+                if (!vm.comentario.hasOwnProperty('nota')) {
+                    vm.comentario.nota = {};
+                }
+                vm.comentario.nota[vm.obj.$id] = true;
 
-            if (!vm.comentario.hasOwnProperty('nota')) {
-                vm.comentario.nota = {};
+                ComentariosService.save(FireService.createArrayRef(Model.refComentarios), vm.comentario)
+                    .then(function (data) {
+                        if (!vm.obj.hasOwnProperty('comentarios')) {
+                            vm.obj.comentarios = {}
+                        }
+                        vm.obj.comentarios[data.key()] = true;
+                        Model.refUsuarios.child(vm.usuario).child('comentarios').child(data.key()).set(true);
+
+                        return vm.obj.$save()
+                    })
+                    .then(function (data) {
+                        vm.comentario = {};
+                        vm.comentarios = vm.arrComentarios.$load(vm.obj.comentarios);
+                    });
+            } else {
+                LoginService.showLoginPanel = true;
+                LoginService.broadcast();
             }
-            vm.comentario.nota[vm.obj.$id] = true;
 
-            ComentariosService.save(FireService.createArrayRef(Model.refComentarios), vm.comentario)
-                .then(function (data) {
-                    if (!vm.obj.hasOwnProperty('comentarios')) {
-                        vm.obj.comentarios = {}
-                    }
-                    vm.obj.comentarios[data.key()] = true;
-                    Model.refUsuarios.child(vm.usuario).child('comentarios').child(data.key()).set(true);
-
-                    return vm.obj.$save()
-                })
-                .then(function (data) {
-                    vm.comentario = {};
-                    vm.comentarios = vm.arrComentarios.$load(vm.obj.comentarios);
-                });
         }
 
     }

@@ -39,6 +39,9 @@
         vm.resetPassword = resetPassword;
         vm.changePassword = changePassword;
 
+        LoginService.listen(function(){
+            vm.showLoginPanel = LoginService.showLoginPanel;
+        });
 
         function changePassword() {
             FireVars._FIREREF.changePassword({
@@ -187,6 +190,7 @@
     LoginService.$inject = ['$rootScope'];
     function LoginService($rootScope) {
         this.isLogged = false;
+        this.showLoginPanel = false;
         this.origen = '/main';
 
         this.listen = function (callback) {
