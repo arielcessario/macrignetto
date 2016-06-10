@@ -25,7 +25,7 @@
         var vm = this;
         vm.comentarios = [];
         vm.comentario = {};
-        vm.img='trash.png';
+        vm.img = 'trash.png';
         vm.save = save;
         vm.remove = remove;
         vm.start = 0;
@@ -59,6 +59,8 @@
                         vm.obj.comentarios = {}
                     }
                     vm.obj.comentarios[data.key()] = true;
+                    Model.refUsuarios.child(vm.usuario).child('comentarios').child(data.key()).set(true);
+
                     return vm.obj.$save()
                 })
                 .then(function (data) {

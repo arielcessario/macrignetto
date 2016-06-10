@@ -56,6 +56,7 @@
         vm.sendMail = sendMail;
         vm.selectEvento = selectEvento;
         vm.getUsuario = getUsuario;
+        vm.getLastComment = getLastComment;
 
         vm.arrComentarios = FireService.cacheFactory(Model.refComentarios);
         vm.arrUsuarios = FireService.cacheFactory(Model.refUsuarios);
@@ -77,9 +78,27 @@
          }
          */
 
+        function getLastComment(nota) {
+            var comentario = vm.arrComentarios.$load(nota.comentarios);
+            nota.comentario = comentario;
+
+            var comment = FireService.createObjectRef(Model.refComentarios.child(nota.comentario[nota.comentario.length - 1].$id));
+
+            comment.$loaded(function (data) {
+
+                var id = {};
+                id[data.usuario] = true;
+                var usuario = vm.arrUsuarios.$load(id);
+                comentario.usuarioResponse = usuario;
+            });
+
+
+            return comentario;
+        }
+
         function getUsuario(comentario) {
             var usuario = {};
-            if(comentario != undefined) {
+            if (comentario != undefined) {
                 comentario.$loaded().then(function () {
                     //console.log(comentario.usuario);
                     usuario = vm.arrUsuarios.$load(comentario.usuario);
@@ -155,7 +174,7 @@
             }
 
             //vm.evento = vm.listaEventos[0].evento;
-            if(vm.listaEventos[0].evento != undefined) {
+            if (vm.listaEventos[0].evento != undefined) {
                 vm.evento.detalle = vm.listaEventos[0].evento.detalle;
                 vm.evento.titulo = getSubString(vm.listaEventos[0].evento.titulo, 20);
                 vm.evento.fotos = vm.listaEventos[0].evento.fotos;
@@ -173,7 +192,7 @@
                 });
 
                 //console.log(data[data.length - 1]);
-                if(data[data.length - 1] != undefined) {
+                if (data[data.length - 1] != undefined) {
                     vm.evento.detalle = data[data.length - 1].detalle;
                     vm.evento.titulo = getSubString(data[data.length - 1].titulo, 20);
                     vm.evento.fotos = data[data.length - 1].fotos;
