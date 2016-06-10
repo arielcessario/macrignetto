@@ -29,6 +29,12 @@
         vm.start = 0;
 
         vm.getRol = getRol;
+        vm.nuevo = nuevo();
+
+        function nuevo() {
+            vm.usuario = {};
+            document.getElementById('apellido-box').focus();
+        }
 
         $timeout(function () {
             vm.limit = (vm.limit == undefined) ? 10 : vm.limit;
