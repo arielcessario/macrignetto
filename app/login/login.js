@@ -15,11 +15,11 @@
         }
     }
 
-    AcLoginController.$inject = ['FireVars', 'Model', '$location', '$scope'];
+    AcLoginController.$inject = ['FireVars', 'Model', '$location', '$scope', 'AppService'];
     /**
      * @constructor
      */
-    function AcLoginController(FireVars, Model, $location, $scope) {
+    function AcLoginController(FireVars, Model, $location, $scope, AppService) {
         var vm = this;
         vm.email = '';
         vm.password = '';
@@ -88,7 +88,9 @@
         function logout(){
             FireVars._FIREREF.unauth();
             vm.isLogged = false;
+            AppService.isLogged = false;
             $location.path('/main');
+            AppService.broadcast();
         }
 
         function createUser() {
@@ -142,11 +144,13 @@
                     }
 
                     vm.isLogged = true;
+                    AppService.isLogged = true;
                     vm.usuario = getName(authData);
                     //$location.path(vm.loginOk);
                     if (!$scope.$$phase) {
                         $scope.$apply();
                     }
+                    AppService.broadcast();
                 });
             }
         });
