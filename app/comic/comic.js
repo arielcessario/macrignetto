@@ -27,6 +27,9 @@
         }
 
         ComicsService.get().then(function (data) {
+            data.sort(function (a, b) {
+                return b.fecha_crea - a.fecha_crea;
+            });
 
             if(data.length > 5) {
                 for(var i=0; i < 5; i++) {
