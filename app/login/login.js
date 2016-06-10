@@ -1,7 +1,8 @@
 (function () {
     'use strict';
     angular.module('login', [])
-        .component('acLogin', acLogin());
+        .component('acLogin', acLogin())
+        .service('LoginService', LoginService);
 
     ///// COMPONENTE LOGIN /////
     function acLogin() {
@@ -15,11 +16,11 @@
         }
     }
 
-    AcLoginController.$inject = ['FireVars', 'Model', '$location', '$scope', 'AppService'];
+    AcLoginController.$inject = ['FireVars', 'Model', '$location', '$scope', 'LoginService'];
     /**
      * @constructor
      */
-    function AcLoginController(FireVars, Model, $location, $scope, AppService) {
+    function AcLoginController(FireVars, Model, $location, $scope, LoginService) {
         var vm = this;
         vm.email = '';
         vm.password = '';
@@ -88,9 +89,10 @@
         function logout(){
             FireVars._FIREREF.unauth();
             vm.isLogged = false;
-            AppService.isLogged = false;
+            vm.showLoginPanel = false;
+            LoginService.isLogged = false;
             $location.path('/main');
-            AppService.broadcast();
+            LoginService.broadcast();
         }
 
         function createUser() {
@@ -144,13 +146,13 @@
                     }
 
                     vm.isLogged = true;
-                    AppService.isLogged = true;
+                    LoginService.isLogged = true;
                     vm.usuario = getName(authData);
                     //$location.path(vm.loginOk);
                     if (!$scope.$$phase) {
                         $scope.$apply();
                     }
-                    AppService.broadcast();
+                    LoginService.broadcast();
                 });
             }
         });
@@ -180,6 +182,21 @@
                     return authData.google.displayName;
             }
         }
+    }
+
+    LoginService.$inject = ['$rootScope'];
+    function LoginService($rootScope) {
+        this.isLogged = false;
+        this.origen = '/main';
+
+        this.listen = function (callback) {
+            $rootScope.$on('login', callback);
+        };
+
+        this.broadcast = function () {
+            $rootScope.$broadcast('login');
+        };
+
     }
 
 })();

@@ -149,13 +149,12 @@
             });
         })
         .controller('AppCtrl', AppCtrl)
-        .service('AppService', AppService)
         //Constante definida para la librería ac-angularfire-factory
         .constant('_FIREREF', 'https://macrignetto.firebaseio.com/');
 
 
-    AppCtrl.$inject = ['FireService', '$rootScope', '$scope', '$location', 'AppService'];
-    function AppCtrl(FireService, $rootScope, $scope, $location, AppService) {
+    AppCtrl.$inject = ['FireService', '$rootScope', '$scope', '$location', 'LoginService'];
+    function AppCtrl(FireService, $rootScope, $scope, $location, LoginService) {
         var vm = this;
         vm.hideLoader = true;
         vm.display_menu = true;
@@ -174,29 +173,13 @@
         });
         ////////// NAVEGACION //////////
 
-        AppService.listen(function(){
-            vm.isLogged = AppService.isLogged;
+        LoginService.listen(function(){
+            vm.isLogged = LoginService.isLogged;
         });
 
         function volver(view){
             $location.path('/' + view);
         }
-    }
-
-    AppService.$inject = ['$rootScope'];
-    function AppService($rootScope) {
-        this.search = '';
-        this.isLogged = false;
-        this.origen = '/main';
-
-        this.listen = function (callback) {
-            $rootScope.$on('result', callback);
-        };
-
-        this.broadcast = function () {
-            $rootScope.$broadcast('result');
-        };
-
     }
 
 })();
