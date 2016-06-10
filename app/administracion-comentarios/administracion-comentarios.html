@@ -1,9 +1,10 @@
-<div class="nota-comentar">
+<div class="nota-comentar" form-id="comentario">
     <div style="width: 100%;">
         <label>Comentar:</label>
     </div>
-    <textarea cols="40" rows="6" ng-model="$ctrl.comentario.detalles"></textarea>
-    <button ng-click="$ctrl.save()">Guardar</button>
+    <textarea cols="40" rows="6" ng-model="$ctrl.comentario.detalles"
+              ac-validator is-required="Debe ingresar un comentario" id="comentario-detalle"></textarea>
+    <button ac-validator ng-click="$ctrl.save()">Guardar</button>
 </div>
 <div class="notas-comentarios">
     <div>
