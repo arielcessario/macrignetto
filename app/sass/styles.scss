@@ -574,8 +574,6 @@ select option {
 
     #menu-desktop-lower {
       background-color: transparent;
-      max-height: 35px;
-      padding: 5px;
       max-width: 100%;
 
       -webkit-transition: all .4s ease-in-out;
@@ -597,10 +595,12 @@ select option {
         color: white;
         font-weight: lighter!important;
         text-decoration: none;
-        padding: 5px 8px;
+        padding: 10px;
         position: relative;
-        font-size: 23px;
+        font-size: 18px;
         opacity: 0;
+         border-right: 0.1px solid white;
+
         -webkit-animation: fadeIn ease-in-out 2; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
         -moz-animation: fadeIn ease-in-out 2;
         animation: fadeIn ease-in-out 2;
@@ -911,6 +911,7 @@ h1 {
   //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5db1', endColorstr='#ef017c', GradientType=0); /* IE6-9 */
   border-style: solid;
   border-color: white;
+
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -919,26 +920,26 @@ h1 {
   width: 100%;
 }
 .nota-pie-color-1 {
-  background-color: rgba(242, 151, 146, 1);
-  background-image: -moz-linear-gradient(top, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
-  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242, 151, 146, 1)), color-stop(100%, rgba(239, 1, 124, 1)));
-  background-image: -webkit-linear-gradient(top, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
-  background-image: -o-linear-gradient(top, url("fondo-globos.png"), rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
-  background-image: -ms-linear-gradient(top, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
-  background-image: linear-gradient(to bottom, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
+  background-color: rgba(242, 151, 146, .7);
+  background-image: -moz-linear-gradient(top, rgba(242, 151, 146, .7) 0%, rgba(239, 1, 124, .7) 100%);
+  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242, 151, 146, .7)), color-stop(100%, rgba(239, 1, 124, .7)));
+  background-image: -webkit-linear-gradient(top, rgba(242, 151, 146, .7) 0%, rgba(239, 1, 124, .7) 100%);
+  background-image: -o-linear-gradient(top, url("fondo-globos.png"), rgba(242, 151, 146, .7) 0%, rgba(239, 1, 124, .7) 100%);
+  background-image: -ms-linear-gradient(top, rgba(242, 151, 146, .7) 0%, rgba(239, 1, 124, .7) 100%);
+  background-image: linear-gradient(to bottom, rgba(242, 151, 146, .7) 0%, rgba(239, 1, 124, .7) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f29792', endColorstr='#ef017c', GradientType=0);
   border-style: solid;
   border-color: white;
 }
 .nota-pie-color-2 {
-  background-color: rgba(242, 151, 146, 1);
-  background-image: -moz-linear-gradient(top, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
-  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242, 151, 146, 1)), color-stop(100%, rgba(239, 1, 124, 1)));
-  background-image: -webkit-linear-gradient(top, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
-  background-image: -o-linear-gradient(top, url("fondo-globos.png"), rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
-  background-image: -ms-linear-gradient(top, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
-  background-image: linear-gradient(to bottom, rgba(242, 151, 146, 1) 0%, rgba(239, 1, 124, 1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f29792', endColorstr='#ef017c', GradientType=0);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cc9c61+0,ceb900+100 */
+  background: rgba(204,156,97, .7); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(204,156,97,.7) 0%, rgba(206,185,0,.7) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(204,156,97,.7) 0%,rgba(206,185,0,.7) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(204,156,97,.7) 0%,rgba(206,185,0,.7) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc9c61', endColorstr='#ceb900',GradientType=0 ); /* IE6-9 */
+
+
   border-style: solid;
   border-color: white;
 }
@@ -954,6 +955,11 @@ h1 {
   font-size: 14px !important;
   margin-top: 5px;
   line-height: 18px !important;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-style: solid;
+  border-bottom: 1px solid lightgrey;
+
 }
 
 h3 {
@@ -1256,6 +1262,8 @@ ac-login {
   line-height: 15px;
   padding: 0px 15px;
   padding-top: 12px;
+  margin-left: 10px;
+  margin-right: 10px;
 
   p {
     font-size: 14px;
@@ -1263,6 +1271,7 @@ ac-login {
     font-weight: 400;
   }
 }
+
 
 .noticia-container {
   display: flex;
@@ -1367,6 +1376,9 @@ ac-login {
 
 .nota-comentar {
   margin-top: 25px;
+  label{
+    color: white!important;
+  }
 
 }
 
@@ -1379,6 +1391,9 @@ ac-login {
 
 .notas-comentarios {
   margin: 25px 0;
+  label{
+    color: white!important;
+  }
 }
 
 .nota-comentar > div > a {
@@ -1473,11 +1488,11 @@ ac-login {
   transform: scale(2,2);
   -webkit-filter: blur(0px); /* Chrome, Safari, Opera */
   filter: blur(0px);
-  -webkit-transition: all 0.2s cubic-bezier(.17,.67,.83,.67);
-  moz-transition: all 0.2s cubic-bezier(.17,.67,.83,.67);
-  ms-transition: all 0.2s cubic-bezier(.17,.67,.83,.67);
-  o-transition: all 0.2s cubic-bezier(.17,.67,.83,.67);
-  transition: all 0.2s cubic-bezier(.17,.67,.83,.67);
+  -webkit-transition: all 0.4s ease-out;
+  moz-transition: all 0.4s ease-out;
+  ms-transition: all 0.4s ease-out;
+  o-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
 }
 
 button, .button {
@@ -1516,7 +1531,7 @@ button:hover, .button:hover {
 }
 
 .fa-search {
-  font-size: 50px !important;
+  font-size: 30px !important;
   color: white;
   //margin: 13px;
   margin: 5px 15px;
@@ -1780,7 +1795,7 @@ button:hover, .button:hover {
 
     .pantalla-administracion-bottom {
       min-height: 450px;
-      max-width: 1600px;
+      //max-width: 1600px;
       .details {
         background: rgba(255,255,255,1);
         background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
@@ -2173,11 +2188,26 @@ ac-login {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+
   @media (min-width: 800px) {
     width: 80%;
     //flex-direction: row;
   }
 }
+
+.foto-principal-comic{
+  width: 90%;
+  margin: 10px auto;
+}
+
+.foto-secundaria-comic{
+  width: 10%;
+  height: 10%;
+  min-height: 50px;
+  margin-right: 10px;
+}
+
+
 .comic-flex{
   display: flex;
   flex-direction: column;
@@ -2187,6 +2217,7 @@ ac-login {
 
   .comic-col-1{
     order:1;
+
     @media (min-width: 800px) {
       order:0;
     }
@@ -2195,6 +2226,9 @@ ac-login {
     order:0;
     @media (min-width: 800px) {
       order:1;
+      width: 46%!important;
+      margin-left: 10px!important;
+      margin-top: 48px!important;
     }
   }
 }
@@ -2220,7 +2254,8 @@ ac-paginacion > .table-td{
 }
 
 .comentario-usuario{
-  font-size: 16px;
+  font-size: 17px;
+  color: gainsboro;
 }
 .issuu {
   background-color: transparent;
@@ -2366,7 +2401,6 @@ ac-paginacion > .table-td{
 .strech{
   width: 161px!important;
   height: 100%;
-  margin: 10px auto;
   img{
     min-width: 160px;
   }
