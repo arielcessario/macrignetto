@@ -11,7 +11,7 @@
         <div id="noticias" class="container">
             <div class="noticias-fila">
                 <div ng-repeat="nota in noticiasCtrl.notas | filter:$ctrl.filtro"
-                     ng-init="comentario = noticiasCtrl.arrComentarios.$load(nota.comentarios);"
+                     ng-init="noticiasCtrl.getLastComment(nota);"
                      class="noticias-info noticia-result" ng-class="{'noticia-destacada':nota.destacada == 1}">
                     <a href="" class="btn-facebook" title="Me gusta">
                         <img src="images/like.png" class="" height="30" width="30">
@@ -24,10 +24,10 @@
                     </figure>
                     <div class="noticias-texto">{{nota.titulo}}</div>
                     <div class="noticias-pie" ng-class="{'nota-pie-color-1':nota.color == 1, 'nota-pie-color-2':nota.color == 2}">
-                        <div ng-init="noticiasCtrl.getUsuario(comentario[comentario.length-1]);">Ultimo comentario:
-                            <span class="comentario-usuario">{{(noticiasCtrl.usuario != undefined ? noticiasCtrl.usuario.apellido + ' ' + noticiasCtrl.usuario.nombre : '')}}</span>
+                        <div>Ultimo comentario:
+                            <span class="comentario-usuario">{{(nota.comentario.usuarioResponse[0] != undefined ? nota.comentario.usuarioResponse[0].apellido + ' ' + nota.comentario.usuarioResponse[0].nombre : '')}}</span>
                         </div>
-                        <div class="noticias-detalle">{{comentario.length > 0 ? comentario[comentario.length-1].detalles : 'Se el primero en comentar'}}</div>
+                        <div class="noticias-detalle">{{nota.comentario.length > 0 ? nota.comentario[nota.comentario.length-1].detalles : 'Se el primero en comentar'}}</div>
                     </div>
                 </div>
             </div>

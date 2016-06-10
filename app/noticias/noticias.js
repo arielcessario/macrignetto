@@ -12,35 +12,25 @@
 
         //FUNCIONES
         vm.verNoticia = verNoticia;
-        vm.getUsuario = getUsuario;
+        vm.getLastComment = getLastComment;
 
         vm.arrComentarios = FireService.cacheFactory(Model.refComentarios);
         vm.arrUsuarios = FireService.cacheFactory(Model.refUsuarios);
 
-        vm.usuario = {};
+        function getLastComment(nota) {
+            var comentario = vm.arrComentarios.$load(nota.comentarios);
+            nota.comentario = comentario;
 
-        /*
-         function getUsuario(comentario) {
-         if(comentario != undefined) {
-         comentario.$loaded().then(function () {
-         var usuario = FireService.createObjectRef(Model.refUsuarios.child(comentario.usuario));
-         comentario.usuario = usuario;
-         });
-         }
-         }
-         */
+            var comment = FireService.createObjectRef(Model.refComentarios.child(nota.comentario[nota.comentario.length - 1].$id));
 
-        function getUsuario(comentario) {
-            var usuario = {};
-            if(comentario != undefined) {
-                comentario.$loaded().then(function () {
-                    //console.log(comentario.usuario);
-                    usuario = vm.arrUsuarios.$load(comentario.usuario);
-                    console.log(usuario);
-                    vm.usuario = usuario;
-                });
-            }
-            return usuario;
+            comment.$loaded(function (data) {
+                var id = {};
+                id[data.usuario] = true;
+                var usuario = vm.arrUsuarios.$load(id);
+                comentario.usuarioResponse = usuario;
+            });
+
+            return comentario;
         }
 
         NotasService.get().then(function (data) {
