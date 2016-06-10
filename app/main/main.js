@@ -58,19 +58,34 @@
         vm.getUsuario = getUsuario;
 
         vm.arrComentarios = FireService.cacheFactory(Model.refComentarios);
+        vm.arrUsuarios = FireService.cacheFactory(Model.refUsuarios);
 
 
+        /*
         function getUsuario(comentario) {
             var usuario = {};
             if(comentario != undefined) {
                 comentario.$loaded().then(function () {
                     //console.log(comentario.usuario);
                     usuario = FireService.createObjectRef(Model.refUsuarios.child(comentario.usuario));
-//                    console.log(usuario);
+                    //console.log(usuario);
                     comentario.usuario = usuario;
                     //console.log(comentario.usuario);
                 });
             }
+        }
+        */
+
+        function getUsuario(comentario) {
+            var usuario = {};
+            if(comentario != undefined) {
+                comentario.$loaded().then(function () {
+                    console.log(comentario.usuario);
+                    usuario = vm.arrUsuarios.$load(comentario.usuario);
+                    console.log(usuario);
+                });
+            }
+            return usuario;
         }
 
         NotasService.getUltimasNotas().then(function (data) {
