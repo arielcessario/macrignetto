@@ -1095,7 +1095,7 @@ ac-login {
 
 .contacto-form {
   width: 80%;
-  margin: 0 auto;
+  margin: 15px auto;
   @media (min-width: 800px) {
     width: 35%;
     margin: 50px auto;
@@ -1472,7 +1472,9 @@ ac-login {
 
 .comic-destacada{
   border: 1px solid black;
-  width: 49.8%;
+  @media (min-width: 800px) {
+    width: 49.8%;
+  }
 }
 
 .busquedas{
