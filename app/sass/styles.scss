@@ -39,6 +39,11 @@ body {
 
 
 
+
+
+
+
+
 //SECCION PARA EL MENU
 .header {
   font-family: 'Merriweather', serif;
@@ -802,36 +807,47 @@ h1 {
 }
 
 
-  .noticias-texto {
-    opacity: 0;
-  }
+  //.noticias-texto {
+    //opacity: 0;
+  //}
 
 
 
 
 
 .tint{
+  -webkit-filter: grayscale; /*sepia, hue-rotate, invert....*/
+  -webkit-filter: brightness(50%);
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  transition: all .2s linear;
+
   img{
-  //background: rgba(0, 0, 0, 0.5);
+
     -webkit-filter: blur(5px); /* Chrome, Safari, Opera */
     filter: blur(5px);
+    cursor: pointer;
     transition: all .2s linear;
   }
 }
 
 .tint:hover{
+  -webkit-filter: none; /*sepia, hue-rotate, invert....*/
+  -webkit-filter: brightness(100%);
+  transition: all .2s linear;
 
   img{
+
     -webkit-filter: blur(0px); /* Chrome, Safari, Opera */
     filter: blur(0px);
     cursor: pointer;
+    transition: all .2s linear;
   }
+
 }
 
 
@@ -2414,13 +2430,7 @@ ac-paginacion > .table-td{
 
 }
 
-.strech{
-  width: 161px!important;
-  height: 100%;
-  img{
-    min-width: 160px;
-  }
-}
+
 
 
 .header-secciones{

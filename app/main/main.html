@@ -35,9 +35,7 @@
                 <div ng-repeat="nota in mainCtrl.notas"
                      ng-init="mainCtrl.getLastComment(nota);"
                      class="noticias-info" ng-class="{'noticia-destacada':nota.destacada == 1}">
-                <!--<div ng-repeat="nota in mainCtrl.notas"-->
-                     <!--ng-init="comentario = mainCtrl.arrComentarios.$load((nota.comentarios));"-->
-                     <!--class="noticias-info" ng-class="{'noticia-destacada':nota.destacada == 1}">-->
+
                     <a href="" class="btn-facebook" title="Me gusta">
                         <img src="images/like.png" class="" height="30" width="30">
                     </a>
@@ -45,7 +43,7 @@
                         <img src="images/tweet.png" class="" height="30" width="30">
                     </a>
 
-                    <div class="noticias-texto">{{nota.titulo}}</div>
+
                     <div class="tint" ng-click="mainCtrl.verNoticia(nota.id);">
                         <img ng-src="images/{{nota.fotos[0].nombre == undefined ? 'no_image.png' : nota.fotos[0].nombre}}"
                              class="strech" >
@@ -64,6 +62,7 @@
                         </div>
                         <div class="noticias-detalle">{{nota.comentario.length > 0 ? nota.comentario[nota.comentario.length-1].detalles : 'Se el primero en comentar'}}</div>
                     </div>
+                    <div class="noticias-texto">{{nota.titulo}}</div>
                 </div>
             </div>
         </div>
