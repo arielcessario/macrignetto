@@ -37,7 +37,7 @@
         vm.agendaAnio = vm.anio;
         vm.listaEventos = [];
         vm.evento = {};
-        vm.eventos = [];
+        //vm.eventos = [];
         vm.comics = [];
 
         vm.email = '';
@@ -55,28 +55,12 @@
         vm.verComic = verComic;
         vm.sendMail = sendMail;
         vm.selectEvento = selectEvento;
-        vm.getUsuario = getUsuario;
+        //vm.getUsuario = getUsuario;
         vm.getLastComment = getLastComment;
 
         vm.arrComentarios = FireService.cacheFactory(Model.refComentarios);
         vm.arrUsuarios = FireService.cacheFactory(Model.refUsuarios);
 
-        vm.usuario = {};
-
-        /*
-         function getUsuario(comentario) {
-         var usuario = {};
-         if(comentario != undefined) {
-         comentario.$loaded().then(function () {
-         //console.log(comentario.usuario);
-         usuario = FireService.createObjectRef(Model.refUsuarios.child(comentario.usuario));
-         //console.log(usuario);
-         comentario.usuario = usuario;
-         //console.log(comentario.usuario);
-         });
-         }
-         }
-         */
 
         function getLastComment(nota) {
             var comentario = vm.arrComentarios.$load(nota.comentarios);
@@ -94,19 +78,6 @@
 
 
             return comentario;
-        }
-
-        function getUsuario(comentario) {
-            var usuario = {};
-            if (comentario != undefined) {
-                comentario.$loaded().then(function () {
-                    //console.log(comentario.usuario);
-                    usuario = vm.arrUsuarios.$load(comentario.usuario);
-                    console.log(usuario);
-                    vm.usuario = usuario;
-                });
-            }
-            return usuario;
         }
 
         NotasService.getUltimasNotas().then(function (data) {
@@ -128,77 +99,57 @@
         });
 
 
-        EventosService.get().then(function (data) {
-            data.sort(function (a, b) {
-                return a.fecha - b.fecha;
-            });
-            //console.log(data);
-
-            vm.eventos = data;
-            var year = vm.anio;
-            var month = vm.agendaMes.id;
-
-            var max = data.length - 1;
-            var fecha = new Date(data[max].fecha);
-
-            year = parseInt(fecha.getFullYear());
-            month = parseInt(fecha.getMonth()) + 1;
-
-            getEventos(year, month);
-        });
-
-        function getEventos(year, month) {
-            //console.log(year);
-            //console.log(month);
-
-            var diasMes = new Date(year, month + 1, 0).getDate();
-            //console.log(diasMes);
-            vm.listaEventos = [];
-            var event = {};
-            for (var i = 1; i < diasMes + 1; i++) {
-                event = {dia: i, evento: undefined};
-                vm.listaEventos.push(event);
-            }
-            //console.log(vm.listaEventos);
-
-            for (var i in vm.eventos) {
-                // Conseguir el día del evento
-                // comparar con el día del listEventos
-                if (typeof vm.eventos[i] === "object") {
-                    var anioEvento = (new Date(vm.eventos[i].fecha)).getFullYear();
-                    var mesEvento = (new Date(vm.eventos[i].fecha)).getMonth() + 1;
-                    if (anioEvento == year && mesEvento == month) {
-                        vm.listaEventos[(new Date(vm.eventos[i].fecha)).getDate() - 1].evento = vm.eventos[i];
-                    }
-                }
-            }
-
-            //vm.evento = vm.listaEventos[0].evento;
-            if (vm.listaEventos[0].evento != undefined) {
-                vm.evento.detalle = vm.listaEventos[0].evento.detalle;
-                vm.evento.titulo = getSubString(vm.listaEventos[0].evento.titulo, 20);
-                vm.evento.fotos = vm.listaEventos[0].evento.fotos;
-            } else {
-                //console.log('Recupero el ultimo evento');
-                getLastEvento();
-            }
-        }
+        getLastEvento();
 
         function getLastEvento() {
             EventosService.getLastEvento().then(function (data) {
-                //console.log(data);
-                data.sort(function (a, b) {
-                    return a.fecha - b.fecha;
-                });
+                console.log(data);
+                //vm.eventos = data;
+                var year = vm.anio;
+                var month = vm.agendaMes.id;
 
-                //console.log(data[data.length - 1]);
-                if (data[data.length - 1] != undefined) {
-                    vm.evento.detalle = data[data.length - 1].detalle;
-                    vm.evento.titulo = getSubString(data[data.length - 1].titulo, 20);
-                    vm.evento.fotos = data[data.length - 1].fotos;
-                }
+                var fecha = new Date(data.fecha).format('dd-mm-yyyy');
+                year = parseInt(fecha.split('-')[2]);
+                month = parseInt(fecha.split('-')[1]) - 1;
+                vm.agendaMes = vm.meses[month];
+
+                getEventos(year, month);
             });
         }
+
+
+        function getEventos(year, month) {
+
+            EventosService.getEventosByFecha(year, month).then(function (data) {
+                var diasMes = new Date(year, month + 1, 0).getDate();
+                vm.listaEventos = [];
+                var event = {};
+
+                for (var i = 0; i < (new Date(year, month, 1).getDay()); i++) {
+                    event = {dia: '', evento: undefined};
+                    vm.listaEventos.push(event);
+                }
+
+                for (var i = 1; i < diasMes + 1; i++) {
+                    event = {dia: i, evento: undefined};
+                    for (var x = 0; x < data.length; x++) {
+                        if ((new Date(data[x].fecha)).getDate() == i) {
+                            event.evento = data[x];
+                        }
+                    }
+                    vm.listaEventos.push(event);
+                }
+
+                for (var i = diasMes + 2; i < 50; i++) {
+                    event = {dia: '', evento: undefined};
+                    vm.listaEventos.push(event);
+                }
+
+                vm.evento = data[0];
+            });
+        }
+
+
 
         function nextMonth() {
             vm.agendaMes = (vm.agendaMes.id == 11) ? vm.meses[0] : vm.meses[vm.agendaMes.id + 1];
@@ -226,9 +177,9 @@
             console.log(evento);
             if (evento != undefined) {
                 vm.evento = evento;
-                vm.evento.detalle = evento.detalle;
-                vm.evento.titulo = getSubString(evento.titulo, 20);
-                vm.evento.fotos = evento.fotos;
+                //vm.evento.detalle = evento.detalle;
+                //vm.evento.titulo = getSubString(evento.titulo, 20);
+                //vm.evento.fotos = evento.fotos;
             }
         }
 

@@ -113,6 +113,7 @@
         service.get = get;
         service.save = save;
         service.getLastEvento = getLastEvento;
+        service.getEventosByFecha = getEventosByFecha;
 
         return service;
 
@@ -153,14 +154,46 @@
         }
 
         function getLastEvento() {
-            //var currentDate = new Date();
-            //var firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
             var refEvento = Model.refEventos;
-            //var arrEventos = FireService.createArrayRef(refEvento, 'fecha', firstDay.getTime(), currentDate.getTime());
             var arrEventos = FireService.createArrayRef(refEvento);
+
             return arrEventos.$loaded(function (data) {
-                //console.log(data);
-                return data;
+                data.sort(function (a, b) {
+                    return a.fecha - b.fecha;
+                });
+
+                var evento = {};
+                var mostRecent= 0;
+                var now = new Date().getTime();
+                for(var i=0; i < data.length; i++){
+                    var curDate = data[i].fecha;
+                    if (curDate > mostRecent && curDate < now) {
+                        mostRecent = curDate;
+                        evento = data[i];
+                    }
+                }
+
+                return evento;
+            });
+        }
+
+        function getEventosByFecha(year, month) {
+            var refEvento = Model.refEventos;
+            var arrEventos = FireService.createArrayRef(refEvento);
+
+            return arrEventos.$loaded(function (data) {
+                var initMonth = new Date(year, month, 1);
+                var diasMes = new Date(year, month + 1, 0).getDate();
+                var finishMonth = new Date(year, month, diasMes);
+                var eventos = [];
+
+                for(var i=0; i < data.length; i++){
+                    if (data[i].fecha > initMonth.getTime() && data[i].fecha < finishMonth.getTime()) {
+                        eventos.push(data[i]);
+                    }
+                }
+
+                return eventos;
             });
         }
     }
