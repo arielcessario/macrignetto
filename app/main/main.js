@@ -138,7 +138,8 @@
                     vm.listaEventos.push(event);
                 }
 
-                for (var i = diasMes + 2; i < 50; i++) {
+                //for (var i = diasMes + 2; i < 50; i++) {
+                for (var i = diasMes + 1; i < 35; i++) {
                     event = {dia: '', evento: undefined};
                     vm.listaEventos.push(event);
                 }

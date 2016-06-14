@@ -65,27 +65,23 @@
                             <span>{{mainCtrl.agendaMes.nombre}} {{mainCtrl.agendaAnio}}</span>
                             <div class="sig-m" ng-click="mainCtrl.nextMonth();">></div>
                         </div>
-                        <!--div style="color: white; font-size: 20px;">
-                            {{mainCtrl.agendaAnio}}
-                        </div-->
                         <div id="agenda-calendar-container">
                             <div id="calendario">
                                 <div id="calendario-header">
-                                    <div>Do</div>
-                                    <div>Lu</div>
-                                    <div>Ma</div>
-                                    <div>Mi</div>
-                                    <div>Ju</div>
-                                    <div>Vi</div>
-                                    <div>Sa</div>
+                                    <div style="width: 30px; height: 26px;display: flex;justify-content: center;align-items: center;">Do</div>
+                                    <div style="width: 30px; height: 26px;display: flex;justify-content: center;align-items: center;">Lu</div>
+                                    <div style="width: 30px; height: 26px;display: flex;justify-content: center;align-items: center;">Ma</div>
+                                    <div style="width: 30px; height: 26px;display: flex;justify-content: center;align-items: center;">Mi</div>
+                                    <div style="width: 30px; height: 26px;display: flex;justify-content: center;align-items: center;">Ju</div>
+                                    <div style="width: 30px; height: 26px;display: flex;justify-content: center;align-items: center;">Vi</div>
+                                    <div style="width: 30px; height: 26px;display: flex;justify-content: center;align-items: center;">Sa</div>
                                 </div>
                                 <div id="calendario-dias">
                                     <div class="calendario-dia"
                                          ng-class="{'calendario-dia-with-event': dia.evento != undefined}"
                                          ng-repeat="dia in mainCtrl.listaEventos"
-                                         ng-click="mainCtrl.selectEvento(dia.evento);"
-                                            >
-                                        {{dia.dia}}
+                                         ng-click="mainCtrl.selectEvento(dia.evento);">
+                                        <div style="width: 30px; height: 26px;">{{dia.dia}}</div>
                                     </div>
                                 </div>
                             </div>
