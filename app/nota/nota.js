@@ -18,6 +18,7 @@
         if (vm.id.length > 0) {
             vm.url_id = 'nota/' + vm.id;
             vm.objNota = FireService.createObjectRef(Model.refNotas.child(vm.id));
+
             vm.objNota.$loaded(function (data) {
                 vm.nota = data;
                 vm.fotoSelected = data.fotos[0].nombre;

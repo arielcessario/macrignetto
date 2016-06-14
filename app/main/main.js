@@ -55,7 +55,6 @@
         vm.verComic = verComic;
         vm.sendMail = sendMail;
         vm.selectEvento = selectEvento;
-        //vm.getUsuario = getUsuario;
         vm.getLastComment = getLastComment;
 
         vm.arrComentarios = FireService.cacheFactory(Model.refComentarios);
@@ -93,6 +92,7 @@
                 nota.titulo = getSubString(data[i].titulo, 50);
                 nota.comentarios = (data[i].comentarios != undefined) ? data[i].comentarios : {};
                 nota.color = (i % 2 == 0) ? 1 : 2;
+                nota.url_id = 'nota/' + data[i].$id;
 
                 vm.notas.push(nota);
             }
@@ -103,8 +103,6 @@
 
         function getLastEvento() {
             EventosService.getLastEvento().then(function (data) {
-                console.log(data);
-                //vm.eventos = data;
                 var year = vm.anio;
                 var month = vm.agendaMes.id;
 
@@ -149,8 +147,6 @@
             });
         }
 
-
-
         function nextMonth() {
             vm.agendaMes = (vm.agendaMes.id == 11) ? vm.meses[0] : vm.meses[vm.agendaMes.id + 1];
             vm.agendaAnio = (vm.agendaMes.id == 0) ? vm.agendaAnio + 1 : vm.agendaAnio;
@@ -164,27 +160,29 @@
         }
 
         function verNoticia(id) {
-            console.log(id);
             $location.path('/nota/' + id);
         }
 
         function verComic(id) {
-            console.log(id);
             $location.path('/comic/' + id);
         }
 
         function selectEvento(evento) {
-            console.log(evento);
             if (evento != undefined) {
                 vm.evento = evento;
-                //vm.evento.detalle = evento.detalle;
-                //vm.evento.titulo = getSubString(evento.titulo, 20);
-                //vm.evento.fotos = evento.fotos;
             }
         }
 
         ComicsService.getUltimosComics().then(function (data) {
-            vm.comics = data;
+
+            for(var i=0; i < data.length; i++) {
+                var comic = {};
+                comic = data[i];
+                comic.url_id = 'comic/' + data[i].$id;
+
+                vm.comics.push(comic);
+            }
+
         });
 
         function sendMail() {
@@ -218,7 +216,6 @@
         $scope.$watch('mainCtrl.textFiltro', function (newVal, oldVal) {
             if (newVal != oldVal && newVal != undefined) {
                 filterByText();
-                console.log(vm.textFiltro);
             }
         });
 

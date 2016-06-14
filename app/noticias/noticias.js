@@ -57,7 +57,6 @@
         });
 
         function verNoticia(id) {
-            console.log(id);
             $location.path('/nota/' + id);
         }
 

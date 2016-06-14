@@ -13,10 +13,10 @@
                  ng-class="{'comic-destacada':comic.destacada == 1}">
                 <img ng-src="images/{{comic.imagen == undefined ? 'no_image.png' : comic.imagen}}"
                      class="strech" ng-click="humorCtrl.verComic(comic.$id);">
-                <div class="btn-facebook-1" facebook proyecto="humorCtrl.url_id"></div>
+                <div class="btn-facebook-1" facebook proyecto="comic.url_id"></div>
                 <a twitter style="height: 30px; width: 30px;"
                    class="btn-twitter-1" data-text="Your text: "
-                   data-url="humorCtrl.url_id"></a>
+                   data-url="comic.url_id"></a>
             </div>
         </div>
     </div>

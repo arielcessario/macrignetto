@@ -10,17 +10,23 @@
         var vm = this;
         vm.fotoSelected = '';
         vm.comics = [];
-        vm.url_id = '';
 
+        //Funciones
         vm.verComic = verComic;
 
         ComicsService.get().then(function (data) {
-            console.log(data);
-            vm.comics = data;
+
+            for(var i=0; i < data.length; i++) {
+                var comic = {};
+                comic = data[i];
+                comic.url_id = 'comic/' + data[i].$id;
+
+                vm.comics.push(comic);
+            }
+
         });
 
         function verComic(id) {
-            console.log(id);
             $location.path('/comic/' + id);
         }
 
