@@ -36,23 +36,30 @@
                      ng-init="mainCtrl.getLastComment(nota);"
                      class="noticias-info" ng-class="{'noticia-destacada':nota.destacada == 1}">
 
-                    <a href="" class="btn-facebook" title="Me gusta">
+                    <!--a href="" class="btn-facebook" title="Me gusta">
                         <img src="images/like.png" class="" height="30" width="30">
                     </a>
                     <a href="" class="btn-twitter" title="Seguir">
                         <img src="images/tweet.png" class="" height="30" width="30">
-                    </a>
+                    </a-->
+                    <div facebook proyecto="nota.$id"></div>
+
 
                     <div class="tint" ng-click="mainCtrl.verNoticia(nota.id);">
                         <img ng-src="images/{{nota.fotos[0].nombre == undefined ? 'no_image.png' : nota.fotos[0].nombre}}"
                              class="strech" >
+                        <a twitter style="height: 30px; width: 30px;"
+                           class="main-button-twitter" data-text="Your text: "
+                           data-url="nota.$id"></a>
                     </div>
-
                     <div class="noticias-pie" ng-class="{'nota-pie-color-1':nota.color == 1, 'nota-pie-color-2':nota.color == 2}">
                         <div>Ultimo comentario:
                             <span class="comentario-usuario">{{(nota.comentario.usuarioResponse[0] != undefined ? nota.comentario.usuarioResponse[0].apellido + ' ' + nota.comentario.usuarioResponse[0].nombre : '')}}</span>
                         </div>
                         <div class="noticias-detalle">{{nota.comentario.length > 0 ? nota.comentario[nota.comentario.length-1].detalles : 'Se el primero en comentar'}}</div>
+                        <a twitter style="height: 30px; width: 30px;"
+                           class="main-button-twitter" data-text="Your text: "
+                           data-url="nota.$id"></a>
                     </div>
                     <div class="noticias-texto">{{nota.titulo}}</div>
                 </div>

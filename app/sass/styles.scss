@@ -2567,3 +2567,39 @@ ac-paginacion > .table-td{
   height: 80px;
   width: 75px;
 }
+
+.btn-facebook-2 {
+  top: 10px;
+  left: 5px;
+  border-radius: 20px;
+  img {
+    min-width: 30px !important;
+  }
+}
+
+.btn-twitter-2 {
+  margin-left: 95px;
+}
+.btn-facebook-1 {
+  position: absolute;
+  top: 30px;
+  margin-left: 120px;
+}
+.btn-twitter-1 {
+  position: absolute;
+  top: 30px;
+  margin-left: 120px;
+}
+.social-media {
+  display: flex;
+  position: absolute;
+  bottom: 90px;
+  height: 30px;
+  width: 100%;
+}
+.titulo-chico{
+  font-size: 2em !important;
+}
+.media-twitter{
+  margin-left: 100px;
+}

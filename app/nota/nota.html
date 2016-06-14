@@ -19,6 +19,12 @@
                     <img ng-if="notaCtrl.nota.fotos[3].nombre != undefined" ng-src="images/{{notaCtrl.nota.fotos[3].nombre}}"
                          ng-click="notaCtrl.fotoSelected = notaCtrl.nota.fotos[3].nombre">
                 </div>
+                <div style="display: flex;">
+                    <div facebook proyecto="notaCtrl.url_id"></div>
+                    <a twitter style="height: 30px; width: 30px;"
+                       class="btn-twitter-2" data-text="Your text: "
+                       data-url="notaCtrl.url_id"></a>
+                </div>
                 <ac-administracion-comentarios obj="notaCtrl.objNota"></ac-administracion-comentarios>
                 <button ng-click="appCtrl.volver('main');" style="margin-bottom: 20px;">Volver</button>
             </div>

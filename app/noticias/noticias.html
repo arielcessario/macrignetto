@@ -13,13 +13,6 @@
                 <div ng-repeat="nota in noticiasCtrl.notas | filter:$ctrl.filtro"
                      ng-init="noticiasCtrl.getLastComment(nota);"
                      class="noticias-info noticia-result" ng-class="{'noticia-destacada':nota.destacada == 1}">
-                    <a href="" class="btn-facebook" title="Me gusta">
-                        <img src="images/like.png" class="" height="30" width="30">
-                    </a>
-                    <a href="" class="btn-twitter" title="Seguir">
-                        <img src="images/tweet.png" class="" height="30" width="30">
-                    </a>
-
                     <div class="tint" ng-click="noticiasCtrl.verNoticia(nota.id);">
                         <img ng-src="images/{{nota.fotos[0].nombre == undefined ? 'no_image.png' : nota.fotos[0].nombre}}"
                              class="strech" >
@@ -30,7 +23,13 @@
                         </div>
                         <div class="noticias-detalle">{{nota.comentario.length > 0 ? nota.comentario[nota.comentario.length-1].detalles : 'Se el primero en comentar'}}</div>
                     </div>
-                    <div class="noticias-texto">{{nota.titulo}}</div>
+                    <div class="social-media">
+                        <div class="media-face" facebook proyecto="nota.url_id"></div>
+                        <a twitter style="height: 30px; width: 30px;"
+                           class="media-twitter" data-text="Your text: "
+                           data-url="nota.url_id"></a>
+                    </div>
+                    <div class="noticias-texto" ng-class="{'titulo-chico':nota.destacada == 0}">{{nota.titulo}}</div>
                 </div>
             </div>
         </div>

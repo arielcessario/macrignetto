@@ -50,6 +50,7 @@
                 nota.titulo = getSubString(data[i].titulo, 50);
                 nota.comentarios = (data[i].comentarios != undefined) ? data[i].comentarios : {};
                 nota.color = (i % 2 == 0) ? 1 : 2;
+                nota.url_id = 'nota/' + data[i].$id;
 
                 vm.notas.push(nota);
             }

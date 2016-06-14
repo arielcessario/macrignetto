@@ -10,6 +10,7 @@
         var vm = this;
         vm.fotoSelected = '';
         vm.comics = [];
+        vm.url_id = '';
 
         vm.verComic = verComic;
 

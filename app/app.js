@@ -149,12 +149,14 @@
             });
         })
         .controller('AppCtrl', AppCtrl)
+        .directive('twitter', twitter)
+        .directive('facebook', facebook)
         //Constante definida para la librería ac-angularfire-factory
         .constant('_FIREREF', 'https://macrignetto.firebaseio.com/');
 
 
-    AppCtrl.$inject = ['FireService', '$rootScope', '$scope', '$location', 'LoginService'];
-    function AppCtrl(FireService, $rootScope, $scope, $location, LoginService) {
+    AppCtrl.$inject = ['FireService', '$rootScope', '$scope', '$location', 'LoginService', 'ContactsService'];
+    function AppCtrl(FireService, $rootScope, $scope, $location, LoginService, ContactsService) {
         var vm = this;
         vm.hideLoader = true;
         vm.display_menu = true;
@@ -163,7 +165,9 @@
 
         vm.volver = volver;
 
+        // INIT
         FireService.init();
+        ContactsService.facebookInit();
 
 
         ////////// NAVEGACION //////////
@@ -180,6 +184,71 @@
         function volver(view){
             $location.path('/' + view);
         }
+    }
+
+    twitter.$inject = ['$timeout'];
+    function twitter($timeout) {
+        return {
+            scope: {
+                'url': '='
+            },
+            controller: function ($scope, $element, $attrs) {
+                var vm = this;
+
+
+                watchUrl();
+                function watchUrl() {
+                    if ($scope.url == undefined) {
+                        $timeout(watchUrl, 1000);
+                    } else {
+                        twttr.widgets.createShareButton(
+                            'http://192.185.67.199/~arielces/macrignetto-dev/#/' + $scope.url,
+                            $element[0],
+                            function (el) {
+                            }, {
+                                count: 'none',
+                                text: $attrs.text
+                            }
+                        );
+                    }
+                }
+            }
+        }
+    }
+
+
+    facebook.$inject = ['$window', '$timeout'];
+    function facebook($window, $timeout) {
+        return {
+            restrict: 'A',
+            scope: {
+                proyecto: '='
+            },
+            template: '<div class="fb-share-button main-button-face" style="height: 30px; width: 30px;" data-layout="button_count" data-mobile-iframe="true" ' +
+            'data-href="http://192.185.67.199/~arielces/macrignetto-dev/#/{{proyecto}}/"></div>',
+            link: function (scope, element, attrs, compile) {
+                scope.$watch(function () {
+                        //console.log(scope.proyecto);
+                        return !!$window.FB;
+                    },
+                    function (fbIsReady) {
+                        if (fbIsReady) {
+                            setFace();
+                        }
+                    });
+
+                function setFace() {
+                    if (scope.proyecto == undefined) {
+
+                        $timeout(setFace, 1000)
+                    } else {
+                        $window.FB.XFBML.parse(element.parent()[0]);
+                    }
+
+                }
+
+            }
+        };
     }
 
 })();

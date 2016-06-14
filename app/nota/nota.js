@@ -13,8 +13,10 @@
         vm.objNota = {};
         vm.comentarios = [];
         vm.id = $routeParams.id;
+        vm.url_id = '';
 
         if (vm.id.length > 0) {
+            vm.url_id = 'nota/' + vm.id;
             vm.objNota = FireService.createObjectRef(Model.refNotas.child(vm.id));
             vm.objNota.$loaded(function (data) {
                 vm.nota = data;
