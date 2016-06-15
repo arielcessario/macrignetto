@@ -797,9 +797,9 @@ h1 {
     min-width: 956px;
     min-height: 100%;
 
+    margin-left: calc(50% - 477px) !important;
 
     @media (min-width: 800px) {
-      margin-left: calc(50% - 477px) !important;
       background: rgba(0, 255, 255, 0.5);
       transition: all .3s linear;
     }
@@ -1022,28 +1022,32 @@ h3 {
   }
 }
 
-.agenda-img {
-  font-size: 46px;
+.contenedor-imagen-agenda {
   text-align: center;
-  margin: 15px;
+  margin: 10px auto;
+  min-width: 95% !important;
+  position: relative;
+  overflow: hidden;
+  border: 5px #DD0374 solid;
+  -webkit-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
 
   @media (min-width: 800px) {
-    width: 50% !important;
-    height: 105%;
-    position: relative;
-    overflow: hidden;
-    border: 5px #DD0374 solid;
-    -webkit-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.75);
+    min-width: 50%!important;
+    height: 100%;
   }
 
 }
 
-#agenda img {
+.contenedor-imagen-agenda img {
+  margin: auto;
   @media (min-width: 800px) {
-    min-width: 600px !important;
-  }
+    height: 100% !important;
+      margin: auto;
+
+
+    }
 }
 
 .agenda-titulo {
@@ -1913,22 +1917,21 @@ ac-login {
     right: 0px;
     left: 0px;
     bottom: 0px;
-
     background-color: rgba(0, 0, 0, 0.8);
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     .login-panel-form {
-      width: 395px;
+      width: 350px;
       /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#878d96+0,596a72+100 */
       background: rgb(135,141,150); /* Old browsers */
       background: -moz-radial-gradient(center, ellipse cover,  rgba(135,141,150,1) 0%, rgba(89,106,114,1) 100%); /* FF3.6-15 */
       background: -webkit-radial-gradient(center, ellipse cover,  rgba(135,141,150,1) 0%,rgba(89,106,114,1) 100%); /* Chrome10-25,Safari5.1-6 */
       background: radial-gradient(ellipse at center,  rgba(135,141,150,1) 0%,rgba(89,106,114,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#878d96', endColorstr='#596a72',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-      padding: 15px;
+      padding: 30px;
+      -webkit-border-radius: 5px;
       -webkit-transform: translateY(-1000px);
       -moz-transform: translateY(-1000px);
       -ms-transform: translateY(-1000px);
@@ -2467,11 +2470,11 @@ ac-paginacion > .table-td{
 }
 .revista-info{
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff5db1+0,ef017c+100;Pink+3D+%231 */
-  background: rgb(255, 93, 177); /* Old browsers */
-  background: -moz-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5db1', endColorstr='#ef017c', GradientType=0); /* IE6-9 */
+  //background: rgb(255, 93, 177); /* Old browsers */
+  //background: -moz-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* FF3.6-15 */
+  //background: -webkit-linear-gradient(top, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+  //background: linear-gradient(to bottom, rgba(255, 93, 177, 1) 0%, rgba(239, 1, 124, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5db1', endColorstr='#ef017c', GradientType=0); /* IE6-9 */
   width: 24%;
   padding: 10px;
   margin: 10px auto;
@@ -2563,7 +2566,7 @@ ac-paginacion > .table-td{
 .input-foto{
   display: flex;
   flex-wrap: wrap;
-  margin: 5px;
+  margin-top: 10px;
   height: 80px;
   width: 75px;
 }
@@ -2578,16 +2581,17 @@ ac-paginacion > .table-td{
 }
 
 .btn-twitter-2 {
-  margin-left: 95px;
+  margin-left: 10px;
 }
 .btn-facebook-1 {
   position: absolute;
   top: 30px;
+  margin-left: 10pxpx;
 }
 .btn-twitter-1 {
   position: absolute;
   top: 30px;
-  margin-left: 120px;
+  margin-left: 10pxpx;
 }
 .social-media {
   display: flex;
@@ -2597,8 +2601,14 @@ ac-paginacion > .table-td{
   width: 100%;
 }
 .titulo-chico{
-  font-size: 2em !important;
+  @media (min-width: 800px) {
+    font-size: 2em !important;
+  }
 }
 .media-twitter{
-  margin-left: 100px;
+  margin-left: 10px;
+}
+
+.media-face{
+  margin-left: 10px;
 }

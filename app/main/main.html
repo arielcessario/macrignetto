@@ -88,7 +88,10 @@
                         </div>
                     </div>
                 </div>
-                <img class="agenda-img" src="images/{{mainCtrl.evento.fotos[0].nombre}}">
+                <div class="contenedor-imagen-agenda">
+                    <img class="agenda-img" src="images/{{mainCtrl.evento.fotos[0].nombre}}">
+                </div>
+
                 <div class="agenda-noticia">
                     <div class="agenda-titulo"><h4>{{mainCtrl.evento.titulo}}</h4></div>
                     <div class="agenda-info" ng-bind-html="mainCtrl.evento.detalle"></div>
