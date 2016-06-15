@@ -161,6 +161,7 @@
         vm.hideLoader = true;
         vm.display_menu = true;
         vm.display_header = true;
+        vm.menu_mobile_open = false;
         vm.isLogged = false;
 
         vm.volver = volver;
